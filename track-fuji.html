@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fuji Speedway — Vantage</title>
+<title>Fuji Speedway | Vantage</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -442,6 +442,29 @@ footer{ padding:64px 40px 36px; }
 .speed-trace-svg .axis{ stroke:var(--line-strong); stroke-width:1; }
 .speed-trace-svg text{ font-family:'JetBrains Mono', monospace; font-size:10px; fill:var(--muted); }
 
+/* ---------- HERO 3D SCENE ---------- */
+.hero-split{ display:grid; grid-template-columns:1.1fr 0.9fr; gap:48px; align-items:center; }
+.hero-3d-wrap{ display:flex; justify-content:center; }
+.hero-3d-card{
+  position:relative; width:100%; aspect-ratio:1/1; max-width:460px;
+  background:radial-gradient(circle at 50% 30%, #171B24, var(--deep));
+  border-radius:24px; border:1px solid rgba(255,255,255,0.06);
+  overflow:hidden; cursor:grab;
+  box-shadow:0 40px 90px -30px rgba(11,13,18,0.35);
+}
+.hero-3d-card:active{ cursor:grabbing; }
+.hero-3d-card canvas{ width:100%; height:100%; display:block; touch-action:none; }
+.hero-3d-hint{
+  position:absolute; bottom:16px; left:50%; transform:translateX(-50%);
+  font-size:10.5px; letter-spacing:0.1em; color:rgba(255,255,255,0.4);
+  background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1);
+  padding:6px 12px; border-radius:100px; pointer-events:none;
+}
+@media (max-width:980px){
+  .hero-split{ grid-template-columns:1fr; }
+  .hero-3d-card{ max-width:340px; margin:0 auto; }
+}
+
 </style>
 </head>
 <body>
@@ -472,7 +495,7 @@ footer{ padding:64px 40px 36px; }
     <div class="track-hero-inner">
       <span class="series-badge">WEC · 6H FORMAT · CLOCKWISE</span>
       <h1>Fuji Speedway</h1>
-      <div class="location">Fuji Speedway — Japan</div>
+      <div class="location">Fuji Speedway, Japan</div>
     </div>
   </div>
 
@@ -488,7 +511,7 @@ footer{ padding:64px 40px 36px; }
   <div class="section-inner">
 
     <div class="track-map-card reveal">
-      <span class="badge">STYLIZED DIAGRAM — ILLUSTRATIVE, NOT GPS-ACCURATE</span>
+      <span class="badge">STYLIZED DIAGRAM: ILLUSTRATIVE, NOT GPS-ACCURATE</span>
       <svg class="track-outline" viewBox="0 0 720 320" role="img" aria-label="Stylized circuit outline with braking zones marked">
         <path class="line" d="M60,150 C60,90 130,60 220,65 C300,69 320,110 280,130 C230,155 250,190 310,195 C420,205 460,150 540,120 C600,97 650,120 650,170 C650,215 590,225 520,210 C440,193 340,245 260,250 C160,257 60,230 60,150 Z"></path>
         <circle class="zone" cx="230" cy="80" r="6"></circle>
@@ -508,7 +531,7 @@ footer{ padding:64px 40px 36px; }
       <div class="section-head" style="margin-bottom:8px;">
         <span class="tag-label">Braking analysis</span>
         <h2 style="font-size:28px;">Zone-by-zone breakdown</h2>
-        <p style="font-size:14.5px;">Sample braking model for illustration — entry/exit speeds and deceleration are indicative, not measured race telemetry.</p>
+        <p style="font-size:14.5px;">Sample braking model for illustration. Entry/exit speeds and deceleration are indicative, not measured race telemetry.</p>
       </div>
       <div class="brake-zone-row head-row">
         <span>ZONE</span><span>CORNER</span><span>ENTRY → EXIT</span><span>DECEL (G)</span><span></span>
@@ -551,7 +574,7 @@ footer{ padding:64px 40px 36px; }
     </div>
 
     <div class="detail-card reveal">
-      <span class="badge">ILLUSTRATIVE SAMPLE — SECTOR MODEL</span>
+      <span class="badge">ILLUSTRATIVE SAMPLE: SECTOR MODEL</span>
       <h3>Sector time comparison</h3>
       <p class="sub">Indicative sector splits comparing clean-air pace against traffic pace. Not measured session data.</p>
       <div class="sector-rows">
@@ -596,7 +619,7 @@ footer{ padding:64px 40px 36px; }
     </div>
 
     <div class="detail-card reveal">
-      <span class="badge">ILLUSTRATIVE SAMPLE — STRATEGY MODEL</span>
+      <span class="badge">ILLUSTRATIVE SAMPLE: STRATEGY MODEL</span>
       <h3>Tyre strategy</h3>
       <p class="sub">Sample stint plan across the opening hours of an endurance run. Timing and compound choice are illustrative, not a real team's strategy.</p>
       <div class="tyre-timeline">
@@ -605,41 +628,41 @@ footer{ padding:64px 40px 36px; }
         <div class="t-bar-wrap">
           <div class="t-bar tyre-medium" style="left:0.0%; width:19.4%;"><span>MEDIUM</span></div>
         </div>
-        <span class="t-range">00:00 – 01:10</span>
+        <span class="t-range">00:00-01:10</span>
       </div>
       <div class="tyre-row">
         <span class="t-num">STINT 2</span>
         <div class="t-bar-wrap">
           <div class="t-bar tyre-medium" style="left:19.4%; width:20.8%;"><span>MEDIUM</span></div>
         </div>
-        <span class="t-range">01:10 – 02:25</span>
+        <span class="t-range">01:10-02:25</span>
       </div>
       <div class="tyre-row">
         <span class="t-num">STINT 3</span>
         <div class="t-bar-wrap">
           <div class="t-bar tyre-hard" style="left:40.3%; width:20.8%;"><span>HARD</span></div>
         </div>
-        <span class="t-range">02:25 – 03:40</span>
+        <span class="t-range">02:25-03:40</span>
       </div>
       <div class="tyre-row">
         <span class="t-num">STINT 4</span>
         <div class="t-bar-wrap">
           <div class="t-bar tyre-hard" style="left:61.1%; width:22.2%;"><span>HARD</span></div>
         </div>
-        <span class="t-range">03:40 – 05:00</span>
+        <span class="t-range">03:40-05:00</span>
       </div>
       <div class="tyre-row">
         <span class="t-num">STINT 5</span>
         <div class="t-bar-wrap">
           <div class="t-bar tyre-medium" style="left:83.3%; width:16.7%;"><span>MEDIUM</span></div>
         </div>
-        <span class="t-range">05:00 – 06:00</span>
+        <span class="t-range">05:00-06:00</span>
       </div>
     </div>
     </div>
 
     <div class="detail-card reveal">
-      <span class="badge">ILLUSTRATIVE SAMPLE — SPEED MODEL</span>
+      <span class="badge">ILLUSTRATIVE SAMPLE: SPEED MODEL</span>
       <h3>Speed trace across one lap</h3>
       <p class="sub">Indicative speed profile combining straights and braking zones. Not GPS or car-sensor telemetry.</p>
       <svg class="speed-trace-svg" viewBox="0 0 740 240" role="img" aria-label="Illustrative speed trace across one lap">

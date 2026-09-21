@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cricket — Vantage</title>
+<title>Cricket | Vantage</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -442,6 +442,29 @@ footer{ padding:64px 40px 36px; }
 .speed-trace-svg .axis{ stroke:var(--line-strong); stroke-width:1; }
 .speed-trace-svg text{ font-family:'JetBrains Mono', monospace; font-size:10px; fill:var(--muted); }
 
+/* ---------- HERO 3D SCENE ---------- */
+.hero-split{ display:grid; grid-template-columns:1.1fr 0.9fr; gap:48px; align-items:center; }
+.hero-3d-wrap{ display:flex; justify-content:center; }
+.hero-3d-card{
+  position:relative; width:100%; aspect-ratio:1/1; max-width:460px;
+  background:radial-gradient(circle at 50% 30%, #171B24, var(--deep));
+  border-radius:24px; border:1px solid rgba(255,255,255,0.06);
+  overflow:hidden; cursor:grab;
+  box-shadow:0 40px 90px -30px rgba(11,13,18,0.35);
+}
+.hero-3d-card:active{ cursor:grabbing; }
+.hero-3d-card canvas{ width:100%; height:100%; display:block; touch-action:none; }
+.hero-3d-hint{
+  position:absolute; bottom:16px; left:50%; transform:translateX(-50%);
+  font-size:10.5px; letter-spacing:0.1em; color:rgba(255,255,255,0.4);
+  background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1);
+  padding:6px 12px; border-radius:100px; pointer-events:none;
+}
+@media (max-width:980px){
+  .hero-split{ grid-template-columns:1fr; }
+  .hero-3d-card{ max-width:340px; margin:0 auto; }
+}
+
 </style>
 </head>
 <body>
@@ -466,9 +489,9 @@ footer{ padding:64px 40px 36px; }
 </div>
 
 <section class="hero compact">
-  <div class="eyebrow"><span class="pip"></span>CRICKET — IN DEVELOPMENT</div>
+  <div class="eyebrow"><span class="pip"></span>CRICKET: IN DEVELOPMENT</div>
   <h1 class="page-title reveal in">The ground shapes the game before a ball is bowled.</h1>
-  <p class="lede">Most cricket sites start and end with runs and wickets. We start with the venue — pitch behaviour, conditions, boundary size — because that's what actually decides how a match plays out. This is the first ground we've built out in full.</p>
+  <p class="lede">Most cricket sites start and end with runs and wickets. We start with the venue: pitch behaviour, conditions, boundary size, because that's what actually decides how a match plays out. This is the first ground we've built out in full.</p>
 </section>
 
 <section class="tight">
@@ -478,13 +501,13 @@ footer{ padding:64px 40px 36px; }
         <div class="arrow">→</div>
         <span class="sc-tag">TEST CRICKET · HOME OF CRICKET</span>
         <h3>Lord's</h3>
-        <p>St John's Wood, London. The 2.5m slope, real conditions, and a full breakdown of a genuine 2025 Test — every figure sourced, nothing invented.</p>
-        <span class="track-count">FIRST VENUE — FULLY BUILT</span>
+        <p>St John's Wood, London. The 2.5m slope, real conditions, and a full breakdown of a genuine 2025 Test, every figure sourced and nothing invented.</p>
+        <span class="track-count">FIRST VENUE: FULLY BUILT</span>
       </a>
       <div class="series-card reveal" style="opacity:0.5;">
         <span class="sc-tag">MORE GROUNDS</span>
         <h3>Coming soon</h3>
-        <p>Eden Gardens, MCG, Newlands and more — built the same way, venue-first, real data only.</p>
+        <p>Eden Gardens, MCG, Newlands and more, built the same way: venue-first, real data only.</p>
         <span class="track-count">IN DEVELOPMENT</span>
       </div>
     </div>

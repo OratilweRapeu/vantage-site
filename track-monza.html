@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Monza — Vantage</title>
+<title>Monza | Vantage</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -442,6 +442,29 @@ footer{ padding:64px 40px 36px; }
 .speed-trace-svg .axis{ stroke:var(--line-strong); stroke-width:1; }
 .speed-trace-svg text{ font-family:'JetBrains Mono', monospace; font-size:10px; fill:var(--muted); }
 
+/* ---------- HERO 3D SCENE ---------- */
+.hero-split{ display:grid; grid-template-columns:1.1fr 0.9fr; gap:48px; align-items:center; }
+.hero-3d-wrap{ display:flex; justify-content:center; }
+.hero-3d-card{
+  position:relative; width:100%; aspect-ratio:1/1; max-width:460px;
+  background:radial-gradient(circle at 50% 30%, #171B24, var(--deep));
+  border-radius:24px; border:1px solid rgba(255,255,255,0.06);
+  overflow:hidden; cursor:grab;
+  box-shadow:0 40px 90px -30px rgba(11,13,18,0.35);
+}
+.hero-3d-card:active{ cursor:grabbing; }
+.hero-3d-card canvas{ width:100%; height:100%; display:block; touch-action:none; }
+.hero-3d-hint{
+  position:absolute; bottom:16px; left:50%; transform:translateX(-50%);
+  font-size:10.5px; letter-spacing:0.1em; color:rgba(255,255,255,0.4);
+  background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1);
+  padding:6px 12px; border-radius:100px; pointer-events:none;
+}
+@media (max-width:980px){
+  .hero-split{ grid-template-columns:1fr; }
+  .hero-3d-card{ max-width:340px; margin:0 auto; }
+}
+
 </style>
 </head>
 <body>
@@ -472,7 +495,7 @@ footer{ padding:64px 40px 36px; }
     <div class="track-hero-inner">
       <span class="series-badge">FORMULA 1 · CLOCKWISE</span>
       <h1>Monza</h1>
-      <div class="location">Autodromo Nazionale Monza — Italy</div>
+      <div class="location">Autodromo Nazionale Monza, Italy</div>
     </div>
   </div>
 
@@ -488,7 +511,7 @@ footer{ padding:64px 40px 36px; }
   <div class="section-inner">
 
     <div class="track-map-card reveal">
-      <span class="badge">STYLIZED DIAGRAM — ILLUSTRATIVE, NOT GPS-ACCURATE</span>
+      <span class="badge">STYLIZED DIAGRAM: ILLUSTRATIVE, NOT GPS-ACCURATE</span>
       <svg class="track-outline" viewBox="0 0 720 320" role="img" aria-label="Stylized circuit outline with braking zones marked">
         <path class="line" d="M60,220 C60,140 140,90 260,90 C300,90 300,120 260,130 C220,140 220,170 260,175 C400,190 420,120 460,90 C520,50 600,60 640,110 C670,150 640,190 590,195 C480,210 420,230 300,235 C180,240 60,300 60,220 Z"></path>
         <circle class="zone" cx="260" cy="110" r="6"></circle>
@@ -508,7 +531,7 @@ footer{ padding:64px 40px 36px; }
       <div class="section-head" style="margin-bottom:8px;">
         <span class="tag-label">Braking analysis</span>
         <h2 style="font-size:28px;">Zone-by-zone breakdown</h2>
-        <p style="font-size:14.5px;">Sample braking model for illustration — entry/exit speeds and deceleration are indicative, not measured race telemetry.</p>
+        <p style="font-size:14.5px;">Sample braking model for illustration. Entry/exit speeds and deceleration are indicative, not measured race telemetry.</p>
       </div>
       <div class="brake-zone-row head-row">
         <span>ZONE</span><span>CORNER</span><span>ENTRY → EXIT</span><span>DECEL (G)</span><span></span>
@@ -551,7 +574,7 @@ footer{ padding:64px 40px 36px; }
     </div>
 
     <div class="detail-card reveal">
-      <span class="badge">ILLUSTRATIVE SAMPLE — SECTOR MODEL</span>
+      <span class="badge">ILLUSTRATIVE SAMPLE: SECTOR MODEL</span>
       <h3>Sector time comparison</h3>
       <p class="sub">Indicative sector splits comparing qualifying pace against race pace. Not measured session data.</p>
       <div class="sector-rows">
@@ -596,7 +619,7 @@ footer{ padding:64px 40px 36px; }
     </div>
 
     <div class="detail-card reveal">
-      <span class="badge">ILLUSTRATIVE SAMPLE — STRATEGY MODEL</span>
+      <span class="badge">ILLUSTRATIVE SAMPLE: STRATEGY MODEL</span>
       <h3>Tyre strategy</h3>
       <p class="sub">Sample tyre allocation across a single-race stint plan. Compound choice and stint length are illustrative.</p>
       <div class="tyre-timeline">
@@ -625,7 +648,7 @@ footer{ padding:64px 40px 36px; }
     </div>
 
     <div class="detail-card reveal">
-      <span class="badge">ILLUSTRATIVE SAMPLE — SPEED MODEL</span>
+      <span class="badge">ILLUSTRATIVE SAMPLE: SPEED MODEL</span>
       <h3>Speed trace across one lap</h3>
       <p class="sub">Indicative speed profile combining straights and braking zones. Not GPS or car-sensor telemetry.</p>
       <svg class="speed-trace-svg" viewBox="0 0 740 240" role="img" aria-label="Illustrative speed trace across one lap">

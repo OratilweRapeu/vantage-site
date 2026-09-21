@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Suzuka | Vantage</title>
+<title>Football | Vantage</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -466,6 +466,36 @@ footer{ padding:64px 40px 36px; }
 }
 
 </style>
+
+<style>
+/* Football section additions */
+.subnav{ display:flex; gap:10px; margin-bottom:8px; flex-wrap:wrap; }
+.subnav-tab{ font-family:'JetBrains Mono', monospace; font-size:12.5px; font-weight:600; padding:9px 18px; border-radius:100px; border:1.5px solid var(--line-strong); color:var(--muted); }
+.subnav-tab.active{ background:var(--ink); color:#fff; border-color:var(--ink); }
+.subnav-tab.disabled{ opacity:0.45; }
+
+.comp-group{ margin-bottom:48px; }
+.comp-heading{ display:flex; align-items:baseline; gap:12px; margin-bottom:20px; padding-bottom:12px; border-bottom:1px solid var(--line); }
+.comp-heading h3{ font-family:'Bricolage Grotesque', sans-serif; font-size:15px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; }
+.comp-heading .count{ font-family:'JetBrains Mono', monospace; font-size:11.5px; color:var(--muted); }
+
+.match-grid{ display:grid; grid-template-columns:repeat(2, 1fr); gap:20px; }
+.match-card{ border:1px solid var(--line); border-radius:16px; padding:26px; background:#fff; transition:border-color .2s, transform .2s; display:block; }
+.match-card:hover{ border-color:var(--ink); transform:translateY(-2px); }
+.match-card .mc-meta{ font-family:'JetBrains Mono', monospace; font-size:11px; color:var(--muted); margin-bottom:16px; }
+.match-card .mc-teams{ display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:18px; }
+.match-card .mc-team{ font-family:'Bricolage Grotesque', sans-serif; font-weight:700; font-size:17px; flex:1; }
+.match-card .mc-team.away{ text-align:right; }
+.match-card .mc-score{ font-family:'JetBrains Mono', monospace; font-weight:700; font-size:20px; background:var(--bg-alt); border-radius:8px; padding:6px 14px; white-space:nowrap; }
+.match-card .mc-foot{ display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid var(--line); }
+.match-card .mc-venue{ font-size:12.5px; color:var(--muted); }
+.match-card .mc-link{ font-size:13px; font-weight:700; color:var(--ink); display:inline-flex; gap:6px; }
+
+@media (max-width:700px){
+  .match-grid{ grid-template-columns:1fr; }
+}
+</style>
+
 </head>
 <body>
 
@@ -484,193 +514,69 @@ footer{ padding:64px 40px 36px; }
 
 <div class="breadcrumb">
   <a href="index.html">Vantage</a><span class="sep">/</span>
-  <a href="motorsport.html">Motorsport</a><span class="sep">/</span>
-  <a href="motorsport-f1.html">Formula 1</a><span class="sep">/</span>
-  <span class="current">Suzuka</span>
+  <a href="index.html#sports">Sports</a><span class="sep">/</span>
+  <span class="current">Football</span>
 </div>
 
 <section class="hero compact">
-  <div class="track-hero reveal in">
-    <div class="frame-grid"></div>
-    <div class="track-hero-inner">
-      <span class="series-badge">FORMULA 1 · CLOCKWISE</span>
-      <h1>Suzuka</h1>
-      <div class="location">Suzuka International Racing Course, Japan</div>
-    </div>
-  </div>
-
-  <div class="circuit-stats reveal">
-    <div class="circuit-stat"><div class="n">5.81 km</div><div class="l">CIRCUIT LENGTH</div></div>
-    <div class="circuit-stat"><div class="n">18</div><div class="l">CORNERS</div></div>
-    <div class="circuit-stat"><div class="n">Figure-8</div><div class="l">LAYOUT</div></div>
-    <div class="circuit-stat"><div class="n">Clockwise</div><div class="l">DIRECTION</div></div>
-  </div>
+  <div class="eyebrow"><span class="pip"></span>FOOTBALL: FULL COVERAGE</div>
+  <h1 class="page-title reveal in">Every match, one home.</h1>
+  <p class="lede">Dashboards, results and stats all live here as fixtures are played. Full breakdowns first, more match types added as they happen.</p>
 </section>
 
 <section class="tight">
   <div class="section-inner">
 
-    <div class="track-map-card reveal">
-      <span class="badge">STYLIZED DIAGRAM: ILLUSTRATIVE, NOT GPS-ACCURATE</span>
-      <svg class="track-outline" viewBox="0 0 720 320" role="img" aria-label="Stylized circuit outline with braking zones marked">
-        <path class="line" d="M60,140 C60,90 120,70 180,90 C230,106 210,150 260,160 C340,178 340,90 420,80 C480,73 480,140 420,150 C360,160 380,210 440,220 C520,235 560,190 600,170 C650,145 660,200 610,230 C540,270 380,260 280,250 C170,238 60,220 60,140 Z"></path>
-        <circle class="zone" cx="180" cy="95" r="6"></circle>
-        <text class="zone-label" x="190" y="99">Z1 · Turn 1</text>
-        <circle class="zone" cx="300" cy="150" r="6"></circle>
-        <text class="zone-label" x="310" y="154">Z2 · Dunlop</text>
-        <circle class="zone" cx="420" cy="90" r="6"></circle>
-        <text class="zone-label" x="430" y="94">Z3 · Degner</text>
-        <circle class="zone" cx="520" cy="225" r="6"></circle>
-        <text class="zone-label" x="530" y="229">Z4 · Spoon</text>
-        <circle class="zone" cx="610" cy="190" r="6"></circle>
-        <text class="zone-label" x="620" y="194">Z5 · 130R</text>
-      </svg>
+    <div class="subnav reveal">
+      <span class="subnav-tab active">Dashboards</span>
+      <span class="subnav-tab disabled">Results</span>
+      <span class="subnav-tab disabled">Stats</span>
     </div>
 
-    <div class="brake-zones reveal">
-      <div class="section-head" style="margin-bottom:8px;">
-        <span class="tag-label">Braking analysis</span>
-        <h2 style="font-size:28px;">Zone-by-zone breakdown</h2>
-        <p style="font-size:14.5px;">Sample braking model for illustration. Entry/exit speeds and deceleration are indicative, not measured race telemetry.</p>
+    <div style="height:36px;"></div>
+
+    <div class="comp-group reveal">
+      <div class="comp-heading">
+        <h3>Premier League</h3>
+        <span class="count">1 DASHBOARD</span>
       </div>
-      <div class="brake-zone-row head-row">
-        <span>ZONE</span><span>CORNER</span><span>ENTRY → EXIT</span><span>DECEL (G)</span><span></span>
-      </div>
-      <div class="brake-zone-row">
-        <span class="zn">Z1</span>
-        <span class="corner-name">Turn 1 hairpin entry <span style="color:var(--muted); font-weight:400;">(Turn 1)</span></span>
-        <span class="val">310 → 130 km/h</span>
-        <span class="val">5.4G</span>
-        <span></span>
-      </div>
-      <div class="brake-zone-row">
-        <span class="zn">Z2</span>
-        <span class="corner-name">Degner 1 <span style="color:var(--muted); font-weight:400;">(Turn 8/9)</span></span>
-        <span class="val">290 → 145 km/h</span>
-        <span class="val">4.6G</span>
-        <span></span>
-      </div>
-      <div class="brake-zone-row">
-        <span class="zn">Z3</span>
-        <span class="corner-name">Hairpin <span style="color:var(--muted); font-weight:400;">(Turn 11)</span></span>
-        <span class="val">250 → 65 km/h</span>
-        <span class="val">5.9G</span>
-        <span></span>
-      </div>
-      <div class="brake-zone-row">
-        <span class="zn">Z4</span>
-        <span class="corner-name">Spoon Curve <span style="color:var(--muted); font-weight:400;">(Turn 13)</span></span>
-        <span class="val">300 → 120 km/h</span>
-        <span class="val">5.0G</span>
-        <span></span>
-      </div>
-      <div class="brake-zone-row">
-        <span class="zn">Z5</span>
-        <span class="corner-name">Casio Triangle <span style="color:var(--muted); font-weight:400;">(Turn 16)</span></span>
-        <span class="val">330 → 90 km/h</span>
-        <span class="val">6.3G</span>
-        <span></span>
+      <div class="match-grid">
+        <a class="match-card" href="vantage-fulham-vs-man-united.html">
+          <div class="mc-meta">PREMIER LEAGUE &middot; 20 SEP 2026</div>
+          <div class="mc-teams">
+            <span class="mc-team">Fulham</span>
+            <span class="mc-score">1-1</span>
+            <span class="mc-team away">Man United</span>
+          </div>
+          <div class="mc-foot">
+            <span class="mc-venue">Craven Cottage</span>
+            <span class="mc-link">View dashboard &rarr;</span>
+          </div>
+        </a>
       </div>
     </div>
 
-    <div class="detail-card reveal">
-      <span class="badge">ILLUSTRATIVE SAMPLE: SECTOR MODEL</span>
-      <h3>Sector time comparison</h3>
-      <p class="sub">Indicative sector splits comparing qualifying pace against race pace. Not measured session data.</p>
-      <div class="sector-rows">
-      <div class="sector-row">
-        <span class="s-label">Sector 1</span>
-        <div class="sector-bar-wrap">
-          <div class="sector-bar-track"><div class="sector-bar-fill pace-a" style="width:97.7%;"></div></div>
-          <span class="sector-bar-val">29.1s</span>
-        </div>
-        <div class="sector-bar-wrap">
-          <div class="sector-bar-track"><div class="sector-bar-fill pace-b" style="width:100.0%;"></div></div>
-          <span class="sector-bar-val">29.8s</span>
-        </div>
+    <div class="comp-group reveal">
+      <div class="comp-heading">
+        <h3>FIFA Intercontinental Cup</h3>
+        <span class="count">1 DASHBOARD</span>
       </div>
-      <div class="sector-row">
-        <span class="s-label">Sector 2</span>
-        <div class="sector-bar-wrap">
-          <div class="sector-bar-track"><div class="sector-bar-fill pace-a" style="width:95.3%;"></div></div>
-          <span class="sector-bar-val">28.4s</span>
-        </div>
-        <div class="sector-bar-wrap">
-          <div class="sector-bar-track"><div class="sector-bar-fill pace-b" style="width:98.0%;"></div></div>
-          <span class="sector-bar-val">29.2s</span>
-        </div>
+      <div class="match-grid">
+        <a class="match-card" href="vantage-sundowns-vs-al-ahli.html">
+          <div class="mc-meta">FIFA INTERCONTINENTAL CUP &middot; 19 SEP 2026</div>
+          <div class="mc-teams">
+            <span class="mc-team">Sundowns FC</span>
+            <span class="mc-score">2-1</span>
+            <span class="mc-team away">Al-Ahli</span>
+          </div>
+          <div class="mc-foot">
+            <span class="mc-venue">Loftus Versfeld</span>
+            <span class="mc-link">View dashboard &rarr;</span>
+          </div>
+        </a>
       </div>
-      <div class="sector-row">
-        <span class="s-label">Sector 3</span>
-        <div class="sector-bar-wrap">
-          <div class="sector-bar-track"><div class="sector-bar-fill pace-a" style="width:83.9%;"></div></div>
-          <span class="sector-bar-val">25.0s</span>
-        </div>
-        <div class="sector-bar-wrap">
-          <div class="sector-bar-track"><div class="sector-bar-fill pace-b" style="width:86.2%;"></div></div>
-          <span class="sector-bar-val">25.7s</span>
-        </div>
-      </div>
-    </div>
-    <div class="sector-legend">
-      <span><i style="background:var(--ink);"></i>Qualifying pace</span>
-      <span><i style="background:var(--data-blue);"></i>Race pace</span>
-    </div>
     </div>
 
-    <div class="detail-card reveal">
-      <span class="badge">ILLUSTRATIVE SAMPLE: STRATEGY MODEL</span>
-      <h3>Tyre strategy</h3>
-      <p class="sub">Sample tyre allocation across a single-race stint plan. Compound choice and stint length are illustrative.</p>
-      <div class="tyre-timeline">
-      <div class="tyre-row">
-        <span class="t-num">STINT 1</span>
-        <div class="t-bar-wrap">
-          <div class="t-bar tyre-medium" style="left:0.0%; width:28.3%;"><span>MEDIUM</span></div>
-        </div>
-        <span class="t-range">Laps 1-15</span>
-      </div>
-      <div class="tyre-row">
-        <span class="t-num">STINT 2</span>
-        <div class="t-bar-wrap">
-          <div class="t-bar tyre-hard" style="left:28.3%; width:28.3%;"><span>HARD</span></div>
-        </div>
-        <span class="t-range">Laps 16-30</span>
-      </div>
-      <div class="tyre-row">
-        <span class="t-num">STINT 3</span>
-        <div class="t-bar-wrap">
-          <div class="t-bar tyre-medium" style="left:56.6%; width:43.4%;"><span>MEDIUM</span></div>
-        </div>
-        <span class="t-range">Laps 31-53</span>
-      </div>
-    </div>
-    </div>
-
-    <div class="detail-card reveal">
-      <span class="badge">ILLUSTRATIVE SAMPLE: SPEED MODEL</span>
-      <h3>Speed trace across one lap</h3>
-      <p class="sub">Indicative speed profile combining straights and braking zones. Not GPS or car-sensor telemetry.</p>
-      <svg class="speed-trace-svg" viewBox="0 0 740 240" role="img" aria-label="Illustrative speed trace across one lap">
-        <defs>
-          <linearGradient id="speedGrad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#C8FF3D"></stop>
-            <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"></stop>
-          </linearGradient>
-        </defs>
-        <line class="axis" x1="30" y1="210" x2="710" y2="210"></line>
-        <polygon class="fillarea" points="30,210 30,73 98,52 166,115 234,68 302,131 370,57 438,46 506,162 574,65 642,110 710,73 710,210"></polygon>
-        <polyline class="line" points="30,73 98,52 166,115 234,68 302,131 370,57 438,46 506,162 574,65 642,110 710,73"></polyline>
-        <text x="30" y="65" text-anchor="middle">260</text><text x="166" y="107" text-anchor="middle">180</text><text x="302" y="123" text-anchor="middle">150</text><text x="438" y="38" text-anchor="middle">310</text><text x="574" y="57" text-anchor="middle">275</text><text x="710" y="65" text-anchor="middle">260</text>
-        <text x="30" y="228">LAP START</text>
-        <text x="670" y="228">LAP END</text>
-      </svg>
-    </div>
-
-    <div class="track-nav-links reveal">
-      <a href="motorsport-f1.html" class="btn btn-ghost btn-sm">← Back to Formula 1 circuits</a>
-      <a href="index.html#contact" class="btn btn-primary btn-sm">Request full telemetry access</a>
-    </div>
   </div>
 </section>
 
@@ -679,47 +585,23 @@ footer{ padding:64px 40px 36px; }
     <a class="logo" href="index.html"><span class="mark"></span>VANTAGE</a>
     <div class="footer-links">
       <a href="index.html#platform">Platform</a>
-      <a href="motorsport.html">Motorsport</a>
+      <a href="index.html#sports">Sports</a>
       <a href="index.html#insights">Insights</a>
       <a href="index.html#contact">Contact</a>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 VANTAGE ANALYTICS</span>
+    <span>&copy; 2026 VANTAGE ANALYTICS</span>
     <span>UPLOAD ONCE. SEE EVERYTHING.</span>
   </div>
 </footer>
 
 <script>
-// Scroll reveal
-const revealEls = document.querySelectorAll('.reveal');
-const io = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-}, { threshold: 0.12 });
-revealEls.forEach(el => io.observe(el));
-
-// Counter animation
-const counters = document.querySelectorAll('.counter');
-const cIo = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      const el = entry.target;
-      const target = parseInt(el.dataset.target, 10);
-      const dur = 900;
-      const start = performance.now();
-      function step(now){
-        const p = Math.min((now - start) / dur, 1);
-        const eased = 1 - Math.pow(1 - p, 3);
-        el.textContent = Math.round(eased * target);
-        if(p < 1) requestAnimationFrame(step);
-      }
-      requestAnimationFrame(step);
-      cIo.unobserve(el);
-    }
-  });
-}, { threshold: 0.4 });
-counters.forEach(el => cIo.observe(el));
-
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => io.observe(el));
 </script>
 </body>
 </html>

@@ -1,0 +1,859 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vantage | Sundowns FC vs Al-Ahli</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff; --surface:#f4f5f7; --surface2:#e9ebef; --ink:#0b0b0c; --ink2:#3a3e46; --muted:#6a7079; --line:#e3e5ea;
+  --a:#f5c518; --a-text:#8a6a00; --a-big:#b98a00; --b:#0d5c3a; --b-text:#0d5c3a; --on-a:#0b0b0c; --on-b:#ffffff;
+  --acid:#c6ff3d; --acid-ink:#0b0b0c;
+  --warn:#8a4b00; --warn-bg:#fff2d6; --ok:#177a3c;
+  --font:'Inter Tight','Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0b0b0c; --surface:#17181b; --surface2:#23252a; --ink:#f5f6f8; --ink2:#c9ccd3; --muted:#8b919b; --line:#26282d;
+    --a:#ffd23f; --a-text:#ffd23f; --a-big:#ffd23f; --b:#3fbf86; --b-text:#3fbf86; --on-a:#0b0b0c; --on-b:#0b0b0c;
+    --warn:#ffcc80; --warn-bg:#2e2412; --ok:#7bdc9a;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0b0b0c; --surface:#17181b; --surface2:#23252a; --ink:#f5f6f8; --ink2:#c9ccd3; --muted:#8b919b; --line:#26282d;
+  --a:#ffd23f; --a-text:#ffd23f; --a-big:#ffd23f; --b:#3fbf86; --b-text:#3fbf86; --on-a:#0b0b0c; --on-b:#0b0b0c;
+  --warn:#ffcc80; --warn-bg:#2e2412; --ok:#7bdc9a;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);background:var(--bg)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);-webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums;line-height:1.4}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.wrap{max-width:720px;margin:0 auto;padding:0 18px 64px}
+
+/* header */
+.top{display:flex;align-items:center;justify-content:space-between;padding:16px 0 4px}
+.brand{display:flex;align-items:center;gap:10px}
+.mark{position:relative;width:18px;height:18px;border-radius:6px;background:var(--ink);display:inline-block}
+.mark::after{content:"";position:absolute;right:-4px;bottom:-4px;width:12px;height:12px;border-radius:5px;background:var(--acid);z-index:-1}
+.wordmark{font-weight:800;font-size:21px;letter-spacing:.01em}
+.tag{font-size:13px;color:var(--muted)}
+
+/* hero */
+.hero{padding:22px 0 8px;text-align:center}
+.comp{font-size:14px;color:var(--muted)}
+.teams{display:grid;grid-template-columns:1fr 1fr;margin-top:18px}
+.tm{display:flex;flex-direction:column;align-items:center;gap:8px}
+.crest{width:46px;height:46px;border-radius:15px;display:grid;place-items:center;font-weight:800;font-size:14px}
+.crest.a{background:var(--a);color:var(--on-a)} .crest.b{background:var(--b);color:var(--on-b)}
+.tname{font-weight:700;font-size:16px}
+.score{display:flex;justify-content:center;align-items:baseline;gap:14px;margin-top:2px;font-weight:800;font-size:clamp(84px,24vw,128px);line-height:1;letter-spacing:-.05em}
+.score .sep{color:var(--surface2);font-weight:600;letter-spacing:0}
+.score .sa{color:var(--a-big)} .score .sb{color:var(--b-text)}
+.status{margin-top:10px;font-size:14px;color:var(--muted);display:flex;align-items:center;justify-content:center;gap:8px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--acid);box-shadow:0 0 0 1px var(--ink) inset}
+.dot.warm{background:#ffb020;box-shadow:none}
+.halves{display:flex;justify-content:center;flex-wrap:wrap;gap:6px;margin-top:16px}
+.halves span{font-size:13.5px;color:var(--muted);padding:6px 12px;border-radius:99px;background:var(--surface)}
+.halves span.on{background:var(--ink);color:var(--bg);font-weight:700}
+.ribbon{margin:20px auto 0;max-width:520px}
+.rib-labels{display:flex;justify-content:space-between;font-weight:700;font-size:15px;margin-bottom:8px}
+.rib-labels .a{color:var(--a-text)} .rib-labels .b{color:var(--b-text)}
+.rib-labels span.mid{color:var(--muted);font-weight:500;font-size:13px}
+.rib{display:flex;gap:4px;height:12px}
+.rib i{display:block;border-radius:99px;flex:1 1 0%;transition:flex-grow .9s cubic-bezier(.2,.8,.2,1)}
+.rib .ra{background:var(--a)} .rib .rb{background:var(--b)}
+
+/* switch */
+.stick{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;margin:14px -18px 0;padding:10px 18px 8px;background:color-mix(in srgb,var(--bg) 90%,transparent);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.switch{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;background:var(--surface);border-radius:16px;padding:4px}
+.sw{border:0;background:transparent;border-radius:12px;padding:9px 4px 8px;display:flex;flex-direction:column;align-items:center;gap:1px;color:var(--muted);transition:background .25s,color .25s}
+.sw b{font-size:14px;font-weight:700}
+.sw small{font-size:11.5px;opacity:.85}
+.sw.on{background:var(--ink);color:var(--bg)}
+.hint{font-size:13.5px;color:var(--muted);margin:10px 2px 0}
+.notice{margin-top:10px;background:var(--warn-bg);color:var(--warn);border-radius:14px;padding:10px 13px;font-size:13.5px}
+
+/* sections */
+.sec{margin-top:44px}
+.sec h3{margin:0;font-size:20px;font-weight:800;letter-spacing:-.02em}
+.sec .sub{margin:4px 0 0;font-size:14px;color:var(--muted)}
+.panel{background:var(--surface);border-radius:26px;padding:20px 18px}
+.swap{animation:swap .4s cubic-bezier(.2,.8,.2,1) both}
+@keyframes swap{from{opacity:.35;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* story */
+.story h2{margin:0 0 14px;font-size:clamp(26px,7vw,34px);line-height:1.1;font-weight:800;letter-spacing:-.03em}
+.story p{margin:0 0 12px;font-size:16.5px;line-height:1.5;color:var(--ink2);max-width:62ch}
+.tc{font-weight:700}
+.tc.a{color:var(--a-text)} .tc.b{color:var(--b-text)}
+
+/* mini cards */
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:34px}
+.mini{background:var(--surface);border-radius:20px;padding:15px 15px 14px}
+.mlab{font-size:14px;color:var(--muted);font-weight:500}
+.mvals{display:flex;justify-content:space-between;align-items:baseline;margin-top:8px;font-size:30px;font-weight:800;letter-spacing:-.03em}
+.mvals .a{color:var(--a-text)} .mvals .b{color:var(--b-text)}
+.mvals .dim{opacity:.38}
+.mcap{margin-top:6px;font-size:13px;color:var(--muted);line-height:1.3}
+
+/* explorer */
+.legend{display:flex;gap:16px;margin-top:14px;font-size:14px;font-weight:600}
+.legend span{display:flex;align-items:center;gap:7px}
+.legend i{width:10px;height:10px;border-radius:50%;display:inline-block}
+.chips{display:flex;gap:6px;overflow-x:auto;margin:16px -2px 4px;padding:2px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;border:1px solid var(--line);background:var(--bg);border-radius:99px;padding:8px 14px;font-size:14px;font-weight:600;color:var(--ink2);transition:background .2s}
+.chip.on{background:var(--acid);border-color:transparent;color:var(--acid-ink)}
+.row{padding:14px 0;border-top:1px solid var(--line);cursor:pointer;outline-offset:-2px}
+.row:first-of-type{border-top:0}
+.rtop{display:grid;grid-template-columns:1fr auto 1fr;align-items:baseline}
+.rv{font-size:22px;font-weight:800;letter-spacing:-.02em}
+.rv.a{color:var(--a-text);text-align:left} .rv.b{color:var(--b-text);text-align:right}
+.rv.low{opacity:.45}
+.rl{font-size:14.5px;color:var(--ink2);font-weight:500;text-align:center;padding:0 8px}
+.bar{display:flex;gap:4px;height:8px;margin-top:9px}
+.bar i{display:block;flex:1 1 0%;border-radius:99px;transition:flex-grow .8s cubic-bezier(.2,.8,.2,1)}
+.bar .ba{background:var(--a)} .bar .bb{background:var(--b)}
+.bar.zero i{background:var(--surface2)}
+.rdetail{display:grid;grid-template-rows:0fr;transition:grid-template-rows .3s ease}
+.rdetail>div{overflow:hidden;font-size:14px;color:var(--muted);line-height:1.45}
+.row.open .rdetail{grid-template-rows:1fr}
+.row.open .rdetail>div{padding-top:10px}
+
+/* funnel + xg */
+.teamblock{margin-top:22px}
+.tbh{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.tbh b{font-size:17px}
+.tbh span{font-size:14px;color:var(--muted);text-align:right}
+.frow{display:grid;grid-template-columns:96px 1fr 38px;gap:10px;align-items:center;margin-top:9px}
+.frow label{font-size:14px;color:var(--ink2)}
+.ftrack{height:14px;border-radius:99px;background:var(--surface)}
+.ffill{display:block;height:100%;width:0;border-radius:99px;transition:width .9s cubic-bezier(.2,.8,.2,1)}
+.ffill.a{background:var(--a)} .ffill.b{background:var(--b)}
+.ffill.o1{opacity:.35} .ffill.o2{opacity:.65}
+.frow .fv{font-size:16px;font-weight:700;text-align:right}
+.goto{margin-top:16px;border:1px solid var(--line);background:var(--bg);border-radius:99px;padding:11px 18px;font-weight:700;font-size:15px}
+.plain{font-size:15.5px;color:var(--ink2);line-height:1.5;margin:14px 0 0;max-width:60ch}
+
+/* session chart */
+.schips{display:flex;gap:6px;overflow-x:auto;margin:14px -2px 4px;padding:2px;scrollbar-width:none}
+.schips::-webkit-scrollbar{display:none}
+.chart{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:12px}
+.cl{border:0;background:transparent;border-radius:16px;padding:8px 2px 10px;display:flex;flex-direction:column;align-items:center;transition:background .25s}
+.cl.on{background:var(--bg)}
+.bars{display:flex;align-items:flex-end;justify-content:center;gap:6px;height:150px;width:100%}
+.col{display:flex;flex-direction:column;justify-content:flex-end;align-items:center;width:34%;max-width:34px;height:100%}
+.colv{font-size:12.5px;font-weight:700;margin-bottom:4px}
+.colv.a{color:var(--a-text)} .colv.b{color:var(--b-text)}
+.colb{width:100%;height:0;border-radius:9px 9px 3px 3px;transition:height .8s cubic-bezier(.2,.8,.2,1)}
+.colb.a{background:var(--a)} .colb.b{background:var(--b)}
+.na{font-size:12px;color:var(--muted);align-self:center;margin-bottom:6px}
+.cn{margin-top:8px;font-size:13.5px;font-weight:700}
+.cs{font-size:12px;color:var(--muted)}
+
+/* logger check */
+.crow{display:grid;grid-template-columns:1fr 1fr;gap:6px 16px;margin-top:18px}
+.crow.head{margin-top:16px;font-weight:700;font-size:15px}
+.crow.head .a{color:var(--a-text)} .crow.head .b{color:var(--b-text)}
+.clab{grid-column:1/-1;font-size:14px;color:var(--muted)}
+.ctxt{font-size:15px;color:var(--ink2)}
+.ctxt b{font-size:19px;color:var(--ink);font-weight:800}
+.ctxt.miss b{color:var(--warn)}
+.mtrack{height:8px;border-radius:99px;background:var(--surface);margin-top:5px}
+.mfill{display:block;height:100%;width:0;border-radius:99px;transition:width .9s cubic-bezier(.2,.8,.2,1)}
+.mfill.a{background:var(--a)} .mfill.b{background:var(--b)}
+.callout{margin-top:22px;background:var(--surface);border-radius:18px;padding:14px 16px;font-size:15px;color:var(--ink2);line-height:1.5}
+.callout b{color:var(--ink)}
+.callout .ok{color:var(--ok);font-weight:700}
+
+/* actions */
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:44px}
+.btn{border:0;border-radius:99px;padding:15px 22px;font-weight:800;font-size:16px;background:var(--acid);color:var(--acid-ink)}
+.btn.ghost{background:transparent;border:1.5px solid var(--ink);color:var(--ink)}
+#ta{display:block;width:100%;margin-top:12px;min-height:120px;border-radius:14px;border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:10px;font:13px var(--mono)}
+#ta[hidden]{display:none}
+.toast{position:fixed;left:50%;bottom:calc(22px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);opacity:0;background:var(--ink);color:var(--bg);padding:11px 18px;border-radius:99px;font-weight:600;font-size:14.5px;pointer-events:none;transition:all .3s;z-index:50;max-width:90vw;text-align:center}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.foot{margin-top:36px;font-size:13px;color:var(--muted)}
+
+
+/* ---- report details: tabs, insight strip, deep dive, footer ---- */
+.mark::after{display:none}
+.mark{box-shadow:3px 3px 0 var(--acid)}
+.tag{font:500 10.5px var(--mono);letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--line);padding:6px 11px;border-radius:99px;color:var(--muted)}
+.comp{font:500 11.5px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.tabs{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:6px}
+.tab{border:0;border-radius:12px;padding:11px 0;background:var(--surface);color:var(--muted);font:500 12px var(--mono);letter-spacing:.06em;transition:background .25s,color .25s}
+.tab.on{background:var(--acid);color:var(--acid-ink)}
+.insight{background:var(--acid);color:#0b0b0c;margin:22px -18px 0;padding:18px;display:flex;gap:12px;align-items:flex-start}
+.insight i{width:7px;height:7px;border-radius:50%;background:#0b0b0c;margin-top:9px;flex:none}
+.insight p{margin:0;font-weight:700;font-size:16.5px;line-height:1.4;letter-spacing:-.01em}
+.insight .num{font-family:var(--mono);font-weight:500}
+.notes{border:1px solid var(--line);border-radius:20px;overflow:hidden;margin-top:16px}
+.note{padding:18px}
+.note+.note{border-top:1px solid var(--line)}
+.half-tag{display:flex;align-items:center;gap:8px;margin-bottom:10px;font:500 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.note p{margin:0;font-size:15.5px;line-height:1.6;color:var(--ink2)}
+.cdot{width:7px;height:7px;border-radius:50%;display:inline-block;background:var(--muted);flex:none}
+.cdot.a{background:var(--a);box-shadow:inset 0 0 0 1.5px var(--a-line,transparent)}
+.cdot.b{background:var(--b)}
+.momentum{margin-top:10px}
+.momentum svg{width:100%;height:auto;display:block}
+.ax{stroke:var(--line);stroke-width:1}
+.axl{font:500 11px var(--mono);fill:var(--muted);letter-spacing:.04em}
+.ln{fill:none;stroke-width:3;stroke-linecap:round}
+.ln-a{stroke:var(--a)} .ln-b{stroke:var(--b)}
+.ln-o{stroke:var(--a-line,transparent);stroke-width:5.5}
+.dt{stroke-width:1.5}
+.dt-a{fill:var(--a);stroke:var(--a-line,transparent)} .dt-b{fill:var(--b);stroke:var(--b)}
+.vl{font:500 13px var(--mono)}
+.vl.va{fill:var(--a-text)} .vl.vb{fill:var(--b-text)}
+.mom-legend{display:flex;flex-wrap:wrap;gap:6px 20px;margin-top:8px}
+.goal-chip{font:500 12.5px var(--mono)}
+.goal-chip.a{color:var(--a-text)} .goal-chip.b{color:var(--b-text)}
+.acc-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px 18px;margin-top:16px}
+.acc-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px;gap:6px}
+.acc-team{display:flex;align-items:center;gap:7px;font-size:14px;font-weight:600}
+.acc-pct{font:500 17px var(--mono)}
+.acc-track{height:8px;border-radius:99px;background:var(--surface2);overflow:hidden}
+.acc-fill{display:block;height:100%;width:0;border-radius:99px;transition:width 1s cubic-bezier(.2,.8,.2,1)}
+.acc-fill.a{background:var(--a);box-shadow:inset 0 0 0 1.5px var(--a-line,transparent)} .acc-fill.b{background:var(--b)}
+.acc-sub{margin-top:7px;font:500 11.5px var(--mono);color:var(--muted)}
+@media (max-width:420px){.acc-grid{grid-template-columns:1fr}}
+.footer{margin:60px -18px -64px;padding:26px 18px;background:#10131a;color:rgba(255,255,255,.55);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.footer .wordmark{color:#fff;font-size:16px}
+.footer .mark{background:#fff}
+.footer .fine{font:500 10.5px var(--mono);letter-spacing:.03em;text-transform:uppercase}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand"><span class="mark"></span><span class="wordmark">VANTAGE</span></div>
+    <span class="tag">Match report</span>
+  </header>
+
+  <section class="hero" id="hero">
+    <div class="comp">FIFA Intercontinental Cup · Loftus Versfeld · 19 Sep 2026</div>
+    <div class="teams">
+      <div class="tm"><span class="crest a">SUN</span><span class="tname">Sundowns FC</span></div>
+      <div class="tm"><span class="crest b">AHL</span><span class="tname">Al-Ahli</span></div>
+    </div>
+    <div class="score"><span class="sa num" id="scA" data-to="0">0</span><span class="sep">-</span><span class="sb num" id="scB" data-to="0">0</span></div>
+    <div class="status" id="status"></div>
+    <div class="halves" id="halves"></div>
+    <div class="ribbon">
+      <div class="rib-labels"><span class="a" id="ribA">0%</span><span class="mid" id="ribMid">Share of passes</span><span class="b" id="ribB">0%</span></div>
+      <div class="rib"><i class="ra" id="ribBarA"></i><i class="rb" id="ribBarB"></i></div>
+    </div>
+  </section>
+
+  <div class="stick">
+    <div class="tabs" role="tablist" aria-label="Report sections">
+      <button class="tab on" role="tab" data-tab="report">MATCH REPORT</button>
+      <button class="tab" role="tab" data-tab="deep">DEEP DIVE</button>
+    </div>
+    <div id="switchWrap"><div class="switch" id="switch" role="tablist" aria-label="Data view"></div></div>
+  </div>
+  <div class="tabpanel" id="panel-report">
+  <p class="hint" id="hint"></p>
+  <div id="notice"></div>
+  <div class="insight" id="insight"></div>
+
+  <section class="sec story" id="story" style="margin-top:34px"></section>
+
+  <section class="grid" id="cards"></section>
+
+  <section class="sec" id="explorer">
+    <h3>Stat explorer</h3>
+    <p class="sub">Tap any row for the split and what it means.</p>
+    <div class="panel" style="margin-top:16px">
+      <div class="legend"><span><i style="background:var(--a)"></i>Sundowns FC</span><span><i style="background:var(--b)"></i>Al-Ahli</span></div>
+      <div class="chips" id="gchips"></div>
+      <div id="rows"></div>
+    </div>
+  </section>
+
+  <section class="sec" id="funnel"></section>
+  <section class="sec" id="xg"></section>
+
+  <section class="sec" id="sessions">
+    <h3>Compare the halves</h3>
+    <p class="sub">Pick a stat, then tap a column group to switch the whole dashboard to that view.</p>
+    <div class="panel" style="margin-top:16px">
+      <div class="schips" id="schips"></div>
+      <div class="chart" id="chart"></div>
+    </div>
+  </section>
+
+  <section class="sec" id="check"></section>
+
+  <div class="actions">
+    <button class="btn" id="copyS">Copy summary</button>
+    <button class="btn ghost" id="copyJ">Copy JSON</button>
+  </div>
+  <textarea id="ta" readonly hidden></textarea>
+  </div>
+
+  <div class="tabpanel" id="panel-deep" hidden>
+    <section class="sec" style="margin-top:30px">
+      <h3>How the game turned</h3>
+      <p class="sub">Analysis built from Vantage's live event log, half by half.</p>
+      <div class="notes" id="notes"></div>
+    </section>
+    <section class="sec">
+      <h3>Momentum swing</h3>
+      <p class="sub" id="momSub"></p>
+      <div class="momentum">
+        <svg viewBox="0 0 600 260" id="momSvg" role="img" aria-label="Shots per half for each team"></svg>
+        <div class="mom-legend" id="momLegend"></div>
+      </div>
+    </section>
+    <section class="sec">
+      <h3>Shot accuracy by half</h3>
+      <p class="sub">Shots on target as a share of total shots, who made theirs count.</p>
+      <div class="acc-grid" id="accGrid"></div>
+      <p class="plain" id="deepNote"></p>
+    </section>
+  </div>
+
+  <footer class="footer">
+    <div class="brand"><span class="mark"></span><span class="wordmark">VANTAGE</span></div>
+    <div class="fine">Live match logger · Prepared 20 Sep 2026</div>
+  </footer>
+</div>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+(function(){
+'use strict';
+var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+function $(s){return document.querySelector(s);}
+var N = {A:'Sundowns FC', B:'Al-Ahli'};
+var KEYS = ['shots','sot','goals','xg','passes','key','drib','tack','fouls','corn'];
+
+var D = {
+  log1:{
+    A:{shots:1,sot:0,goals:0,xg:0.08,passes:49,key:1,drib:0,tack:0,fouls:3,corn:1},
+    B:{shots:1,sot:1,goals:0,xg:0.28,passes:25,key:3,drib:0,tack:0,fouls:1,corn:0}
+  },
+  log2:{
+    A:{shots:6,sot:3,goals:1,xg:1.77,passes:221,key:4,drib:0,tack:2,fouls:7,corn:4},
+    B:{shots:2,sot:0,goals:0,xg:0.20,passes:82,key:3,drib:0,tack:1,fouls:3,corn:2}
+  },
+  official:{
+    A:{shots:10,sot:6,goals:2,poss:71,fouls:14,yel:3,red:0,offs:1,corn:8},
+    B:{shots:5,sot:1,goals:1,poss:29,fouls:10,yel:4,red:0,offs:3,corn:3}
+  }
+};
+function sum(x,y){var o={};KEYS.forEach(function(k){o[k]=+(x[k]+y[k]).toFixed(2);});return o;}
+D.combined = {A:sum(D.log1.A,D.log2.A), B:sum(D.log1.B,D.log2.B)};
+
+var VIEWS = {
+  combined:{label:'Both halves',sub:'added up',hint:'First half and second half logs added together.'},
+  log1:{label:'1st half',sub:'1-1',hint:'Your first half log. The half finished 1-1.'},
+  log2:{label:'2nd half',sub:'1-0',hint:'Your second half log. Sundowns FC won the half 1-0.'},
+  official:{label:'Official',sub:'Full time',hint:'Numbers from the official match feed at full time. It has possession and cards, but no xG, passes or key passes.'}
+};
+var TRUE = {log1:{A:1,B:1},log2:{A:1,B:0},combined:{A:2,B:1},official:{A:2,B:1}};
+var CTX = {log1:'Half time',log2:'Second half',combined:'Full time',official:'Full time'};
+var VORDER = ['combined','log1','log2','official'];
+
+var M = [
+  {k:'goals',label:'Goals',g:'attack',dec:0,hint:'Goals scored in this data.'},
+  {k:'xg',label:'xG (simplified)',g:'attack',dec:2,hint:'Vantage estimate of how many goals the logged shots should have produced.'},
+  {k:'shots',label:'Shots',g:'attack',dec:0,hint:'Every attempt at goal.'},
+  {k:'sot',label:'Shots on target',g:'attack',dec:0,hint:'Shots that forced a save or scored.'},
+  {k:'corn',label:'Corners',g:'attack',dec:0,hint:'Corners won.'},
+  {k:'offs',label:'Offsides',g:'attack',dec:0,hint:'Times caught offside. Fewer is better.'},
+  {k:'passes',label:'Passes',g:'passing',dec:0,hint:'All logged passes. A good proxy for who controlled the ball.'},
+  {k:'poss',label:'Possession',g:'passing',dec:0,suf:'%',hint:'Official share of the ball.'},
+  {k:'key',label:'Key passes',g:'passing',dec:0,hint:'Passes that led directly to a shot.'},
+  {k:'drib',label:'Dribbles won',g:'passing',dec:0,hint:'Successful take-ons.'},
+  {k:'tack',label:'Tackles won',g:'defence',dec:0,hint:'Tackles that won the ball back.'},
+  {k:'fouls',label:'Fouls',g:'discipline',dec:0,hint:'Fouls conceded. Fewer is better.'},
+  {k:'yel',label:'Yellow cards',g:'discipline',dec:0,hint:'Bookings. Fewer is better.'},
+  {k:'red',label:'Red cards',g:'discipline',dec:0,hint:'Sending offs.'}
+];
+var GLAB = {all:'All',attack:'Attack',passing:'Passing',defence:'Defence',discipline:'Discipline'};
+var SM = [['shots','Shots'],['sot','On target'],['goals','Goals'],['xg','xG'],['passes','Passes'],['key','Key passes'],['tack','Tackles'],['fouls','Fouls'],['corn','Corners']];
+var SG = [['log1','1st half','logged'],['log2','2nd half','logged'],['combined','Both','added up'],['official','Official','full time']];
+
+var view = 'combined', group = 'all', smetric = 'shots';
+
+function pct(x,y){return (x+y)>0 ? Math.round(x/(x+y)*100) : 0;}
+function f2(v){return v==null ? 'n/a' : v.toFixed(2);}
+function tn(t){return '<b class="tc '+t.toLowerCase()+'">'+N[t]+'</b>';}
+function ppk(t){return t.key>0 ? t.passes/t.key : null;}
+function xgps(t){return t.shots>0 ? t.xg/t.shots : null;}
+function isLog(v){return v!=='official';}
+
+function runCounters(root){
+  root.querySelectorAll('[data-to]').forEach(function(el){
+    var to = +el.dataset.to, dec = +(el.dataset.dec||0), suf = el.dataset.suf||'';
+    if(reduce){el.textContent = to.toFixed(dec)+suf; return;}
+    var t0 = performance.now(), dur = 800;
+    function step(t){
+      var p = Math.min(1,(t-t0)/dur), e = 1-Math.pow(1-p,3);
+      el.textContent = (to*e).toFixed(dec)+suf;
+      if(p<1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  });
+}
+function applyBars(root){
+  requestAnimationFrame(function(){requestAnimationFrame(function(){
+    root.querySelectorAll('[data-f]').forEach(function(e){e.style.flexGrow = e.dataset.f;});
+    root.querySelectorAll('[data-w]').forEach(function(e){e.style.width = e.dataset.w+'%';});
+    root.querySelectorAll('[data-h]').forEach(function(e){e.style.height = e.dataset.h+'px';});
+  });});
+}
+function swap(el){el.classList.remove('swap');void el.offsetWidth;el.classList.add('swap');}
+
+/* hero */
+function renderHero(){
+  var d = D[view], off = view==='official', tr = TRUE[view];
+  $('#scA').dataset.to = tr.A; $('#scB').dataset.to = tr.B;
+  var st = '<i class="dot'+(off?'':' warm')+'"></i>'+CTX[view];
+  if(!off){
+    var ok = d.A.goals===tr.A && d.B.goals===tr.B;
+    st += '. Vantage tagged '+d.A.goals+'-'+d.B.goals+(ok ? ', matching the score' : ', so goals were missed');
+  }
+  $('#status').innerHTML = st;
+  var act = view==='log1' ? 0 : (view==='log2' ? 1 : 2);
+  $('#halves').innerHTML = ['1st half 1-1','2nd half 1-0','Full time 2-1'].map(function(t,i){
+    return '<span'+(i===act?' class="on"':'')+'>'+t+'</span>';
+  }).join('');
+  var a, b, mid;
+  if(off){a = d.A.poss; b = d.B.poss; mid = 'Possession';}
+  else{a = pct(d.A.passes,d.B.passes); b = pct(d.B.passes,d.A.passes); mid = 'Share of passes';}
+  $('#ribA').dataset.to = a; $('#ribA').dataset.suf = '%';
+  $('#ribB').dataset.to = b; $('#ribB').dataset.suf = '%';
+  $('#ribMid').textContent = mid;
+  $('#ribBarA').dataset.f = a/100; $('#ribBarB').dataset.f = b/100;
+  runCounters($('#hero'));
+  applyBars($('#hero'));
+}
+
+function renderSwitch(){
+  $('#switch').innerHTML = VORDER.map(function(v){
+    var c = VIEWS[v];
+    return '<button class="sw'+(v===view?' on':'')+'" role="tab" aria-selected="'+(v===view)+'" data-view="'+v+'"><b>'+c.label+'</b><small>'+c.sub+'</small></button>';
+  }).join('');
+  $('#hint').textContent = VIEWS[view].hint;
+  var nd = D[view], nt = TRUE[view];
+  if(isLog(view) && !(nd.A.goals===nt.A && nd.B.goals===nt.B)){
+    $('#notice').innerHTML = '<div class="notice">Vantage tagged '+nd.A.goals+'-'+nd.B.goals+' but the score was '+nt.A+'-'+nt.B+'. The missed goal shots are not in the shot or xG totals, so those are likely undercounted here.</div>';
+  } else { $('#notice').innerHTML = ''; }
+}
+
+/* story */
+var FLOW = {
+  log1:'The half finished 1-1. <b class="tc a">Sundowns FC</b> went ahead through Nuno Santos in the 17th minute and <b class="tc b">Al-Ahli</b> levelled two minutes later through a Ronwen Williams own goal.',
+  log2:'<b class="tc a">Sundowns FC</b> scored the winner in this half, Nuno Santos heading home again in the 80th minute.',
+  combined:'Nuno Santos headed <b class="tc a">Sundowns FC</b> ahead in the 17th minute. <b class="tc b">Al-Ahli</b> levelled two minutes later through a Ronwen Williams own goal, and Santos headed the winner in the 80th minute.',
+  official:'Nuno Santos headed <b class="tc a">Sundowns FC</b> ahead in the 17th minute. <b class="tc b">Al-Ahli</b> levelled two minutes later through a Ronwen Williams own goal, and Santos headed the winner in the 80th minute.'
+};
+function story(v){
+  var out = {head:'',paras:[]};
+  if(v==='official'){
+    var A = D.official.A, B = D.official.B;
+    var cA = Math.round(A.goals/A.shots*100), cB = Math.round(B.goals/B.shots*100);
+    out.head = tn('A')+' controlled it, '+tn('B')+' made their one shot on target count';
+    out.paras.push(FLOW.official);
+    out.paras.push(tn('A')+' held '+A.poss+'% of the ball and outshot '+tn('B')+' '+A.shots+' to '+B.shots+', with '+A.sot+' on target to '+B.sot+' and '+A.corn+' corners to '+B.corn+'.');
+    out.paras.push(tn('A')+' needed '+A.sot+' shots on target to score '+A.goals+'. '+(cA===cB ? 'Both sides converted '+cA+'% of their shots, so the gap came from volume, not finishing.' : 'Conversion was '+cA+'% for '+N.A+' and '+cB+'% for '+N.B+'.'));
+    out.paras.push(tn('B')+' picked up '+B.yel+' yellow cards to '+A.yel+' and were caught offside '+B.offs+' times to '+A.offs+'.');
+    return out;
+  }
+  var a = D[v].A, b = D[v].B, T = {A:a,B:b};
+  var L = a.passes>=b.passes ? 'A':'B', Lo = L==='A' ? 'B':'A';
+  var X = a.xg>=b.xg ? 'A':'B', Xo = X==='A' ? 'B':'A';
+  out.head = (L===X) ? tn(L)+' controlled the game and made the better chances' : tn(L)+' had the ball, '+tn(X)+' had the better chances';
+  var shots = T[L].shots>T[Lo].shots ? 'Shots went '+T[L].shots+' to '+T[Lo].shots+' their way.' : (T[L].shots===T[Lo].shots ? 'Shots were level at '+T[L].shots+' each.' : 'Shots went the other way, '+T[Lo].shots+' to '+T[L].shots+'.');
+  out.paras.push(FLOW[v]);
+  out.paras.push(tn(L)+' had '+pct(T[L].passes,T[Lo].passes)+'% of the passing ('+T[L].passes+' to '+T[Lo].passes+'). '+shots);
+  out.paras.push((L===X ? 'The chances backed that up: ' : 'The chances told a different story: ')+tn(X)+' led on xG, '+T[X].xg.toFixed(2)+' to '+T[Xo].xg.toFixed(2)+', or '+f2(xgps(T[X]))+' per shot against '+f2(xgps(T[Xo]))+'.');
+  var pa = ppk(a), pb = ppk(b);
+  if(pa && pb){
+    var E = pa<=pb ? 'A':'B', Eo = E==='A' ? 'B':'A';
+    var pE = E==='A'?pa:pb, pEo = E==='A'?pb:pa;
+    if(pEo/pE >= 1.3){
+      out.paras.push(tn(E)+(E===L ? ' were also the more incisive side' : ' were sharper with less of the ball')+': a key pass every '+Math.round(pE)+' passes, against one every '+Math.round(pEo)+' for '+tn(Eo)+'.');
+    }
+  }
+  var TG = TRUE[v], dA = a.xg-a.goals, dB = b.xg-b.goals, fin;
+  if(a.goals===TG.A && b.goals===TG.B){
+    fin = 'On finishing, '+tn('A')+' scored '+a.goals+' from '+a.xg.toFixed(2)+' xG and '+tn('B')+' '+b.goals+' from '+b.xg.toFixed(2)+'.';
+    if(dA>=0.5) fin += ' '+N.A+' left '+dA.toFixed(2)+' xG unconverted.';
+    if(dB>=0.5) fin += ' '+N.B+' left '+dB.toFixed(2)+' xG unconverted.';
+  } else {
+    fin = 'The log tagged '+a.goals+'-'+b.goals+' against a true '+TG.A+'-'+TG.B+'. The goal shots that were missed are not in the shot or xG totals, so treat xG here as a floor.';
+  }
+  out.paras.push(fin);
+  var fd = a.fouls-b.fouls;
+  if(Math.abs(fd)>=3){
+    out.paras.push(tn(fd>0?'A':'B')+' gave away '+Math.max(a.fouls,b.fouls)+' fouls to '+Math.min(a.fouls,b.fouls)+'.');
+  }
+  return out;
+}
+function renderStory(){
+  var s = story(view);
+  var el = $('#story');
+  el.innerHTML = '<h2>'+s.head+'</h2>'+s.paras.map(function(p){return '<p>'+p+'</p>';}).join('');
+  swap(el);
+}
+
+/* mini cards */
+function renderCards(){
+  var d = D[view], a = d.A, b = d.B, off = view==='official', c = [];
+  function acc(t){return t.shots ? Math.round(t.sot/t.shots*100) : 0;}
+  if(off){
+    c.push({l:'Possession',a:a.poss,b:b.poss,dec:0,suf:'%',cap:'Share of the ball',hi:'max'});
+    c.push({l:'Shot accuracy',a:acc(a),b:acc(b),dec:0,suf:'%',cap:'Shots that hit the target',hi:'max'});
+    c.push({l:'Conversion',a:Math.round(a.goals/a.shots*100),b:Math.round(b.goals/b.shots*100),dec:0,suf:'%',cap:'Shots that scored',hi:'max'});
+    c.push({l:'Corners',a:a.corn,b:b.corn,dec:0,suf:'',cap:'Corners won',hi:'max'});
+  } else {
+    c.push({l:'Pass share',a:pct(a.passes,b.passes),b:pct(b.passes,a.passes),dec:0,suf:'%',cap:'Share of all passes',hi:'max'});
+    c.push({l:'Shot accuracy',a:acc(a),b:acc(b),dec:0,suf:'%',cap:'Shots that hit the target',hi:'max'});
+    c.push({l:'Chance quality',a:+(xgps(a)||0).toFixed(2),b:+(xgps(b)||0).toFixed(2),dec:2,suf:'',cap:'xG per shot',hi:'max'});
+    c.push({l:'Passes per key pass',a:Math.round(ppk(a)||0),b:Math.round(ppk(b)||0),dec:0,suf:'',cap:'Lower means sharper',hi:'min'});
+  }
+  var el = $('#cards');
+  el.innerHTML = c.map(function(x){
+    var better = null;
+    if(x.a!==x.b){ better = x.hi==='min' ? (x.a<x.b?'a':'b') : (x.a>x.b?'a':'b'); }
+    return '<div class="mini"><div class="mlab">'+x.l+'</div><div class="mvals">'+
+      '<span class="a'+(better&&better!=='a'?' dim':'')+'"><span data-to="'+x.a+'" data-dec="'+x.dec+'" data-suf="'+x.suf+'">0</span></span>'+
+      '<span class="b'+(better&&better!=='b'?' dim':'')+'"><span data-to="'+x.b+'" data-dec="'+x.dec+'" data-suf="'+x.suf+'">0</span></span>'+
+      '</div><div class="mcap">'+x.cap+'</div></div>';
+  }).join('');
+  runCounters(el);
+}
+
+/* explorer */
+function renderExplorer(){
+  var d = D[view];
+  var avail = M.filter(function(m){return d.A[m.k]!==undefined;});
+  var groups = ['all'].concat(['attack','passing','defence','discipline'].filter(function(g){return avail.some(function(m){return m.g===g;});}));
+  if(groups.indexOf(group)<0) group = 'all';
+  $('#gchips').innerHTML = groups.map(function(g){
+    return '<button class="chip'+(g===group?' on':'')+'" data-grp="'+g+'">'+GLAB[g]+'</button>';
+  }).join('');
+  var rows = avail.filter(function(m){return group==='all' || m.g===group;});
+  var box = $('#rows');
+  box.innerHTML = rows.map(function(m){
+    var va = d.A[m.k], vb = d.B[m.k], tot = va+vb;
+    var f = tot>0 ? va/tot : 0.5;
+    var pa = tot>0 ? Math.round(va/tot*100) : 0, pb = tot>0 ? 100-pa : 0;
+    var detail = tot>0 ? pa+'% '+N.A+', '+pb+'% '+N.B+'. '+m.hint : 'Neither side recorded any. '+m.hint;
+    return '<div class="row" tabindex="0" role="button" aria-expanded="false" data-k="'+m.k+'">'+
+      '<div class="rtop"><span class="rv a'+(vb>va?' low':'')+'"><span data-to="'+va+'" data-dec="'+m.dec+'" data-suf="'+(m.suf||'')+'">0</span></span>'+
+      '<span class="rl">'+(m.k==='goals' && isLog(view) ? 'Goals (tagged)' : m.label)+'</span>'+
+      '<span class="rv b'+(va>vb?' low':'')+'"><span data-to="'+vb+'" data-dec="'+m.dec+'" data-suf="'+(m.suf||'')+'">0</span></span></div>'+
+      '<div class="bar'+(tot>0?'':' zero')+'"><i class="ba" data-f="'+f+'"></i><i class="bb" data-f="'+(1-f)+'"></i></div>'+
+      '<div class="rdetail"><div>'+detail+'</div></div></div>';
+  }).join('');
+  runCounters(box); applyBars(box); swap(box);
+}
+
+/* funnel */
+function renderFunnel(){
+  var d = D[view], mx = Math.max(d.A.shots,d.B.shots,1);
+  var h = '<h3>Shot funnel</h3><p class="sub">From shot to target to goal'+(isLog(view)?', as tagged in Vantage.':'.')+'</p>';
+  ['A','B'].forEach(function(t){
+    var s = d[t], cl = t.toLowerCase();
+    var conv = s.shots>0 ? s.goals+' from '+s.shots+' shots ('+Math.round(s.goals/s.shots*100)+'%)' : 'No shots';
+    h += '<div class="teamblock"><div class="tbh"><b class="tc '+cl+'">'+N[t]+'</b><span>'+conv+'</span></div>';
+    [['Shots',s.shots,'o1'],['On target',s.sot,'o2'],['Goals',s.goals,'']].forEach(function(r){
+      h += '<div class="frow"><label>'+r[0]+'</label><div class="ftrack"><i class="ffill '+cl+' '+r[2]+'" data-w="'+Math.round(r[1]/mx*100)+'"></i></div><span class="fv">'+r[1]+'</span></div>';
+    });
+    h += '</div>';
+  });
+  var el = $('#funnel'); el.innerHTML = h; applyBars(el); swap(el);
+}
+
+/* xg */
+function renderXG(){
+  var el = $('#xg');
+  if(!isLog(view)){
+    el.innerHTML = '<h3>Goals against xG</h3><p class="plain">The official feed has no xG. Switch to a Vantage view to see whether each side finished its chances.</p><button class="goto" data-go="combined">Show both halves</button>';
+    swap(el); return;
+  }
+  var d = D[view], mx = Math.max(2,d.A.xg,d.B.xg,d.A.goals,d.B.goals)*1.05;
+  var h = '<h3>Goals against xG</h3><p class="sub">Did the chances turn into goals?</p>';
+  ['A','B'].forEach(function(t){
+    var s = d[t], cl = t.toLowerCase(), diff = s.xg-s.goals, txt;
+    if(Math.abs(diff)<0.15) txt = 'In line with expectation';
+    else if(diff>0) txt = diff.toFixed(2)+' below expectation';
+    else txt = (-diff).toFixed(2)+' above expectation';
+    h += '<div class="teamblock"><div class="tbh"><b class="tc '+cl+'">'+N[t]+'</b><span>'+txt+'</span></div>';
+    h += '<div class="frow"><label>Expected (xG)</label><div class="ftrack"><i class="ffill '+cl+' o1" data-w="'+Math.round(s.xg/mx*100)+'"></i></div><span class="fv">'+s.xg.toFixed(2)+'</span></div>';
+    h += '<div class="frow"><label>Scored</label><div class="ftrack"><i class="ffill '+cl+'" data-w="'+Math.round(s.goals/mx*100)+'"></i></div><span class="fv">'+s.goals+'</span></div></div>';
+  });
+  el.innerHTML = h; applyBars(el); swap(el);
+}
+
+/* sessions chart */
+function renderSessions(){
+  $('#schips').innerHTML = SM.map(function(m){
+    return '<button class="chip'+(m[0]===smetric?' on':'')+'" data-sm="'+m[0]+'">'+m[1]+'</button>';
+  }).join('');
+  var dec = smetric==='xg' ? 2 : 0, mx = 0;
+  SG.forEach(function(g){
+    ['A','B'].forEach(function(t){var v = D[g[0]][t][smetric]; if(v!==undefined && v>mx) mx = v;});
+  });
+  if(mx===0) mx = 1;
+  $('#chart').innerHTML = SG.map(function(g){
+    var d = D[g[0]], inner = '';
+    ['A','B'].forEach(function(t){
+      var v = d[t][smetric], cl = t.toLowerCase();
+      if(v===undefined){ inner += '<div class="col"><span class="na">n/a</span></div>'; }
+      else {
+        var hgt = v===0 ? 0 : Math.max(4, Math.round(v/mx*112));
+        inner += '<div class="col"><span class="colv '+cl+'">'+v.toFixed(dec)+'</span><i class="colb '+cl+'" data-h="'+hgt+'"></i></div>';
+      }
+    });
+    return '<button class="cl'+(g[0]===view?' on':'')+'" data-view="'+g[0]+'" aria-label="Switch to '+g[1]+'"><div class="bars">'+inner+'</div><span class="cn">'+g[1]+'</span><span class="cs">'+g[2]+'</span></button>';
+  }).join('');
+  applyBars($('#chart'));
+}
+
+/* logger check */
+function renderCheck(){
+  var c = D.combined, o = D.official;
+  var defs = [['goals','Goals'],['shots','Shots'],['sot','Shots on target'],['corn','Corners'],['fouls','Fouls']];
+  var sumL = {A:0,B:0}, sumO = {A:0,B:0}, weakest = null;
+  var h = '<h3>Logger check</h3><p class="sub">Both halves added up, against the official full time feed.</p>';
+  h += '<div class="crow head"><span class="a">Sundowns FC</span><span class="b">Al-Ahli</span></div>';
+  defs.forEach(function(r){
+    var k = r[0];
+    h += '<div class="crow"><div class="clab">'+r[1]+'</div>';
+    ['A','B'].forEach(function(t){
+      var lg = c[t][k], of = o[t][k], cov = of>0 ? Math.min(1,lg/of) : 1;
+      if(k!=='goals'){
+        sumL[t] += lg; sumO[t] += of;
+        if(of>0 && (!weakest || cov<weakest.cov)) weakest = {t:t,l:r[1],lg:lg,of:of,cov:cov};
+      }
+      h += '<div><div class="ctxt'+(lg<of?' miss':'')+'"><b>'+lg+'</b> of '+of+'</div><div class="mtrack"><i class="mfill '+t.toLowerCase()+'" data-w="'+Math.round(cov*100)+'"></i></div></div>';
+    });
+    h += '</div>';
+  });
+  var capA = Math.round(sumL.A/sumO.A*100), capB = Math.round(sumL.B/sumO.B*100);
+  var pa = pct(c.A.passes,c.B.passes), diff = Math.abs(pa-o.A.poss);
+  h += '<div class="callout"><b>Goals:</b> both first half goals are missing from the log. The second half goal was tagged.<br><br><b>Capture rate:</b> '+capA+'% of official events for '+N.A+', '+capB+'% for '+N.B+'. The weakest tag was '+N[weakest.t]+' '+weakest.l.toLowerCase()+' ('+weakest.lg+' of '+weakest.of+').<br><br>'+
+       '<b>Pass share vs possession:</b> '+pa+'% of logged passes against '+o.A.poss+'% official possession for '+N.A+'. '+
+       (diff<=3 ? '<span class="ok">Close enough to use passes as a control measure.</span>' : 'The gap suggests passes were under-tagged for one side.')+'</div>';
+  var el = $('#check'); el.innerHTML = h; applyBars(el);
+}
+
+
+/* ---- insight strip, tabs and deep dive ---- */
+function nm(v){return '<span class="num">'+v+'</span>';}
+function renderInsight(){
+  var el = $('#insight');
+  el.innerHTML = '<i></i><p>'+insight(view)+'</p>';
+  swap(el);
+}
+function drawMomentum(DD){
+  var H = DD.halves, xs = [130,470];
+  var vals = {A:[H[0].stats.A.shots,H[1].stats.A.shots], B:[H[0].stats.B.shots,H[1].stats.B.shots]};
+  var mx = Math.max.apply(null,vals.A.concat(vals.B)); if(!mx) mx = 1;
+  function y(v){return +(185-(v/mx)*145).toFixed(1);}
+  var svg = '<line class="ax" x1="60" y1="20" x2="60" y2="222"/><line class="ax" x1="60" y1="222" x2="540" y2="222"/>';
+  svg += '<text class="axl" x="130" y="246" text-anchor="middle">1ST HALF</text>';
+  svg += '<text class="axl" x="470" y="246" text-anchor="middle">2ND HALF'+(H[1].derived?' (DERIVED)':'')+'</text>';
+  ['A','B'].forEach(function(t){
+    var d = 'M'+xs[0]+','+y(vals[t][0])+' L'+xs[1]+','+y(vals[t][1]);
+    if(t==='A') svg += '<path class="ln ln-o" d="'+d+'"/>';
+    svg += '<path class="ln ln-'+t.toLowerCase()+'" d="'+d+'"/>';
+  });
+  [0,1].forEach(function(i){
+    var ya = y(vals.A[i]), yb = y(vals.B[i]), aUp = ya<=yb;
+    ['A','B'].forEach(function(t){
+      var v = vals[t][i], yy = t==='A' ? ya : yb, up = (t==='A')===aUp, c = t.toLowerCase();
+      svg += '<circle class="dt dt-'+c+'" cx="'+xs[i]+'" cy="'+yy+'" r="6"/>';
+      svg += '<text class="vl v'+c+'" x="'+xs[i]+'" y="'+(up ? yy-14 : yy+26)+'" text-anchor="middle">'+v+(v===1?' shot':' shots')+'</text>';
+    });
+  });
+  var box = $('#momSvg');
+  box.innerHTML = svg;
+  box.querySelectorAll('path.ln').forEach(function(p){
+    if(reduce) return;
+    var L = p.getTotalLength ? p.getTotalLength() : 400;
+    p.style.strokeDasharray = L; p.style.strokeDashoffset = L;
+    requestAnimationFrame(function(){requestAnimationFrame(function(){
+      p.style.transition = 'stroke-dashoffset 1.1s cubic-bezier(.2,.8,.2,1)';
+      p.style.strokeDashoffset = 0;
+    });});
+  });
+  $('#momLegend').innerHTML = ['A','B'].map(function(t){
+    return '<span class="goal-chip '+t.toLowerCase()+'">● '+N[t]+' goals: '+H[0].goals[t]+' → '+H[1].goals[t]+'</span>';
+  }).join('');
+}
+function renderAcc(DD){
+  var h = '';
+  DD.halves.forEach(function(half){
+    ['A','B'].forEach(function(t){
+      var s = half.stats[t], p = s.shots ? Math.round(s.sot/s.shots*100) : 0, c = t.toLowerCase();
+      h += '<div class="acc-card"><div class="acc-top"><span class="acc-team"><i class="cdot '+c+'"></i>'+N[t]+'</span>'+
+           '<span class="acc-pct"><span data-to="'+p+'" data-suf="%">0</span></span></div>'+
+           '<div class="acc-track"><i class="acc-fill '+c+'" data-w="'+p+'"></i></div>'+
+           '<div class="acc-sub">'+half.label+(half.derived?' (derived)':'')+' · '+s.sot+' of '+s.shots+' shots on target</div></div>';
+    });
+  });
+  var g = $('#accGrid'); g.innerHTML = h; runCounters(g); applyBars(g);
+}
+function renderDeep(){
+  var DD = buildDeep();
+  $('#notes').innerHTML = DD.halves.map(function(h){
+    return '<div class="note"><div class="half-tag"><i class="cdot '+h.chip+'"></i>'+h.tag+'</div><p>'+h.html+'</p></div>';
+  }).join('');
+  swap($('#notes'));
+  $('#momSub').textContent = DD.momSub;
+  $('#deepNote').textContent = DD.note;
+  drawMomentum(DD);
+  renderAcc(DD);
+}
+var tab = 'report';
+function setTab(t){
+  tab = t;
+  $('#panel-report').hidden = t!=='report';
+  $('#panel-deep').hidden = t!=='deep';
+  $('#switchWrap').hidden = t!=='report';
+  document.querySelectorAll('.tab').forEach(function(b){
+    var on = b.dataset.tab===t;
+    b.classList.toggle('on',on); b.setAttribute('aria-selected',on);
+  });
+  if(t==='deep') renderDeep();
+  var st = $('.stick'), p = $('#panel-'+t);
+  var top = p.getBoundingClientRect().top + window.pageYOffset - st.offsetHeight - 8;
+  if(window.pageYOffset > top) window.scrollTo(0,Math.max(0,top));
+}
+
+
+function insight(v){
+  var s;
+  if(v==='official'){
+    var A = D.official.A, B = D.official.B;
+    return N.B+' had '+nm(B.sot)+' shot on target and scored it. '+N.A+' needed '+nm(A.sot)+' to score twice. The gap was volume: '+nm(A.shots)+' shots to '+nm(B.shots)+', '+nm(A.corn)+' corners to '+nm(B.corn)+' and '+nm(A.poss+'%')+' of the ball.';
+  }
+  var a = D[v].A, b = D[v].B, T = {A:a,B:b};
+  var L = a.passes>=b.passes ? 'A':'B', Lo = L==='A' ? 'B':'A';
+  var X = a.xg>=b.xg ? 'A':'B', Xo = X==='A' ? 'B':'A';
+  var pl = nm(pct(T[L].passes,T[Lo].passes)+'%');
+  s = (L===X)
+    ? N[L]+' had '+pl+' of the passing and the better chances, '+nm(T[X].xg.toFixed(2))+' xG to '+nm(T[Xo].xg.toFixed(2))+'.'
+    : N[L]+' had '+pl+' of the passing but '+N[X]+' had the better chances, '+nm(T[X].xg.toFixed(2))+' xG to '+nm(T[Xo].xg.toFixed(2))+'.';
+  var pa = ppk(a), pb = ppk(b);
+  if(pa && pb){
+    var E = pa<=pb ? 'A':'B', Eo = E==='A' ? 'B':'A', pE = E==='A'?pa:pb, pEo = E==='A'?pb:pa;
+    if(pEo/pE>=1.3) s += ' '+N[E]+' made a key pass every '+nm(Math.round(pE))+' passes to '+N[Eo]+"'s "+nm(Math.round(pEo))+'.';
+  }
+  return s;
+}
+function buildDeep(){
+  var h1 = D.log1, h2 = D.log2;
+  var p1 = pct(h1.A.passes,h1.B.passes), p2 = pct(h2.A.passes,h2.B.passes);
+  return {
+    momSub:'Shots per half, the story the full match total hides.',
+    note:'Goals were not tagged in the first half, so first half shot counts and accuracy are a floor.',
+    halves:[
+      {label:'1st half',stats:h1,goals:{A:1,B:1},derived:false,chip:'n',
+       tag:'First half · 1-1 · Sundowns score, Al-Ahli answer',
+       html:tn('A')+' went ahead through Nuno Santos in the 17th minute and '+tn('B')+' levelled two minutes later through a Ronwen Williams own goal. In the log '+tn('A')+' had '+p1+'% of the passing ('+h1.A.passes+' to '+h1.B.passes+'), yet '+tn('B')+' made '+h1.B.key+' key passes to '+h1.A.key+' and led on xG, '+h1.B.xg.toFixed(2)+' to '+h1.A.xg.toFixed(2)+'. Neither goal was tagged, so the shot count of '+h1.A.shots+' apiece understates the half.'},
+      {label:'2nd half',stats:h2,goals:{A:1,B:0},derived:false,chip:'a',
+       tag:'Second half · 1-0 · Sundowns take control',
+       html:tn('A')+' took over: '+h2.A.shots+' shots to '+h2.B.shots+', '+h2.A.sot+' on target to '+h2.B.sot+' and '+h2.A.xg.toFixed(2)+' xG to '+h2.B.xg.toFixed(2)+', with '+p2+'% of the passing (up from '+p1+'%). Santos headed the winner in the 80th minute, and the log has '+tn('B')+' without a shot on target in the half.'}
+    ]
+  };
+}
+
+function renderAll(){
+  renderHero(); renderSwitch(); renderInsight(); renderStory(); renderCards();
+  renderExplorer(); renderFunnel(); renderXG(); renderSessions(); renderCheck();
+}
+function setView(v){
+  if(v===view) return;
+  view = v; renderAll();
+}
+
+/* export */
+function summaryText(){
+  var d = D[view], v = VIEWS[view];
+  var tr = TRUE[view], score = tr.A+'-'+tr.B;
+  if(view!=='official' && (d.A.goals!==tr.A || d.B.goals!==tr.B)) score += ' (Vantage tagged '+d.A.goals+'-'+d.B.goals+')';
+  var t = 'Sundowns FC '+score+' Al-Ahli | FIFA Intercontinental Cup | '+v.label+' ('+v.sub+')\n';
+  t += story(view).head.replace(/<[^>]+>/g,'')+'\n\n';
+  M.forEach(function(m){
+    if(d.A[m.k]===undefined) return;
+    t += m.label+': '+d.A[m.k].toFixed(m.dec)+(m.suf||'')+' - '+d.B[m.k].toFixed(m.dec)+(m.suf||'')+'\n';
+  });
+  return t+'\nVantage';
+}
+function jsonText(){
+  var d = D[view], o = {match:'Sundowns FC vs Al-Ahli',competition:'FIFA Intercontinental Cup',view:view,official_score:'2-1',view_score:TRUE[view].A+'-'+TRUE[view].B,teams:{}};
+  o.teams[N.A] = d.A; o.teams[N.B] = d.B;
+  return JSON.stringify(o,null,2);
+}
+var tt;
+function toast(m){
+  var el = $('#toast'); el.textContent = m; el.classList.add('show');
+  clearTimeout(tt); tt = setTimeout(function(){el.classList.remove('show');},1900);
+}
+function copyText(text,msg){
+  var ta = $('#ta');
+  function fallback(){
+    try{
+      ta.hidden = false; ta.value = text; ta.select(); ta.setSelectionRange(0,text.length);
+      if(document.execCommand('copy')){ ta.hidden = true; toast(msg); return; }
+    }catch(e){}
+    ta.hidden = false; ta.value = text; ta.select();
+    toast('Copy was blocked. The text is selected below.');
+  }
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(function(){toast(msg);}).catch(fallback);
+  } else { fallback(); }
+}
+
+/* events */
+document.addEventListener('click',function(e){
+  var t = e.target;
+  var tb = t.closest('[data-tab]'); if(tb){setTab(tb.dataset.tab); return;}
+  var bv = t.closest('[data-view]'); if(bv){setView(bv.dataset.view); return;}
+  var bg = t.closest('[data-grp]'); if(bg){group = bg.dataset.grp; renderExplorer(); return;}
+  var bs = t.closest('[data-sm]'); if(bs){smetric = bs.dataset.sm; renderSessions(); return;}
+  var go = t.closest('[data-go]'); if(go){setView(go.dataset.go); return;}
+  var row = t.closest('.row');
+  if(row){
+    var was = row.classList.contains('open');
+    document.querySelectorAll('.row.open').forEach(function(r){r.classList.remove('open');r.setAttribute('aria-expanded','false');});
+    if(!was){row.classList.add('open');row.setAttribute('aria-expanded','true');}
+    return;
+  }
+  if(t.closest('#copyS')){copyText(summaryText(),'Summary copied'); return;}
+  if(t.closest('#copyJ')){copyText(jsonText(),'JSON copied'); return;}
+});
+document.addEventListener('keydown',function(e){
+  if((e.key==='Enter'||e.key===' ') && e.target.classList && e.target.classList.contains('row')){
+    e.preventDefault(); e.target.click();
+  }
+});
+
+renderAll();
+})();
+</script>
+</body>
+</html>

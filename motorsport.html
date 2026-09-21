@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Motorsport — Vantage</title>
+<title>Motorsport | Vantage</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -404,6 +404,67 @@ footer{ padding:64px 40px 36px; }
   .brake-zone-row .val{ display:none; }
 }
 
+/* ---------- SECTOR COMPARISON ---------- */
+.detail-card{ background:var(--bg-alt); border:1px solid var(--line); border-radius:var(--radius); padding:36px; margin-top:32px; }
+.detail-card .badge{ font-family:'JetBrains Mono', monospace; font-size:10.5px; color:var(--muted); border:1px solid var(--line-strong); padding:5px 10px; border-radius:100px; display:inline-block; margin-bottom:20px; }
+.detail-card h3{ font-family:'Bricolage Grotesque', sans-serif; font-size:19px; font-weight:700; margin-bottom:6px; }
+.detail-card .sub{ color:var(--muted); font-size:13.5px; margin-bottom:26px; max-width:520px; }
+
+.sector-rows{ display:flex; flex-direction:column; gap:18px; }
+.sector-row{ display:grid; grid-template-columns:90px 1fr 1fr; gap:16px; align-items:center; }
+.sector-row .s-label{ font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--ink); font-weight:600; }
+.sector-bar-wrap{ display:flex; flex-direction:column; gap:6px; }
+.sector-bar-track{ height:10px; border-radius:100px; background:var(--line); overflow:hidden; position:relative; }
+.sector-bar-fill{ height:100%; border-radius:100px; }
+.sector-bar-fill.pace-a{ background:var(--ink); }
+.sector-bar-fill.pace-b{ background:var(--data-blue); }
+.sector-bar-val{ font-family:'JetBrains Mono', monospace; font-size:11px; color:var(--muted); }
+.sector-legend{ display:flex; gap:22px; margin-top:22px; flex-wrap:wrap; }
+.sector-legend span{ display:inline-flex; align-items:center; gap:7px; font-size:12.5px; color:var(--muted); font-family:'JetBrains Mono', monospace; }
+.sector-legend i{ width:10px; height:10px; border-radius:2px; display:inline-block; }
+
+/* ---------- TYRE STRATEGY ---------- */
+.tyre-timeline{ display:flex; flex-direction:column; gap:10px; }
+.tyre-row{ display:flex; align-items:center; gap:14px; }
+.tyre-row .t-num{ font-family:'JetBrains Mono', monospace; font-size:11px; color:var(--muted); width:52px; flex-shrink:0; }
+.tyre-row .t-bar-wrap{ flex-grow:1; height:34px; border-radius:8px; background:#fff; border:1px solid var(--line); position:relative; overflow:hidden; }
+.tyre-row .t-bar{ position:absolute; top:0; bottom:0; border-radius:6px; display:flex; align-items:center; padding:0 12px; }
+.tyre-row .t-bar span{ font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:700; white-space:nowrap; }
+.tyre-soft{ background:#FFD9D9; color:#8C1F1F; }
+.tyre-medium{ background:#FFEFAE; color:#8C6D00; }
+.tyre-hard{ background:#E4E6EA; color:#3A3F49; }
+.tyre-row .t-range{ font-family:'JetBrains Mono', monospace; font-size:11px; color:var(--muted); width:150px; flex-shrink:0; text-align:right; }
+
+/* ---------- SPEED TRACE ---------- */
+.speed-trace-svg{ width:100%; height:auto; }
+.speed-trace-svg .line{ fill:none; stroke:var(--ink); stroke-width:2.5; stroke-linejoin:round; }
+.speed-trace-svg .fillarea{ fill:url(#speedGrad); opacity:0.5; }
+.speed-trace-svg .axis{ stroke:var(--line-strong); stroke-width:1; }
+.speed-trace-svg text{ font-family:'JetBrains Mono', monospace; font-size:10px; fill:var(--muted); }
+
+/* ---------- HERO 3D SCENE ---------- */
+.hero-split{ display:grid; grid-template-columns:1.1fr 0.9fr; gap:48px; align-items:center; }
+.hero-3d-wrap{ display:flex; justify-content:center; }
+.hero-3d-card{
+  position:relative; width:100%; aspect-ratio:1/1; max-width:460px;
+  background:radial-gradient(circle at 50% 30%, #171B24, var(--deep));
+  border-radius:24px; border:1px solid rgba(255,255,255,0.06);
+  overflow:hidden; cursor:grab;
+  box-shadow:0 40px 90px -30px rgba(11,13,18,0.35);
+}
+.hero-3d-card:active{ cursor:grabbing; }
+.hero-3d-card canvas{ width:100%; height:100%; display:block; touch-action:none; }
+.hero-3d-hint{
+  position:absolute; bottom:16px; left:50%; transform:translateX(-50%);
+  font-size:10.5px; letter-spacing:0.1em; color:rgba(255,255,255,0.4);
+  background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1);
+  padding:6px 12px; border-radius:100px; pointer-events:none;
+}
+@media (max-width:980px){
+  .hero-split{ grid-template-columns:1fr; }
+  .hero-3d-card{ max-width:340px; margin:0 auto; }
+}
+
 </style>
 </head>
 <body>
@@ -428,8 +489,8 @@ footer{ padding:64px 40px 36px; }
 </div>
 
 <section class="hero compact">
-  <div class="eyebrow"><span class="pip"></span>MOTORSPORT — IN DEVELOPMENT</div>
-  <h1 class="page-title reveal in">Sector splits, braking zones, onboard footage — synced.</h1>
+  <div class="eyebrow"><span class="pip"></span>MOTORSPORT: IN DEVELOPMENT</div>
+  <h1 class="page-title reveal in">Sector splits, braking zones, onboard footage: synced.</h1>
   <p class="lede">Pick a series to see the circuits we're building coverage for, and what a track breakdown looks like once footage and telemetry are fused.</p>
 </section>
 

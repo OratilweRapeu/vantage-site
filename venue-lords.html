@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lord's — Vantage</title>
+<title>Lord's | Vantage</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -442,6 +442,29 @@ footer{ padding:64px 40px 36px; }
 .speed-trace-svg .axis{ stroke:var(--line-strong); stroke-width:1; }
 .speed-trace-svg text{ font-family:'JetBrains Mono', monospace; font-size:10px; fill:var(--muted); }
 
+/* ---------- HERO 3D SCENE ---------- */
+.hero-split{ display:grid; grid-template-columns:1.1fr 0.9fr; gap:48px; align-items:center; }
+.hero-3d-wrap{ display:flex; justify-content:center; }
+.hero-3d-card{
+  position:relative; width:100%; aspect-ratio:1/1; max-width:460px;
+  background:radial-gradient(circle at 50% 30%, #171B24, var(--deep));
+  border-radius:24px; border:1px solid rgba(255,255,255,0.06);
+  overflow:hidden; cursor:grab;
+  box-shadow:0 40px 90px -30px rgba(11,13,18,0.35);
+}
+.hero-3d-card:active{ cursor:grabbing; }
+.hero-3d-card canvas{ width:100%; height:100%; display:block; touch-action:none; }
+.hero-3d-hint{
+  position:absolute; bottom:16px; left:50%; transform:translateX(-50%);
+  font-size:10.5px; letter-spacing:0.1em; color:rgba(255,255,255,0.4);
+  background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1);
+  padding:6px 12px; border-radius:100px; pointer-events:none;
+}
+@media (max-width:980px){
+  .hero-split{ grid-template-columns:1fr; }
+  .hero-3d-card{ max-width:340px; margin:0 auto; }
+}
+
 </style>
 </head>
 <body>
@@ -471,7 +494,7 @@ footer{ padding:64px 40px 36px; }
     <div class="track-hero-inner">
       <span class="series-badge">TEST CRICKET · HOME OF CRICKET</span>
       <h1>Lord's Cricket Ground</h1>
-      <div class="location">St John's Wood, London — England</div>
+      <div class="location">St John's Wood, London, England</div>
     </div>
   </div>
 
@@ -487,9 +510,9 @@ footer{ padding:64px 40px 36px; }
   <div class="section-inner">
 
     <div class="detail-card reveal">
-      <span class="badge">VERIFIED — PUBLIC RECORD</span>
+      <span class="badge">VERIFIED: PUBLIC RECORD</span>
       <h3>Venue &amp; pitch character</h3>
-      <p class="sub">Lord's is owned by the Marylebone Cricket Club and has hosted Test cricket since 1884. Its defining physical feature is a natural 2.5-metre slope running across the pitch from north to south — real and well documented, not a design choice.</p>
+      <p class="sub">Lord's is owned by the Marylebone Cricket Club and has hosted Test cricket since 1884. Its defining physical feature is a natural 2.5-metre slope running across the pitch from north to south. Real and well documented, not a design choice.</p>
       <div class="brake-zone-row head-row">
         <span>ATTRIBUTE</span><span>DETAIL</span><span></span><span></span><span></span>
       </div>
@@ -501,7 +524,7 @@ footer{ padding:64px 40px 36px; }
       <div class="brake-zone-row">
         <span class="zn" style="width:auto; padding:0 10px;">2</span>
         <span class="corner-name">Typical Test first-innings total</span>
-        <span class="val">300–350 runs</span><span></span><span></span>
+        <span class="val">300-350 runs</span><span></span><span></span>
       </div>
       <div class="brake-zone-row">
         <span class="zn" style="width:auto; padding:0 10px;">3</span>
@@ -519,13 +542,13 @@ footer{ padding:64px 40px 36px; }
     <div class="detail-card reveal">
       <span class="badge">NOT YET SOURCED</span>
       <h3>Match-day conditions</h3>
-      <p class="sub">Temperature, humidity, wind and cloud cover for a specific match date would come from historical weather records tied to that fixture. We haven't pulled that yet for this match — rather than invent plausible-looking numbers, we're leaving this module empty until it's backed by a real source.</p>
+      <p class="sub">Temperature, humidity, wind and cloud cover for a specific match date would come from historical weather records tied to that fixture. We haven't pulled that yet for this match. Rather than invent plausible-looking numbers, we're leaving this module empty until it's backed by a real source.</p>
     </div>
 
     <div class="detail-card reveal">
-      <span class="badge">REAL MATCH — VERIFIED</span>
-      <h3>3rd Test: England v India, 10–14 July 2025</h3>
-      <p class="sub">Part of the 2025 India tour of England. England won by 22 runs — one of the closest results of the series. Ben Stokes was named Player of the Match for 44 &amp; 33 with the bat and 2/63 &amp; 3/48 with the ball.</p>
+      <span class="badge">REAL MATCH: VERIFIED</span>
+      <h3>3rd Test: England v India, 10-14 July 2025</h3>
+      <p class="sub">Part of the 2025 India tour of England. England won by 22 runs, one of the closest results of the series. Ben Stokes was named Player of the Match for 44 &amp; 33 with the bat and 2/63 &amp; 3/48 with the ball.</p>
       <div class="brake-zone-row head-row">
         <span>TEAM</span><span>INNINGS 1</span><span>INNINGS 2</span><span></span><span></span>
       </div>
@@ -542,7 +565,7 @@ footer{ padding:64px 40px 36px; }
     </div>
 
     <div class="detail-card reveal">
-      <span class="badge">REAL PLAYER STATS — THIS MATCH</span>
+      <span class="badge">REAL PLAYER STATS: THIS MATCH</span>
       <h3>Batting highlights</h3>
       <p class="sub">Genuine innings from this Test, not illustrative figures.</p>
       <div class="brake-zone-row head-row">
@@ -556,7 +579,7 @@ footer{ padding:64px 40px 36px; }
       <div class="brake-zone-row">
         <span class="zn" style="width:auto; padding:0 10px;">IND</span>
         <span class="corner-name">KL Rahul</span>
-        <span class="val">1st innings</span><span class="val">100</span><span class="val">—</span>
+        <span class="val">1st innings</span><span class="val">100</span><span class="val">N/A</span>
       </div>
       <div class="brake-zone-row">
         <span class="zn" style="width:auto; padding:0 10px;">ENG</span>
@@ -566,17 +589,17 @@ footer{ padding:64px 40px 36px; }
       <div class="brake-zone-row">
         <span class="zn" style="width:auto; padding:0 10px;">IND</span>
         <span class="corner-name">Ravindra Jadeja</span>
-        <span class="val">2nd innings (not out)</span><span class="val">61*</span><span class="val">—</span>
+        <span class="val">2nd innings (not out)</span><span class="val">61*</span><span class="val">N/A</span>
       </div>
       <div class="brake-zone-row">
         <span class="zn" style="width:auto; padding:0 10px;">ENG</span>
         <span class="corner-name">Ben Stokes</span>
-        <span class="val">1st &amp; 2nd innings</span><span class="val">44 &amp; 33</span><span class="val">—</span>
+        <span class="val">1st &amp; 2nd innings</span><span class="val">44 &amp; 33</span><span class="val">N/A</span>
       </div>
     </div>
 
     <div class="detail-card reveal">
-      <span class="badge">REAL PLAYER STATS — THIS MATCH</span>
+      <span class="badge">REAL PLAYER STATS: THIS MATCH</span>
       <h3>Bowling highlights</h3>
       <div class="brake-zone-row head-row">
         <span>PLAYER</span><span>TEAM</span><span>FIGURES</span><span></span><span></span>
@@ -606,7 +629,7 @@ footer{ padding:64px 40px 36px; }
         <span class="corner-name">Washington Sundar</span>
         <span class="val">India</span><span class="val">4/22</span><span></span>
       </div>
-      <p style="font-size:12.5px; color:var(--muted); margin-top:18px;">Match and player figures via public scorecards for the 3rd Test, India tour of England 2025, played at Lord's, 10–14 July 2025.</p>
+      <p style="font-size:12.5px; color:var(--muted); margin-top:18px;">Match and player figures via public scorecards for the 3rd Test, India tour of England 2025, played at Lord's, 10-14 July 2025.</p>
     </div>
 
     <div class="track-nav-links reveal">
