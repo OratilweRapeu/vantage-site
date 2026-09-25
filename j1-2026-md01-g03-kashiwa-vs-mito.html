@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en" id="htmlRoot">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vantage | Kashiwa Reysol vs Mito Hollyhock</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff; --surface:#f4f5f7; --surface2:#e9ebef; --ink:#0b0b0c; --ink2:#3a3e46; --muted:#6a7079; --line:#e3e5ea;
+  --a:#ffd400; --a-text:#8a6a00; --a-big:#c9a300; --b:#0b4da2; --b-text:#0b4da2; --on-a:#14110a; --on-b:#ffffff;
+  --acid:#c6ff3d; --acid-ink:#0b0b0c;
+  --warn:#8a4b00; --warn-bg:#fff2d6; --ok:#177a3c;
+  --font:'Inter Tight','Noto Sans JP','Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0b0b0c; --surface:#17181b; --surface2:#23252a; --ink:#f5f6f8; --ink2:#c9ccd3; --muted:#8b919b; --line:#26282d;
+    --a:#ffe14d; --a-text:#ffe14d; --a-big:#ffe14d; --b:#6f8dff; --b-text:#6f8dff; --on-a:#0b0b0c; --on-b:#0b0b0c;
+    --warn:#ffcc80; --warn-bg:#2e2412; --ok:#7bdc9a;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0b0b0c; --surface:#17181b; --surface2:#23252a; --ink:#f5f6f8; --ink2:#c9ccd3; --muted:#8b919b; --line:#26282d;
+  --a:#ffe14d; --a-text:#ffe14d; --a-big:#ffe14d; --b:#6f8dff; --b-text:#6f8dff; --on-a:#0b0b0c; --on-b:#0b0b0c;
+  --warn:#ffcc80; --warn-bg:#2e2412; --ok:#7bdc9a;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);background:var(--bg)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);-webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums;line-height:1.4}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.wrap{max-width:720px;margin:0 auto;padding:0 18px 64px}
+.top{display:flex;align-items:center;justify-content:space-between;padding:16px 0 4px;gap:10px}
+.brand{display:flex;align-items:center;gap:10px}
+.mark{position:relative;width:18px;height:18px;border-radius:6px;background:var(--ink);display:inline-block;box-shadow:3px 3px 0 var(--acid)}
+.wordmark{font-weight:800;font-size:21px;letter-spacing:.01em}
+.tag{font:500 10.5px var(--mono);letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--line);padding:6px 11px;border-radius:99px;color:var(--muted)}
+.langsw{display:flex;background:var(--surface);border-radius:99px;padding:3px;gap:2px}
+.lbtn{border:0;background:transparent;border-radius:99px;padding:7px 13px;font-size:13px;font-weight:700;color:var(--muted);transition:background .2s,color .2s}
+.lbtn.on{background:var(--ink);color:var(--bg)}
+.subrow{display:flex;justify-content:flex-end;margin-top:8px}
+.hero{padding:22px 0 8px;text-align:center}
+.comp{font:500 11.5px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.teams{display:grid;grid-template-columns:1fr 1fr;margin-top:18px}
+.tm{display:flex;flex-direction:column;align-items:center;gap:8px}
+.crest{width:46px;height:46px;border-radius:15px;display:grid;place-items:center;font-weight:800;font-size:13px}
+.crest.a{background:var(--a);color:var(--on-a)} .crest.b{background:var(--b);color:var(--on-b)}
+.tname{font-weight:700;font-size:16px}
+.score{display:flex;justify-content:center;align-items:baseline;gap:14px;margin-top:10px;font-weight:800;font-size:clamp(84px,24vw,128px);line-height:1;letter-spacing:-.05em}
+.score .sep{color:var(--surface2);font-weight:600;letter-spacing:0}
+.score .sa{color:var(--a-big)} .score .sb{color:var(--b-text)}
+.status{margin-top:10px;font-size:14px;color:var(--muted);display:flex;align-items:center;justify-content:center;gap:8px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--acid);box-shadow:0 0 0 1px var(--ink) inset}
+.scorers{display:flex;justify-content:center;gap:46px;margin-top:18px;flex-wrap:wrap}
+.scol{display:flex;flex-direction:column;gap:4px;min-width:120px}
+.scol.a{align-items:flex-end;text-align:right} .scol.b{align-items:flex-start;text-align:left}
+.sline{font-size:13.5px;color:var(--ink2)}
+.ribbon{margin:20px auto 0;max-width:520px}
+.rib-labels{display:flex;justify-content:space-between;font-weight:700;font-size:15px;margin-bottom:8px}
+.rib-labels .a{color:var(--a-text)} .rib-labels .b{color:var(--b-text)}
+.rib-labels span.mid{color:var(--muted);font-weight:500;font-size:13px}
+.rib{display:flex;gap:4px;height:12px}
+.rib i{display:block;border-radius:99px;flex:1 1 0%;transition:flex-grow .9s cubic-bezier(.2,.8,.2,1)}
+.rib .ra{background:var(--a)} .rib .rb{background:var(--b)}
+.insight{background:var(--acid);color:#0b0b0c;margin:28px -18px 0;padding:18px;display:flex;gap:12px;align-items:flex-start}
+.insight i{width:7px;height:7px;border-radius:50%;background:#0b0b0c;margin-top:9px;flex:none}
+.insight p{margin:0;font-weight:700;font-size:16.5px;line-height:1.4;letter-spacing:-.01em}
+.story{margin-top:34px}
+.story h2{margin:0 0 14px;font-size:clamp(24px,6.6vw,32px);line-height:1.15;font-weight:800;letter-spacing:-.03em}
+.story p{margin:0 0 12px;font-size:16.5px;line-height:1.55;color:var(--ink2);max-width:62ch}
+.tc{font-weight:700}
+.tc.a{color:var(--a-text)} .tc.b{color:var(--b-text)}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:34px}
+.mini{background:var(--surface);border-radius:20px;padding:15px 15px 14px}
+.mlab{font-size:14px;color:var(--muted);font-weight:500}
+.mvals{display:flex;justify-content:space-between;align-items:baseline;margin-top:8px;font-size:30px;font-weight:800;letter-spacing:-.03em}
+.mvals .a{color:var(--a-text)} .mvals .b{color:var(--b-text)}
+.mcap{margin-top:6px;font-size:13px;color:var(--muted);line-height:1.3}
+.sec{margin-top:44px}
+.sec h3{margin:0;font-size:20px;font-weight:800;letter-spacing:-.02em}
+.sec .sub{margin:4px 0 0;font-size:14px;color:var(--muted)}
+.panel{background:var(--surface);border-radius:26px;padding:20px 18px}
+.legend{display:flex;gap:16px;margin-top:14px;font-size:14px;font-weight:600;flex-wrap:wrap}
+.legend span{display:flex;align-items:center;gap:7px}
+.legend i{width:10px;height:10px;border-radius:50%;display:inline-block}
+.row{padding:14px 0;border-top:1px solid var(--line)}
+.row:first-of-type{border-top:0}
+.rtop{display:grid;grid-template-columns:1fr auto 1fr;align-items:baseline}
+.rv{font-size:22px;font-weight:800;letter-spacing:-.02em}
+.rv.a{color:var(--a-text);text-align:left} .rv.b{color:var(--b-text);text-align:right}
+.rl{font-size:14px;color:var(--ink2);font-weight:500;text-align:center;padding:0 8px}
+.bar{display:flex;gap:4px;height:8px;margin-top:9px}
+.bar i{display:block;flex:1 1 0%;border-radius:99px;transition:flex-grow .8s cubic-bezier(.2,.8,.2,1)}
+.bar .ba{background:var(--a)} .bar .bb{background:var(--b)}
+.source{margin-top:12px;font-size:12.5px;color:var(--muted)}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:44px}
+.btn{border:0;border-radius:99px;padding:15px 22px;font-weight:800;font-size:16px;background:var(--acid);color:var(--acid-ink)}
+.btn.ghost{background:transparent;border:1.5px solid var(--ink);color:var(--ink)}
+#ta{display:block;width:100%;margin-top:12px;min-height:120px;border-radius:14px;border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:10px;font:13px var(--mono)}
+#ta[hidden]{display:none}
+.toast{position:fixed;left:50%;bottom:calc(22px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);opacity:0;background:var(--ink);color:var(--bg);padding:11px 18px;border-radius:99px;font-weight:600;font-size:14.5px;pointer-events:none;transition:all .3s;z-index:50;max-width:90vw;text-align:center}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.footer{margin:60px -18px -64px;padding:26px 18px;background:#10131a;color:rgba(255,255,255,.55);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.footer .wordmark{color:#fff;font-size:16px}
+.footer .mark{background:#fff;box-shadow:none}
+.footer .fine{font:500 10.5px var(--mono);letter-spacing:.03em;text-transform:uppercase}
+@media (max-width:380px){.scorers{gap:22px}}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand"><span class="mark"></span><span class="wordmark">VANTAGE</span></div>
+    <span class="tag" id="tag"></span>
+  </header>
+  <div class="subrow">
+    <div class="langsw" id="langsw" role="group" aria-label="Language / 言語">
+      <button class="lbtn on" data-lang="en">EN</button>
+      <button class="lbtn" data-lang="ja">日本語</button>
+    </div>
+  </div>
+
+  <section class="hero" id="hero">
+    <div class="comp" id="comp"></div>
+    <div class="teams">
+      <div class="tm"><span class="crest a">KAS</span><span class="tname" id="tnameA"></span></div>
+      <div class="tm"><span class="crest b">MIT</span><span class="tname" id="tnameB"></span></div>
+    </div>
+    <div class="score"><span class="sa num" id="scA" data-to="2">0</span><span class="sep">-</span><span class="sb num" id="scB" data-to="1">0</span></div>
+    <div class="status" id="status"></div>
+    <div class="scorers">
+      <div class="scol a" id="scorersA"></div>
+      <div class="scol b" id="scorersB"></div>
+    </div>
+    <div class="ribbon">
+      <div class="rib-labels"><span class="a" id="ribA">52%</span><span class="mid" id="ribMid"></span><span class="b" id="ribB">48%</span></div>
+      <div class="rib"><i class="ra" data-f="51.9" id="ribBarA"></i><i class="rb" data-f="48.1" id="ribBarB"></i></div>
+    </div>
+  </section>
+
+  <div class="insight" id="insight"><i></i><p id="insightText"></p></div>
+  <section class="story" id="story"></section>
+  <section class="grid" id="cards"></section>
+
+  <section class="sec" id="explorer">
+    <h3 id="expH"></h3>
+    <p class="sub" id="expSub"></p>
+    <div class="panel" style="margin-top:16px">
+      <div class="legend" id="legend"></div>
+      <div id="rows"></div>
+      <div class="source" id="sourceLine"></div>
+    </div>
+  </section>
+
+  <div class="actions">
+    <button class="btn" id="copyS"></button>
+    <button class="btn ghost" id="copyJ"></button>
+  </div>
+  <textarea id="ta" readonly hidden></textarea>
+
+  <footer class="footer">
+    <div class="brand"><span class="mark"></span><span class="wordmark">VANTAGE</span></div>
+    <div class="fine" id="footFine"></div>
+  </footer>
+</div>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+(function(){
+'use strict';
+var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+function $(s){return document.querySelector(s);}
+
+var TEAM = { A:{en:'Kashiwa Reysol', ja:'柏レイソル', ab:'KAS'}, B:{en:'Mito Hollyhock', ja:'水戸ホーリーホック', ab:'MIT'} };
+var SCORE = {A:2, B:1};
+var GOALS = { A:[['Kakita','']    ,['Koizumi','']], B:[['Uchino','']] };
+
+var M = [
+  {k:'shots', a:9, b:15, dec:0, en:{l:'Shots'}, ja:{l:'総シュート数'}},
+  {k:'sacc',  a:22.2, b:6.7, dec:1, suf:'%', en:{l:'Shot conversion'}, ja:{l:'シュート成功率'}},
+  {k:'poss',  a:51.9, b:48.1, dec:1, suf:'%', en:{l:'Possession'}, ja:{l:'ボール支配率'}}
+];
+
+var STR = {
+  en:{
+    tag:'Match report', comp:'J1 League 2026/27 \u00b7 Matchday 1 of 38 \u00b7 Sat, 8 Aug 2026 \u00b7 Sankyo Frontier Kashiwa Stadium',
+    status:'Full time', ribMid:'Possession',
+    insight:'Kashiwa Reysol edged the shot count 9 to Mito Hollyhock\u2019s 15 but converted more clinically, winning 2\u20131 with goals from Kakita and Koizumi.',
+    storyH:'Kashiwa open with a narrow win',
+    storyP1:'Kashiwa Reysol began their 2026/27 J1 campaign with a 2\u20131 home win over Mito Hollyhock, newly promoted from J2. Kakita and Koizumi scored for the hosts.',
+    storyP2:'Mito Hollyhock had the greater share of shots but managed just a 6.7% conversion rate; Uchino\u2019s goal was their only reply.',
+    c1lab:'Shots', c1cap:'Total attempts at goal', c2lab:'Shot conversion', c2cap:'Share of shots that scored', c3lab:'Possession', c3cap:'Share of the ball',
+    expH:'Stat explorer', expSub:'Verified match stats.',
+    copyS:'Copy summary', copyJ:'Copy JSON', footFine:'Match report \u00b7 J1 League 2026/27',
+    toastS:'Summary copied', toastJ:'JSON copied',
+    source:'Source: Football LAB (Data Stadium) \u2014 J.League official stats partner.'
+  },
+  ja:{
+    tag:'\u8a66\u5408\u30ec\u30dd\u30fc\u30c8', comp:'2026/27\u660e\u6cbb\u5b89\u7530J1\u30ea\u30fc\u30b0 \u00b7 \u7b2c1\u7bc0\uff08\u516838\u7bc0\uff09 \u00b7 2026\u5e748\u67088\u65e5\uff08\u571f\uff09 \u00b7 \u4e09\u5354\u30d5\u30ed\u30f3\u30c6\u30a2\u67cf\u30b9\u30bf\u30b8\u30a2\u30e0',
+    status:'\u8a66\u5408\u7d42\u4e86', ribMid:'\u30dc\u30fc\u30eb\u652f\u914d\u7387',
+    insight:'\u67cf\u30ec\u30a4\u30bd\u30eb\u306f\u30b7\u30e5\u30fc\u30c8\u65709\u672c\uff08\u6c34\u6238\u306f15\u672c\uff09\u3060\u3063\u305f\u304c\u3001\u5792\u7530\u3068\u5c0f\u6cc9\u306e\u5f97\u70b9\u30672\u20131\u3067\u52dd\u5229\u3057\u305f\u3002',
+    storyH:'\u67cf\u304c\u63a5\u6226\u3092\u5236\u3057\u3066\u767d\u661f\u30b9\u30bf\u30fc\u30c8',
+    storyP1:'\u67cf\u30ec\u30a4\u30bd\u30eb\u306f2026/27\u30b7\u30fc\u30ba\u30f3\u306e\u958b\u5e55\u6226\u3067\u3001J2\u304b\u3089\u6607\u683c\u3057\u305f\u6c34\u6238\u30db\u30fc\u30ea\u30fc\u30db\u30c3\u30af\u306b\u30db\u30fc\u30e02\u20131\u3067\u52dd\u5229\u3002\u5792\u7530\u3068\u5c0f\u6cc9\u304c\u5f97\u70b9\u3057\u305f\u3002',
+    storyP2:'\u6c34\u6238\u30db\u30fc\u30ea\u30fc\u30db\u30c3\u30af\u306f\u30b7\u30e5\u30fc\u30c8\u6570\u3067\u4e0a\u56de\u3063\u305f\u3082\u306e\u306e\u6210\u529f\u7387\u306f6.7\uff05\u306b\u7559\u307e\u308a\u3001\u5185\u91ce\u306e\u5f97\u70b9\u306e\u307f\u3060\u3063\u305f\u3002',
+    c1lab:'\u30b7\u30e5\u30fc\u30c8\u6570', c1cap:'\u30b7\u30e5\u30fc\u30c8\u306e\u7dcf\u6570', c2lab:'\u30b7\u30e5\u30fc\u30c8\u6210\u529f\u7387', c2cap:'\u5f97\u70b9\u306b\u7d50\u3073\u3064\u3044\u305f\u5272\u5408', c3lab:'\u652f\u914d\u7387', c3cap:'\u30dc\u30fc\u30eb\u4fdd\u6301\u306e\u5272\u5408',
+    expH:'\u30b9\u30bf\u30c3\u30c4', expSub:'\u691c\u8a3c\u6e08\u307f\u306e\u8a66\u5408\u30c7\u30fc\u30bf\u3067\u3059\u3002',
+    copyS:'\u30b5\u30de\u30ea\u30fc\u3092\u30b3\u30d4\u30fc', copyJ:'JSON\u3092\u30b3\u30d4\u30fc', footFine:'\u8a66\u5408\u30ec\u30dd\u30fc\u30c8 \u00b7 2026/27 J1\u30ea\u30fc\u30b0',
+    toastS:'\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f', toastJ:'\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f',
+    source:'\u51fa\u5178\uff1aFootball LAB\uff08\u30c7\u30fc\u30bf\u30b9\u30bf\u30b8\u30a2\u30e0\uff09\u2014J\u30ea\u30fc\u30b0\u516c\u5f0f\u30c7\u30fc\u30bf\u30d1\u30fc\u30c8\u30ca\u30fc'
+  }
+};
+
+var lang = 'en';
+function runCounters(root){
+  root.querySelectorAll('[data-to]').forEach(function(el){
+    var to = +el.dataset.to, dec = +(el.dataset.dec||0), suf = el.dataset.suf||'';
+    if(reduce){el.textContent = to.toFixed(dec)+suf; return;}
+    var t0 = performance.now(), dur = 800;
+    function step(t){
+      var p = Math.min(1,(t-t0)/dur), e = 1-Math.pow(1-p,3);
+      el.textContent = (to*e).toFixed(dec)+suf;
+      if(p<1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  });
+}
+function applyBars(root){
+  requestAnimationFrame(function(){requestAnimationFrame(function(){
+    root.querySelectorAll('[data-f]').forEach(function(e){e.style.flexGrow = e.dataset.f;});
+  });});
+}
+
+function renderHero(){
+  var S = STR[lang];
+  $('#htmlRoot').lang = lang;
+  $('#tag').textContent = S.tag;
+  $('#comp').textContent = S.comp;
+  $('#tnameA').textContent = TEAM.A[lang];
+  $('#tnameB').textContent = TEAM.B[lang];
+  $('#scA').dataset.to = SCORE.A;
+  $('#scB').dataset.to = SCORE.B;
+  $('#status').innerHTML = '<i class="dot"></i>'+S.status;
+  var ga = GOALS.A.map(function(g){return '<span class="sline">'+g[0]+'</span>';}).join('');
+  var gb = GOALS.B.map(function(g){return '<span class="sline">'+g[0]+'</span>';}).join('');
+  $('#scorersA').innerHTML = ga;
+  $('#scorersB').innerHTML = gb;
+  $('#ribMid').textContent = S.ribMid;
+  $('#ribA').textContent = '51.9%';
+  $('#ribB').textContent = '48.1%';
+  runCounters($('#hero'));
+  applyBars($('.ribbon'));
+}
+function renderInsight(){ $('#insightText').textContent = STR[lang].insight; }
+function renderStory(){
+  var S = STR[lang];
+  $('#story').innerHTML = '<h2>'+S.storyH+'</h2><p>'+S.storyP1+'</p><p>'+S.storyP2+'</p>';
+}
+function renderCards(){
+  var S = STR[lang];
+  var cards = [
+    {lab:S.c1lab, cap:S.c1cap, a:9, b:15, suf:''},
+    {lab:S.c2lab, cap:S.c2cap, a:22.2, b:6.7, suf:'%', dec:1},
+    {lab:S.c3lab, cap:S.c3cap, a:51.9, b:48.1, suf:'%', dec:1}
+  ];
+  var h = cards.map(function(c){
+    return '<div class="mini"><div class="mlab">'+c.lab+'</div>'+
+      '<div class="mvals"><span class="a num" data-to="'+c.a+'" data-suf="'+c.suf+'" data-dec="'+(c.dec||0)+'">0</span>'+
+      '<span class="b num" data-to="'+c.b+'" data-suf="'+c.suf+'" data-dec="'+(c.dec||0)+'">0</span></div>'+
+      '<div class="mcap">'+c.cap+'</div></div>';
+  }).join('');
+  var g = $('#cards'); g.innerHTML = h; runCounters(g);
+}
+function renderExplorer(){
+  var S = STR[lang];
+  $('#expH').textContent = S.expH;
+  $('#expSub').textContent = S.expSub;
+  $('#legend').innerHTML = '<span><i style="background:var(--a)"></i>'+TEAM.A[lang]+'</span><span><i style="background:var(--b)"></i>'+TEAM.B[lang]+'</span>';
+  var labs = {shots:[S.c1lab], sacc:[S.c2lab], poss:[S.c3lab]};
+  var h = M.map(function(m){
+    var av = m.a+(m.suf||''), bv = m.b+(m.suf||'');
+    return '<div class="row"><div class="rtop"><span class="rv a">'+av+'</span><span class="rl">'+labs[m.k][0]+'</span><span class="rv b">'+bv+'</span></div>'+
+      '<div class="bar"><i class="ba" data-f="'+m.a+'"></i><i class="bb" data-f="'+m.b+'"></i></div></div>';
+  }).join('');
+  var rows = $('#rows'); rows.innerHTML = h; applyBars(rows);
+  $('#sourceLine').textContent = S.source;
+}
+function renderActions(){
+  var S = STR[lang];
+  $('#copyS').textContent = S.copyS;
+  $('#copyJ').textContent = S.copyJ;
+  $('#footFine').textContent = S.footFine;
+}
+function renderAll(){
+  renderHero(); renderInsight(); renderStory(); renderCards(); renderExplorer(); renderActions();
+  document.querySelectorAll('.langsw .lbtn').forEach(function(b){ b.classList.toggle('on', b.dataset.lang===lang); });
+}
+function summaryText(){
+  var S = STR[lang];
+  var t = TEAM.A[lang]+' '+SCORE.A+'-'+SCORE.B+' '+TEAM.B[lang]+' | '+S.comp+'\n\n';
+  t += S.c1lab+': 9 - 15\n'+S.c2lab+': 22.2% - 6.7%\n'+S.c3lab+': 51.9% - 48.1%\n';
+  return t+'\nVantage';
+}
+function jsonText(){
+  var o = {match:TEAM.A.en+' vs '+TEAM.B.en, match_ja:TEAM.A.ja+' vs '+TEAM.B.ja, competition:'J1 League 2026/27', matchday:1, score:SCORE,
+    stats:{shots:{a:9,b:15}, shot_conversion_pct:{a:22.2,b:6.7}, possession_pct:{a:51.9,b:48.1}}, source:'Football LAB (Data Stadium)'};
+  return JSON.stringify(o,null,2);
+}
+var tt;
+function toast(msg){ var el = $('#toast'); el.textContent = msg; el.classList.add('show'); clearTimeout(tt); tt = setTimeout(function(){el.classList.remove('show');},1900); }
+function copyText(text,msg){
+  var ta = $('#ta');
+  function fallback(){ try{ ta.hidden=false; ta.value=text; ta.select(); ta.setSelectionRange(0,text.length); if(document.execCommand('copy')){ta.hidden=true; toast(msg); return;} }catch(e){} ta.hidden=false; ta.value=text; ta.select(); }
+  if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(function(){toast(msg);}).catch(fallback); } else { fallback(); }
+}
+document.addEventListener('click',function(e){
+  var t = e.target;
+  var lb = t.closest('[data-lang]'); if(lb){ if(lb.dataset.lang!==lang){ lang = lb.dataset.lang; renderAll(); } return; }
+  if(t.closest('#copyS')){copyText(summaryText(),STR[lang].toastS); return;}
+  if(t.closest('#copyJ')){copyText(jsonText(),STR[lang].toastJ); return;}
+});
+renderAll();
+})();
+</script>
+</body>
+</html>
