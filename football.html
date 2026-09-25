@@ -261,9 +261,13 @@ footer{ padding:64px 40px 36px; }
 
 <script>
 /* =========================================================================
-   LEAGUES
-   Add a new league by adding an entry here. `id` must be unique and is
-   what each match's `league` field below refers to.
+   PINNED LEAGUES
+   These always show a tab, even with 0 matches uploaded yet. `id` must be
+   unique and is what a match's `league` field below refers to.
+
+   You do NOT need to add anything here for a one-off competition (e.g. a
+   Nations League or cup game) — see "NEW COMPETITIONS" below the MATCHES
+   list. Only edit this array for a league you want visible permanently.
    ========================================================================= */
 var LEAGUES = [
   { id:'jleague', code:'J1', name:'J1 League',       region:'Japan' },
@@ -277,16 +281,30 @@ var LEAGUES = [
    To add a new dashboard: upload its HTML file next to this page, then
    add one object below. `matchday` groups and sorts fixtures within a
    league automatically — no need to edit any HTML/CSS elsewhere.
+   Uploading the dashboard file to the repo alone does nothing on its
+   own — this list is what actually puts it on the page.
 
    Fields:
-     league   - one of the LEAGUE ids above
-     matchday - gameweek number (integer)
-     date     - ISO date, used for sorting within a gameweek
-     dateLabel- human-readable date shown on the card
-     home/away- team names
-     score    - "H–A" as text, or '' if not yet played
-     venue    - stadium name, optional
-     file     - filename of the dashboard HTML, same folder as this page
+     league    - a league id. Use one of the pinned ids above (jleague,
+                 epl, laliga, psl), OR make up a new short id for a
+                 competition that isn't pinned (e.g. 'nations-league').
+     matchday  - gameweek/round number (integer)
+     date      - ISO date, used for sorting within a gameweek
+     dateLabel - human-readable date shown on the card
+     home/away - team names
+     score     - "H–A" as text, or '' if not yet played
+     venue     - stadium name, optional
+     file      - filename of the dashboard HTML, same folder as this page
+
+   NEW COMPETITIONS (not one of the 4 pinned leagues):
+   The very first match you add for a new competition also needs three
+   extra fields so the page knows how to label its tab and section:
+     leagueName   - e.g. 'UEFA Nations League'
+     leagueCode   - short tab badge, e.g. 'UNL'
+     leagueRegion - e.g. 'International'
+   A new tab is created for it automatically — nothing else to edit.
+   Every later match with the same `league` id can skip those three
+   fields; only the first one needs them.
    ========================================================================= */
 var MATCHES = [
   {
@@ -309,9 +327,29 @@ var MATCHES = [
 /* ---------------------------- rendering ---------------------------- */
 function byLeague(id){ return MATCHES.filter(function(m){ return m.league === id; }); }
 
+// Pinned leagues, plus any competition seen in MATCHES that isn't pinned,
+// in the order it first appears.
+function getAllLeagues(){
+  var all = LEAGUES.slice();
+  var known = {};
+  all.forEach(function(lg){ known[lg.id] = true; });
+  MATCHES.forEach(function(m){
+    if(!known[m.league]){
+      known[m.league] = true;
+      all.push({
+        id: m.league,
+        code: m.leagueCode || m.league.slice(0,3).toUpperCase(),
+        name: m.leagueName || m.league,
+        region: m.leagueRegion || ''
+      });
+    }
+  });
+  return all;
+}
+
 function renderTabs(){
   var wrap = document.getElementById('leagueTabs');
-  wrap.innerHTML = LEAGUES.map(function(lg, i){
+  wrap.innerHTML = getAllLeagues().map(function(lg, i){
     var n = byLeague(lg.id).length;
     return '<button type="button" class="league-tab' + (i===0?' active':'') + '" data-league="' + lg.id + '">' +
       '<span class="dot">' + lg.code + '</span>' +
@@ -344,7 +382,7 @@ function matchCard(m){
 
 function renderPanels(){
   var wrap = document.getElementById('leaguePanels');
-  wrap.innerHTML = LEAGUES.map(function(lg, i){
+  wrap.innerHTML = getAllLeagues().map(function(lg, i){
     var matches = byLeague(lg.id);
     var body;
     if(matches.length === 0){
