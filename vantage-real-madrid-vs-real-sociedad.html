@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vantage | Real Madrid vs Real Sociedad</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--surface:#f4f5f7;--surface2:#e3e5ea;--ink:#0b0b0c;--ink2:#3a3e46;--muted:#6a7079;--line:#e3e5ea;
+--a:#fff;--a-line:#0b0b0c;--a-text:#0b0b0c;--b:#0067b1;--b-text:#0067b1;--gold:#febe10;--acid:#c6ff3d;
+--ok:#177a3c;--ok-bg:#e3f5e9;--warn:#8a4b00;--warn-bg:#fff2d6;
+--font:'Inter Tight',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b0b0c;--surface:#17181b;--surface2:#26282d;--ink:#f5f6f8;--ink2:#c9ccd3;--muted:#8b919b;--line:#26282d;--a-line:transparent;--a-text:#f5f6f8;--b:#1f86d4;--b-text:#4fa9ee;--ok:#7bdc9a;--ok-bg:#12261a;--warn:#ffcc80;--warn-bg:#2e2412}}
+:root[data-theme="dark"]{--bg:#0b0b0c;--surface:#17181b;--surface2:#26282d;--ink:#f5f6f8;--ink2:#c9ccd3;--muted:#8b919b;--line:#26282d;--a-line:transparent;--a-text:#f5f6f8;--b:#1f86d4;--b-text:#4fa9ee;--ok:#7bdc9a;--ok-bg:#12261a;--warn:#ffcc80;--warn-bg:#2e2412}
+html{scroll-padding-top:env(safe-area-inset-top,0px);background:var(--bg)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);-webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums;line-height:1.4}
+button{font:inherit;color:inherit;cursor:pointer}
+.wrap{max-width:720px;margin:0 auto;padding:0 18px 56px}
+.top{display:flex;align-items:center;justify-content:space-between;padding:16px 0 4px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:21px;letter-spacing:.02em}
+.mark{width:18px;height:18px;border-radius:6px;background:var(--ink);display:inline-block;box-shadow:3px 3px 0 var(--acid)}
+.tag{font-size:11px;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--line);padding:6px 11px;border-radius:99px;color:var(--muted)}
+.hero{padding:22px 0 8px;text-align:center}
+.comp{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.teams{display:grid;grid-template-columns:1fr 1fr;margin-top:18px}
+.tm{display:flex;flex-direction:column;align-items:center;gap:8px;font-weight:700;font-size:16px}
+.crest{width:46px;height:46px;border-radius:15px;display:grid;place-items:center;font-weight:800;font-size:14px}
+.crest.a{background:var(--a);color:#0b0b0c;box-shadow:inset 0 0 0 1.5px var(--a-line);border-bottom:4px solid var(--gold)}
+.crest.b{background:var(--b);color:#fff}
+.score{display:flex;justify-content:center;align-items:baseline;gap:14px;font-weight:800;font-size:clamp(84px,24vw,128px);line-height:1;letter-spacing:-.05em}
+.score .sep{color:var(--surface2)}.score .sa{color:var(--a-text)}.score .sb{color:var(--b-text)}
+.status{margin-top:10px;font-size:14px;color:var(--muted);display:flex;align-items:center;justify-content:center;gap:8px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--acid)}
+.halves{display:flex;justify-content:center;flex-wrap:wrap;gap:6px;margin-top:14px}
+.halves span{font-size:13px;color:var(--muted);padding:6px 12px;border-radius:99px;background:var(--surface)}
+.ribbon{margin:20px auto 0;max-width:520px}
+.rl2{display:flex;justify-content:space-between;font-weight:700;font-size:15px;margin-bottom:8px}
+.rl2 .a{color:var(--a-text)}.rl2 .b{color:var(--b-text)}.rl2 .m{color:var(--muted);font-weight:500;font-size:13px}
+.rib{display:flex;gap:4px;height:12px}.rib i{display:block;border-radius:99px}
+.stick{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;margin:14px -18px 0;padding:10px 18px 8px;background:color-mix(in srgb,var(--bg) 90%,transparent);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;background:var(--surface);border-radius:22px;padding:6px}
+.tab{border:0;background:transparent;border-radius:17px;padding:14px 1px;font-weight:800;font-size:12px;color:var(--muted);letter-spacing:-.01em;transition:background .25s,color .25s}
+.tab.on{background:var(--ink);color:var(--bg)}
+.panelwrap[hidden]{display:none}
+.sec{margin-top:38px}.sec h3{margin:0;font-size:24px;font-weight:800;letter-spacing:-.03em}
+.sub{margin:6px 0 0;font-size:15px;color:var(--muted)}
+.panel{background:var(--surface);border-radius:30px;padding:20px 18px;margin-top:16px}
+.story h2{margin:0 0 12px;font-size:clamp(26px,7vw,34px);line-height:1.1;font-weight:800;letter-spacing:-.03em}
+.story p{margin:0 0 12px;font-size:16.5px;line-height:1.5;color:var(--ink2)}
+.tc.a{font-weight:700;color:var(--a-text)}.tc.b{font-weight:700;color:var(--b-text)}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:28px}
+.mini{background:var(--surface);border-radius:22px;padding:16px}
+.mini .l{font-size:14px;color:var(--muted)}.mini .v{font-size:32px;font-weight:800;letter-spacing:-.03em;margin-top:6px}
+.mini .c{font-size:13px;color:var(--muted);margin-top:4px;line-height:1.3}
+.legend{display:flex;gap:18px;font-size:16px;font-weight:600}
+.legend i{width:14px;height:14px;border-radius:50%;display:inline-block;margin-right:8px;vertical-align:-2px}
+.legend .la{background:var(--a);box-shadow:inset 0 0 0 1.5px var(--ink)}.legend .lb{background:var(--b)}
+.chips{display:flex;gap:6px;overflow-x:auto;margin:16px -2px 4px;padding:2px;scrollbar-width:none}.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;border:1px solid var(--line);background:var(--bg);border-radius:99px;padding:8px 14px;font-size:14px;font-weight:600;color:var(--ink2)}
+.chip.on{background:var(--acid);border-color:transparent;color:#0b0b0c}
+.row{padding:16px 0;border-top:1px solid var(--line);cursor:pointer}.row:first-of-type{border-top:0}
+.rtop{display:grid;grid-template-columns:1fr auto 1fr;align-items:baseline}
+.rv{font-size:34px;font-weight:800;letter-spacing:-.03em}.rv.a{color:var(--a-text)}.rv.b{color:var(--b-text);text-align:right}
+.rv.low{opacity:.4}
+.rlab{font-size:17px;color:var(--ink2);text-align:center;padding:0 8px}
+.bar{display:flex;gap:10px;height:14px;margin-top:12px}
+.bar i{display:block;border-radius:99px;flex:1 1 0%;transition:flex-grow .8s cubic-bezier(.2,.8,.2,1)}
+.bar .ba{background:var(--a);box-shadow:inset 0 0 0 1.5px var(--a-line)}.bar .bb{background:var(--b)}
+.bar.zero i{background:var(--surface2);box-shadow:none}
+.det{display:grid;grid-template-rows:0fr;transition:grid-template-rows .3s}.det>div{overflow:hidden;font-size:14.5px;color:var(--muted);line-height:1.45}
+.row.open .det{grid-template-rows:1fr}.row.open .det>div{padding-top:10px}
+.frow{display:grid;grid-template-columns:92px 1fr 34px;gap:10px;align-items:center;margin-top:10px}
+.frow label{font-size:14px;color:var(--ink2)}.ft{height:14px;border-radius:99px;background:var(--surface2)}
+.ff{display:block;height:100%;border-radius:99px;transition:width .9s cubic-bezier(.2,.8,.2,1);width:0}
+.ff.a{background:var(--a);box-shadow:inset 0 0 0 1.5px var(--a-line)}.ff.b{background:var(--b)}
+.frow b{text-align:right;font-size:16px}
+.tbh{display:flex;justify-content:space-between;margin-top:22px;font-size:17px;font-weight:700}.tbh span{font-size:14px;color:var(--muted);font-weight:500}
+.tl{position:relative;height:64px;margin:26px 6px 4px}
+.tl::before{content:"";position:absolute;left:0;right:0;top:50%;height:3px;border-radius:2px;background:var(--surface2)}
+.ev{position:absolute;transform:translateX(-50%);font-size:11.5px;font-weight:700;text-align:center;white-space:nowrap}
+.ev.a{top:-4px}.ev.b{bottom:-4px}
+.ev i{display:block;width:14px;height:14px;border-radius:50%;margin:3px auto}
+.ev.a i{background:var(--a);box-shadow:inset 0 0 0 1.5px var(--a-line),0 0 0 2px var(--surface)}.ev.b i{background:var(--b)}
+.tlx{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin:0 2px}
+.group{font-size:12.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin:24px 2px 10px}
+.group.g{color:var(--ok)}.group.i{color:var(--warn)}
+.report{display:grid;gap:12px}
+.card{border-radius:24px;padding:18px 18px 16px}.card.good{background:var(--ok-bg)}.card.bad{background:var(--warn-bg)}
+.card h4{margin:0 0 6px;font-size:18px;font-weight:800}.card.good h4{color:var(--ok)}.card.bad h4{color:var(--warn)}
+.card p{margin:0;font-size:15.5px;color:var(--ink2);line-height:1.45}
+.pill{display:inline-block;margin-top:10px;font-size:12.5px;font-weight:700;padding:5px 11px;border-radius:99px;background:var(--bg);color:var(--ink)}
+.focus{background:var(--ink);color:var(--bg);border-radius:28px;padding:22px 20px;margin-top:24px}
+.focus h3{margin:0 0 10px;font-size:20px;font-weight:800}.focus ol{margin:0;padding-left:20px;font-size:16px;line-height:1.5}.focus li{margin-bottom:8px}
+.footer{margin-top:48px;text-align:center}.footer .brand{justify-content:center}
+.fine{margin-top:8px;font-size:13px;color:var(--muted)}.fine b{color:var(--ink)}
+.swap{animation:sw .4s cubic-bezier(.2,.8,.2,1) both}@keyframes sw{from{opacity:.3;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+.tb{background:#14161a;border-radius:28px;padding:10px;margin-top:16px;color:#f5f6f8}
+#tsv{width:100%;display:block;aspect-ratio:9/16;max-height:72vh;margin:0 auto}
+#tsv .ln{fill:none;stroke:#3b4047;stroke-width:1.2}
+.pl{transition:transform 1.6s cubic-bezier(.45,0,.2,1)}
+.pl circle{fill:#fff;stroke:#febe10;stroke-width:2}.pl.s circle{fill:#1f86d4;stroke:#fff;stroke-width:1.5}
+.pl text{font:800 9.5px var(--font);fill:#0b0b0c;text-anchor:middle;dominant-baseline:central}.pl.s text{fill:#fff}
+.pl text.nm{font:700 8.5px var(--font);fill:#f5f6f8;stroke:#14161a;stroke-width:2.6px;paint-order:stroke;letter-spacing:.01em}
+.pl.hi circle{stroke:#c6ff3d;stroke-width:3}
+.ar,.sh{fill:none;stroke-linecap:round;stroke-width:2.4;stroke-dasharray:1;stroke-dashoffset:1;animation:dr 1.3s .3s cubic-bezier(.45,0,.2,1) forwards}
+.ar{stroke:#fff}.sh{stroke:#febe10;stroke-width:3}
+.rn{fill:none;stroke:#fff;stroke-width:1.6;stroke-dasharray:5 5;opacity:.55}
+@keyframes dr{to{stroke-dashoffset:0}}
+.tcap{min-height:92px;padding:10px 8px 4px;font-size:15.5px;line-height:1.4;color:#c9ccd3}
+.tcap b{display:block;font-size:20px;color:#fff;margin-bottom:3px}
+.tctl{display:flex;gap:8px;padding:6px 4px 4px}
+.tctl button{flex:1;border:0;border-radius:99px;padding:13px;font-weight:800;font-size:15px;background:#26282d;color:#f5f6f8}
+.tctl .go{background:#c6ff3d;color:#0b0b0c;flex:1.4}
+.card.neu{background:var(--surface)}.card.neu h4{color:var(--ink)}
+@media (prefers-reduced-motion:reduce){.pl{transition-duration:.01s}.ar,.sh{animation-duration:.01s}}
+</style></head>
+<body><div class="wrap">
+<header class="top"><div class="brand"><span class="mark"></span>VANTAGE</div><span class="tag">Match report</span></header>
+<section class="hero">
+  <div class="comp">La Liga · Santiago Bernabéu · 26 Aug 2026</div>
+  <div class="teams"><div class="tm"><span class="crest a">RMA</span>Real Madrid</div><div class="tm"><span class="crest b">RSO</span>Real Sociedad</div></div>
+  <div class="score"><span class="sa">4</span><span class="sep">-</span><span class="sb">1</span></div>
+  <div class="status"><i class="dot"></i>Full time · Half time 1-1</div>
+  <div class="halves"><span>40' Mbappé 1-0</span><span>44' Sučić 1-1</span><span>60' Mbappé 2-1</span><span>68' Vinícius 3-1</span><span>80' Mbappé 4-1</span></div>
+  <div class="ribbon"><div class="rl2"><span class="a">52%</span><span class="m">Share of passes</span><span class="b">48%</span></div>
+  <div class="rib"><i style="flex:571;background:var(--a);box-shadow:inset 0 0 0 1.5px var(--a-line)"></i><i style="flex:530;background:var(--b)"></i></div></div>
+</section>
+<div class="stick"><div class="tabs" role="tablist">
+<button class="tab on" data-t="report">MATCH<br>REPORT</button><button class="tab" data-t="deep">DEEP<br>DIVE</button><button class="tab" data-t="improve">IMPROVE</button><button class="tab" data-t="tactics">TACTICS</button></div></div>
+
+<div class="panelwrap" id="p-report">
+  <section class="sec story">
+    <h2>Madrid took their chances</h2>
+    <p><b class="tc a">Real Madrid</b> were ruthless: 4 goals from 20 shots, 10 on target. <b class="tc b">Real Sociedad</b> had 9 shots and 3 on target, and scored once through Sučić four minutes after Mbappé's opener.</p>
+    <p>Mbappé's hat-trick and Vinícius's goal made it 4-1, with Madrid winning 18 tackles at 90%. Sociedad did win the corner count 7-4.</p>
+  </section>
+  <section class="grid">
+    <div class="mini"><div class="l">Goals / shots</div><div class="v">4 / 20</div><div class="c">Sociedad 1 / 9</div></div>
+    <div class="mini"><div class="l">Shot accuracy</div><div class="v">50%</div><div class="c">Sociedad 33%</div></div>
+    <div class="mini"><div class="l">Tackle success</div><div class="v">90%</div><div class="c">Sociedad 77%</div></div>
+    <div class="mini"><div class="l">Pass accuracy</div><div class="v">92%</div><div class="c">Level with Sociedad</div></div>
+  </section>
+  <section class="sec"><h3>Stat explorer</h3><p class="sub">Tap any row to see what it means.</p>
+    <div class="panel"><div class="legend"><span><i class="la"></i>Real Madrid</span><span><i class="lb"></i>Real Sociedad</span></div>
+    <div class="chips" id="chips"></div><div id="rows"></div></div></section>
+</div>
+
+<div class="panelwrap" id="p-deep" hidden>
+  <section class="sec"><h3>Goal timeline</h3><p class="sub">Real Madrid above the line, Real Sociedad below.</p>
+    <div class="panel"><div class="tl" id="tl"></div><div class="tlx"><span>0'</span><span>45'</span><span>90'</span></div></div></section>
+  <section class="sec"><h3>Shot funnel</h3><p class="sub">How each team's shots turned into goals.</p>
+    <div class="panel" id="funnel"></div></section>
+  <section class="sec"><h3>Reading the game</h3>
+    <div class="panel story"><p>The game was 1-1 at half time after goals within four minutes of each other (40' and 44'). Madrid then scored at 60', 68' and 80'.</p>
+    <p>Sociedad's 7 corners and 19 clearances show they stayed in the contest for long periods, but only 3 of their 9 shots were on target.</p></div></section>
+</div>
+
+<div class="panelwrap" id="p-improve" hidden>
+  <section class="sec"><h3>Improve report</h3><p class="sub">Built from this match's stats. Every game gets its own read.</p>
+  <div class="group g">What Real Madrid did well</div><div class="report">
+  <div class="card good"><h4>Clinical finishing</h4><p>Four goals from 20 shots, 10 on target against Sociedad's 3.</p><span class="pill">50% on target vs 33%</span></div>
+  <div class="card good"><h4>Winning the ball back</h4><p>18 tackles won at 90%, plus 6 interceptions to Sociedad's 4.</p><span class="pill">18 tackles won · 90%</span></div>
+  <div class="card good"><h4>Mbappé's hat-trick</h4><p>Goals at 40', 60' and 80' decided the game, with Vinícius adding the fourth at 68'.</p><span class="pill">3 of 4 goals from one player</span></div>
+  <div class="card good"><h4>Passing</h4><p>571 passes at 92%, ahead of Sociedad's 530, with 527 accurate.</p><span class="pill">527 accurate passes</span></div></div>
+  <div class="group i">What Real Madrid need to improve</div><div class="report">
+  <div class="card bad"><h4>Slow first half</h4><p>Reports describe a sluggish opening: careless in possession and exposed on the counter. Kubo cut out a loose pass at 10' and Courtois had to save from Oyarzabal. Madrid were jeered before the break.</p><span class="pill">Better after the break</span></div>
+  <div class="card bad"><h4>Set-piece defending</h4><p>Sociedad won 7 corners to Madrid's 4, and Sučić scored 4 minutes after Mbappé's opener. Tighter corner marking and focus after scoring.</p><span class="pill">7 corners conceded vs 4 won</span></div>
+  <div class="card bad"><h4>Control for the shots taken</h4><p>20 shots but only 51% possession. Hold the ball longer so Sociedad defend more.</p><span class="pill">51% vs 49%</span></div>
+  <div class="card bad"><h4>Wasted chances</h4><p>10 of 20 shots missed the target: 5 off target and 5 blocked.</p><span class="pill">5 off · 5 blocked</span></div>
+  <div class="card bad"><h4>Discipline</h4><p>10 fouls and 3 yellows, more fouls than Sociedad's 8. Cards could hurt in tighter games.</p><span class="pill">10 fouls · 3 yellows</span></div>
+  <div class="card bad"><h4>Clearing under pressure</h4><p>18 clearances while Sociedad kept Madrid defending deep at times. Press higher to reduce this.</p><span class="pill">18 clearances</span></div></div>
+  <div class="focus"><h3>Focus for next match</h3><ol><li>Fix corner marking and stay switched on after scoring.</li><li>Turn more of the 20 shots into on-target efforts.</li><li>Control the middle third so possession matches the shot count.</li><li>Cut avoidable fouls and yellow cards.</li></ol></div></section>
+</div>
+
+<div class="panelwrap" id="p-tactics" hidden>
+  <section class="sec"><h3>Tactics board</h3><p class="sub">How Real Madrid (white) played against Real Sociedad (blue). Madrid attack up the pitch. Press Play.</p>
+  <div class="tb"><svg id="tsv" viewBox="0 0 360 640" role="img" aria-label="Animated tactics board of Real Madrid 4-1 Real Sociedad">
+  <defs><marker id="ah" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M1 1L8 5L1 9z" fill="#fff"/></marker><marker id="ah2" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.5" markerHeight="4.5" orient="auto"><path d="M1 1L8 5L1 9z" fill="#febe10"/></marker></defs>
+  <rect width="360" height="640" fill="#14161a"/>
+  <g class="ln"><rect x="30" y="30" width="300" height="580"/><line x1="30" y1="320" x2="330" y2="320"/><circle cx="180" cy="320" r="42"/><rect x="100" y="30" width="160" height="70"/><rect x="100" y="540" width="160" height="70"/><rect x="145" y="30" width="70" height="26"/><rect x="145" y="584" width="70" height="26"/></g>
+  <g id="tar"></g><g id="tpl"></g><g id="tball" class="pl"><circle r="5" style="fill:#fff;stroke:#111;stroke-width:1.5"/></g></svg>
+  <div class="tcap" aria-live="polite"><b id="tt"></b><span id="tc"></span></div>
+  <div class="tctl"><button id="tback">Back</button><button id="tplay" class="go">Play</button><button id="tnext">Next</button></div></div>
+  <p class="sub">Schematic, built from the confirmed lineups and match reports. It is not tracking data.</p></section>
+  <section class="sec"><h3>How Real Madrid played</h3><div class="report" style="margin-top:14px">
+  <div class="card neu"><h4>Shape: 4-2-3-1</h4><p>Courtois; Dumfries, Konaté, Huijsen, Carreras; Bernardo Silva and Valverde in the pivot; Güler, Bellingham and Vinícius behind Mbappé.</p></div>
+  <div class="card neu"><h4>High defensive line</h4><p>The back four holds around the halfway line when Madrid have the ball, which squeezes the game into Sociedad's half. The cost was space behind it early on.</p></div>
+  <div class="card neu"><h4>Through balls to Mbappé</h4><p>Valverde split the defence at 40' and Vinícius did the same at 80', and Mbappé finished both runs from inside the box.</p></div>
+  <div class="card neu"><h4>Left-side combinations</h4><p>After half-time Cucurella and Valverde linked down the left, and Mbappé and Bellingham worked a one-two for the 60' goal.</p></div>
+  <div class="card neu"><h4>Sociedad's plan</h4><p>A compact 4-2-3-1 that hit Madrid's loose passes on the counter, with Kubo, Oyarzabal and Sučić arriving from deep. It worked until the break.</p></div></div></section>
+</div>
+<footer class="footer"><div class="brand"><span class="mark"></span>VANTAGE</div><div class="fine">Logged by <b>Vantage</b></div></footer>
+</div>
+<script>
+(function(){
+function $(s){return document.querySelector(s)}
+var M=[
+["Goals",4,1,"attack","","Goals scored."],["Shots",20,9,"attack","","Every attempt at goal."],["Shots on target",10,3,"attack","","Shots that forced a save or scored."],
+["Shots off target",5,4,"attack","","Shots that missed the goal."],["Shots blocked",5,2,"attack","","Shots stopped by a defender."],["Corners",4,7,"attack","","Corners won. Corners conceded give the other team set-piece chances."],["Offsides",1,0,"attack","","Times caught offside. Fewer is better."],
+["Possession",51,49,"passing","%","Share of the ball."],["Passes",571,530,"passing","","All passes, a good proxy for who controlled the ball."],["Accurate passes",527,490,"passing","","Passes that found a teammate."],["Pass accuracy",92,92,"passing","%","Share of passes that found a teammate."],
+["Tackles won",18,7,"defence","","Tackles that won the ball. Madrid 90% success, Sociedad 77%."],["Interceptions",6,4,"defence","","Passes read and cut out."],["Clearances",18,19,"defence","","Balls cleared from danger. High numbers mean a team was defending under pressure."],["Blocks",3,4,"defence","","Shots or passes blocked."],["Keeper saves",2,6,"defence","","Saves made. More saves means the keeper faced more shots on target."],
+["Fouls",10,8,"discipline","","Fouls conceded. Fewer is better."],["Yellow cards",3,3,"discipline","","Bookings. Fewer is better."],["Red cards",0,0,"discipline","","Sending offs."]];
+var G=[["all","All"],["attack","Attack"],["passing","Passing"],["defence","Defence"],["discipline","Discipline"]],g="all";
+function rows(){
+  $("#chips").innerHTML=G.map(function(x){return '<button class="chip'+(x[0]===g?' on':'')+'" data-g="'+x[0]+'">'+x[1]+'</button>'}).join("");
+  var h="";M.forEach(function(m){if(g!=="all"&&m[3]!==g)return;var a=m[1],b=m[2],t=a+b,z=t===0;
+    h+='<div class="row" tabindex="0"><div class="rtop"><span class="rv a'+(b>a?' low':'')+'">'+a+m[4]+'</span><span class="rlab">'+m[0]+'</span><span class="rv b'+(a>b?' low':'')+'">'+b+m[4]+'</span></div>'
+    +'<div class="bar'+(z?' zero':'')+'"><i class="ba" style="flex:'+(z?1:Math.max(a,.001))+'"></i><i class="bb" style="flex:'+(z?1:Math.max(b,.001))+'"></i></div>'
+    +'<div class="det"><div>'+m[5]+(z||m[4]?'':' Real Madrid '+Math.round(a/t*100)+'% of the total, Real Sociedad '+Math.round(b/t*100)+'%.')+'</div></div></div>'});
+  var r=$("#rows");r.innerHTML=h;r.classList.remove("swap");void r.offsetWidth;r.classList.add("swap");
+}
+rows();
+$("#chips").addEventListener("click",function(e){var c=e.target.closest(".chip");if(c){g=c.dataset.g;rows()}});
+$("#rows").addEventListener("click",function(e){var r=e.target.closest(".row");if(r)r.classList.toggle("open")});
+$("#rows").addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){var r=e.target.closest(".row");if(r){e.preventDefault();r.classList.toggle("open")}}});
+var ev=[[40,"a","Mbappé 40'"],[44,"b","Sučić 44'"],[60,"a","Mbappé 60'"],[68,"a","Vinícius 68'"],[80,"a","Mbappé 80'"]];
+$("#tl").innerHTML=ev.map(function(e){return '<div class="ev '+e[1]+'" style="left:'+(e[0]/90*100)+'%">'+(e[1]==="a"?e[2]+'<i></i>':'<i></i>'+e[2])+'</div>'}).join("");
+var F=[["Real Madrid","a",[["Shots",20],["On target",10],["Goals",4]],"50% on target · 20% scored"],["Real Sociedad","b",[["Shots",9],["On target",3],["Goals",1]],"33% on target · 11% scored"]];
+$("#funnel").innerHTML=F.map(function(t){return '<div class="tbh" style="margin-top:'+(t[1]==="a"?0:22)+'px">'+t[0]+'<span>'+t[3]+'</span></div>'+t[2].map(function(f){return '<div class="frow"><label>'+f[0]+'</label><div class="ft"><span class="ff '+t[1]+'" data-w="'+(f[1]/20*100)+'"></span></div><b>'+f[1]+'</b></div>'}).join("")}).join("");
+function bars(){requestAnimationFrame(function(){document.querySelectorAll("[data-w]").forEach(function(e){e.style.width=e.dataset.w+"%"})})}
+document.querySelectorAll(".tab").forEach(function(b){b.addEventListener("click",function(){
+  document.querySelectorAll(".tab").forEach(function(x){x.classList.toggle("on",x===b)});
+  document.querySelectorAll(".panelwrap").forEach(function(p){p.hidden=p.id!=="p-"+b.dataset.t});
+  var p=$("#p-"+b.dataset.t);p.classList.remove("swap");void p.offsetWidth;p.classList.add("swap");bars();
+  window.scrollTo({top:Math.min(window.scrollY,document.querySelector(".stick").offsetTop),behavior:"smooth"})})});
+
+var NS="http://www.w3.org/2000/svg",PL=$("#tpl"),AR=$("#tar"),TB=$("#tball"),E={};
+var MN=["Courtois","Dumfries","Konaté","Huijsen","Carreras","B. Silva","Valverde","Güler","Bellingham","Vinícius","Mbappé"],MS=[1,24,16,4,18,20,8,15,5,7,10];
+var SN=["Remiro","Aramburu","Beitia","J. Martín","S. Gómez","Herrera","Turrientes","Ochieng","Sučić","Kubo","Oyarzabal"],SS=[1,2,34,31,17,21,8,12,24,14,10];
+for(var k=0;k<11;k++){["m","s"].forEach(function(t){var g=document.createElementNS(NS,"g");g.setAttribute("class","pl "+t);g.innerHTML='<circle r="10"/><text>'+(t=="m"?MS:SS)[k]+'</text><text class="nm" y="21">'+(t=="m"?MN:SN)[k]+'</text>';PL.appendChild(g);E[t+k]=g})}
+function at(g,p){g.style.transform="translate("+p[0]+"px,"+p[1]+"px)"}
+var M1=[180,575,270,330,205,335,155,335,90,330,215,290,145,290,255,250,180,258,105,250,180,205],
+S1=[180,50,95,100,150,95,210,95,265,100,150,135,210,135,255,180,180,170,105,180,180,235],
+M2=[180,585,250,500,210,540,150,545,75,470,215,470,145,455,235,385,190,410,120,390,185,370],
+S2=[180,150,95,255,150,240,210,240,265,255,150,350,210,350,255,440,200,435,125,520,195,480],
+S2b=[180,150,95,255,150,240,210,240,265,255,150,350,210,350,255,440,200,435,125,520,185,558],
+M3a=[180,560,270,325,205,325,155,325,90,325,215,285,145,300,250,235,195,240,100,215,195,180],
+S3a=[180,50,95,112,150,108,210,108,265,112,150,165,210,165,255,210,180,215,105,210,175,262],
+M3b=[180,560,270,318,205,318,155,318,90,318,215,280,150,280,235,215,190,190,100,170,165,80],
+S3b=[180,48,95,118,140,115,215,112,265,118,150,158,210,158,255,195,170,218,105,195,190,248],
+M4=[180,590,265,525,210,545,150,545,95,520,225,480,150,470,250,430,185,430,110,420,170,380],
+S4a=[180,230,100,360,150,350,210,350,265,360,150,425,215,445,235,495,195,470,110,470,185,520],
+S4b=[180,230,100,360,150,350,210,350,265,360,150,425,215,445,235,505,195,562,110,470,125,525],
+M5a=[180,570,265,320,205,322,155,322,85,285,205,290,115,235,245,195,170,200,70,165,180,125],
+S5a=[180,50,95,100,150,98,210,98,265,100,150,140,210,140,255,175,185,175,105,175,205,215],
+M5b=[180,565,265,320,205,322,155,322,85,290,200,288,130,225,245,190,195,118,70,150,165,72],
+S5b=[180,48,100,110,140,112,225,105,265,110,150,150,210,155,255,185,185,180,105,185,180,225],
+M6a=[180,565,265,320,205,320,155,320,90,318,205,280,150,262,245,190,195,105,115,135,195,160],
+S6a=[180,45,105,95,178,118,225,100,270,105,160,150,230,150,260,175,150,185,100,170,200,215],
+M6b=[180,565,265,320,205,320,155,320,90,318,205,280,150,262,245,190,195,105,170,62,215,140],
+S6b=[182,46,105,95,180,125,225,102,270,105,160,152,230,152,260,175,150,185,100,170,200,215],
+M7a=[180,560,265,322,205,322,155,322,90,322,215,295,150,295,240,220,205,240,130,225,190,185],
+S7a=[180,95,100,170,150,160,210,160,265,170,150,215,215,215,255,255,165,262,105,255,190,290],
+M7b=[180,560,265,318,205,318,155,318,90,318,215,292,150,292,240,230,200,215,140,170,190,85],
+S7b=[182,62,100,185,150,150,215,160,265,185,150,235,215,235,255,270,175,270,105,270,190,300];
+var ST=[
+{t:"Kick-off shape",c:"Madrid line up 4-2-3-1 and the back four sits on the halfway line. Sociedad defend in a compact 4-2-3-1.",M:M1,S:S1,b:"m3",hi:["m1","m2","m3","m4"]},
+{t:"10' · Counter",c:"A loose Madrid pass near their own box is cut out by Kubo, who slips in Oyarzabal.",M:M2,S:S2,b:"s9",r:["s9","s10","s8","s7","m4"],hi:["s9","s10"]},
+{t:"10' · Courtois saves",c:"Oyarzabal shoots from inside the box. Courtois blocks it with his leg.",M:M2,S:S2b,b:"s10",sh:[178,608],hi:["s10"],rs:1},
+{t:"40' · Valverde splits the line",c:"Valverde collects the ball just beyond halfway. The back four holds the halfway line as Mbappé starts his run.",M:M3a,S:S3a,b:"m6",hi:["m6","m10"],r:["m10","m9","m7"]},
+{t:"40' · Mbappé 1-0",c:"Through ball, Mbappé surges into the box, cuts left and finishes in the top corner.",M:M3b,S:S3b,b:"m10",sh:[208,31],hi:["m10"],r:["m10","m9","m7","m8"],pf:"m6"},
+{t:"44' · Sociedad hit back",c:"Four minutes later Madrid are stretched. Ochieng's shot falls loose and Sučić arrives from deep.",M:M4,S:S4a,b:"s7",hi:["s7","s8"],r:["s7","s8","s10","s6"]},
+{t:"44' · Sučić 1-1",c:"Sučić finishes left-footed from inside the box.",M:M4,S:S4b,b:"s8",sh:[172,608],hi:["s8"],r:["s8"]},
+{t:"60' · Madrid go direct",c:"Cucurella is on after the break. He and Valverde combine down the left while Vinícius and Mbappé stretch the defence.",M:M5a,S:S5a,b:"m6",cuc:1,hi:["m4","m6"],r:["m4","m6","m9","m10"]},
+{t:"60' · Mbappé 2-1",c:"Mbappé plays a one-two with Bellingham and slides the ball past Remiro from inside the box.",M:M5b,S:S5b,b:"m10",sh:[176,31],cuc:1,hi:["m8","m10"],r:["m10","m8"],pf:"m8"},
+{t:"68' · Bellingham holds it up",c:"Bellingham holds off Beitia on the edge of the box.",M:M6a,S:S6a,b:"m8",cuc:1,hi:["m8","s2"],r:["m8","m9"]},
+{t:"68' · Vinícius 3-1",c:"Bellingham lays it off and Vinícius taps in from inside the six-yard box.",M:M6b,S:S6b,b:"m9",sh:[177,31],cuc:1,hi:["m9"],r:["m9"],pf:"m8"},
+{t:"80' · Through ball",c:"Sociedad push up for a comeback. Vinícius threads a pass behind their line while Madrid's back four stays on halfway.",M:M7a,S:S7a,b:"m9",cuc:1,hi:["m9","m10"],r:["m10","m9"]},
+{t:"80' · Mbappé 4-1",c:"Mbappé runs on, and from inside the box chips Remiro to complete his hat-trick.",M:M7b,S:S7b,b:"m10",sh:[183,32],cuc:1,hi:["m10"],r:["m10"],pf:"m9"}];
+function P(st,id){var a=id[0]=="m"?st.M:st.S,n=+id.slice(1);return[a[2*n],a[2*n+1]]}
+function BP(i){return P(ST[i],ST[i].b)}
+function ln(a,b,c){var l=document.createElementNS(NS,"line");l.setAttribute("x1",a[0]);l.setAttribute("y1",a[1]);l.setAttribute("x2",b[0]);l.setAttribute("y2",b[1]);l.setAttribute("class",c);if(c!="rn"){l.setAttribute("pathLength",1);l.setAttribute("marker-end","url(#"+(c=="sh"?"ah2":"ah")+")")}AR.appendChild(l)}
+var idx=0,playing=0,timer;
+function go(i){idx=i;var st=ST[i],pv=ST[i-1]||st;AR.innerHTML="";
+for(var k=0;k<11;k++){at(E["m"+k],[st.M[2*k],st.M[2*k+1]]);at(E["s"+k],[st.S[2*k],st.S[2*k+1]])}
+var cu=E.m4;cu.querySelectorAll("text")[0].textContent=st.cuc?"MC":18;cu.querySelectorAll("text")[1].textContent=st.cuc?"Cucurella":"Carreras";
+for(var q in E)E[q].classList.toggle("hi",(st.hi||[]).indexOf(q)>-1);
+(st.r||[]).forEach(function(id){ln(P(pv,id),P(st,id),"rn")});
+var bp=BP(i);at(TB,bp);
+var from=st.pf?P(pv,st.pf):(i&&!st.rs?BP(i-1):null);
+if(from&&(from[0]!=bp[0]||from[1]!=bp[1]))ln(from,bp,"ar");
+if(st.sh)ln(bp,st.sh,"sh");
+$("#tt").textContent=st.t+"  ("+(i+1)+"/"+ST.length+")";$("#tc").textContent=st.c}
+function stop(){playing=0;clearTimeout(timer);$("#tplay").textContent="Play"}
+function tick(){timer=setTimeout(function(){if(idx<ST.length-1){go(idx+1);tick()}else stop()},3600)}
+$("#tplay").addEventListener("click",function(){if(playing){stop();return}playing=1;this.textContent="Pause";if(idx>=ST.length-1)go(0);tick()});
+$("#tnext").addEventListener("click",function(){stop();go(Math.min(idx+1,ST.length-1))});
+$("#tback").addEventListener("click",function(){stop();go(Math.max(idx-1,0))});
+document.querySelectorAll(".tab").forEach(function(b){b.addEventListener("click",function(){if(b.dataset.t!=="tactics")stop()})});
+go(0);
+})();
+</script></body></html>
