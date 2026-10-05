@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vantage | Baroka FC vs Cape Town City</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--surface:#f4f5f7;--surface2:#e3e5ea;--ink:#0b0b0c;--ink2:#3a3e46;--muted:#6a7079;--line:#e3e5ea;
+--a:#0b5a33;--a-text:#0b5a33;--b:#2353d4;--b-text:#2353d4;--y:#fcd116;--acid:#c6ff3d;
+--ok:#177a3c;--ok-bg:#e3f5e9;--warn:#8a4b00;--warn-bg:#fff2d6;
+--font:'Inter Tight',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b0b0c;--surface:#17181b;--surface2:#26282d;--ink:#f5f6f8;--ink2:#c9ccd3;--muted:#8b919b;--line:#26282d;--a:#168a4e;--a-text:#43c783;--b:#4670ec;--b-text:#7b9bff;--ok:#7bdc9a;--ok-bg:#12261a;--warn:#ffcc80;--warn-bg:#2e2412}}
+:root[data-theme="dark"]{--bg:#0b0b0c;--surface:#17181b;--surface2:#26282d;--ink:#f5f6f8;--ink2:#c9ccd3;--muted:#8b919b;--line:#26282d;--a:#168a4e;--a-text:#43c783;--b:#4670ec;--b-text:#7b9bff;--ok:#7bdc9a;--ok-bg:#12261a;--warn:#ffcc80;--warn-bg:#2e2412}
+html{scroll-padding-top:env(safe-area-inset-top,0px);background:var(--bg)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);-webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums;line-height:1.4}
+button{font:inherit;color:inherit;cursor:pointer}
+.wrap{max-width:720px;margin:0 auto;padding:0 18px 56px}
+.top{display:flex;align-items:center;justify-content:space-between;padding:16px 0 4px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:21px;letter-spacing:.02em}
+.mark{width:18px;height:18px;border-radius:6px;background:var(--ink);display:inline-block;box-shadow:3px 3px 0 var(--acid)}
+.tag{font-size:11px;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--line);padding:6px 11px;border-radius:99px;color:var(--muted)}
+.hero{padding:22px 0 8px;text-align:center}
+.comp{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.teams{display:grid;grid-template-columns:1fr 1fr;margin-top:18px}
+.tm{display:flex;flex-direction:column;align-items:center;gap:8px;font-weight:700;font-size:16px}
+.crest{width:46px;height:46px;border-radius:15px;display:grid;place-items:center;font-weight:800;font-size:14px;color:#fff}
+.crest.a{background:var(--a)}
+.crest.b{background:var(--b);border-bottom:4px solid var(--y)}
+.score{display:flex;justify-content:center;align-items:baseline;gap:14px;font-weight:800;font-size:clamp(84px,24vw,128px);line-height:1;letter-spacing:-.05em}
+.score .sep{color:var(--surface2)}.score .sa{color:var(--a-text)}.score .sb{color:var(--b-text)}
+.status{margin-top:10px;font-size:14px;color:var(--muted);display:flex;align-items:center;justify-content:center;gap:8px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--acid)}
+.halves{display:flex;justify-content:center;flex-wrap:wrap;gap:6px;margin-top:14px}
+.halves span{font-size:13px;color:var(--muted);padding:6px 12px;border-radius:99px;background:var(--surface)}
+.ribbon{margin:20px auto 0;max-width:520px}
+.rl2{display:flex;justify-content:space-between;font-weight:700;font-size:15px;margin-bottom:8px}
+.rl2 .a{color:var(--a-text)}.rl2 .b{color:var(--b-text)}.rl2 .m{color:var(--muted);font-weight:500;font-size:13px}
+.rib{display:flex;gap:4px;height:12px}.rib i{display:block;border-radius:99px}
+.fa{background:var(--a)}.fb{background:var(--b);box-shadow:inset 0 -4px 0 var(--y)}.fd{background:var(--surface2)}
+.stick{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;margin:14px -18px 0;padding:10px 18px 8px;background:color-mix(in srgb,var(--bg) 90%,transparent);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;background:var(--surface);border-radius:22px;padding:6px}
+.tab{border:0;background:transparent;border-radius:17px;padding:14px 1px;font-weight:800;font-size:12px;color:var(--muted);letter-spacing:-.01em;transition:background .25s,color .25s}
+.tab.on{background:var(--ink);color:var(--bg)}
+.panelwrap[hidden]{display:none}
+.sec{margin-top:38px}.sec h3{margin:0;font-size:24px;font-weight:800;letter-spacing:-.03em}
+.sub{margin:6px 0 0;font-size:15px;color:var(--muted)}
+.panel{background:var(--surface);border-radius:30px;padding:20px 18px;margin-top:16px}
+.story h2{margin:0 0 12px;font-size:clamp(26px,7vw,34px);line-height:1.1;font-weight:800;letter-spacing:-.03em}
+.story p{margin:0 0 12px;font-size:16.5px;line-height:1.5;color:var(--ink2)}
+.tc.a{font-weight:700;color:var(--a-text)}.tc.b{font-weight:700;color:var(--b-text)}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:28px}
+.mini{background:var(--surface);border-radius:22px;padding:16px}
+.mini .l{font-size:14px;color:var(--muted)}.mini .v{font-size:32px;font-weight:800;letter-spacing:-.03em;margin-top:6px}
+.mini .c{font-size:13px;color:var(--muted);margin-top:4px;line-height:1.3}
+.legend{display:flex;gap:18px;font-size:16px;font-weight:600;flex-wrap:wrap}
+.legend i{width:14px;height:14px;border-radius:50%;display:inline-block;margin-right:8px;vertical-align:-2px}
+.legend .la{background:var(--a)}.legend .lb{background:var(--b);box-shadow:inset 0 -4px 0 var(--y)}
+.chips{display:flex;gap:6px;overflow-x:auto;margin:16px -2px 4px;padding:2px;scrollbar-width:none}.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;border:1px solid var(--line);background:var(--bg);border-radius:99px;padding:8px 14px;font-size:14px;font-weight:600;color:var(--ink2)}
+.chip.on{background:var(--acid);border-color:transparent;color:#0b0b0c}
+.row{padding:16px 0;border-top:1px solid var(--line);cursor:pointer}.row:first-of-type{border-top:0}
+.rtop{display:grid;grid-template-columns:1fr auto 1fr;align-items:baseline}
+.rv{font-size:34px;font-weight:800;letter-spacing:-.03em}.rv.a{color:var(--a-text)}.rv.b{color:var(--b-text);text-align:right}
+.rv.low{opacity:.4}
+.rlab{font-size:17px;color:var(--ink2);text-align:center;padding:0 8px}
+.bar{display:flex;gap:10px;height:14px;margin-top:12px}
+.bar i{display:block;border-radius:99px;flex:1 1 0%;transition:flex-grow .8s cubic-bezier(.2,.8,.2,1)}
+.bar .ba{background:var(--a)}.bar .bb{background:var(--b);box-shadow:inset 0 -4px 0 var(--y)}
+.bar.zero i{background:var(--surface2);box-shadow:none}
+.det{display:grid;grid-template-rows:0fr;transition:grid-template-rows .3s}.det>div{overflow:hidden;font-size:14.5px;color:var(--muted);line-height:1.45}
+.row.open .det{grid-template-rows:1fr}.row.open .det>div{padding-top:10px}
+.frow{display:grid;grid-template-columns:92px 1fr 34px;gap:10px;align-items:center;margin-top:10px}
+.frow label{font-size:14px;color:var(--ink2)}.ft{height:14px;border-radius:99px;background:var(--surface2);overflow:hidden}
+.ff{display:block;height:100%;border-radius:99px;transition:width .9s cubic-bezier(.2,.8,.2,1);width:0}
+.ff.a{background:var(--a)}.ff.b{background:var(--b);box-shadow:inset 0 -4px 0 var(--y)}
+.frow b{text-align:right;font-size:16px}
+.tbh{display:flex;justify-content:space-between;margin-top:22px;font-size:17px;font-weight:700}.tbh span{font-size:14px;color:var(--muted);font-weight:500}
+.tl{position:relative;height:64px;margin:26px 6px 4px}
+.tl::before{content:"";position:absolute;left:0;right:0;top:50%;height:3px;border-radius:2px;background:var(--surface2)}
+.ev{position:absolute;transform:translateX(-50%);font-size:11.5px;font-weight:700;text-align:center;white-space:nowrap}
+.ev.a{top:-4px}.ev.b{bottom:-4px}
+.ev i{display:block;width:14px;height:14px;border-radius:50%;margin:3px auto}
+.ev.a i{background:var(--a);box-shadow:0 0 0 2px var(--surface)}.ev.b i{background:var(--b);box-shadow:0 0 0 2px var(--y),0 0 0 4px var(--surface)}
+.tlx{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin:0 2px}
+.group{font-size:12.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin:24px 2px 10px}
+.group.g{color:var(--ok)}.group.i{color:var(--warn)}
+.report{display:grid;gap:12px}
+.card{border-radius:24px;padding:18px 18px 16px}.card.good{background:var(--ok-bg)}.card.bad{background:var(--warn-bg)}
+.card h4{margin:0 0 6px;font-size:18px;font-weight:800}.card.good h4{color:var(--ok)}.card.bad h4{color:var(--warn)}
+.card p{margin:0;font-size:15.5px;color:var(--ink2);line-height:1.45}
+.pill{display:inline-block;margin-top:10px;font-size:12.5px;font-weight:700;padding:5px 11px;border-radius:99px;background:var(--bg);color:var(--ink)}
+.focus{background:var(--ink);color:var(--bg);border-radius:28px;padding:22px 20px;margin-top:24px}
+.focus h3{margin:0 0 10px;font-size:20px;font-weight:800}.focus ol{margin:0;padding-left:20px;font-size:16px;line-height:1.5}.focus li{margin-bottom:8px}
+.footer{margin-top:48px;text-align:center}.footer .brand{justify-content:center}
+.fine{margin-top:8px;font-size:13px;color:var(--muted)}.fine b{color:var(--ink)}
+.swap{animation:sw .4s cubic-bezier(.2,.8,.2,1) both}@keyframes sw{from{opacity:.3;transform:translateY(6px)}to{opacity:1;transform:none}}
+.h2h{margin-top:4px}
+.h2h .rib{height:16px}
+.h2h .nums{display:flex;justify-content:space-between;margin-top:10px;font-size:15px;font-weight:700}
+.h2h .nums span:nth-child(1){color:var(--a-text)}.h2h .nums span:nth-child(2){color:var(--muted);font-weight:500}.h2h .nums span:nth-child(3){color:var(--b-text)}
+.tb{background:#14161a;border-radius:28px;padding:10px;margin-top:16px;color:#f5f6f8}
+#psv{width:100%;display:block;height:auto}
+#psv .ln{fill:none;stroke:#5a6068;stroke-width:1.2}
+#psv text{font-family:var(--font);fill:#fff;text-anchor:middle}
+.tcap{padding:10px 8px 6px;font-size:15px;line-height:1.4;color:#c9ccd3}
+.card.neu{background:var(--surface)}.card.neu h4{color:var(--ink)}
+@media (prefers-reduced-motion:reduce){.bar i,.ff,.det,.swap{transition-duration:.01s;animation-duration:.01s}}
+</style></head>
+<body><div class="wrap">
+<header class="top"><div class="brand"><span class="mark"></span>VANTAGE</div><span class="tag">Match report</span></header>
+<section class="hero">
+  <div class="comp">Baroka FC vs Cape Town City · Full-time report</div>
+  <div class="teams"><div class="tm"><span class="crest a">BFC</span>Baroka FC</div><div class="tm"><span class="crest b">CTC</span>Cape Town City</div></div>
+  <div class="score"><span class="sa">0</span><span class="sep">-</span><span class="sb">1</span></div>
+  <div class="status"><i class="dot"></i>Full time · Half time 0-1</div>
+  <div class="halves"><span>22' G. Amato 0-1</span></div>
+  <div class="ribbon"><div class="rl2"><span class="a">39%</span><span class="m">Possession</span><span class="b">61%</span></div>
+  <div class="rib"><i class="fa" style="flex:39"></i><i class="fb" style="flex:61"></i></div></div>
+</section>
+<div class="stick"><div class="tabs" role="tablist">
+<button class="tab on" data-t="report">MATCH<br>REPORT</button><button class="tab" data-t="deep">DEEP<br>DIVE</button><button class="tab" data-t="improve">IMPROVE</button><button class="tab" data-t="tactics">TACTICS</button></div></div>
+
+<div class="panelwrap" id="p-report">
+  <section class="sec story">
+    <h2>City had the ball, one goal decided it</h2>
+    <p><b class="tc b">Cape Town City</b> controlled the game: 61% possession, 91 attacks and 23 shots to Baroka's 53 attacks and 7 shots. Only 6 of those shots were on target, and G. Amato's 22nd-minute goal was the only one of the match.</p>
+    <p><b class="tc a">Baroka FC</b> had 2 shots on target and could not find an equaliser, even though 45 of their 53 attacks (85%) were dangerous, against 51 of City's 91 (56%).</p>
+  </section>
+  <section class="grid">
+    <div class="mini"><div class="l">Shots / on target</div><div class="v">7 / 2</div><div class="c">Cape Town City 23 / 6</div></div>
+    <div class="mini"><div class="l">Shot accuracy</div><div class="v">29%</div><div class="c">Cape Town City 26%</div></div>
+    <div class="mini"><div class="l">Dangerous attack share</div><div class="v">85%</div><div class="c">Cape Town City 56%</div></div>
+    <div class="mini"><div class="l">Possession</div><div class="v">39%</div><div class="c">Cape Town City 61%</div></div>
+  </section>
+  <section class="sec"><h3>Stat explorer</h3><p class="sub">Tap any row to see what it means.</p>
+    <div class="panel"><div class="legend"><span><i class="la"></i>Baroka FC</span><span><i class="lb"></i>Cape Town City</span></div>
+    <div class="chips" id="chips"></div><div id="rows"></div></div></section>
+</div>
+
+<div class="panelwrap" id="p-deep" hidden>
+  <section class="sec"><h3>Goal timeline</h3><p class="sub">Baroka FC above the line, Cape Town City below.</p>
+    <div class="panel"><div class="tl" id="tl"></div><div class="tlx"><span>0'</span><span>45'</span><span>90'</span></div></div></section>
+  <section class="sec"><h3>Shot funnel</h3><p class="sub">How each team's shots turned into goals.</p>
+    <div class="panel" id="funnel"></div></section>
+  <section class="sec"><h3>Head-to-head</h3><p class="sub">Record going into this match.</p>
+    <div class="panel h2h"><div class="rib"><i class="fa" style="flex:4"></i><i class="fd" style="flex:6"></i><i class="fb" style="flex:3"></i></div>
+    <div class="nums"><span>Baroka 4 wins</span><span>6 draws</span><span>City 3 wins</span></div></div></section>
+  <section class="sec"><h3>Reading the game</h3>
+    <div class="panel story"><p>Cape Town City were 3rd and in good form; Baroka were 16th and had gone 10 matches without a win. The game followed the table on the stat sheet, with City well ahead on possession, attacks and shots.</p>
+    <p>City's volume brought only one goal: 17 of their 23 shots missed the target. Baroka's 45 dangerous attacks came from just 53 attacks, but only 7 shots and 2 on target followed. On this result the head-to-head record is now level at 4 wins each, with 6 draws.</p></div></section>
+</div>
+
+<div class="panelwrap" id="p-improve" hidden>
+  <section class="sec"><h3>Improve report</h3><p class="sub">Built from this match's stats. Every game gets its own read.</p>
+  <div class="group g">What Baroka FC did well</div><div class="report">
+  <div class="card good"><h4>Sharp when they attacked</h4><p>45 of Baroka's 53 attacks were dangerous, against 51 of City's 91. They created almost as many dangerous moments from far fewer attacks.</p><span class="pill">85% dangerous vs 56%</span></div>
+  <div class="card good"><h4>Shot accuracy</h4><p>2 of Baroka's 7 shots were on target, a slightly better rate than City's 6 from 23.</p><span class="pill">29% on target vs 26%</span></div>
+  <div class="card good"><h4>Kept the scoreline to one</h4><p>City took 23 shots but only 6 were on target and 17 missed, so their pressure produced just one goal.</p><span class="pill">1 goal from 23 shots</span></div></div>
+  <div class="group i">What Baroka FC need to improve</div><div class="report">
+  <div class="card bad"><h4>Conceded early</h4><p>Amato scored in the 22nd minute, and Baroka spent the rest of the match chasing the game without an equaliser.</p><span class="pill">0-1 from 22'</span></div>
+  <div class="card bad"><h4>Not enough of the ball</h4><p>39% possession and 53 attacks to City's 91. Baroka struggled to hold the ball and push City back.</p><span class="pill">39% vs 61%</span></div>
+  <div class="card bad"><h4>Too few shots</h4><p>7 shots against 23, with only 2 on target. Baroka's dangerous attacks need to end in shots more often.</p><span class="pill">2 on target · 0 goals</span></div>
+  <div class="card bad"><h4>Fouls and cards</h4><p>15 fouls to City's 9, and 2 yellow cards to City's 1. Cleaner defending keeps everyone on the pitch in tight games.</p><span class="pill">15 fouls · 2 yellows</span></div>
+  <div class="card bad"><h4>Corners conceded</h4><p>City won 8 corners to Baroka's 5, giving them more chances to deliver into the box.</p><span class="pill">8 conceded · 5 won</span></div>
+  <div class="card bad"><h4>Bench impact</h4><p>Baroka made 2 substitutions to City's 5 while trailing. With a goal needed, earlier changes are worth testing.</p><span class="pill">2 subs vs 5</span></div></div>
+  <div class="focus"><h3>Focus for next match</h3><ol><li>Win more of the ball in midfield and lift possession above 39%.</li><li>Turn dangerous attacks into shots, and shots into on-target efforts.</li><li>Start sharper so the opposition does not score first.</li><li>Cut avoidable fouls and yellow cards.</li></ol></div></section>
+</div>
+
+<div class="panelwrap" id="p-tactics" hidden>
+  <section class="sec"><h3>Game shape</h3><p class="sub">Built from team stats only. Lineups and positional data were not available for this match.</p>
+  <div class="tb"><svg id="psv" viewBox="0 0 360 230" role="img" aria-label="Possession split: Baroka FC 39%, Cape Town City 61%">
+    <rect width="360" height="230" fill="#14161a"/>
+    <rect x="20" y="15" width="124.8" height="200" fill="#168a4e" opacity=".55"/>
+    <rect x="144.8" y="15" width="195.2" height="200" fill="#4670ec" opacity=".55"/>
+    <rect x="144.8" y="15" width="3" height="200" fill="#fcd116"/>
+    <g class="ln"><rect x="20" y="15" width="320" height="200"/><rect x="20" y="70" width="48" height="90"/><rect x="292" y="70" width="48" height="90"/></g>
+    <text x="82" y="125" font-size="34" font-weight="800">39%</text>
+    <text x="242" y="125" font-size="34" font-weight="800">61%</text>
+    <text x="82" y="146" font-size="11" font-weight="600" opacity=".8">Baroka FC</text>
+    <text x="242" y="146" font-size="11" font-weight="600" opacity=".8">Cape Town City</text>
+  </svg>
+  <div class="tcap">Possession share drawn across the pitch. It shows who had the ball, not where on the pitch play happened.</div></div></section>
+  <section class="sec"><h3>How the match played out</h3><div class="report" style="margin-top:14px">
+  <div class="card neu"><h4>Baroka: fewer attacks, sharper ones</h4><p>39% possession and 53 attacks, but 85% of them dangerous. The numbers point to a lower-possession game built on quicker, more direct attacks.</p></div>
+  <div class="card neu"><h4>Cape Town City: volume over precision</h4><p>91 attacks, 23 shots and 8 corners. City dominated the ball and territory in the stats but put only 6 shots on target.</p></div>
+  <div class="card neu"><h4>Game state</h4><p>After Amato's 22nd-minute goal, City led for the rest of the match and Baroka had to chase. City used 5 substitutions to Baroka's 2.</p></div>
+  <div class="card neu"><h4>Pressure points</h4><p>Baroka gave away 15 fouls to City's 9 and conceded 8 corners to 5, which fed City's sustained pressure.</p></div></div></section>
+</div>
+<footer class="footer"><div class="brand"><span class="mark"></span>VANTAGE</div><div class="fine">Logged by <b>Vantage</b></div></footer>
+</div>
+<script>
+(function(){
+function $(s){return document.querySelector(s)}
+var M=[
+["Goals",0,1,"attack","","Goals scored."],["Shots",7,23,"attack","","Every attempt at goal. Another source lists 8 vs 24."],["Shots on target",2,6,"attack","","Shots that forced a save or scored."],
+["Shots off target",5,17,"attack","","Shots that missed the goal."],["Corners",5,8,"attack","","Corners won. Corners conceded give the other team set-piece chances."],
+["Possession",39,61,"control","%","Share of the ball."],["Attacks",53,91,"control","","All attacking moves. A good proxy for who pushed forward more."],["Dangerous attacks",45,51,"control","","Attacks that created a real threat on goal."],["Substitutions",2,5,"control","","Changes made from the bench."],
+["Fouls",15,9,"discipline","","Fouls conceded. Fewer is better."],["Yellow cards",2,1,"discipline","","Bookings. Fewer is better."]];
+var G=[["all","All"],["attack","Attack"],["control","Control"],["discipline","Discipline"]],g="all";
+function rows(){
+  $("#chips").innerHTML=G.map(function(x){return '<button class="chip'+(x[0]===g?' on':'')+'" data-g="'+x[0]+'">'+x[1]+'</button>'}).join("");
+  var h="";M.forEach(function(m){if(g!=="all"&&m[3]!==g)return;var a=m[1],b=m[2],t=a+b,z=t===0;
+    h+='<div class="row" tabindex="0"><div class="rtop"><span class="rv a'+(b>a?' low':'')+'">'+a+m[4]+'</span><span class="rlab">'+m[0]+'</span><span class="rv b'+(a>b?' low':'')+'">'+b+m[4]+'</span></div>'
+    +'<div class="bar'+(z?' zero':'')+'"><i class="ba" style="flex:'+(z?1:Math.max(a,.001))+'"></i><i class="bb" style="flex:'+(z?1:Math.max(b,.001))+'"></i></div>'
+    +'<div class="det"><div>'+m[5]+(z||m[4]?'':' Baroka FC '+Math.round(a/t*100)+'% of the total, Cape Town City '+Math.round(b/t*100)+'%.')+'</div></div></div>'});
+  var r=$("#rows");r.innerHTML=h;r.classList.remove("swap");void r.offsetWidth;r.classList.add("swap");
+}
+rows();
+$("#chips").addEventListener("click",function(e){var c=e.target.closest(".chip");if(c){g=c.dataset.g;rows()}});
+$("#rows").addEventListener("click",function(e){var r=e.target.closest(".row");if(r)r.classList.toggle("open")});
+$("#rows").addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){var r=e.target.closest(".row");if(r){e.preventDefault();r.classList.toggle("open")}}});
+var ev=[[22,"b","G. Amato 22'"]];
+$("#tl").innerHTML=ev.map(function(e){return '<div class="ev '+e[1]+'" style="left:'+(e[0]/90*100)+'%">'+(e[1]==="a"?e[2]+'<i></i>':'<i></i>'+e[2])+'</div>'}).join("");
+var F=[["Baroka FC","a",[["Shots",7],["On target",2],["Goals",0]],"29% on target · 0% scored"],["Cape Town City","b",[["Shots",23],["On target",6],["Goals",1]],"26% on target · 4% scored"]];
+$("#funnel").innerHTML=F.map(function(t){return '<div class="tbh" style="margin-top:'+(t[1]==="a"?0:22)+'px">'+t[0]+'<span>'+t[3]+'</span></div>'+t[2].map(function(f){return '<div class="frow"><label>'+f[0]+'</label><div class="ft"><span class="ff '+t[1]+'" data-w="'+(f[1]/23*100)+'"></span></div><b>'+f[1]+'</b></div>'}).join("")}).join("");
+function bars(){requestAnimationFrame(function(){document.querySelectorAll("[data-w]").forEach(function(e){e.style.width=e.dataset.w+"%"})})}
+document.querySelectorAll(".tab").forEach(function(b){b.addEventListener("click",function(){
+  document.querySelectorAll(".tab").forEach(function(x){x.classList.toggle("on",x===b)});
+  document.querySelectorAll(".panelwrap").forEach(function(p){p.hidden=p.id!=="p-"+b.dataset.t});
+  var p=$("#p-"+b.dataset.t);p.classList.remove("swap");void p.offsetWidth;p.classList.add("swap");bars();
+  window.scrollTo({top:Math.min(window.scrollY,document.querySelector(".stick").offsetTop),behavior:"smooth"})})});
+})();
+</script></body></html>
