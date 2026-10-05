@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vantage | Sundowns 2-1 Al-Ahli tactics board</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:#0b0c0e;color:#f2f2f0;font-family:"Barlow Condensed","Arial Narrow",sans-serif}
+body{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px}
+#stage{position:relative;height:min(86vh,calc(100vw*16/9));aspect-ratio:9/16;max-width:100vw;overflow:hidden;border-radius:12px}
+svg{width:100%;height:100%;display:block;--pitch:#14161a;--line:#3b4047;--dot:#e0a93b;--ink:#1a1204;--nmf:#f2f2f0;--nms:#0b0c0e}
+svg.light{--pitch:#b9bdc1;--line:#e8eaec;--dot:#3fc46b;--ink:#06210f;--nmf:#101214;--nms:#e8eaec}
+#bg{fill:var(--pitch);transition:fill 1.2s}
+.ln{fill:none;stroke:var(--line);stroke-width:1.2;transition:stroke 1.2s}
+.p{transition:transform 1.5s cubic-bezier(.45,0,.2,1)}
+.p circle{fill:#f5c518;stroke:none}.p.al circle{fill:#1f9d63}.p.al text:not(.nm){fill:#fff}
+.p.hi circle{stroke:#fff;stroke-width:2.5}
+.p text{font:700 10px "Barlow Condensed",sans-serif;fill:var(--ink);text-anchor:middle;dominant-baseline:central}
+.p text.nm{font:700 9.5px "Barlow Condensed",sans-serif;fill:var(--nmf);stroke:var(--nms);stroke-width:3px;paint-order:stroke;stroke-linejoin:round;letter-spacing:.02em;transition:fill 1.2s,stroke 1.2s}
+#ball circle{fill:#fff;stroke:#111;stroke-width:1.5}
+.ar{stroke:#fff;stroke-width:2.4;fill:none;stroke-linecap:round}
+.rn{stroke:#fff;stroke-width:1.6;fill:none;stroke-dasharray:5 5;opacity:0;transition:opacity .6s}
+.ov{position:absolute;left:0;right:0;text-align:center;padding:0 16px;opacity:0;transition:opacity .6s;pointer-events:none}
+#top{top:3.5%;font-size:clamp(30px,9.5vw,46px);line-height:1;font-weight:700;letter-spacing:.01em;text-shadow:0 2px 10px #0009}
+#top small{display:block;font-size:.42em;font-weight:600;opacity:.85;margin-top:4px}
+#bot{bottom:3.5%;font-size:clamp(16px,5vw,24px);font-weight:600;line-height:1.15;text-shadow:0 2px 10px #000a}
+#cmp{top:0;bottom:0;display:flex;flex-direction:column;justify-content:center;gap:14px;background:#0b0c0ee6}
+.cd{font-size:clamp(54px,18vw,92px);font-weight:700;line-height:.95}
+.cs{font-size:clamp(13px,4vw,18px);font-weight:600;opacity:.85;line-height:1.2}
+#end{top:0;bottom:0;display:flex;flex-direction:column;justify-content:center;gap:14px;background:#0b0c0ef2;font-size:clamp(26px,8.4vw,40px);font-weight:700;line-height:1.05}
+#end small{font-size:clamp(16px,5vw,22px);font-weight:600;opacity:.75}
+#go{font:700 18px "Barlow Condensed",sans-serif;padding:10px 28px;border-radius:8px;border:0;background:#e0a93b;color:#1a1204;cursor:pointer;transition:opacity .4s}
+#go:focus-visible{outline:2px solid #fff;outline-offset:2px}
+@media (prefers-reduced-motion:reduce){.p{transition-duration:.01s}}
+</style>
+</head>
+<body>
+<div id="stage">
+<svg id="sv" viewBox="0 0 360 640" role="img" aria-label="Animated tactics board of how Mamelodi Sundowns (5-4-1) and Al-Ahli (4-3-3) played in the 2-1 at Loftus Versfeld">
+<defs><marker id="ah" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M1 1L8 5L1 9z" fill="#fff"/></marker></defs>
+<rect id="bg" width="360" height="640"/>
+<g class="ln"><rect x="30" y="30" width="300" height="580" class="ln"/><line x1="30" y1="320" x2="330" y2="320" class="ln"/><circle cx="180" cy="320" r="42" class="ln"/><rect x="100" y="30" width="160" height="70" class="ln"/><rect x="100" y="540" width="160" height="70" class="ln"/><rect x="145" y="30" width="70" height="26" class="ln"/><rect x="145" y="584" width="70" height="26" class="ln"/></g>
+<g id="arrows"></g>
+<g id="players"></g>
+<g id="ball" class="p"><circle r="5"/></g>
+</svg>
+<div id="top" class="ov"></div>
+<div id="bot" class="ov"></div>
+<div id="cmp" class="ov">
+<div class="cs"><b style="font-size:1.4em">SAME SCORE. 5-0.</b></div>
+<div class="cs"><b style="font-size:1.3em">WHERE CHANCES CAME FROM</b><br><span style="color:#e0a93b">Broos: overloads down the left, cutbacks from the right winger.</span><br><span style="color:#3fc46b">Pitso: one 10 slips the other in behind.</span></div>
+<div class="cs"><b style="font-size:1.3em">WHO ARRIVES</b><br><span style="color:#e0a93b">Broos: midfielders from deep (Mokoena, Aubaas).</span><br><span style="color:#3fc46b">Pitso: the front three (two 10s, striker).</span></div>
+<div class="cs"><b style="font-size:1.3em">HOW IT STARTS</b><br><span style="color:#e0a93b">Broos: shape and width.</span><br><span style="color:#3fc46b">Pitso: back three, wing-backs wide, quick links after winning it high.</span></div>
+</div>
+<div id="end" class="ov"><div style="color:#e0a93b">2024: WIDTH, THEN MIDFIELD RUNNERS.</div><div style="color:#3fc46b">2026: THE FRONT LINE ROTATES AND ARRIVES.</div><small>Schematic, from match reports. Not tracking data.</small></div>
+</div>
+<button id="go">Play</button>
+<script>
+var NS="http://www.w3.org/2000/svg",sv=document.getElementById("sv"),pl=document.getElementById("players"),ball=document.getElementById("ball"),ar=document.getElementById("arrows");
+var el={},nm={},tx={},ids=[],i;
+for(i=0;i<11;i++){ids.push("s"+i);ids.push("a"+i)}
+ids.forEach(function(k){var g=document.createElementNS(NS,"g");g.setAttribute("class","p"+(k[0]=="a"?" al":""));g.innerHTML='<circle r="10"/><text></text><text class="nm" y="21"></text>';pl.appendChild(g);el[k]=g;tx[k]=g.querySelector("text");nm[k]=g.querySelector("text.nm")});
+var RS=["GK","LWB","CB","CB","CB","RWB","CM","CM","CM","CM","9"],RA=["GK","LB","CB","CB","RB","DM","CM","CM","LW","9","RW"];
+var NSu={s0:"Williams",s1:"Ndamane",s2:"Modiba",s3:"Kekana",s4:"Morena",s5:"Matuludi",s7:"Mokoena",s10:"Santos",a8:"Al-Buraikan",a9:"Toney",a10:"Trincao"};
+var cur={},bp=[180,320];
+function at(g,x,y){g.style.transform="translate("+x+"px,"+y+"px)"}
+function lab(){for(i=0;i<11;i++){tx["s"+i].textContent=RS[i];tx["a"+i].textContent=RA[i];nm["s"+i].textContent=NSu["s"+i]||"";nm["a"+i].textContent=NSu["a"+i]||""}}
+function put(t,f){for(var j=0;j<11;j++){cur[t+j]=[f[2*j],f[2*j+1]];at(el[t+j],f[2*j],f[2*j+1])}}
+function line(a,b,c,solid){var l=document.createElementNS(NS,"line");l.setAttribute("x1",a[0]);l.setAttribute("y1",a[1]);l.setAttribute("x2",b[0]);l.setAttribute("y2",b[1]);l.setAttribute("class",c);l.setAttribute("marker-end","url(#ah)");ar.appendChild(l);
+if(solid){var d=Math.hypot(b[0]-a[0],b[1]-a[1]);l.style.strokeDasharray=d;l.style.strokeDashoffset=d;l.style.transition="stroke-dashoffset 1.5s cubic-bezier(.45,0,.2,1)";requestAnimationFrame(function(){requestAnimationFrame(function(){l.style.strokeDashoffset=0})})}
+else{requestAnimationFrame(function(){requestAnimationFrame(function(){l.style.opacity=.6})})}}
+function clr(){ar.innerHTML=""}
+function show(id,t){var e=document.getElementById(id);if(t!==undefined)e.innerHTML=t;e.style.opacity=1}
+function hide(id){document.getElementById(id).style.opacity=0}
+/* step: S,A = full position arrays moved together; r = runs to draw; p = pass to player; sh = shot */
+function step(o){var old={};for(var k in cur)old[k]=cur[k].slice();clr();
+if(o.S)put("s",o.S);if(o.A)put("a",o.A);
+for(var k2 in el)el[k2].classList.toggle("hi",(o.hi||[]).indexOf(k2)>-1);
+(o.r||[]).forEach(function(k){line(old[k],cur[k],"rn",false)});
+if(o.p){var b=cur[o.p].slice();if(!o.rs)line(bp,b,"ar",true);bp=b;at(ball,b[0],b[1])}
+if(o.sh){line(bp,o.sh,"ar",true);bp=o.sh;at(ball,o.sh[0],o.sh[1])}
+if(o.c)show("bot",o.c)}
+var tm=[];function T(ms,f){tm.push(setTimeout(f,ms))}
+function reset(){tm.forEach(clearTimeout);tm=[];clr();["top","bot","cmp","end"].forEach(hide);put("s",S0);put("a",A0);lab();bp=[180,320];at(ball,180,320)}
+/* Sundowns (gold, attack up): gk, LWB, 3 CB, RWB, 4 mids, 9.  Al-Ahli (green, attack down): gk, LB, 2 CB, RB, DM, 2 CM, LW, 9, RW */
+var S0=[180,590,60,500,110,520,180,525,250,520,300,500,110,440,155,445,205,445,250,440,180,380];
+var S1=[180,570,55,400,115,430,180,435,245,430,305,400,115,365,160,375,200,375,245,365,180,300];
+var S2=[180,520,50,250,120,335,180,340,240,335,310,250,115,285,160,290,205,290,245,285,180,215];
+var S3=[180,500,70,215,130,332,180,338,235,332,325,36,125,150,150,100,215,95,250,160,185,85];
+var S4a=[180,520,50,230,120,330,180,335,240,330,310,230,120,270,160,275,205,275,245,270,180,200];
+var S4b=[180,585,75,470,125,480,180,495,235,480,285,470,120,420,165,430,200,430,245,420,180,360];
+var S5=[180,500,45,215,120,330,180,335,240,330,315,215,110,260,160,250,205,250,250,260,180,190];
+var S6=[180,500,60,230,125,330,180,335,235,330,300,130,120,250,155,160,215,150,250,240,190,85];
+var A0=[180,50,80,115,145,105,215,105,280,115,180,170,130,160,230,160,105,220,180,225,255,220];
+var A1=[180,48,85,105,150,95,210,95,275,105,180,150,135,145,225,145,110,195,180,200,250,195];
+var A2=[180,46,90,90,150,85,210,85,270,90,180,130,140,125,220,125,120,175,180,180,240,175];
+var A3=[180,45,120,75,150,62,210,62,240,75,130,110,180,100,230,110,110,170,180,180,250,170];
+var A4a=[180,60,90,170,150,175,210,175,270,170,180,240,130,230,230,230,95,330,180,345,265,330];
+var A4b=[180,80,95,260,150,265,210,265,265,260,180,330,130,320,230,320,110,430,180,365,255,440];
+var A4c=[180,120,100,300,150,310,210,310,260,300,185,380,135,370,225,370,90,500,185,470,250,490];
+var A5=[180,48,90,85,150,80,210,80,270,85,180,120,140,115,220,115,120,160,180,160,240,160];
+var A6=[180,45,110,75,160,70,215,70,260,75,140,110,180,105,225,110,110,150,180,150,250,150];
+var ST=[
+[5000,{S:S1,A:A1,p:"s2",r:["s1","s5","s10"],c:"Sundowns build short from a 5-4-1. Al-Ahli sit in a compact 4-3-3 low block."}],
+[7400,{S:S2,A:A2,p:"s7",r:["s2","s3","s4","s6","s7","s8","s9","s10"],c:"71% of the ball. The whole unit steps up: back line on the halfway line."}],
+[9800,{S:S2,A:A2,p:"s5",hi:["s1","s5"],c:"Wing-backs hold the width. Al-Ahli cede the ball and stay tight."}],
+[12200,{S:S3,A:A3,p:"s5",rs:1,r:["s1","s5","s7","s9","s10"],c:"17': a corner. Mokoena arrives from deep and Santos attacks the box."}],
+[14600,{p:"s10",c:"Santos wins the header. 1-0."}],
+[16200,{sh:[180,34]}],
+[19000,{S:S4a,A:A4a,rs:1,p:"a6",r:["a8","a9","a10"],c:"19': Al-Ahli win it back and go straight forward."}],
+[21400,{S:S4a,A:A4b,p:"a9",r:["a5","a6","a7","a8","a9","a10"],hi:["a8","a9","a10"],c:"Toney, Al-Buraikan and Trincao run into the pockets behind the midfield."}],
+[23800,{S:S4b,A:A4c,p:"a8",r:["a8","a10","s1","s2","s3","s4","s5"],c:"A sharp low cross. Sundowns' line is dragged back toward goal."}],
+[26000,{sh:[180,606]}],
+[28500,{S:S2,A:A5,rs:1,p:"s2",c:"2nd half. Al-Ahli retreat too deep. The passing lanes to their forwards are cut."}],
+[30900,{S:S5,A:A5,p:"s1",hi:["s1","s5"],r:["s1","s5"],c:"Cardoso's subs refresh the flanks. Back line stays on halfway."}],
+[33300,{S:S6,A:A6,p:"s5",hi:["s5","s10"],r:["s5","s10","s8"],c:"80': Matuludi gets wide with room to deliver."}],
+[35700,{p:"s10",c:"Al-Ahli lose the runner at the far post. Santos is free."}],
+[37700,{sh:[180,34]}]
+];
+function run(){reset();var btn=document.getElementById("go");btn.style.opacity=0;
+T(300,function(){show("top","Sundowns 2-1 Al-Ahli<small>FIFA Intercontinental Cup, Loftus Versfeld</small>")});
+T(3800,function(){hide("top")});
+T(4200,function(){show("top","SUNDOWNS 5-4-1<small>v AL-AHLI 4-3-3 low block</small>");show("bot","")});
+ST.forEach(function(x){T(x[0],function(){step(x[1])})});
+T(40500,function(){hide("top");hide("bot");clr()});
+T(41000,function(){show("cmp")});
+T(50000,function(){hide("cmp");show("end")});
+T(55000,function(){btn.textContent="Replay";btn.style.opacity=1});}
+document.getElementById("go").onclick=run;reset();
+</script>
+</body>
+</html>
