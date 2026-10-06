@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>Vantage | Manchester United vs Brighton</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--surface:#f4f5f7;--surface2:#e3e5ea;--ink:#0b0b0c;--ink2:#3a3e46;--muted:#6a7079;--line:#e3e5ea;
+--a:#da291c;--a-line:transparent;--a-text:#c4231a;--b:#0057b8;--b-text:#0057b8;--gold:#febe10;--acid:#c6ff3d;
+--ok:#177a3c;--ok-bg:#e3f5e9;--warn:#8a4b00;--warn-bg:#fff2d6;--bad:#a3201a;--bad-bg:#fde8e6;
+--font:'Inter Tight',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b0b0c;--surface:#17181b;--surface2:#26282d;--ink:#f5f6f8;--ink2:#c9ccd3;--muted:#8b919b;--line:#26282d;--a:#e8412f;--a-text:#ff6b5b;--b:#1f86d4;--b-text:#4fa9ee;--ok:#7bdc9a;--ok-bg:#12261a;--warn:#ffcc80;--warn-bg:#2e2412;--bad:#ff9a92;--bad-bg:#2e1614}}
+:root[data-theme="dark"]{--bg:#0b0b0c;--surface:#17181b;--surface2:#26282d;--ink:#f5f6f8;--ink2:#c9ccd3;--muted:#8b919b;--line:#26282d;--a:#e8412f;--a-text:#ff6b5b;--b:#1f86d4;--b-text:#4fa9ee;--ok:#7bdc9a;--ok-bg:#12261a;--warn:#ffcc80;--warn-bg:#2e2412;--bad:#ff9a92;--bad-bg:#2e1614}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 80px);background:var(--bg)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);-webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums;line-height:1.4}
+button{font:inherit;color:inherit;cursor:pointer}
+.wrap{max-width:720px;margin:0 auto;padding:0 18px 56px}
+.top{display:flex;align-items:center;justify-content:space-between;padding:16px 0 4px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:21px;letter-spacing:.02em}
+.mark{width:18px;height:18px;border-radius:6px;background:var(--ink);display:inline-block;box-shadow:3px 3px 0 var(--acid)}
+.tag{font-size:11px;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--line);padding:6px 11px;border-radius:99px;color:var(--muted)}
+.hero{padding:22px 0 8px;text-align:center}
+.comp{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.teams{display:grid;grid-template-columns:1fr 1fr;margin-top:18px}
+.tm{display:flex;flex-direction:column;align-items:center;gap:8px;font-weight:700;font-size:16px}
+.crest{width:46px;height:46px;border-radius:15px;display:grid;place-items:center;font-weight:800;font-size:14px;color:#fff}
+.crest.a{background:var(--a)}
+.crest.b{background:var(--b);border-bottom:4px solid var(--gold)}
+.score{display:flex;justify-content:center;align-items:baseline;gap:14px;font-weight:800;font-size:clamp(84px,24vw,128px);line-height:1;letter-spacing:-.05em}
+.score .sep{color:var(--surface2)}.score .sa{color:var(--a-text)}.score .sb{color:var(--b-text)}
+.status{margin-top:10px;font-size:14px;color:var(--muted);display:flex;align-items:center;justify-content:center;gap:8px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--acid)}
+.halves{display:flex;justify-content:center;flex-wrap:wrap;gap:6px;margin-top:14px}
+.halves span{font-size:13px;color:var(--muted);padding:6px 12px;border-radius:99px;background:var(--surface)}
+.halves span.fl{outline:1.5px dashed var(--warn);outline-offset:-1.5px}
+.ribbon{margin:20px auto 0;max-width:520px}
+.rl2{display:flex;justify-content:space-between;font-weight:700;font-size:15px;margin-bottom:8px}
+.rl2 .a{color:var(--a-text)}.rl2 .b{color:var(--b-text)}.rl2 .m{color:var(--muted);font-weight:500;font-size:13px}
+.rib{display:flex;gap:4px;height:12px}.rib i{display:block;border-radius:99px}
+.stick{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;margin:14px -18px 0;padding:10px 18px 8px;background:color-mix(in srgb,var(--bg) 90%,transparent);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.tabs{display:grid;grid-template-columns:repeat(5,1fr);gap:3px;background:var(--surface);border-radius:22px;padding:6px}
+.tab{border:0;background:transparent;border-radius:17px;padding:13px 0;font-weight:800;font-size:10.5px;color:var(--muted);letter-spacing:-.01em;transition:background .25s,color .25s;line-height:1.15}
+.tab.on{background:var(--ink);color:var(--bg)}
+.panelwrap[hidden]{display:none}
+.sec{margin-top:38px}.sec h3{margin:0;font-size:24px;font-weight:800;letter-spacing:-.03em}
+.sub{margin:6px 0 0;font-size:15px;color:var(--muted)}
+.panel{background:var(--surface);border-radius:30px;padding:20px 18px;margin-top:16px}
+.story h2{margin:0 0 12px;font-size:clamp(26px,7vw,34px);line-height:1.1;font-weight:800;letter-spacing:-.03em}
+.story p{margin:0 0 12px;font-size:16.5px;line-height:1.5;color:var(--ink2)}
+.tc.a{font-weight:700;color:var(--a-text)}.tc.b{font-weight:700;color:var(--b-text)}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:28px}
+.mini{background:var(--surface);border-radius:22px;padding:16px}
+.mini .l{font-size:14px;color:var(--muted)}.mini .v{font-size:32px;font-weight:800;letter-spacing:-.03em;margin-top:6px}
+.mini .c{font-size:13px;color:var(--muted);margin-top:4px;line-height:1.3}
+.legend{display:flex;gap:18px;font-size:16px;font-weight:600}
+.legend i{width:14px;height:14px;border-radius:50%;display:inline-block;margin-right:8px;vertical-align:-2px}
+.legend .la{background:var(--a)}.legend .lb{background:var(--b)}
+.chips{display:flex;gap:6px;overflow-x:auto;margin:16px -2px 4px;padding:2px;scrollbar-width:none}.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;border:1px solid var(--line);background:var(--bg);border-radius:99px;padding:8px 14px;font-size:14px;font-weight:600;color:var(--ink2)}
+.chip.on{background:var(--acid);border-color:transparent;color:#0b0b0c}
+.row{padding:16px 0;border-top:1px solid var(--line);cursor:pointer}.row:first-of-type{border-top:0}
+.rtop{display:grid;grid-template-columns:1fr auto 1fr;align-items:baseline}
+.rv{font-size:34px;font-weight:800;letter-spacing:-.03em}.rv.a{color:var(--a-text)}.rv.b{color:var(--b-text);text-align:right}
+.rv.low{opacity:.4}
+.rlab{font-size:16px;color:var(--ink2);text-align:center;padding:0 8px;line-height:1.2}
+.bar{display:flex;gap:10px;height:14px;margin-top:12px}
+.bar i{display:block;border-radius:99px;flex:1 1 0%;transition:flex-grow .8s cubic-bezier(.2,.8,.2,1)}
+.bar .ba{background:var(--a)}.bar .bb{background:var(--b)}
+.bar.zero i{background:var(--surface2)}
+.det{display:grid;grid-template-rows:0fr;transition:grid-template-rows .3s}.det>div{overflow:hidden;font-size:14.5px;color:var(--muted);line-height:1.45}
+.row.open .det{grid-template-rows:1fr}.row.open .det>div{padding-top:10px}
+.group{font-size:12.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin:24px 2px 10px}
+.group.g{color:var(--ok)}.group.i{color:var(--warn)}
+.report{display:grid;gap:12px}
+.card{border-radius:24px;padding:18px 18px 16px}.card.good{background:var(--ok-bg)}.card.bad{background:var(--warn-bg)}
+.card h4{margin:0 0 6px;font-size:18px;font-weight:800}.card.good h4{color:var(--ok)}.card.bad h4{color:var(--warn)}
+.card p{margin:0;font-size:15.5px;color:var(--ink2);line-height:1.45}
+.card p+p{margin-top:8px}
+.card.neu{background:var(--surface)}.card.neu h4{color:var(--ink)}
+.pill{display:inline-block;margin-top:10px;font-size:12.5px;font-weight:700;padding:5px 11px;border-radius:99px;background:var(--bg);color:var(--ink)}
+.focus{background:var(--ink);color:var(--bg);border-radius:28px;padding:22px 20px;margin-top:24px}
+.focus h3{margin:0 0 10px;font-size:20px;font-weight:800}.focus ol{margin:0;padding-left:20px;font-size:16px;line-height:1.5}.focus li{margin-bottom:10px}
+.focus li small{display:block;opacity:.7;font-size:13px;margin-top:2px}
+.footer{margin-top:48px;text-align:center}.footer .brand{justify-content:center}
+.fine{margin-top:8px;font-size:13px;color:var(--muted)}.fine b{color:var(--ink)}
+.swap{animation:sw .4s cubic-bezier(.2,.8,.2,1) both}@keyframes sw{from{opacity:.3;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* source badges & flags */
+.src{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.05em;padding:2px 7px;border-radius:99px;margin-left:5px;vertical-align:1px;white-space:nowrap}
+.src.you{background:var(--acid);color:#0b0b0c}
+.src.web{background:var(--surface2);color:var(--ink2)}
+.src.der{border:1px dashed var(--muted);color:var(--muted)}
+.flag{display:inline-block;font-weight:700;color:var(--warn);background:var(--warn-bg);padding:2px 8px;border-radius:99px;font-size:12.5px}
+.note{background:var(--surface);border-radius:22px;padding:16px 16px 14px;margin-top:16px;border-left:5px solid var(--acid)}
+.note h4{margin:0 0 6px;font-size:16px;font-weight:800}
+.note p,.note li{font-size:14.5px;color:var(--ink2);line-height:1.45;margin:0 0 6px}
+.note ul{margin:6px 0 0;padding-left:18px}
+.note.warn{border-left-color:var(--gold)}
+.tw{overflow-x:auto;margin:0 -4px}
+.tbl{width:100%;border-collapse:collapse;font-size:13.5px;min-width:480px}
+.tbl th{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);text-align:left;padding:8px 6px;border-bottom:1px solid var(--line);font-weight:700}
+.tbl td{padding:10px 6px;border-top:1px solid var(--line);vertical-align:top;color:var(--ink2)}
+.tbl td:first-child{font-weight:700;color:var(--ink)}
+.tbl .a{color:var(--a-text);font-weight:700}.tbl .b{color:var(--b-text);font-weight:700}
+
+/* timeline */
+.tl2{position:relative;height:150px;margin:6px 8px 0}
+.tl2::before{content:"";position:absolute;left:0;right:0;top:74px;height:3px;border-radius:2px;background:var(--surface2)}
+.mk{position:absolute;transform:translateX(-50%);border:0;background:none;padding:0;text-align:center;font:700 11.5px var(--font);color:var(--ink);white-space:nowrap}
+.mk i{display:block;width:18px;height:18px;border-radius:50%;margin:3px auto}
+.mk.a{top:24px}.mk.b{top:82px}
+.mk.a i{background:var(--a)}.mk.b i{background:var(--b)}
+.mk.n{top:66px}.mk.n i{width:15px;height:15px;border-radius:3px;transform:rotate(45deg);background:var(--gold);margin:0 auto}
+.mk.n span{position:absolute;left:50%;top:-18px;transform:translateX(-50%);font-size:10.5px;color:var(--muted)}
+.mk.on i{outline:3px solid var(--acid);outline-offset:1px}
+.mk.n.on i{outline-offset:2px}
+.ht{position:absolute;top:8px;bottom:6px;width:0;border-left:1.5px dashed var(--muted);opacity:.6}
+.ht b{position:absolute;top:-4px;left:4px;font-size:10.5px;color:var(--muted);font-weight:700}
+.bands{display:flex;height:28px;margin:4px 8px 0;border-radius:99px;overflow:hidden;gap:2px}
+.bd{display:grid;place-items:center;font-weight:800;font-size:12px;color:var(--ink)}
+.bd1{background:color-mix(in srgb,var(--a) 55%,var(--surface))}.bd2{background:var(--surface2)}
+.bd3{background:color-mix(in srgb,var(--b) 55%,var(--surface))}.bd4{background:color-mix(in srgb,var(--muted) 25%,var(--surface))}
+.bd5{background:var(--gold);color:#0b0b0c}.bd6{background:color-mix(in srgb,var(--b) 25%,var(--surface))}
+.tlx{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin:6px 10px 0}
+.sel{background:var(--bg);border-radius:20px;padding:14px 16px;margin-top:14px}
+.sel b{display:block;font-size:17px;margin-bottom:3px}
+.sel p{margin:0;font-size:14.5px;color:var(--ink2);line-height:1.4}
+.sel button{margin-top:10px;border:0;border-radius:99px;padding:9px 14px;font-weight:800;font-size:13px;background:var(--ink);color:var(--bg)}
+.ph{display:grid;grid-template-columns:30px 1fr;gap:12px;padding:14px 0;border-top:1px solid var(--line)}
+.ph:first-of-type{border-top:0}
+.ph .n{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:13px;color:var(--ink)}
+.ph h5{margin:0;font-size:16px;font-weight:800}.ph h5 span{font-weight:500;color:var(--muted);font-size:13px;margin-left:6px}
+.ph p{margin:4px 0 0;font-size:14.5px;color:var(--ink2);line-height:1.42}
+
+/* accordion */
+.acc{background:var(--surface);border-radius:24px;margin-top:10px;overflow:hidden}
+.acc-h{width:100%;border:0;background:none;display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:16px 18px;text-align:left}
+.acc-h .mn{font-weight:800;font-size:20px;letter-spacing:-.02em;min-width:56px}
+.acc-h .mn.a{color:var(--a-text)}.acc-h .mn.b{color:var(--b-text)}
+.acc-h .mt b{display:block;font-size:16.5px;font-weight:800}.acc-h .mt i{font-style:normal;font-size:13px;color:var(--muted)}
+.chev{width:10px;height:10px;border-right:2.5px solid var(--muted);border-bottom:2.5px solid var(--muted);transform:rotate(45deg);transition:transform .25s;margin-right:4px}
+.acc.open .chev{transform:rotate(-135deg)}
+.acc-b{display:none;padding:0 18px 18px}
+.acc.open .acc-b{display:block}
+.chain{list-style:none;margin:0;padding:0;counter-reset:s}
+.chain li{position:relative;padding:0 0 14px 38px;font-size:14.5px;color:var(--ink2);line-height:1.42;counter-increment:s}
+.chain li::before{content:counter(s);position:absolute;left:0;top:0;width:24px;height:24px;border-radius:50%;background:var(--ink);color:var(--bg);display:grid;place-items:center;font-weight:800;font-size:12px}
+.chain li::after{content:"";position:absolute;left:11px;top:26px;bottom:2px;width:2px;background:var(--surface2)}
+.chain li:last-child::after{display:none}
+.chain li b{color:var(--ink)}
+.chain li.stop{background:var(--bad-bg);border-radius:16px;padding:12px 14px 12px 44px;margin:2px 0 12px}
+.chain li.stop::before{content:"!";left:10px;top:12px;background:var(--bad);color:var(--bg)}
+.chain li.stop::after{display:none}
+.chain li.stop b{color:var(--bad)}
+.ev{font-size:13px;color:var(--muted);line-height:1.5;margin-top:4px}
+.pneed{display:grid;grid-template-columns:96px 1fr;gap:12px;align-items:center;margin-top:12px;padding:12px;border:1.5px dashed var(--muted);border-radius:18px;color:var(--muted)}
+.pneed svg{width:96px;height:auto;color:var(--muted)}
+.pneed b{display:block;color:var(--ink);font-size:13.5px}.pneed span{font-size:12.5px;line-height:1.35;display:block;margin-top:2px}
+.verd{display:inline-block;font-size:11.5px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:4px 10px;border-radius:99px;margin-bottom:8px}
+.v-ok{background:var(--ok-bg);color:var(--ok)}.v-part{background:var(--warn-bg);color:var(--warn)}.v-none{background:var(--surface2);color:var(--ink2)}
+#ladder{width:100%;height:auto;display:block}
+#ladder text{font:700 10.5px var(--font);fill:var(--ink2)}
+#ladder .ax{stroke:var(--surface2);stroke-width:1.5}
+#ladder .gl{stroke:var(--muted);stroke-width:1;stroke-dasharray:3 4;opacity:.5}
+#ladder .m{fill:var(--muted);font-weight:500;font-size:10px}
+
+/* tactics board */
+.tb{background:#14161a;border-radius:28px;padding:10px;margin-top:16px;color:#f5f6f8}
+#tsv{width:100%;display:block;aspect-ratio:9/16;max-height:72vh;margin:0 auto}
+#tsv .ln{fill:none;stroke:#3b4047;stroke-width:1.2}
+#tsv .nd circle{stroke:#fff;stroke-width:1.5}
+#tsv .nd text{font:800 9px var(--font);fill:#fff;text-anchor:middle;dominant-baseline:central}
+#tsv .nd text.nm{font:700 9.5px var(--font);fill:#f5f6f8;stroke:#14161a;stroke-width:2.6px;paint-order:stroke}
+#tsv .zone{fill:rgba(198,255,61,.08);stroke:#c6ff3d;stroke-width:1.2;stroke-dasharray:4 4}
+.tcap{min-height:70px;padding:10px 8px 4px;font-size:15px;line-height:1.4;color:#c9ccd3}
+.tcap b{display:block;font-size:19px;color:#fff;margin-bottom:3px}
+.tctl{display:flex;gap:6px;padding:6px 4px 4px}
+.tctl button{flex:1;border:0;border-radius:99px;padding:12px 4px;font-weight:800;font-size:13px;background:#26282d;color:#f5f6f8}
+.tctl button.on{background:#c6ff3d;color:#0b0b0c}
+.badge-s{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;padding:4px 10px;border-radius:99px;background:var(--gold);color:#0b0b0c;margin-top:10px}
+@media (prefers-reduced-motion:reduce){.bar i,.det,.chev{transition-duration:.01s}.swap{animation:none}}
+</style></head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="hp" viewBox="0 0 160 100"><rect x="2" y="2" width="156" height="96" rx="4" fill="none" stroke="currentColor" stroke-width="1.6"/><line x1="80" y1="2" x2="80" y2="98" stroke="currentColor" stroke-width="1.2"/><circle cx="80" cy="50" r="12" fill="none" stroke="currentColor" stroke-width="1.2"/><rect x="2" y="24" width="28" height="52" fill="none" stroke="currentColor" stroke-width="1.2"/><rect x="130" y="24" width="28" height="52" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="52" cy="40" r="4" fill="none" stroke="currentColor" stroke-dasharray="2 2"/><circle cx="68" cy="62" r="4" fill="none" stroke="currentColor" stroke-dasharray="2 2"/><circle cx="104" cy="48" r="4" fill="none" stroke="currentColor" stroke-dasharray="2 2"/></symbol></defs></svg>
+<div class="wrap">
+<header class="top"><div class="brand"><span class="mark"></span>VANTAGE</div><span class="tag">Match dashboard</span></header>
+<section class="hero">
+  <div class="comp">EFL Cup · Round 3 · Old Trafford · 16 Sep 2026</div>
+  <div class="teams"><div class="tm"><span class="crest a">MUN</span>Manchester United</div><div class="tm"><span class="crest b">BHA</span>Brighton</div></div>
+  <div class="score"><span class="sa">2</span><span class="sep">-</span><span class="sb">3</span></div>
+  <div class="status"><i class="dot"></i>Full time · Half time 2-1</div>
+  <div class="halves"><span>8' Lacey 1-0</span><span class="fl">10' Mount 2-0</span><span>45+1' Kostoulas 2-1</span><span>65' Groß 2-2</span><span>69' De Cuyper 2-3</span></div>
+  <div class="ribbon"><div class="rl2"><span class="a">42%</span><span class="m">Share of shots</span><span class="b">58%</span></div>
+  <div class="rib"><i style="flex:11;background:var(--a)"></i><i style="flex:15;background:var(--b)"></i></div></div>
+</section>
+<div class="stick"><div class="tabs" role="tablist">
+<button class="tab on" data-t="report">MATCH<br>REPORT</button><button class="tab" data-t="deep">DEEP<br>DIVE</button><button class="tab" data-t="improve">IMPROVE</button><button class="tab" data-t="tactics">TACTICS</button><button class="tab" data-t="oppo">OPPO<br>PREP</button></div></div>
+
+<!-- ============ MATCH REPORT ============ -->
+<div class="panelwrap" id="p-report">
+  <section class="sec story">
+    <h2>Two quick goals, then Brighton took the game</h2>
+    <p><b class="tc a">Manchester United</b> were 2-0 up inside ten minutes through Shea Lacey (8') and Mason Mount (10'). <b class="tc b">Brighton</b> answered with Kostoulas (45+1'), Groß (65') and substitute De Cuyper (69') to win 3-2 and reach round four.</p>
+    <p>The 2-0 hid a lot. By half-time United led 2-1 but trailed on shots 4-8, touches in the opposition box 8-24 and xG 0.30-0.92.<span class="src web">WEB</span></p>
+    <p>Over 90 minutes Brighton had 15 shots to 11, 5 on target to 4, and committed 14 fouls to United's 5, with four yellow cards to none.<span class="src you">YOU</span></p>
+  </section>
+  <section class="grid">
+    <div class="mini"><div class="l">Goals / shots</div><div class="v">2 / 11</div><div class="c">Brighton 3 / 15</div></div>
+    <div class="mini"><div class="l">Goals per shot on target</div><div class="v">50%</div><div class="c">Brighton 60% (3 of 5)</div></div>
+    <div class="mini"><div class="l">Fouls · yellows</div><div class="v">5 · 0</div><div class="c">Brighton 14 · 4</div></div>
+    <div class="mini"><div class="l">xG (FotMob)</div><div class="v">1.20</div><div class="c">Brighton 2.14. SI has 1.04-2.15 <span class="flag">⚠</span></div></div>
+  </section>
+
+  <div class="note"><h4>What this dashboard is built on</h4>
+    <ul><li><span class="src you">YOU</span> your screenshots: the Google match card (score, goals, team stats) and 12 YouTube highlight frames (scoreboard state plus caption text).</li>
+    <li><span class="src web">WEB</span> outside reports (ESPN, FotMob, TNT Sports, SI, WhoScored, Sofascore). Used for lineups, xG, shot list and goal assists.</li>
+    <li><span class="src der">DERIVED</span> simple arithmetic across sources. Always flagged.</li>
+    <li><span class="flag">⚠</span> two sources disagree. Both values are shown.</li>
+    <li><b>Not in the data yet:</b> shot x/y positions, pressing data, minute-by-minute event log. The highlight frames are video frames, not shot maps, so nothing on this page is plotted at an invented position.</li></ul></div>
+
+  <section class="sec"><h3>Stat explorer</h3><p class="sub">Tap any row to see what it means and where it came from.</p>
+    <div class="panel"><div class="legend"><span><i class="la"></i>Man United</span><span><i class="lb"></i>Brighton</span></div>
+    <div class="chips" id="chips"></div><div id="rows"></div></div></section>
+
+  <section class="sec"><h3>Where the sources disagree</h3><p class="sub">Shown side by side so nothing gets quietly picked.</p>
+    <div class="panel"><div class="tw"><table class="tbl"><thead><tr><th>Item</th><th>Value A</th><th>Value B</th><th>Note</th></tr></thead><tbody>
+    <tr><td>Mount goal</td><td>10' (Google, ESPN, FotMob)</td><td>9' (Sofascore)</td><td>A report puts it inside two minutes of Lacey's 8' goal, so both are plausible. Log it from the video.</td></tr>
+    <tr><td>Shots</td><td class="a">11-15 (Google)</td><td class="b">12-18 (FotMob)</td><td>Differs by 1 for United and 3 for Brighton.</td></tr>
+    <tr><td>Possession</td><td>49-51 (Google)</td><td>50-50 (FotMob)</td><td>TNT half-time figure was 46-54.</td></tr>
+    <tr><td>xG</td><td>1.20-2.14 (FotMob)</td><td>1.04-2.15 (SI)</td><td>Different models. Brighton higher in both.</td></tr>
+    <tr><td>Brighton shape</td><td>4-3-3 (FotMob; ESPN lists Boscagli as a midfielder)</td><td>3-4-2-1 (WhoScored)</td><td>One outlet says 4-2-3-1. See Tactics.</td></tr>
+    <tr><td>Lacey goal creator</td><td>Assist: Tielemans (FotMob)</td><td>Caption names Rashford at 1-0</td><td>Commentary can name the player before the assist. Check the clip.</td></tr>
+    <tr><td>United changes at ~66'</td><td colspan="2">Reports name different players on and off</td><td>Only the timing is consistent. See Tactics.</td></tr>
+    </tbody></table></div></div></section>
+</div>
+
+<!-- ============ DEEP DIVE ============ -->
+<div class="panelwrap" id="p-deep" hidden>
+  <section class="sec"><h3>Match timeline</h3><p class="sub">United above the line, Brighton below. Tap a marker.</p>
+    <div class="panel"><div class="tl2" id="tl"></div>
+    <div class="bands"><div class="bd bd1" style="flex:12">1</div><div class="bd bd2" style="flex:24">2</div><div class="bd bd3" style="flex:10">3</div><div class="bd bd4" style="flex:19">4</div><div class="bd bd5" style="flex:4">5</div><div class="bd bd6" style="flex:26">6</div></div>
+    <div class="tlx"><span>0'</span><span>45'</span><span>90'</span></div>
+    <div class="sel" id="sel"></div></div></section>
+
+  <section class="sec"><h3>Phases of the game</h3><p class="sub">Read from the sources. Confirm against your event log.</p>
+    <div class="panel">
+    <div class="ph"><div class="n bd1">1</div><div><h5>United front foot <span>0'-12'</span></h5><p>Shots at 8' (Lacey), 9' (Rashford, saved) and 10' (Mount), then Rashford from 38 yds at 12'. Two goals. The three chances that mattered added up to 0.29 xG.<span class="src web">WEB</span></p></div></div>
+    <div class="ph"><div class="n bd2">2</div><div><h5>United go quiet <span>12'-36'+</span></h5><p>No United shot appears in ESPN's list between 12' and 36' (the list I could capture ends at 36'). Brighton shot at 24', 33' and 36'. In your 2-0 clip frames Brighton are already building attacks: Groß, Yalcouyé and O'Riley in one move, a ball clipped in, a shot blocked by Heaven.<span class="src web">WEB</span><span class="src you">YOU</span></p></div></div>
+    <div class="ph"><div class="n bd3">3</div><div><h5>Brighton surge <span>36'-45+1'</span></h5><p>Half-time Brighton xG was 0.92. The shots I can see up to 36' add up to about 0.24, which implies roughly 0.68 xG in the last 10 minutes of the half, including the Kostoulas header. Treat as an estimate.<span class="src der">DERIVED</span></p></div></div>
+    <div class="ph"><div class="n bd4">4</div><div><h5>United restart, no end product <span>46'-65'</span></h5><p>TNT's live text says United began the second half with more intensity than they ended the first. Tielemans bent a shot off target after Steele came out (ESPN). Second-half shots on target, derived from the Google card minus half-time: United 1, Brighton 3.<span class="src der">DERIVED</span></p></div></div>
+    <div class="ph"><div class="n bd5">5</div><div><h5>Collapse window <span>65'-69'</span></h5><p>Groß equalises at 65'. United make a triple change around 66'. De Cuyper, on for about three minutes, scores at 69'. Two goals in four minutes.<span class="src web">WEB</span></p></div></div>
+    <div class="ph"><div class="n bd6">6</div><div><h5>United chase, Brighton manage <span>69'-90'+</span></h5><p>Bruno Fernandes and Cunha come on at about 73'-74' (FotMob). Brighton still created chances through Kostoulas and Diego Gómez (ESPN). De Cuyper was booked for time-wasting. I have no shot or possession split for this period.<span class="src web">WEB</span></p></div></div>
+    </div></section>
+
+  <section class="sec"><h3>Decisive moments</h3><p class="sub">Each goal, the chain that led to it, and where it could have been stopped.</p>
+    <div id="moments">
+    <div class="acc" id="g1"><button class="acc-h"><span class="mn a">8'</span><span class="mt"><b>Lacey 1-0</b><i>United · assist Tielemans</i></span><span class="chev"></span></button><div class="acc-b">
+      <ol class="chain">
+        <li><b>Set-up.</b> United 4-2-3-1. Lacey starts on the right of the attacking three, his first senior start; Rashford is on the left.<span class="src web">WEB</span></li>
+        <li><b>Tielemans plays Lacey in.</b> The assist is credited to Tielemans. In your 1-0 frames the commentary names Rashford just before "Lacy", so Rashford was in the move.<span class="src web">WEB</span><span class="src you">YOU</span></li>
+        <li><b>Lacey shoots from about 21 yds.</b> xG 0.03, post-shot xG 0.28. He beats Steele.<span class="src web">WEB</span></li>
+        <li class="stop"><b>Where it could be stopped:</b> the pass into Lacey. The shot itself was a 0.03 chance, so the value was in denying Tielemans time to play it or closing Lacey before he set his feet. Which Brighton player was nearest cannot be said without positions.</li>
+      </ol>
+      <div class="ev">Clip evidence: 0-0 frame, caption about "room for the shot" naming Tielemans; 1-0 frames with Rashford and Lacy in the captions. Video timecodes weren't visible in the screenshots.</div>
+      <div class="pneed"><svg viewBox="0 0 160 100"><use href="#hp"/></svg><div><b>Chain on pitch: needs a log</b><span>Positions of Tielemans, Lacey, Rashford and the nearest three Brighton players at the moment of the pass.</span></div></div>
+    </div></div>
+
+    <div class="acc" id="g2"><button class="acc-h"><span class="mn a">10'</span><span class="mt"><b>Mount 2-0</b><i>United · rebound · 9' per Sofascore ⚠</i></span><span class="chev"></span></button><div class="acc-b">
+      <ol class="chain">
+        <li><b>Rashford shoots from about 13 yds.</b> xG 0.16, post-shot xG 0.15. Steele saves.<span class="src web">WEB</span></li>
+        <li><b>The rebound stays in the box.</b> Mount follows up from about 14 yds, xG 0.10 but post-shot xG 0.67, finishing into the ground and into the net. Reports put this inside two minutes of Lacey's goal.<span class="src web">WEB</span></li>
+        <li class="stop"><b>Where it could be stopped:</b> the second ball. Steele's save left it inside 14 yds with Mount arriving first. Nobody in Brighton blue cleared it or got to Mount before he shot.</li>
+      </ol>
+      <div class="ev">Sources: ESPN shot list and report (Mount 10'), Sofascore (9'). This is the second goal United scored from a chance worth 0.10 xG or less.</div>
+      <div class="pneed"><svg viewBox="0 0 160 100"><use href="#hp"/></svg><div><b>Chain on pitch: needs a log</b><span>Where the save went, and the position of every Brighton defender when Mount struck it.</span></div></div>
+    </div></div>
+
+    <div class="acc" id="g3"><button class="acc-h"><span class="mn b">45+1'</span><span class="mt"><b>Kostoulas 2-1</b><i>Brighton · header · assist Hadjam</i></span><span class="chev"></span></button><div class="acc-b">
+      <ol class="chain">
+        <li><b>United lose the ball and appeal for a foul.</b> The appeal was not given and play continued. SI's wording is that two turnovers led to Brighton's first two goals.<span class="src web">WEB</span></li>
+        <li><b>Hadjam plays a raking ball forward.</b> He is a full-back or wing-back, so a defender had the time to pick the pass.<span class="src web">WEB</span></li>
+        <li><b>Kostoulas heads it past Darlow.</b> Darlow was making his United debut. First minute of added time, so United went into the break with the lead cut.<span class="src web">WEB</span></li>
+        <li class="stop"><b>Where it could be stopped:</b> three places. (1) The turnover. (2) Pressure on Hadjam before he played the ball. (3) The aerial duel. Who marked Kostoulas is not in the sources.</li>
+      </ol>
+      <div class="ev">Sources: ESPN report, FotMob assist, SI numbers table.</div>
+      <div class="pneed"><svg viewBox="0 0 160 100"><use href="#hp"/></svg><div><b>Chain on pitch: needs a log</b><span>Where the turnover happened, where Hadjam released it, the line height at the moment of the pass.</span></div></div>
+    </div></div>
+
+    <div class="acc" id="g4"><button class="acc-h"><span class="mn b">65'</span><span class="mt"><b>Groß 2-2</b><i>Brighton · assist Vušković</i></span><span class="chev"></span></button><div class="acc-b">
+      <ol class="chain">
+        <li><b>Vušković creates from centre-back.</b> FotMob credits him with the assist. A centre-back creating the goal means nobody closed him down.<span class="src web">WEB</span></li>
+        <li><b>The pass goes through the middle to Groß.</b> TNT's live text describes United's defence splitting open. Your 2-1 frames carry the caption "that's through to Pascal Gross" twice.<span class="src web">WEB</span><span class="src you">YOU</span></li>
+        <li><b>Groß finishes.</b> He was Player of the Match (FotMob) and top-rated on Sofascore.<span class="src web">WEB</span></li>
+        <li class="stop"><b>Where it could be stopped:</b> the central lane between United's midfield and back line, and pressure on Vušković. This is provisional: it reads the goal from the reports, not from positions.</li>
+      </ol>
+      <div class="ev">Context: Carrick's triple change was already lined up and went ahead around 66', so United were still in the old shape for this goal (ESPN, TNT).</div>
+      <div class="pneed"><svg viewBox="0 0 160 100"><use href="#hp"/></svg><div><b>Chain on pitch: needs a log</b><span>Vušković's carry and pass start/end, Groß's run, and where Tielemans and Santos were standing.</span></div></div>
+    </div></div>
+
+    <div class="acc" id="g5"><button class="acc-h"><span class="mn b">69'</span><span class="mt"><b>De Cuyper 2-3</b><i>Brighton · substitute · cut-back</i></span><span class="chev"></span></button><div class="acc-b">
+      <ol class="chain">
+        <li><b>De Cuyper comes on.</b> About 65'-66' (FotMob has 66'). He is on the pitch for roughly three minutes before scoring.<span class="src web">WEB</span></li>
+        <li><b>Kostoulas races down United's right.</b> Your 2-2 frame caption has him breezing into the box.<span class="src web">WEB</span><span class="src you">YOU</span></li>
+        <li><b>Cut-back, deflection, finish.</b> The cut-back deflects and falls to De Cuyper near the six-yard box, and he converts.<span class="src web">WEB</span></li>
+        <li class="stop"><b>Where it could be stopped:</b> the run down United's right, and the cut-back zone. Lacey, who played on that side, was one of the players replaced around 66' (FotMob), so the right flank had a new player a few minutes into the job. Worth checking on video.</li>
+      </ol>
+      <div class="ev">Timing: 4 minutes after the equaliser. One outlet lists 70'; Google, Sofascore, ESPN and FotMob say 69'.</div>
+      <div class="pneed"><svg viewBox="0 0 160 100"><use href="#hp"/></svg><div><b>Chain on pitch: needs a log</b><span>Start and end of Kostoulas's run, who tracked him, and who was marking at the six-yard box.</span></div></div>
+    </div></div>
+    </div></section>
+
+  <section class="sec"><h3>Shot distance ladder</h3><p class="sub">First-half shots from ESPN's list, by distance from goal. Circle size is xG, ringed circles are goals.</p>
+    <div class="panel"><svg id="ladder" viewBox="0 0 330 170" role="img" aria-label="Shot distance ladder"></svg>
+    <div class="note warn"><h4>Not a shot map</h4><p>Distance only, with no angle or side. Boscagli's 33' shot and Yalcouyé's 36' shot had no distance in the list I could read, and ESPN's list is cut off after 36'. Send a full shot map or log x/y to get a real one.</p></div></div></section>
+
+  <section class="sec"><h3>First half vs second half</h3><p class="sub">Half-time figures from TNT, full-time from the sources shown. The last column subtracts one from the other.</p>
+    <div class="panel"><div class="tw"><table class="tbl"><thead><tr><th>Metric</th><th>Half-time</th><th>Full time</th><th>2nd half</th></tr></thead><tbody>
+    <tr><td>Shots</td><td>4-8</td><td>11-15 (Google)<br>12-18 (FotMob)</td><td>7-7 / 8-10</td></tr>
+    <tr><td>On target</td><td>3-2</td><td>4-5 (Google)</td><td>1-3</td></tr>
+    <tr><td>Possession %</td><td>46-54</td><td>49-51 (Google)<br>50-50 (FotMob)</td><td>about 52-48 / 54-46</td></tr>
+    <tr><td>Box touches</td><td>8-24</td><td>17-40 (FotMob)</td><td>9-16</td></tr>
+    <tr><td>xG</td><td>0.30-0.92</td><td>1.20-2.14 (FotMob)<br>1.04-2.15 (SI)</td><td>0.90-1.22 / 0.74-1.23</td></tr>
+    <tr><td>Corners</td><td>1-2</td><td>4-3 (Google)</td><td>3-1</td></tr>
+    </tbody></table></div>
+    <p class="fine"><span class="src der">DERIVED</span> Mixes sources, so treat as direction not precision. Possession assumes two equal halves. United first, Brighton second in every pair.</p></div></section>
+
+  <section class="sec"><h3>Your read vs the data</h3><p class="sub">Your intensity thesis, tested point by point.</p>
+    <div class="report" style="margin-top:14px">
+    <div class="card neu"><span class="verd v-ok">Supported</span><h4>"United started on the front foot"</h4><p>Three shots between 8' and 10' and two goals inside about two minutes. Note the quality: the three chances added up to 0.29 xG, and the two goals were worth 0.13 between them. Fast, but not yet dominant.</p></div>
+    <div class="card neu"><span class="verd v-ok">Supported</span><h4>"They took their foot off the gas"</h4><p>No United shot appears in ESPN's list from 12' to 36'. At half-time United had 4 shots to 8 and 8 box touches to 24, while leading 2-1.</p></div>
+    <div class="card neu"><span class="verd v-part">Partly</span><h4>"Brighton pressed higher and United couldn't cope"</h4><p>Indirect evidence fits: two of Brighton's three goals came from a defender who had time to pass (Hadjam, Vušković), and Brighton committed 14 fouls to 5. But there is no pressing data in the sources, so the press itself cannot be measured yet. See the log list.</p></div>
+    <div class="card neu"><span class="verd v-part">Partly</span><h4>"Brighton grew into the game after going 2-0 down"</h4><p>True, and earlier than the scoreline suggests. They were shooting by 24', and the xG arithmetic puts the biggest burst between 36' and 45+1'. The goal came in added time, but the pressure had been building for 20 minutes.</p></div>
+    <div class="card neu"><span class="verd v-part">Partly</span><h4>"That trend carried into the second half"</h4><p>The second half was more open than a one-way press. TNT said United restarted with more intensity, and United's derived second-half xG (0.74-0.90) was above their first-half 0.30. Brighton still had more (1.22) and took two of their three second-half shots on target.</p></div>
+    <div class="card neu"><span class="verd v-none">Can't test yet</span><h4>"United controlled the midfield early"</h4><p>No box-touch, possession or pass data for the first 10 minutes. Log it by 5-minute block.</p></div>
+    </div></section>
+</div>
+
+<!-- ============ IMPROVE ============ -->
+<div class="panelwrap" id="p-improve" hidden>
+  <section class="sec"><h3>Improve report</h3><p class="sub">For Manchester United. Every item shows its evidence.</p>
+  <div class="group g">What United did well</div><div class="report">
+  <div class="card good"><h4>A genuine fast start</h4><p>Three shots between 8' and 10', two goals from them, both from inside 21 yds. Rashford's shot forced the save that led to Mount's goal.</p><span class="pill">2 goals from 3 shots · 8'-10'</span></div>
+  <div class="card good"><h4>Finishing quality</h4><p>Lacey's goal was a 0.03 chance placed for a 0.28 post-shot value. Mount's was 0.10 xG but 0.67 post-shot xG. Both finishes beat the odds.</p><span class="pill">Post-shot xG 0.28 and 0.67</span></div>
+  <div class="card good"><h4>Clean discipline</h4><p>Five fouls and no cards, against Brighton's 14 and four yellows.</p><span class="pill">5 fouls · 0 cards</span></div>
+  <div class="card good"><h4>A real restart</h4><p>TNT's live text says United began the second half with more intensity, and they won the corner count 3-1 after the break.</p><span class="pill">3-1 corners, 2nd half · derived</span></div></div>
+  <div class="group i">What United need to improve</div><div class="report">
+  <div class="card bad"><h4>The attack disappeared after 12'</h4><p>No United shot in ESPN's list between 12' and 36'. At half-time: shots 4-8, box touches 8-24, xG 0.30-0.92. A 2-0 lead was managed by defending, and the defending didn't hold.</p><span class="pill">0 shots 12'-36'+</span></div>
+  <div class="card bad"><h4>Brighton's defenders had time</h4><p>Hadjam (45+1') and Vušković (65') both created goals from defence. When the ball-player is not pressed, the chance starts three passes earlier than the shot.</p><span class="pill">2 of 3 Brighton goals assisted by a defender</span></div>
+  <div class="card bad"><h4>Turnovers</h4><p>SI says two turnovers led to Brighton's first two goals. Pass accuracy was 83% for both teams, so the problem is where the losses happened, not how many.</p><span class="pill">83% pass accuracy · log where</span></div>
+  <div class="card bad"><h4>Outnumbered in the middle, on paper</h4><p>Santos and Tielemans with Mount in front, against three central players in Brighton's 4-3-3, or two plus two behind the striker in a 3-4-2-1. Box touches 8-24 at half-time fit that picture.</p><span class="pill">8 vs 24 box touches at HT</span></div>
+  <div class="card bad"><h4>Possession without a threat after the break</h4><p>United probably had slightly more of the ball in the second half, but produced one shot on target in about 45 minutes while Brighton had three.</p><span class="pill">1 vs 3 shots on target · derived</span></div>
+  <div class="card bad"><h4>Substitutions at the wrong moment</h4><p>A triple change around 66' put three new players on within three minutes of the winner. Lacey, who played on the right where the 69' goal came, was one of those replaced.</p><span class="pill">Triple change · winner 3 minutes later</span></div>
+  <div class="card bad"><h4>No tactical fouls</h4><p>United committed 5 fouls and received no cards. Brighton's 14 fouls and four yellows suggest they were willing to break up play. United never did.</p><span class="pill">5 fouls vs 14</span></div></div>
+  <div class="focus"><h3>Focus for next match</h3><ol>
+  <li>Change the plan after going 2-0 up. Keep both pivots available to the centre-backs and keep Mount between Brighton's lines, so the front four have the ball, not just the space.<small>Track shots per 10-minute block and flag any block with zero while leading.</small></li>
+  <li>Press the passers. Šeško screens the ball-side centre-back and Mount steps to the first receiver, so a Vušković or Hadjam never has a clean first touch.<small>Evidence: the 45+1' and 65' goals.</small></li>
+  <li>Protect the right channel and the cut-back zone. When the ball is wide, the weak-side pivot drops to the penalty spot.<small>Evidence: De Cuyper scored from near the six-yard box at 69'.</small></li>
+  <li>Stage substitutions. No triple change in the ten minutes after conceding. First change at the next dead ball, one at a time, with the new winger told whose run to track.<small>Evidence: 65', 66', 69'.</small></li></ol></div></section>
+</div>
+
+<!-- ============ TACTICS ============ -->
+<div class="panelwrap" id="p-tactics" hidden>
+  <section class="sec"><h3>Formations</h3><p class="sub">The confirmed starting XIs. All teams attack up the page. Pick a team.</p>
+  <div class="tb"><svg id="tsv" viewBox="0 0 360 640" role="img" aria-label="Formation boards for Manchester United and Brighton">
+  <rect width="360" height="640" fill="#14161a"/>
+  <g class="ln"><rect x="30" y="30" width="300" height="580"/><line x1="30" y1="320" x2="330" y2="320"/><circle cx="180" cy="320" r="42"/><rect x="100" y="30" width="160" height="70"/><rect x="100" y="540" width="160" height="70"/><rect x="145" y="30" width="70" height="26"/><rect x="145" y="584" width="70" height="26"/></g>
+  <g id="zones"></g><g id="nodes"></g></svg>
+  <div class="tcap" aria-live="polite"><b id="tt"></b><span id="tc"></span></div>
+  <div class="tctl"><button data-f="u" class="on">United 4-2-3-1</button><button data-f="b4">Brighton 4-3-3</button><button data-f="b3">Brighton 3-4-2-1</button></div></div>
+  <p class="sub"><span class="badge-s">Schematic</span> Built from the lineups only. Flanks follow the sources (Rashford left, Lacey right). The order of players within a line is approximate. It is not tracking data.</p></section>
+
+  <section class="sec"><h3>How the systems met</h3><div class="report" style="margin-top:14px">
+  <div class="card neu"><h4>Midfield numbers</h4><p>United: Santos and Tielemans as a pair, with Mount as the 10. Brighton: Andrés, Groß and Boscagli as a three (FotMob, ESPN) or Andrés and Groß as a pair with O'Riley and Yalcouyé between the lines (WhoScored). Either way Brighton had the central overload, and Groß was Player of the Match.<span class="src web">WEB</span></p></div>
+  <div class="card neu"><h4>Brighton's defenders as playmakers</h4><p>Hadjam (wide) and Vušković (centre-back) provided the final pass for goals 3 and 4. United's front players did not stop them, which is a pressing problem, not a goalkeeping one.<span class="src web">WEB</span></p></div>
+  <div class="card neu"><h4>Wide attackers left high</h4><p>Rashford and Lacey were the wide players in the front three. When they were high, Dalot and Mazraoui defended wide space against Brighton's wide runners. Goals 3 and 5 both came from Brighton wide play.</p></div>
+  <div class="card neu"><h4>Rotation</h4><p>Lacey was one of eight United changes, Darlow made his United debut, and Brighton were also heavily rotated (ESPN, SI). A rotated XI has fewer rehearsed pressing triggers. This is an alternative explanation to "intensity" that the data cannot separate yet.<span class="src web">WEB</span></p></div>
+  <div class="card neu"><h4>The substitutions</h4><div class="tw"><table class="tbl" style="min-width:420px"><thead><tr><th>When</th><th>United</th><th>Brighton</th></tr></thead><tbody>
+  <tr><td>~65'-66'</td><td>Triple change. VAVEL: Mbeumo for Lacey, Zirkzee for Šeško, Mainoo into midfield. FotMob lists other names. <span class="flag">⚠</span></td><td>De Cuyper on for Yalcouyé, Gómez on for O'Riley (TNT, VAVEL)</td></tr>
+  <tr><td>~73'-74'</td><td>Fernandes on for Mount, Cunha on for Rashford (FotMob)</td><td>Kadıoğlu for Hadjam, Ayari for Boscagli, Rutter for Kostoulas (FotMob)</td></tr>
+  </tbody></table></div></div>
+  <div class="card neu"><h4>Goalkeeper</h4><p>Darlow faced 5 shots on target and conceded 3 (Google card). Without positions or post-shot xG for Brighton's goals this says little about him; it is context, not a verdict.<span class="src you">YOU</span></p></div></div></section>
+</div>
+
+<!-- ============ OPPOSITION PREP ============ -->
+<div class="panelwrap" id="p-oppo" hidden>
+  <section class="sec"><h3>Scouting Brighton</h3><p class="sub">From this one match (EFL Cup, heavily rotated side). Treat every pattern as a hypothesis until it repeats.</p>
+  <div class="note"><h4>Their shape</h4><p>Reports disagree: 4-3-3 (FotMob), 3-4-2-1 (WhoScored). Prepare for both. XI: Steele; Costinha, Vušković, Struijk, Hadjam; Andrés, Groß, Boscagli; O'Riley, Kostoulas, Yalcouyé. Coach: Fabian Hürzeler.<span class="src web">WEB</span></p></div>
+
+  <div class="group i">How they scored (3 goals)</div><div class="report">
+  <div class="card neu"><h4>Long ball from a wide defender to Kostoulas</h4><p>Hadjam's raking ball, Kostoulas heading past Darlow at 45+1'.</p><span class="pill">Goal 1 of 3</span></div>
+  <div class="card neu"><h4>Centre-back through the middle to Groß</h4><p>Vušković created, Groß finished at 65'.</p><span class="pill">Goal 2 of 3</span></div>
+  <div class="card neu"><h4>Striker down the flank, cut-back to a substitute</h4><p>Kostoulas on United's right, a deflected cut-back, De Cuyper from near the six-yard box at 69'.</p><span class="pill">Goal 3 of 3</span></div></div>
+
+  <div class="group g">Pattern tracker</div>
+  <div class="panel"><div class="tw"><table class="tbl" style="min-width:520px"><thead><tr><th>Pattern</th><th>This match</th><th>Games logged</th><th>Repeat rate</th></tr></thead><tbody>
+  <tr><td>Defender supplies the final pass</td><td>2 of 3 goals</td><td>1</td><td>Needs 3+ games</td></tr>
+  <tr><td>Kostoulas decisive</td><td>2 of 3 goals</td><td>1</td><td>Needs 3+ games</td></tr>
+  <tr><td>Goal from a wide delivery or run</td><td>2 of 3 goals</td><td>1</td><td>Needs 3+ games</td></tr>
+  <tr><td>Late first-half surge</td><td>about 0.68 xG, 36'-45+1' <span class="src der">DERIVED</span></td><td>1</td><td>Needs 3+ games</td></tr>
+  <tr><td>Substitute scores quickly</td><td>De Cuyper, about 3 minutes</td><td>1</td><td>Needs 3+ games</td></tr>
+  <tr><td>Slow start</td><td>Conceded twice by 10'</td><td>1</td><td>Needs 3+ games</td></tr>
+  </tbody></table></div><p class="fine">One match cannot show repetition. Every row above is a prompt to look for it in the next Brighton games you log.</p></div>
+
+  <div class="group i">Actions, one per pattern</div><div class="report">
+  <div class="card bad"><h4>Press the ball-playing defenders</h4><p>Set your striker to screen Groß and send the wide forward on Hadjam's side to jump his first touch. Vušković should receive with a player already closing.</p><span class="pill">Evidence: 45+1' and 65' goals</span></div>
+  <div class="card bad"><h4>Own the Kostoulas duel</h4><p>Put your best aerial centre-back on Kostoulas for every Hadjam delivery. A second player covers the back post.</p><span class="pill">Evidence: header at 45+1', run at 69'</span></div>
+  <div class="card bad"><h4>Defend the cut-back zone</h4><p>When the ball is wide, the weak-side midfielder drops to the penalty spot and a second player stays at the edge of the six-yard box.</p><span class="pill">Evidence: De Cuyper's 69' finish</span></div>
+  <div class="card bad"><h4>Close out the first half</h4><p>From about 36', drop into a compact mid-block and stop playing through the centre until the whistle.</p><span class="pill">Evidence: about 0.68 xG, 36'-45+1'</span></div>
+  <div class="card bad"><h4>Be ready for the substitute</h4><p>Brighton changed around 65'-66' and the new player scored within about three minutes. Hold your own wide-defender changes until after theirs, and give the full-back on that side an explicit job on the first run.</p><span class="pill">Evidence: 65', 66', 69'</span></div>
+  <div class="card good"><h4>Hit them early</h4><p>Brighton conceded twice in the first 10 minutes, both from inside 21 yds. Press high from the first whistle, and send a second runner to every rebound: Mount's goal came from a saved shot.</p><span class="pill">Evidence: 8' and 10' goals</span></div></div>
+
+  <section class="sec"><h3>What to log next</h3><p class="sub">The exact data that would turn this into a full analysis.</p>
+  <div class="note warn"><ul>
+  <li><b>Every shot (26 per the Google card):</b> minute, player, x/y, body part, outcome, assist type.</li>
+  <li><b>Each goal's last 30 seconds:</b> video timecode and the x/y of every pass and player in the chain.</li>
+  <li><b>Every turnover:</b> minute, player, x/y, and whether it led to a shot within 15 seconds.</li>
+  <li><b>Pressing:</b> for each Brighton build-up phase, which United players were within about 5 m when the pass was played. Opponent passes allowed per defensive action, per 15-minute block.</li>
+  <li><b>Defensive line height</b> at 45+1', 65' and 68'.</li>
+  <li><b>Substitution timestamps</b> and who covered United's right flank at 69'.</li>
+  <li><b>Midfield occupancy</b> by 5-minute block: players per team in the central corridor.</li>
+  <li><b>Fouls:</b> all 19 (5 and 14), with location and what they stopped.</li>
+  <li><b>Timecodes</b> for the 12 highlight frames you sent.</li></ul></div></section></section>
+</div>
+
+<footer class="footer"><div class="brand"><span class="mark"></span>VANTAGE</div></footer>
+</div>
+<script>
+(function(){
+function $(s){return document.querySelector(s)}
+function $$(s){return Array.prototype.slice.call(document.querySelectorAll(s))}
+var SY='<span class="src you">YOU</span>',SW='<span class="src web">WEB</span>',SD='<span class="src der">DERIVED</span>';
+/* label, United, Brighton, group, suffix, explain, source, flag */
+var M=[
+["Goals",2,3,"attack","","Goals scored.",SY,"Mount's goal is 9' on Sofascore and 10' elsewhere."],
+["Shots",11,15,"attack","","Every attempt at goal.",SY,"FotMob has 12-18."],
+["Shots on target",4,5,"attack","","Includes goals. United: 2 goals and 2 saves. Brighton: 3 goals and 2 saves.",SY,""],
+["Not on target (off + blocked)",7,10,"attack","","Shots minus shots on target. Google doesn't split off-target from blocked, so log that.",SD,""],
+["Corners",4,3,"attack","","Corners won. Half-time was 1-2, so United won 3 of the last 4 after the break.",SY,""],
+["Offsides",0,2,"attack","","Times caught offside.",SY,""],
+["Possession",49,51,"possession","%","Share of the ball. TNT had 46-54 at half-time.",SY,"FotMob has 50-50."],
+["Fouls",5,14,"discipline","","Fouls committed. Fewer is better, but a very low count can mean few contested duels.",SY,""],
+["Yellow cards",0,4,"discipline","","Bookings. De Cuyper's was for time-wasting.",SY,""],
+["Red cards",0,0,"discipline","","Sending offs.",SY,""],
+["xG",1.20,2.14,"external","","Expected goals, FotMob.",SW,"SI has 1.04-2.15."],
+["Touches in opp. box",17,40,"external","","FotMob. Half-time was 8-24, so Brighton's box presence was front-loaded.",SW,""],
+["Pass accuracy",83,83,"external","%","Sports Illustrated.",SW,""]];
+var G=[["all","All"],["attack","Attack"],["possession","Possession"],["discipline","Discipline"],["external","External"]],g="all";
+function rows(){
+  $("#chips").innerHTML=G.map(function(x){return '<button class="chip'+(x[0]===g?' on':'')+'" data-g="'+x[0]+'">'+x[1]+'</button>'}).join("");
+  var h="";M.forEach(function(m){if(g!=="all"&&m[3]!==g)return;var a=m[1],b=m[2],t=a+b,z=t===0;
+    var share=(!m[4]&&m[3]!=="external"&&t>0)?' United '+Math.round(a/t*100)+'% of the total, Brighton '+Math.round(b/t*100)+'%.':'';
+    h+='<div class="row" tabindex="0"><div class="rtop"><span class="rv a'+(b>a?' low':'')+'">'+a+m[4]+'</span><span class="rlab">'+m[0]+(m[7]?' <span class="flag">⚠</span>':'')+'</span><span class="rv b'+(a>b?' low':'')+'">'+b+m[4]+'</span></div>'
+    +'<div class="bar'+(z?' zero':'')+'"><i class="ba" style="flex:'+(z?1:Math.max(a,.001))+'"></i><i class="bb" style="flex:'+(z?1:Math.max(b,.001))+'"></i></div>'
+    +'<div class="det"><div>'+m[5]+share+m[6]+(m[7]?'<br><span class="flag">⚠ '+m[7]+'</span>':'')+'</div></div></div>'});
+  var r=$("#rows");r.innerHTML=h;r.classList.remove("swap");void r.offsetWidth;r.classList.add("swap");
+}
+rows();
+$("#chips").addEventListener("click",function(e){var c=e.target.closest(".chip");if(c){g=c.dataset.g;rows()}});
+$("#rows").addEventListener("click",function(e){var r=e.target.closest(".row");if(r)r.classList.toggle("open")});
+$("#rows").addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){var r=e.target.closest(".row");if(r){e.preventDefault();r.classList.toggle("open")}}});
+
+/* timeline */
+var MO=[
+{m:8,s:"a",l:"8'",dx:-7,id:"g1",t:"8' · Lacey 1-0",x:"Tielemans finds Lacey, who shoots from about 21 yds (xG 0.03, post-shot xG 0.28)."},
+{m:10,s:"a",l:"10'",dx:7,id:"g2",t:"10' · Mount 2-0",x:"Rashford's shot is saved and Mount scores the rebound from about 14 yds. Sofascore has this at 9'."},
+{m:46,s:"b",l:"45+1'",id:"g3",t:"45+1' · Kostoulas 2-1",x:"Hadjam's raking ball, Kostoulas heads past Darlow. A United foul appeal was ignored in the build-up."},
+{m:65,s:"b",l:"65'",dx:-7,id:"g4",t:"65' · Groß 2-2",x:"Centre-back Vušković creates through the middle for Groß."},
+{m:66,s:"n",l:"66'",id:"",t:"~66' · United's triple change",x:"Carrick's three changes go ahead right after the equaliser. Reports differ on exactly who came off."},
+{m:69,s:"b",l:"69'",dx:7,id:"g5",t:"69' · De Cuyper 2-3",x:"Kostoulas runs down United's right, the cut-back deflects to substitute De Cuyper, who had been on about three minutes."}];
+var SC=95;
+function tl(){
+  var h='<div class="ht" style="left:'+(45.5/SC*100)+'%"><b>HT</b></div>';
+  MO.forEach(function(e,i){var p=e.m/SC*100;
+    var inner=e.s==="a"?e.l+'<i></i>':(e.s==="b"?'<i></i>'+e.l:'<span>'+e.l+'</span><i></i>');
+    h+='<button class="mk '+e.s+'" data-i="'+i+'" style="left:calc('+p+'% + '+(e.dx||0)+'px)" aria-label="'+e.t+'">'+inner+'</button>'});
+  $("#tl").innerHTML=h;pick(4)
+}
+function pick(i){var e=MO[i];
+  $$(".mk").forEach(function(b){b.classList.toggle("on",+b.dataset.i===i)});
+  $("#sel").innerHTML='<b>'+e.t+'</b><p>'+e.x+'</p>'+(e.id?'<button data-open="'+e.id+'">Open the chain</button>':'')}
+$("#tl").addEventListener("click",function(e){var b=e.target.closest(".mk");if(b)pick(+b.dataset.i)});
+$("#sel").addEventListener("click",function(e){var b=e.target.closest("[data-open]");if(!b)return;
+  var a=document.getElementById(b.dataset.open);a.classList.add("open");a.scrollIntoView({behavior:"smooth",block:"start"})});
+tl();
+$("#moments").addEventListener("click",function(e){var h=e.target.closest(".acc-h");if(h)h.parentNode.classList.toggle("open")});
+
+/* shot distance ladder (ESPN, first-half shots with distance) */
+var SH=[["Boscagli",5,74,.01,"b",0,0],["Lacey",8,21,.03,"a",1,0],["Rashford",9,13,.16,"a",0,-13],["Mount",10,14,.10,"a",1,13],["Rashford",12,38,.03,"a",0,0],["Andrés",24,18,.15,"b",0,0]];
+(function(){
+  var W=330,x0=22,x1=312,svg='',ya=58,yb=122;
+  [0,20,40,60,80].forEach(function(d){var x=x0+d/80*(x1-x0);svg+='<line class="gl" x1="'+x+'" y1="22" x2="'+x+'" y2="148"/><text class="m" x="'+x+'" y="164" text-anchor="middle">'+d+' yds</text>'});
+  svg+='<text x="4" y="14">United</text><text x="4" y="104">Brighton</text><line class="ax" x1="'+x0+'" y1="90" x2="'+x1+'" y2="90"/>';
+  SH.forEach(function(s){var x=x0+s[2]/80*(x1-x0),y=(s[4]==="a"?ya:yb)+s[6],r=4+s[3]*34,col=s[4]==="a"?"var(--a)":"var(--b)";
+    svg+='<circle cx="'+x+'" cy="'+y+'" r="'+r+'" fill="'+col+'" fill-opacity="'+(s[5]?1:.55)+'" stroke="'+(s[5]?'var(--ink)':'none')+'" stroke-width="2.5"/>'
+      +'<text x="'+x+'" y="'+(y-r-4)+'" text-anchor="middle">'+s[1]+"' "+s[0]+'</text>'});
+  $("#ladder").innerHTML=svg
+})();
+
+/* tabs */
+$$(".tab").forEach(function(b){b.addEventListener("click",function(){
+  $$(".tab").forEach(function(x){x.classList.toggle("on",x===b)});
+  $$(".panelwrap").forEach(function(p){p.hidden=p.id!=="p-"+b.dataset.t});
+  var p=$("#p-"+b.dataset.t);p.classList.remove("swap");void p.offsetWidth;p.classList.add("swap");
+  window.scrollTo({top:Math.min(window.scrollY,document.querySelector(".stick").offsetTop),behavior:"smooth"})})});
+
+/* formation board */
+var NS="http://www.w3.org/2000/svg";
+var F={
+u:{c:"var(--a)",t:"Manchester United · 4-2-3-1",d:"Darlow (debut); Dalot, Yoro, Heaven, Mazraoui; Santos, Tielemans; Lacey, Mount, Rashford; Šeško. Eight changes from the previous match (ESPN).",
+ p:[["GK","Darlow",180,570],["RB","Dalot",295,470],["CB","Yoro",222,495],["CB","Heaven",138,495],["LB","Mazraoui",65,470],["DM","Santos",235,385],["DM","Tielemans",125,385],["RW","Lacey",290,265],["AM","Mount",180,255],["LW","Rashford",70,265],["ST","Šeško",180,150]],
+ z:[[60,360,300,50,"Pivot: 2 + Mount"]]},
+b4:{c:"var(--b)",t:"Brighton · 4-3-3",d:"FotMob and ESPN roles. A midfield three of Andrés, Groß and Boscagli, with O'Riley, Kostoulas and Yalcouyé up front.",
+ p:[["GK","Steele",180,570],["RB","Costinha",295,470],["CB","Vušković",222,495],["CB","Struijk",138,495],["LB","Hadjam",65,470],["CM","Andrés",255,365],["CM","Groß",180,345],["CM","Boscagli",105,365],["RW","O'Riley",285,205],["ST","Kostoulas",180,160],["LW","Yalcouyé",75,205]],
+ z:[[70,320,220,60,"Midfield three"]]},
+b3:{c:"var(--b)",t:"Brighton · 3-4-2-1",d:"WhoScored. Boscagli as the third centre-back, Costinha and Hadjam as wing-backs, Groß and Andrés in the middle, O'Riley and Yalcouyé behind Kostoulas.",
+ p:[["GK","Steele",180,570],["CB","Vušković",250,490],["CB","Struijk",180,505],["CB","Boscagli",110,490],["RWB","Costinha",310,385],["CM","Andrés",230,375],["CM","Groß",130,375],["LWB","Hadjam",50,385],["AM","O'Riley",245,255],["AM","Yalcouyé",115,255],["ST","Kostoulas",180,150]],
+ z:[[100,340,160,60,"Pair + 2 between lines"]]}};
+function board(k){var f=F[k];$("#nodes").innerHTML="";$("#zones").innerHTML="";
+  f.z.forEach(function(z){var r=document.createElementNS(NS,"rect");r.setAttribute("class","zone");r.setAttribute("x",z[0]);r.setAttribute("y",z[1]);r.setAttribute("width",z[2]);r.setAttribute("height",z[3]);r.setAttribute("rx",18);$("#zones").appendChild(r)});
+  f.p.forEach(function(p){var g=document.createElementNS(NS,"g");g.setAttribute("class","nd");g.setAttribute("transform","translate("+p[2]+","+p[3]+")");
+    g.innerHTML='<circle r="14" style="fill:'+f.c+'"/><text>'+p[0]+'</text><text class="nm" y="26">'+p[1]+'</text>';$("#nodes").appendChild(g)});
+  $("#tt").textContent=f.t;$("#tc").textContent=f.d;
+  $$(".tctl button").forEach(function(b){b.classList.toggle("on",b.dataset.f===k)})}
+$$(".tctl button").forEach(function(b){b.addEventListener("click",function(){board(b.dataset.f)})});
+board("u");
+})();
+</script></body></html>
