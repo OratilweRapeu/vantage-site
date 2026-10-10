@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>Vantage | Manchester United vs Tottenham</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--surface:#f4f5f7;--surface2:#e3e5ea;--ink:#0b0b0c;--ink2:#3a3e46;--muted:#6a7079;--line:#e3e5ea;
+--a:#da291c;--a-line:transparent;--a-text:#c4231a;--b:#0057b8;--b-text:#0057b8;--gold:#febe10;--acid:#c6ff3d;
+--ok:#177a3c;--ok-bg:#e3f5e9;--warn:#8a4b00;--warn-bg:#fff2d6;--bad:#a3201a;--bad-bg:#fde8e6;
+--font:'Inter Tight',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b0b0c;--surface:#17181b;--surface2:#26282d;--ink:#f5f6f8;--ink2:#c9ccd3;--muted:#8b919b;--line:#26282d;--a:#e8412f;--a-text:#ff6b5b;--b:#1f86d4;--b-text:#4fa9ee;--ok:#7bdc9a;--ok-bg:#12261a;--warn:#ffcc80;--warn-bg:#2e2412;--bad:#ff9a92;--bad-bg:#2e1614}}
+:root[data-theme="dark"]{--bg:#0b0b0c;--surface:#17181b;--surface2:#26282d;--ink:#f5f6f8;--ink2:#c9ccd3;--muted:#8b919b;--line:#26282d;--a:#e8412f;--a-text:#ff6b5b;--b:#1f86d4;--b-text:#4fa9ee;--ok:#7bdc9a;--ok-bg:#12261a;--warn:#ffcc80;--warn-bg:#2e2412;--bad:#ff9a92;--bad-bg:#2e1614}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 80px);background:var(--bg)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);-webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums;line-height:1.4}
+button{font:inherit;color:inherit;cursor:pointer}
+.wrap{max-width:720px;margin:0 auto;padding:0 18px 56px}
+.top{display:flex;align-items:center;justify-content:space-between;padding:16px 0 4px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:21px;letter-spacing:.02em}
+.mark{width:18px;height:18px;border-radius:6px;background:var(--ink);display:inline-block;box-shadow:3px 3px 0 var(--acid)}
+.tag{font-size:11px;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--line);padding:6px 11px;border-radius:99px;color:var(--muted)}
+.hero{padding:22px 0 8px;text-align:center}
+.comp{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.teams{display:grid;grid-template-columns:1fr 1fr;margin-top:18px}
+.tm{display:flex;flex-direction:column;align-items:center;gap:8px;font-weight:700;font-size:16px}
+.crest{width:46px;height:46px;border-radius:15px;display:grid;place-items:center;font-weight:800;font-size:14px;color:#fff}
+.crest.a{background:var(--a)}
+.crest.b{background:var(--b);border-bottom:4px solid var(--gold)}
+.score{display:flex;justify-content:center;align-items:baseline;gap:14px;font-weight:800;font-size:clamp(84px,24vw,128px);line-height:1;letter-spacing:-.05em}
+.score .sep{color:var(--surface2)}.score .sa{color:var(--a-text)}.score .sb{color:var(--b-text)}
+.status{margin-top:10px;font-size:14px;color:var(--muted);display:flex;align-items:center;justify-content:center;gap:8px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--acid)}
+.halves{display:flex;justify-content:center;flex-wrap:wrap;gap:6px;margin-top:14px}
+.halves span{font-size:13px;color:var(--muted);padding:6px 12px;border-radius:99px;background:var(--surface)}
+.halves span.fl{outline:1.5px dashed var(--warn);outline-offset:-1.5px}
+.ribbon{margin:20px auto 0;max-width:520px}
+.rl2{display:flex;justify-content:space-between;font-weight:700;font-size:15px;margin-bottom:8px}
+.rl2 .a{color:var(--a-text)}.rl2 .b{color:var(--b-text)}.rl2 .m{color:var(--muted);font-weight:500;font-size:13px}
+.rib{display:flex;gap:4px;height:12px}.rib i{display:block;border-radius:99px}
+.stick{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;margin:14px -18px 0;padding:10px 18px 8px;background:color-mix(in srgb,var(--bg) 90%,transparent);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.tabs{display:grid;grid-template-columns:repeat(5,1fr);gap:3px;background:var(--surface);border-radius:22px;padding:6px}
+.tab{border:0;background:transparent;border-radius:17px;padding:13px 0;font-weight:800;font-size:10.5px;color:var(--muted);letter-spacing:-.01em;transition:background .25s,color .25s;line-height:1.15}
+.tab.on{background:var(--ink);color:var(--bg)}
+.panelwrap[hidden]{display:none}
+.sec{margin-top:38px}.sec h3{margin:0;font-size:24px;font-weight:800;letter-spacing:-.03em}
+.sub{margin:6px 0 0;font-size:15px;color:var(--muted)}
+.panel{background:var(--surface);border-radius:30px;padding:20px 18px;margin-top:16px}
+.story h2{margin:0 0 12px;font-size:clamp(26px,7vw,34px);line-height:1.1;font-weight:800;letter-spacing:-.03em}
+.story p{margin:0 0 12px;font-size:16.5px;line-height:1.5;color:var(--ink2)}
+.tc.a{font-weight:700;color:var(--a-text)}.tc.b{font-weight:700;color:var(--b-text)}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:28px}
+.mini{background:var(--surface);border-radius:22px;padding:16px}
+.mini .l{font-size:14px;color:var(--muted)}.mini .v{font-size:32px;font-weight:800;letter-spacing:-.03em;margin-top:6px}
+.mini .c{font-size:13px;color:var(--muted);margin-top:4px;line-height:1.3}
+.legend{display:flex;gap:18px;font-size:16px;font-weight:600}
+.legend i{width:14px;height:14px;border-radius:50%;display:inline-block;margin-right:8px;vertical-align:-2px}
+.legend .la{background:var(--a)}.legend .lb{background:var(--b)}
+.chips{display:flex;gap:6px;overflow-x:auto;margin:16px -2px 4px;padding:2px;scrollbar-width:none}.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;border:1px solid var(--line);background:var(--bg);border-radius:99px;padding:8px 14px;font-size:14px;font-weight:600;color:var(--ink2)}
+.chip.on{background:var(--acid);border-color:transparent;color:#0b0b0c}
+.row{padding:16px 0;border-top:1px solid var(--line);cursor:pointer}.row:first-of-type{border-top:0}
+.rtop{display:grid;grid-template-columns:1fr auto 1fr;align-items:baseline}
+.rv{font-size:34px;font-weight:800;letter-spacing:-.03em}.rv.a{color:var(--a-text)}.rv.b{color:var(--b-text);text-align:right}
+.rv.low{opacity:.4}
+.rlab{font-size:16px;color:var(--ink2);text-align:center;padding:0 8px;line-height:1.2}
+.bar{display:flex;gap:10px;height:14px;margin-top:12px}
+.bar i{display:block;border-radius:99px;flex:1 1 0%;transition:flex-grow .8s cubic-bezier(.2,.8,.2,1)}
+.bar .ba{background:var(--a)}.bar .bb{background:var(--b)}
+.bar.zero i{background:var(--surface2)}
+.det{display:grid;grid-template-rows:0fr;transition:grid-template-rows .3s}.det>div{overflow:hidden;font-size:14.5px;color:var(--muted);line-height:1.45}
+.row.open .det{grid-template-rows:1fr}.row.open .det>div{padding-top:10px}
+.group{font-size:12.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin:24px 2px 10px}
+.group.g{color:var(--ok)}.group.i{color:var(--warn)}
+.report{display:grid;gap:12px}
+.card{border-radius:24px;padding:18px 18px 16px}.card.good{background:var(--ok-bg)}.card.bad{background:var(--warn-bg)}
+.card h4{margin:0 0 6px;font-size:18px;font-weight:800}.card.good h4{color:var(--ok)}.card.bad h4{color:var(--warn)}
+.card p{margin:0;font-size:15.5px;color:var(--ink2);line-height:1.45}
+.card p+p{margin-top:8px}
+.card.neu{background:var(--surface)}.card.neu h4{color:var(--ink)}
+.pill{display:inline-block;margin-top:10px;font-size:12.5px;font-weight:700;padding:5px 11px;border-radius:99px;background:var(--bg);color:var(--ink)}
+.focus{background:var(--ink);color:var(--bg);border-radius:28px;padding:22px 20px;margin-top:24px}
+.focus h3{margin:0 0 10px;font-size:20px;font-weight:800}.focus ol{margin:0;padding-left:20px;font-size:16px;line-height:1.5}.focus li{margin-bottom:10px}
+.focus li small{display:block;opacity:.7;font-size:13px;margin-top:2px}
+.footer{margin-top:48px;text-align:center}.footer .brand{justify-content:center}
+.fine{margin-top:8px;font-size:13px;color:var(--muted)}.fine b{color:var(--ink)}
+.swap{animation:sw .4s cubic-bezier(.2,.8,.2,1) both}@keyframes sw{from{opacity:.3;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* source badges & flags */
+.src{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.05em;padding:2px 7px;border-radius:99px;margin-left:5px;vertical-align:1px;white-space:nowrap}
+.src.you{background:var(--acid);color:#0b0b0c}
+.src.web{background:var(--surface2);color:var(--ink2)}
+.src.der{border:1px dashed var(--muted);color:var(--muted)}
+.flag{display:inline-block;font-weight:700;color:var(--warn);background:var(--warn-bg);padding:2px 8px;border-radius:99px;font-size:12.5px}
+.note{background:var(--surface);border-radius:22px;padding:16px 16px 14px;margin-top:16px;border-left:5px solid var(--acid)}
+.note h4{margin:0 0 6px;font-size:16px;font-weight:800}
+.note p,.note li{font-size:14.5px;color:var(--ink2);line-height:1.45;margin:0 0 6px}
+.note ul{margin:6px 0 0;padding-left:18px}
+.note.warn{border-left-color:var(--gold)}
+.tw{overflow-x:auto;margin:0 -4px}
+.tbl{width:100%;border-collapse:collapse;font-size:13.5px;min-width:480px}
+.tbl th{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);text-align:left;padding:8px 6px;border-bottom:1px solid var(--line);font-weight:700}
+.tbl td{padding:10px 6px;border-top:1px solid var(--line);vertical-align:top;color:var(--ink2)}
+.tbl td:first-child{font-weight:700;color:var(--ink)}
+.tbl .a{color:var(--a-text);font-weight:700}.tbl .b{color:var(--b-text);font-weight:700}
+
+/* timeline */
+.tl2{position:relative;height:150px;margin:6px 8px 0}
+.tl2::before{content:"";position:absolute;left:0;right:0;top:74px;height:3px;border-radius:2px;background:var(--surface2)}
+.mk{position:absolute;transform:translateX(-50%);border:0;background:none;padding:0;text-align:center;font:700 11.5px var(--font);color:var(--ink);white-space:nowrap}
+.mk i{display:block;width:18px;height:18px;border-radius:50%;margin:3px auto}
+.mk.a{top:24px}.mk.b{top:82px}
+.mk.a i{background:var(--a)}.mk.b i{background:var(--b)}
+.mk.n{top:66px}.mk.n i{width:15px;height:15px;border-radius:3px;transform:rotate(45deg);background:var(--gold);margin:0 auto}
+.mk.n span{position:absolute;left:50%;top:-18px;transform:translateX(-50%);font-size:10.5px;color:var(--muted)}
+.mk.on i{outline:3px solid var(--acid);outline-offset:1px}
+.mk.n.on i{outline-offset:2px}
+.ht{position:absolute;top:8px;bottom:6px;width:0;border-left:1.5px dashed var(--muted);opacity:.6}
+.ht b{position:absolute;top:-4px;left:4px;font-size:10.5px;color:var(--muted);font-weight:700}
+.bands{display:flex;height:28px;margin:4px 8px 0;border-radius:99px;overflow:hidden;gap:2px}
+.bd{display:grid;place-items:center;font-weight:800;font-size:12px;color:var(--ink)}
+.bd1{background:color-mix(in srgb,var(--a) 55%,var(--surface))}.bd2{background:var(--surface2)}
+.bd3{background:color-mix(in srgb,var(--b) 55%,var(--surface))}.bd4{background:color-mix(in srgb,var(--muted) 25%,var(--surface))}
+.bd5{background:var(--gold);color:#0b0b0c}.bd6{background:color-mix(in srgb,var(--b) 25%,var(--surface))}
+.tlx{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin:6px 10px 0}
+.sel{background:var(--bg);border-radius:20px;padding:14px 16px;margin-top:14px}
+.sel b{display:block;font-size:17px;margin-bottom:3px}
+.sel p{margin:0;font-size:14.5px;color:var(--ink2);line-height:1.4}
+.sel button{margin-top:10px;border:0;border-radius:99px;padding:9px 14px;font-weight:800;font-size:13px;background:var(--ink);color:var(--bg)}
+.ph{display:grid;grid-template-columns:30px 1fr;gap:12px;padding:14px 0;border-top:1px solid var(--line)}
+.ph:first-of-type{border-top:0}
+.ph .n{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:13px;color:var(--ink)}
+.ph h5{margin:0;font-size:16px;font-weight:800}.ph h5 span{font-weight:500;color:var(--muted);font-size:13px;margin-left:6px}
+.ph p{margin:4px 0 0;font-size:14.5px;color:var(--ink2);line-height:1.42}
+
+/* accordion */
+.acc{background:var(--surface);border-radius:24px;margin-top:10px;overflow:hidden}
+.acc-h{width:100%;border:0;background:none;display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:16px 18px;text-align:left}
+.acc-h .mn{font-weight:800;font-size:20px;letter-spacing:-.02em;min-width:56px}
+.acc-h .mn.a{color:var(--a-text)}.acc-h .mn.b{color:var(--b-text)}
+.acc-h .mt b{display:block;font-size:16.5px;font-weight:800}.acc-h .mt i{font-style:normal;font-size:13px;color:var(--muted)}
+.chev{width:10px;height:10px;border-right:2.5px solid var(--muted);border-bottom:2.5px solid var(--muted);transform:rotate(45deg);transition:transform .25s;margin-right:4px}
+.acc.open .chev{transform:rotate(-135deg)}
+.acc-b{display:none;padding:0 18px 18px}
+.acc.open .acc-b{display:block}
+.chain{list-style:none;margin:0;padding:0;counter-reset:s}
+.chain li{position:relative;padding:0 0 14px 38px;font-size:14.5px;color:var(--ink2);line-height:1.42;counter-increment:s}
+.chain li::before{content:counter(s);position:absolute;left:0;top:0;width:24px;height:24px;border-radius:50%;background:var(--ink);color:var(--bg);display:grid;place-items:center;font-weight:800;font-size:12px}
+.chain li::after{content:"";position:absolute;left:11px;top:26px;bottom:2px;width:2px;background:var(--surface2)}
+.chain li:last-child::after{display:none}
+.chain li b{color:var(--ink)}
+.chain li.stop{background:var(--bad-bg);border-radius:16px;padding:12px 14px 12px 44px;margin:2px 0 12px}
+.chain li.stop::before{content:"!";left:10px;top:12px;background:var(--bad);color:var(--bg)}
+.chain li.stop::after{display:none}
+.chain li.stop b{color:var(--bad)}
+.ev{font-size:13px;color:var(--muted);line-height:1.5;margin-top:4px}
+.pneed{display:grid;grid-template-columns:96px 1fr;gap:12px;align-items:center;margin-top:12px;padding:12px;border:1.5px dashed var(--muted);border-radius:18px;color:var(--muted)}
+.pneed svg{width:96px;height:auto;color:var(--muted)}
+.pneed b{display:block;color:var(--ink);font-size:13.5px}.pneed span{font-size:12.5px;line-height:1.35;display:block;margin-top:2px}
+.verd{display:inline-block;font-size:11.5px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:4px 10px;border-radius:99px;margin-bottom:8px}
+.v-ok{background:var(--ok-bg);color:var(--ok)}.v-part{background:var(--warn-bg);color:var(--warn)}.v-none{background:var(--surface2);color:var(--ink2)}
+#ladder{width:100%;height:auto;display:block}
+#ladder text{font:700 10.5px var(--font);fill:var(--ink2)}
+#ladder .ax{stroke:var(--surface2);stroke-width:1.5}
+#ladder .gl{stroke:var(--muted);stroke-width:1;stroke-dasharray:3 4;opacity:.5}
+#ladder .m{fill:var(--muted);font-weight:500;font-size:10px}
+
+/* tactics board */
+.tb{background:#14161a;border-radius:28px;padding:10px;margin-top:16px;color:#f5f6f8}
+#tsv{width:100%;display:block;aspect-ratio:9/16;max-height:72vh;margin:0 auto}
+#tsv .ln{fill:none;stroke:#3b4047;stroke-width:1.2}
+#tsv .nd circle{stroke:#fff;stroke-width:1.5}
+#tsv .nd text{font:800 9px var(--font);fill:#fff;text-anchor:middle;dominant-baseline:central}
+#tsv .nd text.nm{font:700 9.5px var(--font);fill:#f5f6f8;stroke:#14161a;stroke-width:2.6px;paint-order:stroke}
+#tsv .zone{fill:rgba(198,255,61,.08);stroke:#c6ff3d;stroke-width:1.2;stroke-dasharray:4 4}
+.tcap{min-height:70px;padding:10px 8px 4px;font-size:15px;line-height:1.4;color:#c9ccd3}
+.tcap b{display:block;font-size:19px;color:#fff;margin-bottom:3px}
+.tctl{display:flex;gap:6px;padding:6px 4px 4px}
+.tctl button{flex:1;border:0;border-radius:99px;padding:12px 4px;font-weight:800;font-size:13px;background:#26282d;color:#f5f6f8}
+.tctl button.on{background:#c6ff3d;color:#0b0b0c}
+.badge-s{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;padding:4px 10px;border-radius:99px;background:var(--gold);color:#0b0b0c;margin-top:10px}
+:root{--b:#fff;--b-text:#132257}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--b:#fff;--b-text:#fff}}
+:root[data-theme="dark"]{--b:#fff;--b-text:#fff}
+.crest.b{background:#fff;color:#132257;border:2px solid #132257;border-bottom:4px solid #132257}
+.bar .bb,.rib i:last-child,.legend .lb,.mk.b i{box-shadow:inset 0 0 0 2px #132257}
+#tsv .arw{fill:none;stroke:#c6ff3d;stroke-width:2.5;stroke-dasharray:6 4;marker-end:url(#ar)}
+@media (prefers-reduced-motion:reduce){.bar i,.det,.chev{transition-duration:.01s}.swap{animation:none}}
+</style></head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="hp" viewBox="0 0 160 100"><rect x="2" y="2" width="156" height="96" rx="4" fill="none" stroke="currentColor" stroke-width="1.6"/><line x1="80" y1="2" x2="80" y2="98" stroke="currentColor" stroke-width="1.2"/><circle cx="80" cy="50" r="12" fill="none" stroke="currentColor" stroke-width="1.2"/><rect x="2" y="24" width="28" height="52" fill="none" stroke="currentColor" stroke-width="1.2"/><rect x="130" y="24" width="28" height="52" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="52" cy="40" r="4" fill="none" stroke="currentColor" stroke-dasharray="2 2"/><circle cx="68" cy="62" r="4" fill="none" stroke="currentColor" stroke-dasharray="2 2"/><circle cx="104" cy="48" r="4" fill="none" stroke="currentColor" stroke-dasharray="2 2"/></symbol></defs></svg>
+<div class="wrap">
+<header class="top"><div class="brand"><span class="mark"></span>VANTAGE</div><span class="tag">Match dashboard</span></header>
+<section class="hero">
+  <div class="comp">Premier League · Yesterday (10 Oct 2026)</div>
+  <div class="teams"><div class="tm"><span class="crest a">MUN</span>Manchester United</div><div class="tm"><span class="crest b">TOT</span>Tottenham</div></div>
+  <div class="score"><span class="sa">1</span><span class="sep">-</span><span class="sb">1</span></div>
+  <div class="status"><i class="dot"></i>Full time · Half time 0-0 (derived)</div>
+  <div class="halves"><span>73' Mbeumo 1-0</span><span class="fl">78' Bentancur (TOT) red</span><span>90+2' Solanke 1-1</span></div>
+  <div class="ribbon"><div class="rl2"><span class="a">52%</span><span class="m">Share of shots</span><span class="b">48%</span></div>
+  <div class="rib"><i style="flex:11;background:var(--a)"></i><i style="flex:10;background:var(--b)"></i></div></div>
+</section>
+<div class="stick"><div class="tabs" role="tablist">
+<button class="tab on" data-t="report">MATCH<br>REPORT</button><button class="tab" data-t="deep">DEEP<br>DIVE</button><button class="tab" data-t="improve">IMPROVE</button><button class="tab" data-t="tactics">TACTICS</button><button class="tab" data-t="oppo">OPPO<br>PREP</button></div></div>
+
+<div class="panelwrap" id="p-report">
+  <section class="sec story">
+    <h2>Level for 72 minutes, a red card, then a 90+2' equaliser</h2>
+    <p><b class="tc a">Manchester United</b> broke the deadlock through Bryan Mbeumo (73'), five minutes before Tottenham's Rodrigo Bentancur was sent off (78'). <b class="tc b">Tottenham</b> still found an equaliser from Dominic Solanke in the 90+2' minute, a goal Tonali is credited with setting up.<span class="src you">YOU</span></p>
+    <p>The numbers say a level game: shots 11-10, on target 4-3, passes 438-436, corners 4-4, offsides 2-2. United had the better pass accuracy (86% v 85%) but only 49% of the ball.<span class="src you">YOU</span></p>
+    <p>Where they split: United made 57 clearances to Tottenham's 19 and 12 interceptions to 8, while Tottenham committed more fouls (16 v 13) but won their tackles at 93% against 83%.<span class="src you">YOU</span></p>
+  </section>
+  <section class="grid">
+    <div class="mini"><div class="l">Goals / shots</div><div class="v">1 / 11</div><div class="c">Tottenham 1 / 10</div></div>
+    <div class="mini"><div class="l">Goals per shot on target</div><div class="v">25%</div><div class="c">Tottenham 33% (1 of 3)</div></div>
+    <div class="mini"><div class="l">Fouls · yellows</div><div class="v">13 · 4</div><div class="c">Tottenham 16 · 3, plus 1 red</div></div>
+    <div class="mini"><div class="l">Clearances</div><div class="v">57</div><div class="c">Tottenham 19</div></div>
+  </section>
+
+  <div class="note"><h4>What this dashboard is built on</h4>
+    <ul><li><span class="src you">YOU</span> the Google match card (score, goals, lineups with ratings, team stats) and your written first-half and second-half reports.</li>
+    <li><span class="src der">DERIVED</span> simple arithmetic or inference from those. Always flagged.</li>
+    <li><span class="flag">⚠</span> something that needs checking.</li>
+    <li>No outside sources were used this time, so there is <b>no xG, no shot map, no substitution minutes and no event log</b>. Nothing on this page is plotted at an invented position.</li>
+    <li>Date comes from Google's "Yesterday" label. League comes from the table positions on the card (Man Utd 12th, Spurs 18th).</li></ul></div>
+
+  <section class="sec"><h3>Stat explorer</h3><p class="sub">Tap any row to see what it means.</p>
+    <div class="panel"><div class="legend"><span><i class="la"></i>Man United</span><span><i class="lb"></i>Tottenham</span></div>
+    <div class="chips" id="chips"></div><div id="rows"></div></div></section>
+
+  <section class="sec"><h3>Where the data is thin</h3><p class="sub">Things to check rather than assume.</p>
+    <div class="panel"><div class="tw"><table class="tbl"><thead><tr><th>Item</th><th>What I see</th><th>Why it matters</th></tr></thead><tbody>
+    <tr><td>Half-time score</td><td>Not on the card. First goal is 73', so 0-0.</td><td>Derived, but safe.</td></tr>
+    <tr><td>United's 4th yellow</td><td>Card shows 4. Only 3 starters are booked (Martínez, Shaw, Fernandes).</td><td>The fourth went to a substitute I can't see.</td></tr>
+    <tr><td>Bentancur's red</td><td>Spurs' 3 yellows are all starters (Gallagher, van Hecke, Gray).</td><td>Looks like a straight red, not two yellows. Check.</td></tr>
+    <tr><td>Blocks</td><td>Defence tab: 6-3. Attack tab "shots blocked": 3-4.</td><td>Different definitions. I don't mix them.</td></tr>
+    <tr><td>Left and right</td><td>Google draws each team with the goalkeeper at the top or bottom.</td><td>I read flanks from that, so confirm Diallo right and Mbeumo left.</td></tr>
+    <tr><td>Spurs shape</td><td>Formation label not in the data. Layout reads 4-2-3-1.</td><td>See Tactics.</td></tr>
+    <tr><td>Substitutes</td><td>Players coming off are marked. Who came on, and when, isn't.</td><td>Limits the midfield question below.</td></tr>
+    </tbody></table></div></div></section>
+</div>
+
+<div class="panelwrap" id="p-deep" hidden>
+  <section class="sec"><h3>Match timeline</h3><p class="sub">United above the line, Tottenham below, diamonds are your reads. Tap a marker.</p>
+    <div class="panel"><div class="tl2" id="tl"></div>
+    <div class="bands"><div class="bd bd3" style="flex:25">1</div><div class="bd bd1" style="flex:12">2</div><div class="bd bd6" style="flex:8">3</div><div class="bd bd2" style="flex:27">4</div><div class="bd bd5" style="flex:5">5</div><div class="bd bd4" style="flex:18">6</div></div>
+    <div class="tlx"><span>0'</span><span>45'</span><span>90'</span></div>
+    <div class="sel" id="sel"></div></div></section>
+
+  <section class="sec"><h3>Phases of the game</h3><p class="sub">Phases 1-4 are your read of the match. 5-6 come from the goal and card times.</p>
+    <div class="panel">
+    <div class="ph"><div class="n bd3">1</div><div><h5>Spurs lock the middle <span>0'-25'</span></h5><p>United couldn't unlock the midfield and kept playing through it, where Spurs won the ball high. Lammens' pass to Mainoo, who was marked, was the clearest mistake. Spurs didn't punish it.<span class="src you">YOU</span></p></div></div>
+    <div class="ph"><div class="n bd1">2</div><div><h5>United rise <span>~26'-37'</span></h5><p>Spurs lose their grip, United move up the pitch and create. Quality let them down: of 11 shots all game, only 4 were on target.<span class="src you">YOU</span></p></div></div>
+    <div class="ph"><div class="n bd6">3</div><div><h5>Spurs take it back <span>~38'-45'</span></h5><p>By about 40' Spurs held the middle again. United needed the middle kept open and didn't manage it.<span class="src you">YOU</span></p></div></div>
+    <div class="ph"><div class="n bd2">4</div><div><h5>Second half, more bite <span>46'-72'</span></h5><p>Same eleven, more aggression, the midfield opened up and United won more of it. Still few clear chances. No minute-by-minute data, so how long this lasted isn't measurable.<span class="src you">YOU</span></p></div></div>
+    <div class="ph"><div class="n bd5">5</div><div><h5>Goal to red <span>73'-77'</span></h5><p>Mbeumo scores at 73'. Five minutes later Bentancur is sent off at 78'.<span class="src you">YOU</span></p></div></div>
+    <div class="ph"><div class="n bd4">6</div><div><h5>Eleven v ten <span>78'-90+2'</span></h5><p>United had a numerical advantage for at least 12 minutes plus added time, and conceded at 90+2'. I have no shot or possession split for this period.<span class="src der">DERIVED</span></p></div></div>
+    </div></section>
+
+  <section class="sec"><h3>Decisive moments</h3><p class="sub">The three events on the card, and where it could have gone differently.</p>
+    <div id="moments">
+    <div class="acc" id="g1"><button class="acc-h"><span class="mn a">73'</span><span class="mt"><b>Mbeumo 1-0</b><i>United · assist Cunha</i></span><span class="chev"></span></button><div class="acc-b">
+      <ol class="chain">
+        <li><b>Set-up.</b> United 4-2-3-1 with Cunha as the lone striker, Fernandes behind him and Mbeumo on the left of the three (flank inferred). The first goal after 72 minutes of 0-0.<span class="src you">YOU</span></li>
+        <li><b>Cunha creates.</b> Google marks him with an assist (rating 6.3). How he made it, by pass, flick or cut-back, isn't in the data.<span class="src you">YOU</span></li>
+        <li><b>Mbeumo finishes.</b> Goal icon, rating 7.0, United's second-highest behind Maguire (7.5).<span class="src you">YOU</span></li>
+        <li class="stop"><b>Worth checking on video:</b> did the move come through the middle or from the wing? It tests your wing thesis directly. Also who was the nearest Spurs midfielder when Cunha received.</li>
+      </ol>
+      <div class="ev">Evidence: goal and assist icons on the lineup card, goal list (B. Mbeumo 73').</div>
+      <div class="pneed"><svg viewBox="0 0 160 100"><use href="#hp"/></svg><div><b>Chain on pitch: needs a log</b><span>Positions of Cunha, Mbeumo and the nearest three Spurs players at the moment of the pass.</span></div></div>
+    </div></div>
+
+    <div class="acc" id="g2"><button class="acc-h"><span class="mn b">78'</span><span class="mt"><b>Bentancur red card</b><i>Tottenham down to ten</i></span><span class="chev"></span></button><div class="acc-b">
+      <ol class="chain">
+        <li><b>Bentancur wasn't a starter.</b> He is not in Spurs' XI, so he had come on earlier (minute unknown).<span class="src der">DERIVED</span></li>
+        <li><b>Sent off at 78'.</b> Spurs' three yellows are all starters, so this looks like a straight red. Check.<span class="src der">DERIVED</span></li>
+        <li><b>Five minutes after United's goal.</b> Spurs had to chase the game with ten.<span class="src you">YOU</span></li>
+        <li class="stop"><b>What United needed:</b> a second goal or control of the ball. Over 12 minutes plus added time against ten, they didn't get either. Spurs still had a chance good enough to score.</li>
+      </ol>
+      <div class="ev">Evidence: goal list (R. Bentancur 78', red icon), Spurs 3 yellows and 1 red.</div>
+    </div></div>
+
+    <div class="acc" id="g3"><button class="acc-h"><span class="mn b">90+2'</span><span class="mt"><b>Solanke 1-1</b><i>Tottenham · assist Tonali</i></span><span class="chev"></span></button><div class="acc-b">
+      <ol class="chain">
+        <li><b>Ten men still attack.</b> Spurs had 3 shots on target in total and Solanke's was one of them. Lammens made 2 saves.<span class="src you">YOU</span></li>
+        <li><b>Tonali creates.</b> Assist icon, rating 6.4, Spurs' best-rated midfielder.<span class="src you">YOU</span></li>
+        <li><b>Solanke scores.</b> Rating 7.0, joint best on the pitch with Mbeumo.<span class="src you">YOU</span></li>
+        <li class="stop"><b>Where it could be stopped:</b> United cleared 57 times in the match, so Spurs were putting balls into the box. Five United starters were already off (Yoro, Shaw, Tielemans, Diallo, Cunha), so check who was defending and how the ball got to Solanke. Substitute names and minutes aren't in the data.</li>
+      </ol>
+      <div class="ev">Evidence: goal list (D. Solanke 90+2'), assist icon on Tonali, lineup arrows.</div>
+      <div class="pneed"><svg viewBox="0 0 160 100"><use href="#hp"/></svg><div><b>Chain on pitch: needs a log</b><span>Where Tonali received, the line height, and who was marking Solanke.</span></div></div>
+    </div></div>
+    </div></section>
+
+  <section class="sec"><h3>Your open question</h3><p class="sub">Why did United find freedom in midfield? What the stats can and can't say.</p>
+    <div class="report" style="margin-top:14px">
+    <div class="card neu"><span class="verd v-part">Possible</span><h4>Spurs changed their middle</h4><p>Gallagher (5.7, booked) and Bergvall (5.5) both came off, along with Kudus (4.5). That is two of Spurs' three central players and a winger. The minutes aren't in the data, so the timing can't yet be linked to your read.</p></div>
+    <div class="card neu"><span class="verd v-part">Possible</span><h4>United read the passes</h4><p>United made 12 interceptions to 8 and won 15 tackles, close to Spurs' 14. The gap is in reading lanes, not winning duels, which fits Spurs trying to play through the middle.</p></div>
+    <div class="card neu"><span class="verd v-part">Possible</span><h4>Spurs went direct</h4><p>57 United clearances to 19 means a lot of balls into United's box. If Spurs bypassed the middle, the middle looks "open", but not because United took it.</p></div>
+    <div class="card neu"><span class="verd v-ok">Late only</span><h4>The red card</h4><p>It explains the last 12 minutes, not the start of the second half. It can't explain the early freedom you saw.</p></div>
+    <div class="card neu"><span class="verd v-none">Can't test yet</span><h4>Overall volume says "even"</h4><p>Passes 438-436 and possession 49-51 give no sign of United dominating the ball. Whatever changed is in zones and minutes, so log midfield occupancy and ball wins by 5-minute block.</p></div>
+    </div></section>
+
+  <section class="sec"><h3>Your read vs the data</h3><p class="sub">Your first-half and second-half reports, tested.</p>
+    <div class="report" style="margin-top:14px">
+    <div class="card neu"><span class="verd v-ok">Consistent</span><h4>"United lacked wing threat"</h4><p>Diallo (right) rated 5.7 and was subbed off. Mbeumo (left) rated 7.0 and scored, so the threat was uneven. Not enough crossing or dribble data to confirm. In a mirrored 4-2-3-1 v 4-2-3-1, width was the obvious way round a 2 v 2 pivot.</p></div>
+    <div class="card neu"><span class="verd v-part">Partly</span><h4>"Tottenham won it high and tried to score"</h4><p>No data on where the ball was lost. Spurs did take 10 shots, 3 on target, and made 14 tackles at 93%. Spurs fouled 16 times, so some of that pressure was physical.</p></div>
+    <div class="card neu"><span class="verd v-part">Partly</span><h4>"Lack of quality hampered United's good spell"</h4><p>7 of United's 11 shots didn't test the keeper (4 off, 3 blocked). Supported over the match, but can't be placed in 26'-37'.</p></div>
+    <div class="card neu"><span class="verd v-ok">Supported</span><h4>"Midfield substitutions would help"</h4><p>Mainoo had United's lowest rating (5.2) and wasn't marked as taken off. Tielemans (5.8) was. Your Baleba idea is a fair fit for the gap.</p></div>
+    <div class="card neu"><span class="verd v-part">Partly</span><h4>"United didn't adapt in-game"</h4><p>The same eleven began the second half, and five starters were later replaced. Whether the plan changed can't be seen without sub times. Mbeumo's goal shows they eventually found a route.</p></div>
+    </div></section>
+</div>
+
+<div class="panelwrap" id="p-improve" hidden>
+  <section class="sec"><h3>Improve report</h3><p class="sub">For Manchester United. Every item shows its evidence.</p>
+  <div class="group g">What United did well</div><div class="report">
+  <div class="card good"><h4>Matched Spurs on chances</h4><p>On 49% of the ball United had 11 shots to 10 and 4 on target to 3, with 86% pass accuracy.</p><span class="pill">11-10 shots · 4-3 on target</span></div>
+  <div class="card good"><h4>Defensive work</h4><p>12 interceptions, 6 blocks and 57 clearances. Maguire (7.5) was the best-rated player on the pitch for United, and Lammens made 2 saves.</p><span class="pill">12 interceptions · Maguire 7.5</span></div>
+  <div class="card good"><h4>Found a way through</h4><p>Cunha's assist and Mbeumo's finish came after a spell where chances were scarce. Both were among United's higher ratings.</p><span class="pill">Cunha 6.3 · Mbeumo 7.0</span></div>
+  <div class="card good"><h4>A second-half response</h4><p>Your read: more aggression after the break, the midfield opened and United won more of it.</p><span class="pill">Your read</span></div></div>
+  <div class="group i">What United need to improve</div><div class="report">
+  <div class="card bad"><h4>Not seeing it out</h4><p>Ahead from 73', a man up from 78', and still conceded at 90+2'. At least 12 minutes of extra space and no second goal.</p><span class="pill">Lead 73' · red 78' · equaliser 90+2'</span></div>
+  <div class="card bad"><h4>Forcing play through the middle</h4><p>Your read of the first 25 minutes: repeated passes into a Spurs block, losing it high up. Lammens' pass to a marked Mainoo showed the same instinct.</p><span class="pill">Your read · 0'-25'</span></div>
+  <div class="card bad"><h4>No wide threat</h4><p>The wide players never stretched Spurs enough for the midfield to open. Diallo (5.7) came off.</p><span class="pill">Diallo 5.7 · no crossing data</span></div>
+  <div class="card bad"><h4>Weak shot quality</h4><p>7 of 11 shots didn't test the keeper. A better spell from 26' to 37' needed a final ball.</p><span class="pill">4 of 11 on target</span></div>
+  <div class="card bad"><h4>Midfield output</h4><p>Mainoo 5.2 and Tielemans 5.8 were the pivot. Mainoo stayed on, Tielemans came off. Spurs' pivot of Tonali (6.4) and Bergvall (5.5) was only slightly better.</p><span class="pill">Mainoo 5.2 · lowest United rating</span></div>
+  <div class="card bad"><h4>Booked defenders</h4><p>Martínez, Shaw and Fernandes were all booked, and a fourth card went to a sub. Heavy yellows in the closing stages restrict how aggressively they can defend.</p><span class="pill">4 yellows</span></div></div>
+  <div class="focus"><h3>Focus for next match</h3><ol>
+  <li>Build a wide outlet for the first 25 minutes. A winger who pins Spurs' full-back opens the pivot.<small>Log touches and crosses by wide players per 10-minute block.</small></li>
+  <li>Stop forcing the centre. Goalkeeper and centre-backs need a safe option when the pivot is marked.<small>Evidence: your read of the 0'-25' spell and the Lammens pass.</small></li>
+  <li>Plan a midfield change by about 60', not just forwards. Add a ball-winner or progressor for the weakest rating.<small>Evidence: Mainoo 5.2. Your Baleba suggestion.</small></li>
+  <li>A plan for 1-0 up against ten. Keep the ball, make the extra man count, protect the box in added time.<small>Evidence: the 78' red and 90+2' equaliser.</small></li></ol></div></section>
+</div>
+
+<div class="panelwrap" id="p-tactics" hidden>
+  <section class="sec"><h3>Formations</h3><p class="sub">The starting XIs from the Google card. All teams attack up the page. Pick a team.</p>
+  <div class="tb"><svg id="tsv" viewBox="0 0 360 640" role="img" aria-label="Formation boards for Manchester United and Tottenham">
+  <rect width="360" height="640" fill="#14161a"/>
+  <g class="ln"><rect x="30" y="30" width="300" height="580"/><line x1="30" y1="320" x2="330" y2="320"/><circle cx="180" cy="320" r="42"/><rect x="100" y="30" width="160" height="70"/><rect x="100" y="540" width="160" height="70"/><rect x="145" y="30" width="70" height="26"/><rect x="145" y="584" width="70" height="26"/></g>
+  <defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#c6ff3d"/></marker></defs><g id="zones"></g><g id="arrows"></g><g id="nodes"></g></svg>
+  <div class="tcap" aria-live="polite"><b id="tt"></b><span id="tc"></span></div>
+  <div class="tctl"><button data-f="u" class="on">United 4-2-3-1</button><button data-f="m">Cunha ⇄ Mbeumo</button><button data-f="s">Spurs 4-2-3-1</button></div></div>
+  <p class="sub"><span class="badge-s">Schematic</span> Built from the lineups only. Flanks are inferred from how Google draws each team. Order within a line is approximate. It is not tracking data.</p></section>
+
+  <section class="sec"><h3>How the systems met</h3><div class="report" style="margin-top:14px">
+  <div class="card neu"><h4>A mirror image</h4><p>Both sides read as 4-2-3-1: Tielemans and Mainoo v Tonali and Bergvall, Fernandes v Gallagher, Cunha v Solanke. A 2 v 2 pivot plus a 10 each means the middle is crowded and one-to-one. That is why you saw United's central passes met by Spurs, and why width was the missing piece.<span class="src der">DERIVED</span></p></div>
+  <div class="card neu"><h4>Cunha and Mbeumo swapping</h4><p>Your read: Cunha and Mbeumo changed places, with Cunha going wide left and Mbeumo playing through the middle. That makes Spurs' two centre-backs (Senesi, van Hecke) deal with a different runner, and gives United a wide outlet on the left. Mbeumo scored at 73' and Cunha is credited with the assist. Whether the swap stretched Spurs can't be told without positions and the minutes it happened.<span class="src you">YOU</span></p></div>
+  <div class="card neu"><h4>Mainoo and his marker</h4><p>Your read: Mainoo was marked by a Spurs defender when Lammens went to him. In a mirrored shape the pivot is exactly who gets picked up first.<span class="src you">YOU</span></p></div>
+  <div class="card neu"><h4>Wide players</h4><p>United: Diallo (5.7) and Mbeumo (7.0). Spurs: Sávio (5.2) and Kudus (4.5). Spurs' wide pair were the two lowest rated forwards on the card. No data to say whether that eased things for United's full-backs.</p></div>
+  <div class="card neu"><h4>The changes</h4><div class="tw"><table class="tbl" style="min-width:420px"><thead><tr><th>Team</th><th>Taken off (minutes unknown)</th></tr></thead><tbody>
+  <tr><td>United</td><td>Yoro, Shaw, Tielemans, Diallo, Cunha</td></tr>
+  <tr><td>Tottenham</td><td>Kudus, Gallagher, Bergvall, Udogie, Senesi. Bentancur was on by 78'.</td></tr>
+  </tbody></table></div><p style="margin-top:8px">Both sides used five changes by the end. Who replaced whom isn't in the data.</p></div>
+  <div class="card neu"><h4>Goalkeepers</h4><p>Lammens 6.6, 2 saves, 1 conceded. Kinský 6.3, 3 saves, 1 conceded. Level.<span class="src you">YOU</span></p></div></div></section>
+</div>
+
+<div class="panelwrap" id="p-oppo" hidden>
+  <section class="sec"><h3>Scouting Tottenham</h3><p class="sub">From this one match. Treat every pattern as a hypothesis until it repeats.</p>
+  <div class="note"><h4>Their shape</h4><p>4-2-3-1 by layout. XI: Kinský; Gray, van Hecke, Senesi, Udogie; Tonali, Bergvall; Sávio, Gallagher, Kudus; Solanke.<span class="src you">YOU</span></p></div>
+
+  <div class="group i">How they scored (1 goal)</div><div class="report">
+  <div class="card neu"><h4>Late, with ten men, via Tonali to Solanke</h4><p>90+2'. Their midfielder made it and their striker finished.</p><span class="pill">Goal 1 of 1</span></div></div>
+
+  <div class="group g">Pattern tracker</div>
+  <div class="panel"><div class="tw"><table class="tbl" style="min-width:520px"><thead><tr><th>Pattern</th><th>This match</th><th>Games logged</th><th>Repeat rate</th></tr></thead><tbody>
+  <tr><td>Strong opening, midfield grip</td><td>First 25' (your read)</td><td>1</td><td>Needs 3+ games</td></tr>
+  <tr><td>Win the ball high</td><td>Your read, no data</td><td>1</td><td>Needs 3+ games</td></tr>
+  <tr><td>Physical: 16 fouls</td><td>16 fouls, 3 yellows, 1 red</td><td>1</td><td>Needs 3+ games</td></tr>
+  <tr><td>Efficient tackling</td><td>14 won, 93%</td><td>1</td><td>Needs 3+ games</td></tr>
+  <tr><td>Direct play</td><td>United cleared 57 times</td><td>1</td><td>Needs 3+ games</td></tr>
+  <tr><td>Scores late</td><td>90+2' with ten men</td><td>1</td><td>Needs 3+ games</td></tr>
+  </tbody></table></div><p class="fine">One match cannot show repetition. Every row is a prompt to look for it in the next Spurs games you log.</p></div>
+
+  <div class="group i">Actions, one per pattern</div><div class="report">
+  <div class="card bad"><h4>Beat the early squeeze</h4><p>Play wide early rather than into their midfield. Give the pivot an outlet so Spurs' central block gets stretched.</p><span class="pill">Evidence: your 0'-25' read</span></div>
+  <div class="card bad"><h4>Protect the goalkeeper's first pass</h4><p>Have a free option wide or long before the ball goes into a marked central player.</p><span class="pill">Evidence: the Lammens pass</span></div>
+  <div class="card bad"><h4>Use the 26'-37' window</h4><p>Spurs lost their grip here. Push the line up, and make sure the final ball is ready.</p><span class="pill">Evidence: your read</span></div>
+  <div class="card bad"><h4>Avoid soft duels</h4><p>Spurs won 93% of their tackles. Move the ball early rather than dribbling into them.</p><span class="pill">14 won · 93%</span></div>
+  <div class="card bad"><h4>Win the restarts</h4><p>Spurs gave away 16 fouls. Take quick free-kicks and make set-pieces count.</p><span class="pill">16 fouls · United 4 corners</span></div>
+  <div class="card bad"><h4>Defend the last ten minutes</h4><p>Spurs scored at 90+2' even with ten. Keep a settled back line and cover second balls to the end.</p><span class="pill">Evidence: 90+2' goal</span></div>
+  <div class="card good"><h4>Pick on their weaker players</h4><p>Kudus (4.5), van Hecke (4.5, booked) and Sávio (5.2) were Spurs' lowest-rated starters. Test Kudus' flank and van Hecke's channel.</p><span class="pill">Ratings, Google</span></div></div>
+
+  <section class="sec"><h3>What to log next</h3><p class="sub">The exact data that would turn this into a full analysis.</p>
+  <div class="note warn"><ul>
+  <li><b>Every shot (21 on the card):</b> minute, player, x/y, body part, outcome, assist type.</li>
+  <li><b>The three events:</b> video timecode and positions of the pass chain for 73' and 90+2'.</li>
+  <li><b>Substitutions:</b> who came on, when, and the minute of each yellow card.</li>
+  <li><b>Midfield occupancy</b> by 5-minute block, which tests your 25'/37'/40' reads.</li>
+  <li><b>Turnovers:</b> minute, player, x/y, and whether Spurs shot within 15 seconds.</li>
+  <li><b>Wide play:</b> crosses, dribbles and touches in the final third for Diallo and Mbeumo.</li>
+  <li><b>Pressing:</b> which Spurs players were within about 5 m of each United build-up pass.</li></ul></div></section></section>
+</div>
+
+<footer class="footer"><div class="brand"><span class="mark"></span>VANTAGE</div></footer>
+</div>
+<script>
+(function(){
+function $(s){return document.querySelector(s)}
+function $$(s){return Array.prototype.slice.call(document.querySelectorAll(s))}
+var SY='<span class="src you">YOU</span>',SD='<span class="src der">DERIVED</span>';
+var M=[
+["Goals",1,1,"attack","","Goals scored. Mbeumo 73', Solanke 90+2'.",SY,""],
+["Shots",11,10,"attack","","Every attempt at goal.",SY,""],
+["Shots on target",4,3,"attack","","Includes the goals. United: 1 goal and 3 saved by Kinský. Spurs: 1 goal and 2 saved by Lammens.",SY,""],
+["Shots off target",4,3,"attack","","Missed the frame.",SY,""],
+["Shots blocked",3,4,"attack","","Shots by each team that were blocked. 4 + 4 + 3 = 11 and 3 + 3 + 4 = 10, so it adds up.",SY,""],
+["Corners",4,4,"attack","","Corners won.",SY,""],
+["Offsides",2,2,"attack","","Times caught offside.",SY,""],
+["Possession",49,51,"possession","%","Share of the ball.",SY,""],
+["Passes",438,436,"possession","","Total passes.",SY,""],
+["Accurate passes",379,373,"possession","","Passes completed: 379 of 438 and 373 of 436.",SY,""],
+["Pass accuracy",86,85,"possession","%","Completion rate.",SY,""],
+["Tackles won",15,14,"defence","","Success rate: United 83%, Spurs 93%. That implies about 18 and 15 attempts.",SY,""],
+["Keeper saves",2,3,"defence","","Saves made by each goalkeeper.",SY,""],
+["Clearances",57,19,"defence","","United cleared three times as often. Suggests Spurs got the ball into United's box a lot, or United sat deeper.",SY,""],
+["Interceptions",12,8,"defence","","Passes read and cut out.",SY,""],
+["Blocks",6,3,"defence","","Defence-tab blocks. Doesn't match the attack-tab shots blocked, so I don't mix them.",SY,"Different definitions."],
+["Fouls",13,16,"discipline","","Fouls committed. Fewer is better, but very few can mean few contested duels.",SY,""],
+["Yellow cards",4,3,"discipline","","United's fourth went to a substitute I can't see.",SY,""],
+["Red cards",0,1,"discipline","","Bentancur, 78'.",SY,""]];
+var G=[["all","All"],["attack","Attack"],["possession","Possession"],["defence","Defence"],["discipline","Discipline"]],g="all";
+function rows(){
+  $("#chips").innerHTML=G.map(function(x){return '<button class="chip'+(x[0]===g?' on':'')+'" data-g="'+x[0]+'">'+x[1]+'</button>'}).join("");
+  var h="";M.forEach(function(m){if(g!=="all"&&m[3]!==g)return;var a=m[1],b=m[2],t=a+b,z=t===0;
+    var share=(!m[4]&&t>0)?' United '+Math.round(a/t*100)+'% of the total, Tottenham '+Math.round(b/t*100)+'%.':'';
+    h+='<div class="row" tabindex="0"><div class="rtop"><span class="rv a'+(b>a?' low':'')+'">'+a+m[4]+'</span><span class="rlab">'+m[0]+(m[7]?' <span class="flag">⚠</span>':'')+'</span><span class="rv b'+(a>b?' low':'')+'">'+b+m[4]+'</span></div>'
+    +'<div class="bar'+(z?' zero':'')+'"><i class="ba" style="flex:'+(z?1:Math.max(a,.001))+'"></i><i class="bb" style="flex:'+(z?1:Math.max(b,.001))+'"></i></div>'
+    +'<div class="det"><div>'+m[5]+share+m[6]+(m[7]?'<br><span class="flag">⚠ '+m[7]+'</span>':'')+'</div></div></div>'});
+  var r=$("#rows");r.innerHTML=h;r.classList.remove("swap");void r.offsetWidth;r.classList.add("swap");
+}
+rows();
+$("#chips").addEventListener("click",function(e){var c=e.target.closest(".chip");if(c){g=c.dataset.g;rows()}});
+$("#rows").addEventListener("click",function(e){var r=e.target.closest(".row");if(r)r.classList.toggle("open")});
+$("#rows").addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){var r=e.target.closest(".row");if(r){e.preventDefault();r.classList.toggle("open")}}});
+
+var MO=[
+{m:26,s:"n",l:"26'",id:"",t:"~26' · United start to rise (your read)",x:"Spurs lose their grip on the middle and United move up the pitch. Quality lets them down."},
+{m:40,s:"n",l:"40'",id:"",t:"~40' · Spurs take hold again (your read)",x:"Spurs grab the midfield back before half-time. The game stays 0-0."},
+{m:73,s:"a",l:"73'",dx:-7,id:"g1",t:"73' · Mbeumo 1-0",x:"Cunha is credited with the assist. First goal after 72 minutes of 0-0."},
+{m:78,s:"b",l:"78'",dx:-6,id:"g2",t:"78' · Bentancur sent off",x:"Tottenham drop to ten men, five minutes after going behind."},
+{m:92,s:"b",l:"90+2'",dx:-12,id:"g3",t:"90+2' · Solanke 1-1",x:"Tonali is credited with the assist. Spurs equalise with ten men."}];
+var SC=95;
+function tl(){
+  var h='<div class="ht" style="left:'+(45.5/SC*100)+'%"><b>HT</b></div>';
+  MO.forEach(function(e,i){var p=e.m/SC*100;
+    var inner=e.s==="a"?e.l+'<i></i>':(e.s==="b"?'<i></i>'+e.l:'<span>'+e.l+'</span><i></i>');
+    h+='<button class="mk '+e.s+'" data-i="'+i+'" style="left:calc('+p+'% + '+(e.dx||0)+'px)" aria-label="'+e.t+'">'+inner+'</button>'});
+  $("#tl").innerHTML=h;pick(4)
+}
+function pick(i){var e=MO[i];
+  $$(".mk").forEach(function(b){b.classList.toggle("on",+b.dataset.i===i)});
+  $("#sel").innerHTML='<b>'+e.t+'</b><p>'+e.x+'</p>'+(e.id?'<button data-open="'+e.id+'">Open the chain</button>':'')}
+$("#tl").addEventListener("click",function(e){var b=e.target.closest(".mk");if(b)pick(+b.dataset.i)});
+$("#sel").addEventListener("click",function(e){var b=e.target.closest("[data-open]");if(!b)return;
+  var a=document.getElementById(b.dataset.open);a.classList.add("open");a.scrollIntoView({behavior:"smooth",block:"start"})});
+tl();
+$("#moments").addEventListener("click",function(e){var h=e.target.closest(".acc-h");if(h)h.parentNode.classList.toggle("open")});
+
+$$(".tab").forEach(function(b){b.addEventListener("click",function(){
+  $$(".tab").forEach(function(x){x.classList.toggle("on",x===b)});
+  $$(".panelwrap").forEach(function(p){p.hidden=p.id!=="p-"+b.dataset.t});
+  var p=$("#p-"+b.dataset.t);p.classList.remove("swap");void p.offsetWidth;p.classList.add("swap");
+  window.scrollTo({top:Math.min(window.scrollY,document.querySelector(".stick").offsetTop),behavior:"smooth"})})});
+
+var NS="http://www.w3.org/2000/svg";
+var F={
+u:{c:"var(--a)",t:"Manchester United · 4-2-3-1",d:"Lammens; Yoro, Maguire, Martínez, Shaw; Tielemans, Mainoo; Diallo, Fernandes, Mbeumo; Cunha. Flanks inferred from Google's layout.",
+ p:[["GK","Lammens",180,570],["RB","Yoro",295,470],["CB","Maguire",222,495],["CB","Martínez",138,495],["LB","Shaw",65,470],["DM","Tielemans",235,385],["DM","Mainoo",125,385],["RW","Diallo",290,265],["AM","Fernandes",180,255],["LW","Mbeumo",70,265],["ST","Cunha",180,150]],
+ z:[[90,235,180,170]]},
+m:{c:"var(--a)",t:"United · Cunha and Mbeumo swap",d:"Your read: Cunha and Mbeumo switched roles. Cunha drifts to the left wing and Mbeumo moves central as the striker. Arrows show the movement. No tracking data, so the timing and the exact paths are schematic.",
+ a:["M165 165 Q 80 170 74 248","M88 250 Q 165 245 176 168"],
+ p:[["GK","Lammens",180,570],["RB","Yoro",295,470],["CB","Maguire",222,495],["CB","Martínez",138,495],["LB","Shaw",65,470],["DM","Tielemans",235,385],["DM","Mainoo",125,385],["RW","Diallo",290,265],["AM","Fernandes",180,255],["LW","Cunha",70,265],["ST","Mbeumo",180,150]],
+ z:[[40,115,280,185]]},
+s:{c:"#fff",t:"Tottenham · 4-2-3-1",d:"Kinský; Gray, van Hecke, Senesi, Udogie; Bergvall, Tonali; Sávio, Gallagher, Kudus; Solanke. Formation label wasn't shown, so the shape is read from the layout.",
+ p:[["GK","Kinský",180,570],["RB","Gray",295,470],["CB","van Hecke",222,495],["CB","Senesi",138,495],["LB","Udogie",65,470],["DM","Bergvall",235,385],["DM","Tonali",125,385],["RW","Sávio",290,265],["AM","Gallagher",180,255],["LW","Kudus",70,265],["ST","Solanke",180,150]],
+ z:[[90,235,180,170]]}};
+function board(k){var f=F[k];$("#nodes").innerHTML="";$("#zones").innerHTML="";
+  f.z.forEach(function(z){var r=document.createElementNS(NS,"rect");r.setAttribute("class","zone");r.setAttribute("x",z[0]);r.setAttribute("y",z[1]);r.setAttribute("width",z[2]);r.setAttribute("height",z[3]);r.setAttribute("rx",18);$("#zones").appendChild(r)});
+  $("#arrows").innerHTML="";(f.a||[]).forEach(function(a){var q=document.createElementNS(NS,"path");q.setAttribute("d",a);q.setAttribute("class","arw");$("#arrows").appendChild(q)});f.p.forEach(function(p){var g=document.createElementNS(NS,"g");g.setAttribute("class","nd");g.setAttribute("transform","translate("+p[2]+","+p[3]+")");
+    g.innerHTML='<circle r="14" style="fill:'+f.c+'"/><text'+(k==="s"?' style="fill:#132257"':'')+'>'+p[0]+'</text><text class="nm" y="26">'+p[1]+'</text>';$("#nodes").appendChild(g)});
+  $("#tt").textContent=f.t;$("#tc").textContent=f.d;
+  $$(".tctl button").forEach(function(b){b.classList.toggle("on",b.dataset.f===k)})}
+$$(".tctl button").forEach(function(b){b.addEventListener("click",function(){board(b.dataset.f)})});
+board("u");
+})();
+</script></body></html>
