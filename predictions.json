@@ -1,0 +1,424 @@
+{
+ "updated": "2026-10-12T07:00:00+00:00",
+ "season": "2026/27",
+ "matchweek": 6,
+ "featured": 0,
+ "bootstrap": true,
+ "model": {
+  "type": "starter snapshot (first 5 matches of the season only)"
+ },
+ "fixtures": [
+  {
+   "home": {
+    "code": "MUN",
+    "name": "Man United"
+   },
+   "away": {
+    "code": "TOT",
+    "name": "Tottenham"
+   },
+   "kickoff": "2026-10-10T16:30:00Z",
+   "pct": [
+    56,
+    24,
+    20
+   ],
+   "xg": [
+    1.71,
+    0.93
+   ],
+   "likeliest": {
+    "h": 1,
+    "a": 0,
+    "p": 0.122
+   }
+  },
+  {
+   "home": {
+    "code": "ARS",
+    "name": "Arsenal"
+   },
+   "away": {
+    "code": "LEE",
+    "name": "Leeds"
+   },
+   "kickoff": "2026-10-10T11:30:00Z",
+   "pct": [
+    39,
+    29,
+    32
+   ],
+   "xg": [
+    1.19,
+    1.04
+   ],
+   "likeliest": {
+    "h": 1,
+    "a": 1,
+    "p": 0.133
+   }
+  },
+  {
+   "home": {
+    "code": "AVL",
+    "name": "Aston Villa"
+   },
+   "away": {
+    "code": "BRE",
+    "name": "Brentford"
+   },
+   "kickoff": "2026-10-10T14:00:00Z",
+   "pct": [
+    21,
+    24,
+    55
+   ],
+   "xg": [
+    0.98,
+    1.74
+   ],
+   "likeliest": {
+    "h": 0,
+    "a": 1,
+    "p": 0.114
+   }
+  },
+  {
+   "home": {
+    "code": "CHE",
+    "name": "Chelsea"
+   },
+   "away": {
+    "code": "BOU",
+    "name": "Bournemouth"
+   },
+   "kickoff": "2026-10-10T14:00:00Z",
+   "pct": [
+    46,
+    22,
+    32
+   ],
+   "xg": [
+    1.92,
+    1.6
+   ],
+   "likeliest": {
+    "h": 1,
+    "a": 1,
+    "p": 0.091
+   }
+  },
+  {
+   "home": {
+    "code": "IPS",
+    "name": "Ipswich"
+   },
+   "away": {
+    "code": "FUL",
+    "name": "Fulham"
+   },
+   "kickoff": "2026-10-10T14:00:00Z",
+   "pct": [
+    42,
+    24,
+    34
+   ],
+   "xg": [
+    1.61,
+    1.42
+   ],
+   "likeliest": {
+    "h": 1,
+    "a": 1,
+    "p": 0.111
+   }
+  },
+  {
+   "home": {
+    "code": "SUN",
+    "name": "Sunderland"
+   },
+   "away": {
+    "code": "BHA",
+    "name": "Brighton"
+   },
+   "kickoff": "2026-10-10T14:00:00Z",
+   "pct": [
+    18,
+    18,
+    64
+   ],
+   "xg": [
+    1.23,
+    2.44
+   ],
+   "likeliest": {
+    "h": 1,
+    "a": 2,
+    "p": 0.093
+   }
+  },
+  {
+   "home": {
+    "code": "CRY",
+    "name": "Crystal Palace"
+   },
+   "away": {
+    "code": "NFO",
+    "name": "Forest"
+   },
+   "kickoff": "2026-10-11T13:00:00Z",
+   "pct": [
+    35,
+    27,
+    38
+   ],
+   "xg": [
+    1.23,
+    1.31
+   ],
+   "likeliest": {
+    "h": 1,
+    "a": 1,
+    "p": 0.127
+   }
+  },
+  {
+   "home": {
+    "code": "HUL",
+    "name": "Hull"
+   },
+   "away": {
+    "code": "EVE",
+    "name": "Everton"
+   },
+   "kickoff": "2026-10-11T13:00:00Z",
+   "pct": [
+    36,
+    31,
+    33
+   ],
+   "xg": [
+    1.05,
+    0.97
+   ],
+   "likeliest": {
+    "h": 1,
+    "a": 0,
+    "p": 0.139
+   }
+  },
+  {
+   "home": {
+    "code": "LIV",
+    "name": "Liverpool"
+   },
+   "away": {
+    "code": "MCI",
+    "name": "Man City"
+   },
+   "kickoff": "2026-10-11T15:30:00Z",
+   "pct": [
+    34,
+    26,
+    40
+   ],
+   "xg": [
+    1.31,
+    1.44
+   ],
+   "likeliest": {
+    "h": 1,
+    "a": 1,
+    "p": 0.12
+   }
+  },
+  {
+   "home": {
+    "code": "COV",
+    "name": "Coventry"
+   },
+   "away": {
+    "code": "NEW",
+    "name": "Newcastle"
+   },
+   "kickoff": "2026-10-12T19:00:00Z",
+   "pct": [
+    22,
+    24,
+    54
+   ],
+   "xg": [
+    1.04,
+    1.74
+   ],
+   "likeliest": {
+    "h": 1,
+    "a": 1,
+    "p": 0.112
+   }
+  }
+ ],
+ "results": {
+  "matchweek": 6,
+  "fixtures": [
+   {
+    "home": {
+     "code": "ARS",
+     "name": "Arsenal"
+    },
+    "away": {
+     "code": "LEE",
+     "name": "Leeds"
+    },
+    "kickoff": "2026-10-10T11:30:00Z",
+    "status": "FT",
+    "score": [
+     2,
+     1
+    ]
+   },
+   {
+    "home": {
+     "code": "AVL",
+     "name": "Aston Villa"
+    },
+    "away": {
+     "code": "BRE",
+     "name": "Brentford"
+    },
+    "kickoff": "2026-10-10T14:00:00Z",
+    "status": "FT",
+    "score": [
+     2,
+     2
+    ]
+   },
+   {
+    "home": {
+     "code": "CHE",
+     "name": "Chelsea"
+    },
+    "away": {
+     "code": "BOU",
+     "name": "Bournemouth"
+    },
+    "kickoff": "2026-10-10T14:00:00Z",
+    "status": "FT",
+    "score": [
+     5,
+     1
+    ]
+   },
+   {
+    "home": {
+     "code": "IPS",
+     "name": "Ipswich"
+    },
+    "away": {
+     "code": "FUL",
+     "name": "Fulham"
+    },
+    "kickoff": "2026-10-10T14:00:00Z",
+    "status": "FT",
+    "score": [
+     2,
+     1
+    ]
+   },
+   {
+    "home": {
+     "code": "SUN",
+     "name": "Sunderland"
+    },
+    "away": {
+     "code": "BHA",
+     "name": "Brighton"
+    },
+    "kickoff": "2026-10-10T14:00:00Z",
+    "status": "FT",
+    "score": [
+     0,
+     2
+    ]
+   },
+   {
+    "home": {
+     "code": "MUN",
+     "name": "Man United"
+    },
+    "away": {
+     "code": "TOT",
+     "name": "Tottenham"
+    },
+    "kickoff": "2026-10-10T16:30:00Z",
+    "status": "FT",
+    "score": [
+     1,
+     1
+    ]
+   },
+   {
+    "home": {
+     "code": "CRY",
+     "name": "Crystal Palace"
+    },
+    "away": {
+     "code": "NFO",
+     "name": "Forest"
+    },
+    "kickoff": "2026-10-11T13:00:00Z",
+    "status": "FT",
+    "score": [
+     3,
+     1
+    ]
+   },
+   {
+    "home": {
+     "code": "HUL",
+     "name": "Hull"
+    },
+    "away": {
+     "code": "EVE",
+     "name": "Everton"
+    },
+    "kickoff": "2026-10-11T13:00:00Z",
+    "status": "FT",
+    "score": [
+     2,
+     2
+    ]
+   },
+   {
+    "home": {
+     "code": "LIV",
+     "name": "Liverpool"
+    },
+    "away": {
+     "code": "MCI",
+     "name": "Man City"
+    },
+    "kickoff": "2026-10-11T15:30:00Z",
+    "status": "FT",
+    "score": [
+     0,
+     3
+    ]
+   },
+   {
+    "home": {
+     "code": "COV",
+     "name": "Coventry"
+    },
+    "away": {
+     "code": "NEW",
+     "name": "Newcastle"
+    },
+    "kickoff": "2026-10-12T19:00:00Z",
+    "status": "SCHEDULED",
+    "score": null
+   }
+  ]
+ }
+}
