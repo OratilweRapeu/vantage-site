@@ -1,38 +1,16 @@
 {
- "updated": "2026-10-12T07:00:00+00:00",
+ "updated": "2026-10-12T09:14:08+00:00",
  "season": "2026/27",
  "matchweek": 6,
- "featured": 0,
- "bootstrap": true,
+ "featured": 5,
  "model": {
-  "type": "starter snapshot (first 5 matches of the season only)"
+  "type": "opponent-adjusted Poisson",
+  "shrink": 8.0,
+  "season_decay": 0.5,
+  "rho": -0.08,
+  "matches_used": 430
  },
  "fixtures": [
-  {
-   "home": {
-    "code": "MUN",
-    "name": "Man United"
-   },
-   "away": {
-    "code": "TOT",
-    "name": "Tottenham"
-   },
-   "kickoff": "2026-10-10T16:30:00Z",
-   "pct": [
-    56,
-    24,
-    20
-   ],
-   "xg": [
-    1.71,
-    0.93
-   ],
-   "likeliest": {
-    "h": 1,
-    "a": 0,
-    "p": 0.122
-   }
-  },
   {
    "home": {
     "code": "ARS",
@@ -40,47 +18,47 @@
    },
    "away": {
     "code": "LEE",
-    "name": "Leeds"
+    "name": "Leeds United"
    },
    "kickoff": "2026-10-10T11:30:00Z",
    "pct": [
-    39,
-    29,
-    32
+    62,
+    24,
+    14
    ],
    "xg": [
-    1.19,
-    1.04
+    1.79,
+    0.74
    ],
    "likeliest": {
     "h": 1,
-    "a": 1,
-    "p": 0.133
+    "a": 0,
+    "p": 0.134
    }
   },
   {
    "home": {
-    "code": "AVL",
-    "name": "Aston Villa"
+    "code": "SUN",
+    "name": "Sunderland"
    },
    "away": {
-    "code": "BRE",
-    "name": "Brentford"
+    "code": "BHA",
+    "name": "Brighton Hove"
    },
    "kickoff": "2026-10-10T14:00:00Z",
    "pct": [
-    21,
-    24,
-    55
+    29,
+    27,
+    44
    ],
    "xg": [
-    0.98,
-    1.74
+    1.17,
+    1.5
    ],
    "likeliest": {
-    "h": 0,
+    "h": 1,
     "a": 1,
-    "p": 0.114
+    "p": 0.131
    }
   },
   {
@@ -95,23 +73,23 @@
    "kickoff": "2026-10-10T14:00:00Z",
    "pct": [
     46,
-    22,
-    32
+    24,
+    30
    ],
    "xg": [
-    1.92,
-    1.6
+    1.86,
+    1.46
    ],
    "likeliest": {
     "h": 1,
     "a": 1,
-    "p": 0.091
+    "p": 0.106
    }
   },
   {
    "home": {
     "code": "IPS",
-    "name": "Ipswich"
+    "name": "Ipswich Town"
    },
    "away": {
     "code": "FUL",
@@ -119,43 +97,93 @@
    },
    "kickoff": "2026-10-10T14:00:00Z",
    "pct": [
-    42,
-    24,
-    34
+    41,
+    26,
+    33
    ],
    "xg": [
-    1.61,
-    1.42
+    1.57,
+    1.4
    ],
    "likeliest": {
     "h": 1,
     "a": 1,
-    "p": 0.111
+    "p": 0.122
    }
   },
   {
    "home": {
-    "code": "SUN",
-    "name": "Sunderland"
+    "code": "AVL",
+    "name": "Aston Villa"
    },
    "away": {
-    "code": "BHA",
-    "name": "Brighton"
+    "code": "BRE",
+    "name": "Brentford"
    },
    "kickoff": "2026-10-10T14:00:00Z",
    "pct": [
-    18,
-    18,
-    64
+    38,
+    27,
+    35
    ],
    "xg": [
-    1.23,
-    2.44
+    1.43,
+    1.36
    ],
    "likeliest": {
     "h": 1,
-    "a": 2,
-    "p": 0.093
+    "a": 1,
+    "p": 0.129
+   }
+  },
+  {
+   "home": {
+    "code": "MUN",
+    "name": "Man United"
+   },
+   "away": {
+    "code": "TOT",
+    "name": "Tottenham"
+   },
+   "kickoff": "2026-10-10T16:30:00Z",
+   "pct": [
+    60,
+    22,
+    18
+   ],
+   "xg": [
+    2.06,
+    1.03
+   ],
+   "likeliest": {
+    "h": 1,
+    "a": 1,
+    "p": 0.104
+   }
+  },
+  {
+   "home": {
+    "code": "HUL",
+    "name": "Hull City"
+   },
+   "away": {
+    "code": "EVE",
+    "name": "Everton"
+   },
+   "kickoff": "2026-10-11T13:00:00Z",
+   "pct": [
+    43,
+    31,
+    26
+   ],
+   "xg": [
+    1.23,
+    0.88
+   ],
+   "likeliest": {
+    "h": 1,
+    "a": 1,
+    "p": 0.142
    }
   },
   {
@@ -165,47 +193,22 @@
    },
    "away": {
     "code": "NFO",
-    "name": "Forest"
+    "name": "Nottingham"
    },
    "kickoff": "2026-10-11T13:00:00Z",
    "pct": [
-    35,
-    27,
-    38
+    37,
+    30,
+    33
    ],
    "xg": [
     1.23,
-    1.31
+    1.15
    ],
    "likeliest": {
     "h": 1,
     "a": 1,
-    "p": 0.127
-   }
-  },
-  {
-   "home": {
-    "code": "HUL",
-    "name": "Hull"
-   },
-   "away": {
-    "code": "EVE",
-    "name": "Everton"
-   },
-   "kickoff": "2026-10-11T13:00:00Z",
-   "pct": [
-    36,
-    31,
-    33
-   ],
-   "xg": [
-    1.05,
-    0.97
-   ],
-   "likeliest": {
-    "h": 1,
-    "a": 0,
-    "p": 0.139
+    "p": 0.141
    }
   },
   {
@@ -219,24 +222,24 @@
    },
    "kickoff": "2026-10-11T15:30:00Z",
    "pct": [
-    34,
+    29,
     26,
-    40
+    45
    ],
    "xg": [
     1.31,
-    1.44
+    1.66
    ],
    "likeliest": {
     "h": 1,
     "a": 1,
-    "p": 0.12
+    "p": 0.121
    }
   },
   {
    "home": {
     "code": "COV",
-    "name": "Coventry"
+    "name": "Coventry City"
    },
    "away": {
     "code": "NEW",
@@ -244,18 +247,18 @@
    },
    "kickoff": "2026-10-12T19:00:00Z",
    "pct": [
-    22,
-    24,
-    54
+    27,
+    28,
+    45
    ],
    "xg": [
-    1.04,
-    1.74
+    1.12,
+    1.5
    ],
    "likeliest": {
     "h": 1,
     "a": 1,
-    "p": 0.112
+    "p": 0.132
    }
   }
  ],
@@ -269,9 +272,57 @@
     },
     "away": {
      "code": "LEE",
-     "name": "Leeds"
+     "name": "Leeds United"
     },
     "kickoff": "2026-10-10T11:30:00Z",
+    "status": "FT",
+    "score": [
+     2,
+     1
+    ]
+   },
+   {
+    "home": {
+     "code": "SUN",
+     "name": "Sunderland"
+    },
+    "away": {
+     "code": "BHA",
+     "name": "Brighton Hove"
+    },
+    "kickoff": "2026-10-10T14:00:00Z",
+    "status": "FT",
+    "score": [
+     0,
+     2
+    ]
+   },
+   {
+    "home": {
+     "code": "CHE",
+     "name": "Chelsea"
+    },
+    "away": {
+     "code": "BOU",
+     "name": "Bournemouth"
+    },
+    "kickoff": "2026-10-10T14:00:00Z",
+    "status": "FT",
+    "score": [
+     5,
+     1
+    ]
+   },
+   {
+    "home": {
+     "code": "IPS",
+     "name": "Ipswich Town"
+    },
+    "away": {
+     "code": "FUL",
+     "name": "Fulham"
+    },
+    "kickoff": "2026-10-10T14:00:00Z",
     "status": "FT",
     "score": [
      2,
@@ -296,54 +347,6 @@
    },
    {
     "home": {
-     "code": "CHE",
-     "name": "Chelsea"
-    },
-    "away": {
-     "code": "BOU",
-     "name": "Bournemouth"
-    },
-    "kickoff": "2026-10-10T14:00:00Z",
-    "status": "FT",
-    "score": [
-     5,
-     1
-    ]
-   },
-   {
-    "home": {
-     "code": "IPS",
-     "name": "Ipswich"
-    },
-    "away": {
-     "code": "FUL",
-     "name": "Fulham"
-    },
-    "kickoff": "2026-10-10T14:00:00Z",
-    "status": "FT",
-    "score": [
-     2,
-     1
-    ]
-   },
-   {
-    "home": {
-     "code": "SUN",
-     "name": "Sunderland"
-    },
-    "away": {
-     "code": "BHA",
-     "name": "Brighton"
-    },
-    "kickoff": "2026-10-10T14:00:00Z",
-    "status": "FT",
-    "score": [
-     0,
-     2
-    ]
-   },
-   {
-    "home": {
      "code": "MUN",
      "name": "Man United"
     },
@@ -360,24 +363,8 @@
    },
    {
     "home": {
-     "code": "CRY",
-     "name": "Crystal Palace"
-    },
-    "away": {
-     "code": "NFO",
-     "name": "Forest"
-    },
-    "kickoff": "2026-10-11T13:00:00Z",
-    "status": "FT",
-    "score": [
-     3,
-     1
-    ]
-   },
-   {
-    "home": {
      "code": "HUL",
-     "name": "Hull"
+     "name": "Hull City"
     },
     "away": {
      "code": "EVE",
@@ -388,6 +375,22 @@
     "score": [
      2,
      2
+    ]
+   },
+   {
+    "home": {
+     "code": "CRY",
+     "name": "Crystal Palace"
+    },
+    "away": {
+     "code": "NFO",
+     "name": "Nottingham"
+    },
+    "kickoff": "2026-10-11T13:00:00Z",
+    "status": "FT",
+    "score": [
+     3,
+     1
     ]
    },
    {
@@ -409,7 +412,7 @@
    {
     "home": {
      "code": "COV",
-     "name": "Coventry"
+     "name": "Coventry City"
     },
     "away": {
      "code": "NEW",
