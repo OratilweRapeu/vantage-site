@@ -1,7 +1,7 @@
 name: Update predictions
 
 on:
-  workflow_dispatch:          # gives you the "Run workflow" button.
+  workflow_dispatch:          # gives you the "Run workflow" button
   schedule:
     - cron: "0 */3 * * *"     # every 3 hours (UTC)
 
