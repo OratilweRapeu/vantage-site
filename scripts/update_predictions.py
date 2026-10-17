@@ -231,10 +231,14 @@ def build_competition(code, cfg, key):
         if hit is not None: feat = hit; break
 
     # --- results: the most recent round in which any game has finished ----------------
+    # Once any game of the current round has kicked off (live or finished), the Results tab switches to
+    # that round straight away, so the rest of it shows as Today / Tonight / Tomorrow, like La Liga does.
+    # Before that, it keeps showing the last round that has been played.
+    started = [m for m in day if m["status"] in ("FINISHED", "IN_PLAY", "PAUSED")]
     done = [m["rk"] for m in now_season if m["status"] == "FINISHED"]
     results = None
-    if done:
-        rrk = max(done)
+    if started or done:
+        rrk = rk if started else max(done)
         rnd = sorted((m for m in now_season if m["rk"] == rrk), key=lambda m: m["utc"])
         res = []
         for m in rnd:
@@ -365,3 +369,4 @@ if __name__ == "__main__":
         sys.exit(f"API error {e.code}: {e.reason}. predictions.json left unchanged.")
     except urllib.error.URLError as e:
         sys.exit(f"Network error: {e.reason}. predictions.json left unchanged.")
+
