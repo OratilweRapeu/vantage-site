@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-17T17:01:20+00:00",
+ "updated": "2026-10-17T19:14:30+00:00",
  "order": [
   "PL",
   "PD",
@@ -348,10 +348,10 @@
        "name": "Aston Villa"
       },
       "kickoff": "2026-10-17T16:30:00Z",
-      "status": "LIVE",
+      "status": "FT",
       "score": [
        0,
-       0
+       1
       ]
      },
      {
