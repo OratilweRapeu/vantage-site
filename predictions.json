@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-17T14:13:05+00:00",
+ "updated": "2026-10-17T17:01:20+00:00",
  "order": [
   "PL",
   "PD",
@@ -300,9 +300,9 @@
        "name": "Hull City"
       },
       "kickoff": "2026-10-17T14:00:00Z",
-      "status": "LIVE",
+      "status": "FT",
       "score": [
-       0,
+       1,
        0
       ]
      },
@@ -316,10 +316,10 @@
        "name": "Ipswich Town"
       },
       "kickoff": "2026-10-17T14:00:00Z",
-      "status": "LIVE",
+      "status": "FT",
       "score": [
-       0,
-       0
+       3,
+       2
       ]
      },
      {
@@ -332,10 +332,10 @@
        "name": "Liverpool"
       },
       "kickoff": "2026-10-17T14:00:00Z",
-      "status": "LIVE",
+      "status": "FT",
       "score": [
-       0,
-       0
+       1,
+       2
       ]
      },
      {
@@ -348,8 +348,11 @@
        "name": "Aston Villa"
       },
       "kickoff": "2026-10-17T16:30:00Z",
-      "status": "SCHEDULED",
-      "score": null
+      "status": "LIVE",
+      "score": [
+       0,
+       0
+      ]
      },
      {
       "home": {
