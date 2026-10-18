@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-18T17:23:54+00:00",
+ "updated": "2026-10-18T19:29:56+00:00",
  "order": [
   "PL",
   "PD",
@@ -412,7 +412,7 @@
        "name": "Arsenal"
       },
       "kickoff": "2026-10-18T15:30:00Z",
-      "status": "LIVE",
+      "status": "FT",
       "score": [
        0,
        1
