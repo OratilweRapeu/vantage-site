@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-17T19:14:30+00:00",
+ "updated": "2026-10-18T14:11:37+00:00",
  "order": [
   "PL",
   "PD",
@@ -364,8 +364,11 @@
        "name": "Sunderland"
       },
       "kickoff": "2026-10-18T13:00:00Z",
-      "status": "SCHEDULED",
-      "score": null
+      "status": "LIVE",
+      "score": [
+       1,
+       0
+      ]
      },
      {
       "home": {
@@ -377,8 +380,11 @@
        "name": "Man United"
       },
       "kickoff": "2026-10-18T13:00:00Z",
-      "status": "SCHEDULED",
-      "score": null
+      "status": "LIVE",
+      "score": [
+       0,
+       1
+      ]
      },
      {
       "home": {
@@ -390,8 +396,11 @@
        "name": "Crystal Palace"
       },
       "kickoff": "2026-10-18T13:00:00Z",
-      "status": "SCHEDULED",
-      "score": null
+      "status": "LIVE",
+      "score": [
+       3,
+       0
+      ]
      },
      {
       "home": {
