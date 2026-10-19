@@ -69,17 +69,17 @@
         "pts": 7
       },
       {
-        "n": "Crystal Palace FC",
+        "n": "Coventry City FC",
         "p": 14,
         "pts": 7
       },
       {
-        "n": "AFC Bournemouth",
+        "n": "Crystal Palace FC",
         "p": 15,
-        "pts": 6
+        "pts": 7
       },
       {
-        "n": "Coventry City FC",
+        "n": "AFC Bournemouth",
         "p": 16,
         "pts": 6
       },
@@ -94,14 +94,14 @@
         "pts": 5
       },
       {
-        "n": "Sunderland AFC",
+        "n": "Tottenham Hotspur FC",
         "p": 19,
         "pts": 4
       },
       {
-        "n": "Tottenham Hotspur FC",
+        "n": "Sunderland AFC",
         "p": 20,
-        "pts": 3
+        "pts": 4
       }
     ]
   }
