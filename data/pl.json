@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-19T13:09:30Z",
+  "updated": "2026-10-19T18:53:18Z",
   "table": [
     {
       "position": 1,
@@ -4994,7 +4994,14 @@
       "odds": {
         "msg": "Activate Odds-Package in User-Panel to retrieve odds."
       },
-      "referees": []
+      "referees": [
+        {
+          "id": 11423,
+          "name": "Andy Madley",
+          "type": "REFEREE",
+          "nationality": "England"
+        }
+      ]
     },
     {
       "area": {
