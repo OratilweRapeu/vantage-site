@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Fetch from football-data.org
         env:
-          KEY: ${{ secrets.FOOTBALL_DATA_KEY }}
+          KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
         run: |
           mkdir -p data
           if [ -z "$KEY" ]; then echo "SECRET IS EMPTY: FOOTBALL_DATA_KEY not found"; exit 1; fi
