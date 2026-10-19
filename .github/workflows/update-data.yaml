@@ -1,0 +1,30 @@
+name: Update Premier League data
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch from football-data.org
+        env:
+          KEY: ${{ secrets.FOOTBALL_DATA_KEY }}
+        run: |
+          mkdir -p data
+          curl -sf -H "X-Auth-Token: $KEY" https://api.football-data.org/v4/competitions/PL/standings -o st.json
+          sleep 7
+          curl -sf -H "X-Auth-Token: $KEY" https://api.football-data.org/v4/competitions/PL/matches -o mt.json
+          jq -n --slurpfile s st.json --slurpfile m mt.json \
+            '{updated: (now|todate), table: $s[0].standings[0].table, matches: $m[0].matches}' > data/pl.json
+          [ -f data/history.json ] || echo '[]' > data/history.json
+          jq --slurpfile s st.json '($s[0].season.currentMatchday) as $md | map(select(.md != $md)) + [{md:$md, date:(now|todate|.[:10]), t:[$s[0].standings[0].table[] | {n:.team.name, p:.position, pts:.points}]}] | sort_by(.md)' data/history.json > h.tmp && mv h.tmp data/history.json
+      - name: Commit if changed
+        run: |
+          git config user.name "data-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add data/pl.json data/history.json
+          git diff --cached --quiet || (git commit -m "Update PL data" && git push)
