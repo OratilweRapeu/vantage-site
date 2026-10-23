@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-23T15:23:09Z",
+  "updated": "2026-10-23T19:22:35Z",
   "table": [
     {
       "position": 1,
@@ -181,18 +181,37 @@
         "tla": "IPS",
         "crest": "https://crests.football-data.org/349.png"
       },
-      "playedGames": 7,
+      "playedGames": 8,
       "form": null,
       "won": 3,
       "draw": 0,
-      "lost": 4,
+      "lost": 5,
       "points": 9,
       "goalsFor": 11,
-      "goalsAgainst": 15,
-      "goalDifference": -4
+      "goalsAgainst": 16,
+      "goalDifference": -5
     },
     {
       "position": 11,
+      "team": {
+        "id": 351,
+        "name": "Nottingham Forest FC",
+        "shortName": "Nottingham",
+        "tla": "NOT",
+        "crest": "https://crests.football-data.org/351.png"
+      },
+      "playedGames": 8,
+      "form": null,
+      "won": 2,
+      "draw": 2,
+      "lost": 4,
+      "points": 8,
+      "goalsFor": 6,
+      "goalsAgainst": 9,
+      "goalDifference": -3
+    },
+    {
+      "position": 12,
       "team": {
         "id": 67,
         "name": "Newcastle United FC",
@@ -211,7 +230,7 @@
       "goalDifference": -4
     },
     {
-      "position": 12,
+      "position": 13,
       "team": {
         "id": 58,
         "name": "Aston Villa FC",
@@ -230,7 +249,7 @@
       "goalDifference": -4
     },
     {
-      "position": 13,
+      "position": 14,
       "team": {
         "id": 66,
         "name": "Manchester United FC",
@@ -249,7 +268,7 @@
       "goalDifference": 0
     },
     {
-      "position": 14,
+      "position": 15,
       "team": {
         "id": 354,
         "name": "Crystal Palace FC",
@@ -268,7 +287,7 @@
       "goalDifference": -8
     },
     {
-      "position": 15,
+      "position": 16,
       "team": {
         "id": 1044,
         "name": "AFC Bournemouth",
@@ -287,7 +306,7 @@
       "goalDifference": -4
     },
     {
-      "position": 16,
+      "position": 17,
       "team": {
         "id": 73,
         "name": "Tottenham Hotspur FC",
@@ -306,7 +325,7 @@
       "goalDifference": -4
     },
     {
-      "position": 17,
+      "position": 18,
       "team": {
         "id": 1076,
         "name": "Coventry City FC",
@@ -325,7 +344,7 @@
       "goalDifference": -8
     },
     {
-      "position": 18,
+      "position": 19,
       "team": {
         "id": 63,
         "name": "Fulham FC",
@@ -342,25 +361,6 @@
       "goalsFor": 7,
       "goalsAgainst": 10,
       "goalDifference": -3
-    },
-    {
-      "position": 19,
-      "team": {
-        "id": 351,
-        "name": "Nottingham Forest FC",
-        "shortName": "Nottingham",
-        "tla": "NOT",
-        "crest": "https://crests.football-data.org/351.png"
-      },
-      "playedGames": 7,
-      "form": null,
-      "won": 1,
-      "draw": 2,
-      "lost": 4,
-      "points": 5,
-      "goalsFor": 5,
-      "goalsAgainst": 9,
-      "goalDifference": -4
     },
     {
       "position": 20,
@@ -5026,11 +5026,11 @@
       },
       "id": 560620,
       "utcDate": "2026-10-23T19:00:00Z",
-      "status": "TIMED",
+      "status": "IN_PLAY",
       "matchday": 8,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-10-23T00:20:28Z",
+      "lastUpdated": "2026-10-23T19:21:26Z",
       "homeTeam": {
         "id": 349,
         "name": "Ipswich Town FC",
@@ -5046,11 +5046,11 @@
         "crest": "https://crests.football-data.org/351.png"
       },
       "score": {
-        "winner": null,
+        "winner": "AWAY_TEAM",
         "duration": "REGULAR",
         "fullTime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 1
         },
         "halfTime": {
           "home": null,
@@ -5060,7 +5060,14 @@
       "odds": {
         "msg": "Activate Odds-Package in User-Panel to retrieve odds."
       },
-      "referees": []
+      "referees": [
+        {
+          "id": 11620,
+          "name": "Thomas Bramall",
+          "type": "REFEREE",
+          "nationality": "England"
+        }
+      ]
     },
     {
       "area": {
