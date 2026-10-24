@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-24T14:46:34Z",
+  "updated": "2026-10-24T17:04:36Z",
   "table": [
     {
       "position": 1,
@@ -35,9 +35,9 @@
       "draw": 0,
       "lost": 1,
       "points": 21,
-      "goalsFor": 12,
+      "goalsFor": 13,
       "goalsAgainst": 5,
-      "goalDifference": 7
+      "goalDifference": 8
     },
     {
       "position": 3,
@@ -67,12 +67,12 @@
         "tla": "CHE",
         "crest": "https://crests.football-data.org/61.png"
       },
-      "playedGames": 7,
+      "playedGames": 8,
       "form": null,
       "won": 4,
-      "draw": 1,
+      "draw": 2,
       "lost": 2,
-      "points": 13,
+      "points": 14,
       "goalsFor": 17,
       "goalsAgainst": 13,
       "goalDifference": 4
@@ -169,8 +169,8 @@
       "lost": 2,
       "points": 10,
       "goalsFor": 8,
-      "goalsAgainst": 8,
-      "goalDifference": 0
+      "goalsAgainst": 9,
+      "goalDifference": -1
     },
     {
       "position": 10,
@@ -213,6 +213,25 @@
     {
       "position": 12,
       "team": {
+        "id": 63,
+        "name": "Fulham FC",
+        "shortName": "Fulham",
+        "tla": "FUL",
+        "crest": "https://crests.football-data.org/63.png"
+      },
+      "playedGames": 8,
+      "form": null,
+      "won": 2,
+      "draw": 2,
+      "lost": 4,
+      "points": 8,
+      "goalsFor": 8,
+      "goalsAgainst": 10,
+      "goalDifference": -2
+    },
+    {
+      "position": 13,
+      "team": {
         "id": 67,
         "name": "Newcastle United FC",
         "shortName": "Newcastle",
@@ -230,7 +249,7 @@
       "goalDifference": -4
     },
     {
-      "position": 13,
+      "position": 14,
       "team": {
         "id": 66,
         "name": "Manchester United FC",
@@ -249,7 +268,26 @@
       "goalDifference": 0
     },
     {
-      "position": 14,
+      "position": 15,
+      "team": {
+        "id": 73,
+        "name": "Tottenham Hotspur FC",
+        "shortName": "Tottenham",
+        "tla": "TOT",
+        "crest": "https://crests.football-data.org/73.png"
+      },
+      "playedGames": 8,
+      "form": null,
+      "won": 1,
+      "draw": 4,
+      "lost": 3,
+      "points": 7,
+      "goalsFor": 6,
+      "goalsAgainst": 10,
+      "goalDifference": -4
+    },
+    {
+      "position": 16,
       "team": {
         "id": 354,
         "name": "Crystal Palace FC",
@@ -266,44 +304,6 @@
       "goalsFor": 9,
       "goalsAgainst": 17,
       "goalDifference": -8
-    },
-    {
-      "position": 15,
-      "team": {
-        "id": 1076,
-        "name": "Coventry City FC",
-        "shortName": "Coventry City",
-        "tla": "COV",
-        "crest": "https://crests.football-data.org/1076.png"
-      },
-      "playedGames": 8,
-      "form": null,
-      "won": 2,
-      "draw": 1,
-      "lost": 5,
-      "points": 7,
-      "goalsFor": 6,
-      "goalsAgainst": 14,
-      "goalDifference": -8
-    },
-    {
-      "position": 16,
-      "team": {
-        "id": 63,
-        "name": "Fulham FC",
-        "shortName": "Fulham",
-        "tla": "FUL",
-        "crest": "https://crests.football-data.org/63.png"
-      },
-      "playedGames": 8,
-      "form": null,
-      "won": 1,
-      "draw": 3,
-      "lost": 4,
-      "points": 6,
-      "goalsFor": 7,
-      "goalsAgainst": 10,
-      "goalDifference": -3
     },
     {
       "position": 17,
@@ -344,23 +344,23 @@
       "goalDifference": -4
     },
     {
-      "position": 18,
+      "position": 19,
       "team": {
-        "id": 73,
-        "name": "Tottenham Hotspur FC",
-        "shortName": "Tottenham",
-        "tla": "TOT",
-        "crest": "https://crests.football-data.org/73.png"
+        "id": 1076,
+        "name": "Coventry City FC",
+        "shortName": "Coventry City",
+        "tla": "COV",
+        "crest": "https://crests.football-data.org/1076.png"
       },
-      "playedGames": 7,
+      "playedGames": 8,
       "form": null,
-      "won": 1,
-      "draw": 3,
-      "lost": 3,
+      "won": 2,
+      "draw": 0,
+      "lost": 6,
       "points": 6,
       "goalsFor": 6,
-      "goalsAgainst": 10,
-      "goalDifference": -4
+      "goalsAgainst": 15,
+      "goalDifference": -9
     },
     {
       "position": 20,
