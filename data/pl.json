@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-24T09:39:19Z",
+  "updated": "2026-10-24T11:26:52Z",
   "table": [
     {
       "position": 1,
@@ -5126,7 +5126,14 @@
       "odds": {
         "msg": "Activate Odds-Package in User-Panel to retrieve odds."
       },
-      "referees": []
+      "referees": [
+        {
+          "id": 11309,
+          "name": "Peter Bankes",
+          "type": "REFEREE",
+          "nationality": "England"
+        }
+      ]
     },
     {
       "area": {
