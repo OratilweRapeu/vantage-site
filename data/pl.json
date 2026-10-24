@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-24T22:04:35Z",
+  "updated": "2026-10-24T22:58:48Z",
   "table": [
     {
       "position": 1,
@@ -5092,11 +5092,11 @@
       },
       "id": 560614,
       "utcDate": "2026-10-24T11:30:00Z",
-      "status": "TIMED",
+      "status": "IN_PLAY",
       "matchday": 8,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-10-24T00:20:29Z",
+      "lastUpdated": "2026-10-24T11:35:18Z",
       "homeTeam": {
         "id": 58,
         "name": "Aston Villa FC",
@@ -5155,7 +5155,7 @@
       "matchday": 8,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-10-24T00:20:29Z",
+      "lastUpdated": "2026-10-24T14:32:22Z",
       "homeTeam": {
         "id": 57,
         "name": "Arsenal FC",
@@ -5214,7 +5214,7 @@
       "matchday": 8,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-10-24T01:32:02Z",
+      "lastUpdated": "2026-10-24T14:35:34Z",
       "homeTeam": {
         "id": 1076,
         "name": "Coventry City FC",
@@ -5273,7 +5273,7 @@
       "matchday": 8,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-10-24T00:20:29Z",
+      "lastUpdated": "2026-10-24T16:38:45Z",
       "homeTeam": {
         "id": 61,
         "name": "Chelsea FC",
