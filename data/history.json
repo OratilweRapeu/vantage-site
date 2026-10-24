@@ -135,37 +135,37 @@
         "pts": 12
       },
       {
-        "n": "Brentford FC",
+        "n": "Aston Villa FC",
         "p": 6,
-        "pts": 10
+        "pts": 11
       },
       {
-        "n": "Leeds United FC",
+        "n": "Brentford FC",
         "p": 7,
         "pts": 10
       },
       {
-        "n": "Everton FC",
+        "n": "Leeds United FC",
         "p": 8,
         "pts": 10
       },
       {
-        "n": "Ipswich Town FC",
+        "n": "Everton FC",
         "p": 9,
         "pts": 10
       },
       {
-        "n": "Hull City AFC",
+        "n": "Ipswich Town FC",
         "p": 10,
+        "pts": 10
+      },
+      {
+        "n": "Hull City AFC",
+        "p": 11,
         "pts": 9
       },
       {
         "n": "Newcastle United FC",
-        "p": 11,
-        "pts": 8
-      },
-      {
-        "n": "Aston Villa FC",
         "p": 12,
         "pts": 8
       },
