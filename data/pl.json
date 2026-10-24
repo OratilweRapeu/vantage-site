@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-24T17:57:16Z",
+  "updated": "2026-10-24T19:36:00Z",
   "table": [
     {
       "position": 1,
@@ -70,12 +70,12 @@
       "playedGames": 8,
       "form": null,
       "won": 4,
-      "draw": 2,
-      "lost": 2,
-      "points": 14,
+      "draw": 1,
+      "lost": 3,
+      "points": 13,
       "goalsFor": 17,
-      "goalsAgainst": 13,
-      "goalDifference": 4
+      "goalsAgainst": 15,
+      "goalDifference": 2
     },
     {
       "position": 5,
@@ -213,6 +213,25 @@
     {
       "position": 12,
       "team": {
+        "id": 73,
+        "name": "Tottenham Hotspur FC",
+        "shortName": "Tottenham",
+        "tla": "TOT",
+        "crest": "https://crests.football-data.org/73.png"
+      },
+      "playedGames": 8,
+      "form": null,
+      "won": 2,
+      "draw": 3,
+      "lost": 3,
+      "points": 9,
+      "goalsFor": 8,
+      "goalsAgainst": 10,
+      "goalDifference": -2
+    },
+    {
+      "position": 13,
+      "team": {
         "id": 63,
         "name": "Fulham FC",
         "shortName": "Fulham",
@@ -230,7 +249,7 @@
       "goalDifference": -2
     },
     {
-      "position": 13,
+      "position": 14,
       "team": {
         "id": 67,
         "name": "Newcastle United FC",
@@ -249,7 +268,7 @@
       "goalDifference": -4
     },
     {
-      "position": 14,
+      "position": 15,
       "team": {
         "id": 66,
         "name": "Manchester United FC",
@@ -266,25 +285,6 @@
       "goalsFor": 10,
       "goalsAgainst": 10,
       "goalDifference": 0
-    },
-    {
-      "position": 15,
-      "team": {
-        "id": 73,
-        "name": "Tottenham Hotspur FC",
-        "shortName": "Tottenham",
-        "tla": "TOT",
-        "crest": "https://crests.football-data.org/73.png"
-      },
-      "playedGames": 8,
-      "form": null,
-      "won": 1,
-      "draw": 4,
-      "lost": 3,
-      "points": 7,
-      "goalsFor": 6,
-      "goalsAgainst": 10,
-      "goalDifference": -4
     },
     {
       "position": 16,
@@ -5096,7 +5096,7 @@
       "matchday": 8,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-10-24T13:37:46Z",
+      "lastUpdated": "2026-10-24T00:20:29Z",
       "homeTeam": {
         "id": 58,
         "name": "Aston Villa FC",
@@ -5126,14 +5126,7 @@
       "odds": {
         "msg": "Activate Odds-Package in User-Panel to retrieve odds."
       },
-      "referees": [
-        {
-          "id": 11309,
-          "name": "Peter Bankes",
-          "type": "REFEREE",
-          "nationality": "England"
-        }
-      ]
+      "referees": []
     },
     {
       "area": {
@@ -5162,7 +5155,7 @@
       "matchday": 8,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-10-24T16:13:30Z",
+      "lastUpdated": "2026-10-24T00:20:29Z",
       "homeTeam": {
         "id": 57,
         "name": "Arsenal FC",
@@ -5192,14 +5185,7 @@
       "odds": {
         "msg": "Activate Odds-Package in User-Panel to retrieve odds."
       },
-      "referees": [
-        {
-          "id": 11378,
-          "name": "Tony Harrington",
-          "type": "REFEREE",
-          "nationality": "England"
-        }
-      ]
+      "referees": []
     },
     {
       "area": {
@@ -5228,7 +5214,7 @@
       "matchday": 8,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-10-24T16:09:14Z",
+      "lastUpdated": "2026-10-24T01:32:02Z",
       "homeTeam": {
         "id": 1076,
         "name": "Coventry City FC",
@@ -5258,14 +5244,7 @@
       "odds": {
         "msg": "Activate Odds-Package in User-Panel to retrieve odds."
       },
-      "referees": [
-        {
-          "id": 58025,
-          "name": "Adam Herczeg",
-          "type": "REFEREE",
-          "nationality": "England"
-        }
-      ]
+      "referees": []
     },
     {
       "area": {
@@ -5290,11 +5269,11 @@
       },
       "id": 560617,
       "utcDate": "2026-10-24T16:30:00Z",
-      "status": "IN_PLAY",
+      "status": "TIMED",
       "matchday": 8,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-10-24T17:56:38Z",
+      "lastUpdated": "2026-10-24T00:20:29Z",
       "homeTeam": {
         "id": 61,
         "name": "Chelsea FC",
@@ -5310,11 +5289,11 @@
         "crest": "https://crests.football-data.org/73.png"
       },
       "score": {
-        "winner": "DRAW",
+        "winner": null,
         "duration": "REGULAR",
         "fullTime": {
-          "home": 0,
-          "away": 0
+          "home": null,
+          "away": null
         },
         "halfTime": {
           "home": null,
@@ -5324,14 +5303,7 @@
       "odds": {
         "msg": "Activate Odds-Package in User-Panel to retrieve odds."
       },
-      "referees": [
-        {
-          "id": 11443,
-          "name": "Chris Kavanagh",
-          "type": "REFEREE",
-          "nationality": "England"
-        }
-      ]
+      "referees": []
     },
     {
       "area": {
