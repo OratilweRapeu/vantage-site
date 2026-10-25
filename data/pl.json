@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-25T16:42:21Z",
+  "updated": "2026-10-25T17:28:17Z",
   "table": [
     {
       "position": 1,
@@ -5624,7 +5624,7 @@
       "matchday": 8,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-10-25T16:40:54Z",
+      "lastUpdated": "2026-10-25T17:22:30Z",
       "homeTeam": {
         "id": 71,
         "name": "Sunderland AFC",
@@ -5647,8 +5647,8 @@
           "away": 0
         },
         "halfTime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 0
         }
       },
       "odds": {
