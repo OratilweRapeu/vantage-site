@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Fetch from football-data.org
         env:
-          KEY: ${{ secrets.FOOTBALL_DATA_KEY }}
+          KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
         run: |
           mkdir -p data
           curl -sf -H "X-Auth-Token: $KEY" https://api.football-data.org/v4/competitions/PL/standings -o st.json
@@ -24,7 +24,7 @@ jobs:
           jq --slurpfile s st.json '($s[0].season.currentMatchday) as $md | map(select(.md != $md)) + [{md:$md, date:(now|todate|.[:10]), t:[$s[0].standings[0].table[] | {n:.team.name, p:.position, pts:.points}]}] | sort_by(.md)' data/history.json > h.tmp && mv h.tmp data/history.json
       - name: Build predictions
         env:
-          FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_KEY }}
+          FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
         run: |
           sleep 10
           python3 scripts/update_predictions.py
