@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-18T19:29:56+00:00",
+ "updated": "2026-10-30T17:15:15+00:00",
  "order": [
   "PL",
   "PD",
@@ -10,59 +10,109 @@
    "name": "Premier League",
    "kind": "league",
    "season": "2026/27",
-   "label": "Matchweek 7",
-   "featured": 6,
+   "label": "Matchweek 9",
+   "featured": 0,
    "model": {
     "type": "opponent-adjusted Poisson",
     "shrink": 8.0,
     "season_decay": 0.5,
     "rho": -0.08,
-    "matches_used": 440
+    "matches_used": 460
    },
    "fixtures": [
     {
      "home": {
-      "code": "EVE",
-      "name": "Everton"
-     },
-     "away": {
       "code": "CHE",
       "name": "Chelsea"
      },
-     "kickoff": "2026-10-17T11:30:00Z",
+     "away": {
+      "code": "MUN",
+      "name": "Man United"
+     },
+     "kickoff": "2026-10-31T12:30:00Z",
      "pct": [
-      40,
-      27,
-      33
+      45,
+      24,
+      31
      ],
      "xg": [
-      1.53,
-      1.37
+      1.91,
+      1.57
      ],
      "likeliest": {
       "h": 1,
       "a": 1,
-      "p": 0.125
+      "p": 0.1
      }
     },
     {
      "home": {
-      "code": "FUL",
-      "name": "Fulham"
+      "code": "MCI",
+      "name": "Man City"
      },
      "away": {
-      "code": "HUL",
-      "name": "Hull City"
+      "code": "BHA",
+      "name": "Brighton Hove"
      },
-     "kickoff": "2026-10-17T14:00:00Z",
+     "kickoff": "2026-10-31T15:00:00Z",
      "pct": [
-      33,
-      30,
-      37
+      52,
+      24,
+      24
      ],
      "xg": [
-      1.12,
-      1.2
+      1.86,
+      1.21
+     ],
+     "likeliest": {
+      "h": 1,
+      "a": 1,
+      "p": 0.113
+     }
+    },
+    {
+     "home": {
+      "code": "BOU",
+      "name": "Bournemouth"
+     },
+     "away": {
+      "code": "LEE",
+      "name": "Leeds United"
+     },
+     "kickoff": "2026-10-31T15:00:00Z",
+     "pct": [
+      44,
+      27,
+      29
+     ],
+     "xg": [
+      1.53,
+      1.18
+     ],
+     "likeliest": {
+      "h": 1,
+      "a": 1,
+      "p": 0.13
+     }
+    },
+    {
+     "home": {
+      "code": "COV",
+      "name": "Coventry City"
+     },
+     "away": {
+      "code": "SUN",
+      "name": "Sunderland"
+     },
+     "kickoff": "2026-10-31T15:00:00Z",
+     "pct": [
+      35,
+      31,
+      34
+     ],
+     "xg": [
+      1.16,
+      1.15
      ],
      "likeliest": {
       "h": 1,
@@ -72,47 +122,22 @@
     },
     {
      "home": {
-      "code": "MCI",
-      "name": "Man City"
+      "code": "HUL",
+      "name": "Hull City"
      },
      "away": {
       "code": "IPS",
       "name": "Ipswich Town"
      },
-     "kickoff": "2026-10-17T14:00:00Z",
+     "kickoff": "2026-10-31T15:00:00Z",
      "pct": [
-      75,
-      15,
-      10
-     ],
-     "xg": [
-      2.76,
-      0.94
-     ],
-     "likeliest": {
-      "h": 2,
-      "a": 0,
-      "p": 0.094
-     }
-    },
-    {
-     "home": {
-      "code": "BRE",
-      "name": "Brentford"
-     },
-     "away": {
-      "code": "LIV",
-      "name": "Liverpool"
-     },
-     "kickoff": "2026-10-17T14:00:00Z",
-     "pct": [
-      45,
+      50,
       26,
-      29
+      24
      ],
      "xg": [
-      1.63,
-      1.26
+      1.7,
+      1.11
      ],
      "likeliest": {
       "h": 1,
@@ -122,47 +147,22 @@
     },
     {
      "home": {
-      "code": "NEW",
-      "name": "Newcastle"
+      "code": "BRE",
+      "name": "Brentford"
      },
      "away": {
-      "code": "AVL",
-      "name": "Aston Villa"
+      "code": "NFO",
+      "name": "Nottingham"
      },
-     "kickoff": "2026-10-17T16:30:00Z",
+     "kickoff": "2026-10-31T15:00:00Z",
      "pct": [
-      41,
-      26,
-      33
-     ],
-     "xg": [
-      1.63,
-      1.43
-     ],
-     "likeliest": {
-      "h": 1,
-      "a": 1,
-      "p": 0.118
-     }
-    },
-    {
-     "home": {
-      "code": "BOU",
-      "name": "Bournemouth"
-     },
-     "away": {
-      "code": "SUN",
-      "name": "Sunderland"
-     },
-     "kickoff": "2026-10-18T13:00:00Z",
-     "pct": [
-      47,
+      51,
       27,
-      26
+      22
      ],
      "xg": [
-      1.59,
-      1.13
+      1.61,
+      0.99
      ],
      "likeliest": {
       "h": 1,
@@ -172,198 +172,150 @@
     },
     {
      "home": {
-      "code": "LEE",
-      "name": "Leeds United"
-     },
-     "away": {
-      "code": "MUN",
-      "name": "Man United"
-     },
-     "kickoff": "2026-10-18T13:00:00Z",
-     "pct": [
-      37,
-      27,
-      36
-     ],
-     "xg": [
-      1.45,
-      1.42
-     ],
-     "likeliest": {
-      "h": 1,
-      "a": 1,
-      "p": 0.126
-     }
-    },
-    {
-     "home": {
-      "code": "BHA",
-      "name": "Brighton Hove"
+      "code": "TOT",
+      "name": "Tottenham"
      },
      "away": {
       "code": "CRY",
       "name": "Crystal Palace"
      },
-     "kickoff": "2026-10-18T13:00:00Z",
+     "kickoff": "2026-10-31T17:30:00Z",
      "pct": [
-      61,
-      23,
-      16
+      47,
+      28,
+      25
      ],
      "xg": [
-      1.99,
-      0.93
+      1.53,
+      1.06
      ],
      "likeliest": {
       "h": 1,
       "a": 1,
-      "p": 0.108
+      "p": 0.131
      }
     },
     {
      "home": {
-      "code": "NFO",
-      "name": "Nottingham"
+      "code": "AVL",
+      "name": "Aston Villa"
+     },
+     "away": {
+      "code": "FUL",
+      "name": "Fulham"
+     },
+     "kickoff": "2026-10-31T20:00:00Z",
+     "pct": [
+      47,
+      28,
+      25
+     ],
+     "xg": [
+      1.5,
+      1.03
+     ],
+     "likeliest": {
+      "h": 1,
+      "a": 1,
+      "p": 0.133
+     }
+    },
+    {
+     "home": {
+      "code": "LIV",
+      "name": "Liverpool"
      },
      "away": {
       "code": "ARS",
       "name": "Arsenal"
      },
-     "kickoff": "2026-10-18T15:30:00Z",
+     "kickoff": "2026-11-01T16:30:00Z",
      "pct": [
-      20,
-      28,
-      52
-     ],
-     "xg": [
-      0.82,
-      1.5
-     ],
-     "likeliest": {
-      "h": 0,
-      "a": 1,
-      "p": 0.137
-     }
-    },
-    {
-     "home": {
-      "code": "TOT",
-      "name": "Tottenham"
-     },
-     "away": {
-      "code": "COV",
-      "name": "Coventry City"
-     },
-     "kickoff": "2026-10-19T19:00:00Z",
-     "pct": [
-      42,
+      26,
       29,
-      29
+      45
      ],
      "xg": [
-      1.38,
-      1.11
+      1.01,
+      1.41
      ],
      "likeliest": {
       "h": 1,
       "a": 1,
       "p": 0.137
      }
+    },
+    {
+     "home": {
+      "code": "NEW",
+      "name": "Newcastle"
+     },
+     "away": {
+      "code": "EVE",
+      "name": "Everton"
+     },
+     "kickoff": "2026-11-02T20:00:00Z",
+     "pct": [
+      42,
+      28,
+      30
+     ],
+     "xg": [
+      1.44,
+      1.19
+     ],
+     "likeliest": {
+      "h": 1,
+      "a": 1,
+      "p": 0.133
+     }
     }
    ],
    "results": {
-    "label": "Matchweek 7",
+    "label": "Matchweek 8",
     "fixtures": [
      {
       "home": {
-       "code": "EVE",
-       "name": "Everton"
-      },
-      "away": {
-       "code": "CHE",
-       "name": "Chelsea"
-      },
-      "kickoff": "2026-10-17T11:30:00Z",
-      "status": "FT",
-      "score": [
-       0,
-       2
-      ]
-     },
-     {
-      "home": {
-       "code": "FUL",
-       "name": "Fulham"
-      },
-      "away": {
-       "code": "HUL",
-       "name": "Hull City"
-      },
-      "kickoff": "2026-10-17T14:00:00Z",
-      "status": "FT",
-      "score": [
-       1,
-       0
-      ]
-     },
-     {
-      "home": {
-       "code": "MCI",
-       "name": "Man City"
-      },
-      "away": {
        "code": "IPS",
        "name": "Ipswich Town"
       },
-      "kickoff": "2026-10-17T14:00:00Z",
-      "status": "FT",
-      "score": [
-       3,
-       2
-      ]
-     },
-     {
-      "home": {
-       "code": "BRE",
-       "name": "Brentford"
-      },
       "away": {
-       "code": "LIV",
-       "name": "Liverpool"
+       "code": "NFO",
+       "name": "Nottingham"
       },
-      "kickoff": "2026-10-17T14:00:00Z",
+      "kickoff": "2026-10-23T19:00:00Z",
       "status": "FT",
       "score": [
        1,
-       2
-      ]
-     },
-     {
-      "home": {
-       "code": "NEW",
-       "name": "Newcastle"
-      },
-      "away": {
-       "code": "AVL",
-       "name": "Aston Villa"
-      },
-      "kickoff": "2026-10-17T16:30:00Z",
-      "status": "FT",
-      "score": [
-       0,
        1
       ]
      },
      {
       "home": {
-       "code": "BOU",
-       "name": "Bournemouth"
+       "code": "AVL",
+       "name": "Aston Villa"
       },
       "away": {
-       "code": "SUN",
-       "name": "Sunderland"
+       "code": "MCI",
+       "name": "Man City"
       },
-      "kickoff": "2026-10-18T13:00:00Z",
+      "kickoff": "2026-10-24T11:30:00Z",
+      "status": "FT",
+      "score": [
+       2,
+       1
+      ]
+     },
+     {
+      "home": {
+       "code": "ARS",
+       "name": "Arsenal"
+      },
+      "away": {
+       "code": "EVE",
+       "name": "Everton"
+      },
+      "kickoff": "2026-10-24T14:00:00Z",
       "status": "FT",
       "score": [
        2,
@@ -372,46 +324,14 @@
      },
      {
       "home": {
-       "code": "LEE",
-       "name": "Leeds United"
+       "code": "COV",
+       "name": "Coventry City"
       },
       "away": {
-       "code": "MUN",
-       "name": "Man United"
+       "code": "FUL",
+       "name": "Fulham"
       },
-      "kickoff": "2026-10-18T13:00:00Z",
-      "status": "FT",
-      "score": [
-       1,
-       1
-      ]
-     },
-     {
-      "home": {
-       "code": "BHA",
-       "name": "Brighton Hove"
-      },
-      "away": {
-       "code": "CRY",
-       "name": "Crystal Palace"
-      },
-      "kickoff": "2026-10-18T13:00:00Z",
-      "status": "FT",
-      "score": [
-       5,
-       0
-      ]
-     },
-     {
-      "home": {
-       "code": "NFO",
-       "name": "Nottingham"
-      },
-      "away": {
-       "code": "ARS",
-       "name": "Arsenal"
-      },
-      "kickoff": "2026-10-18T15:30:00Z",
+      "kickoff": "2026-10-24T14:00:00Z",
       "status": "FT",
       "score": [
        0,
@@ -420,16 +340,99 @@
      },
      {
       "home": {
+       "code": "CHE",
+       "name": "Chelsea"
+      },
+      "away": {
        "code": "TOT",
        "name": "Tottenham"
       },
-      "away": {
-       "code": "COV",
-       "name": "Coventry City"
+      "kickoff": "2026-10-24T16:30:00Z",
+      "status": "FT",
+      "score": [
+       0,
+       2
+      ]
+     },
+     {
+      "home": {
+       "code": "LIV",
+       "name": "Liverpool"
       },
-      "kickoff": "2026-10-19T19:00:00Z",
-      "status": "SCHEDULED",
-      "score": null
+      "away": {
+       "code": "BHA",
+       "name": "Brighton Hove"
+      },
+      "kickoff": "2026-10-25T14:00:00Z",
+      "status": "FT",
+      "score": [
+       2,
+       0
+      ]
+     },
+     {
+      "home": {
+       "code": "CRY",
+       "name": "Crystal Palace"
+      },
+      "away": {
+       "code": "NEW",
+       "name": "Newcastle"
+      },
+      "kickoff": "2026-10-25T14:00:00Z",
+      "status": "FT",
+      "score": [
+       0,
+       2
+      ]
+     },
+     {
+      "home": {
+       "code": "MUN",
+       "name": "Man United"
+      },
+      "away": {
+       "code": "BOU",
+       "name": "Bournemouth"
+      },
+      "kickoff": "2026-10-25T14:00:00Z",
+      "status": "FT",
+      "score": [
+       0,
+       3
+      ]
+     },
+     {
+      "home": {
+       "code": "HUL",
+       "name": "Hull City"
+      },
+      "away": {
+       "code": "BRE",
+       "name": "Brentford"
+      },
+      "kickoff": "2026-10-25T14:00:00Z",
+      "status": "FT",
+      "score": [
+       1,
+       1
+      ]
+     },
+     {
+      "home": {
+       "code": "SUN",
+       "name": "Sunderland"
+      },
+      "away": {
+       "code": "LEE",
+       "name": "Leeds United"
+      },
+      "kickoff": "2026-10-25T16:30:00Z",
+      "status": "FT",
+      "score": [
+       0,
+       0
+      ]
      }
     ]
    }
@@ -438,34 +441,59 @@
    "name": "La Liga",
    "kind": "league",
    "season": "2026/27",
-   "label": "Matchweek 6",
-   "featured": 3,
+   "label": "Matchweek 11",
+   "featured": 6,
    "model": {
     "type": "opponent-adjusted Poisson",
     "shrink": 8.0,
     "season_decay": 0.5,
     "rho": -0.08,
-    "matches_used": 410
+    "matches_used": 479
    },
    "fixtures": [
     {
      "home": {
-      "code": "RSO",
-      "name": "Real Sociedad"
+      "code": "VIL",
+      "name": "Villarreal"
      },
      "away": {
-      "code": "CEL",
-      "name": "Celta"
+      "code": "ESP",
+      "name": "Espanyol"
      },
-     "kickoff": "2026-09-03T19:00:00Z",
+     "kickoff": "2026-10-30T20:00:00Z",
      "pct": [
-      48,
-      26,
-      26
+      61,
+      23,
+      16
      ],
      "xg": [
-      1.68,
-      1.2
+      1.97,
+      0.91
+     ],
+     "likeliest": {
+      "h": 1,
+      "a": 1,
+      "p": 0.109
+     }
+    },
+    {
+     "home": {
+      "code": "LEV",
+      "name": "Levante"
+     },
+     "away": {
+      "code": "ATL",
+      "name": "Atleti"
+     },
+     "kickoff": "2026-10-31T13:00:00Z",
+     "pct": [
+      28,
+      26,
+      46
+     ],
+     "xg": [
+      1.26,
+      1.66
      ],
      "likeliest": {
       "h": 1,
@@ -479,148 +507,23 @@
       "name": "Rayo Vallecano"
      },
      "away": {
-      "code": "ESP",
-      "name": "Espanyol"
+      "code": "CEL",
+      "name": "Celta"
      },
-     "kickoff": "2026-09-15T17:00:00Z",
+     "kickoff": "2026-10-31T15:15:00Z",
      "pct": [
-      46,
-      29,
-      25
+      36,
+      31,
+      33
      ],
      "xg": [
-      1.42,
-      0.98
+      1.15,
+      1.08
      ],
      "likeliest": {
       "h": 1,
       "a": 1,
-      "p": 0.136
-     }
-    },
-    {
-     "home": {
-      "code": "ALA",
-      "name": "Alavés"
-     },
-     "away": {
-      "code": "VAL",
-      "name": "Valencia"
-     },
-     "kickoff": "2026-09-15T18:00:00Z",
-     "pct": [
-      50,
-      28,
-      22
-     ],
-     "xg": [
-      1.54,
-      0.94
-     ],
-     "likeliest": {
-      "h": 1,
-      "a": 1,
-      "p": 0.131
-     }
-    },
-    {
-     "home": {
-      "code": "ELC",
-      "name": "Elche"
-     },
-     "away": {
-      "code": "RMA",
-      "name": "Real Madrid"
-     },
-     "kickoff": "2026-09-15T19:30:00Z",
-     "pct": [
-      22,
-      24,
-      54
-     ],
-     "xg": [
-      1.14,
-      1.9
-     ],
-     "likeliest": {
-      "h": 1,
-      "a": 1,
-      "p": 0.112
-     }
-    },
-    {
-     "home": {
-      "code": "DEP",
-      "name": "Deportivo"
-     },
-     "away": {
-      "code": "SEV",
-      "name": "Sevilla FC"
-     },
-     "kickoff": "2026-09-16T17:00:00Z",
-     "pct": [
-      55,
-      24,
-      21
-     ],
-     "xg": [
-      1.86,
-      1.06
-     ],
-     "likeliest": {
-      "h": 1,
-      "a": 1,
-      "p": 0.115
-     }
-    },
-    {
-     "home": {
-      "code": "ATL",
-      "name": "Atleti"
-     },
-     "away": {
-      "code": "OSA",
-      "name": "Osasuna"
-     },
-     "kickoff": "2026-09-16T17:00:00Z",
-     "pct": [
-      58,
-      25,
-      17
-     ],
-     "xg": [
-      1.74,
-      0.85
-     ],
-     "likeliest": {
-      "h": 1,
-      "a": 0,
-      "p": 0.121
-     }
-    },
-    {
-     "home": {
-      "code": "BAR",
-      "name": "Barça"
-     },
-     "away": {
-      "code": "SAN",
-      "name": "Santander"
-     },
-     "kickoff": "2026-09-16T19:30:00Z",
-     "pct": [
-      80,
-      13,
-      7
-     ],
-     "xg": [
-      3.13,
-      0.92
-     ],
-     "likeliest": {
-      "h": 3,
-      "a": 0,
-      "p": 0.089
+      "p": 0.144
      }
     },
     {
@@ -629,596 +532,118 @@
       "name": "Real Betis"
      },
      "away": {
-      "code": "GET",
-      "name": "Getafe"
-     },
-     "kickoff": "2026-09-17T17:00:00Z",
-     "pct": [
-      52,
-      30,
-      18
-     ],
-     "xg": [
-      1.4,
-      0.72
-     ],
-     "likeliest": {
-      "h": 1,
-      "a": 0,
-      "p": 0.158
-     }
-    },
-    {
-     "home": {
       "code": "MAL",
       "name": "Málaga"
      },
-     "away": {
-      "code": "VIL",
-      "name": "Villarreal"
-     },
-     "kickoff": "2026-09-17T19:30:00Z",
+     "kickoff": "2026-10-31T17:30:00Z",
      "pct": [
-      31,
-      26,
-      43
+      63,
+      22,
+      15
      ],
      "xg": [
-      1.31,
-      1.6
+      2.04,
+      0.89
      ],
      "likeliest": {
-      "h": 1,
-      "a": 1,
-      "p": 0.123
+      "h": 2,
+      "a": 0,
+      "p": 0.111
      }
     },
     {
      "home": {
-      "code": "LEV",
-      "name": "Levante"
+      "code": "BAR",
+      "name": "Barça"
      },
      "away": {
-      "code": "ATH",
-      "name": "Athletic"
+      "code": "ALA",
+      "name": "Alavés"
      },
-     "kickoff": "2026-10-21T18:00:00Z",
+     "kickoff": "2026-10-31T20:00:00Z",
      "pct": [
-      49,
-      26,
-      25
+      82,
+      12,
+      6
      ],
      "xg": [
-      1.66,
-      1.12
-     ],
-     "likeliest": {
-      "h": 1,
-      "a": 1,
-      "p": 0.124
-     }
-    }
-   ],
-   "results": {
-    "label": "Matchweek 6",
-    "fixtures": [
-     {
-      "home": {
-       "code": "RSO",
-       "name": "Real Sociedad"
-      },
-      "away": {
-       "code": "CEL",
-       "name": "Celta"
-      },
-      "kickoff": "2026-09-03T19:00:00Z",
-      "status": "FT",
-      "score": [
-       0,
-       0
-      ]
-     },
-     {
-      "home": {
-       "code": "RAY",
-       "name": "Rayo Vallecano"
-      },
-      "away": {
-       "code": "ESP",
-       "name": "Espanyol"
-      },
-      "kickoff": "2026-09-15T17:00:00Z",
-      "status": "FT",
-      "score": [
-       2,
-       1
-      ]
-     },
-     {
-      "home": {
-       "code": "ALA",
-       "name": "Alavés"
-      },
-      "away": {
-       "code": "VAL",
-       "name": "Valencia"
-      },
-      "kickoff": "2026-09-15T18:00:00Z",
-      "status": "FT",
-      "score": [
-       0,
-       1
-      ]
-     },
-     {
-      "home": {
-       "code": "ELC",
-       "name": "Elche"
-      },
-      "away": {
-       "code": "RMA",
-       "name": "Real Madrid"
-      },
-      "kickoff": "2026-09-15T19:30:00Z",
-      "status": "FT",
-      "score": [
-       2,
-       3
-      ]
-     },
-     {
-      "home": {
-       "code": "DEP",
-       "name": "Deportivo"
-      },
-      "away": {
-       "code": "SEV",
-       "name": "Sevilla FC"
-      },
-      "kickoff": "2026-09-16T17:00:00Z",
-      "status": "FT",
-      "score": [
-       0,
-       1
-      ]
-     },
-     {
-      "home": {
-       "code": "ATL",
-       "name": "Atleti"
-      },
-      "away": {
-       "code": "OSA",
-       "name": "Osasuna"
-      },
-      "kickoff": "2026-09-16T17:00:00Z",
-      "status": "FT",
-      "score": [
-       4,
-       0
-      ]
-     },
-     {
-      "home": {
-       "code": "BAR",
-       "name": "Barça"
-      },
-      "away": {
-       "code": "SAN",
-       "name": "Santander"
-      },
-      "kickoff": "2026-09-16T19:30:00Z",
-      "status": "FT",
-      "score": [
-       7,
-       2
-      ]
-     },
-     {
-      "home": {
-       "code": "BET",
-       "name": "Real Betis"
-      },
-      "away": {
-       "code": "GET",
-       "name": "Getafe"
-      },
-      "kickoff": "2026-09-17T17:00:00Z",
-      "status": "FT",
-      "score": [
-       1,
-       0
-      ]
-     },
-     {
-      "home": {
-       "code": "MAL",
-       "name": "Málaga"
-      },
-      "away": {
-       "code": "VIL",
-       "name": "Villarreal"
-      },
-      "kickoff": "2026-09-17T19:30:00Z",
-      "status": "FT",
-      "score": [
-       1,
-       3
-      ]
-     },
-     {
-      "home": {
-       "code": "LEV",
-       "name": "Levante"
-      },
-      "away": {
-       "code": "ATH",
-       "name": "Athletic"
-      },
-      "kickoff": "2026-10-21T18:00:00Z",
-      "status": "SCHEDULED",
-      "score": null
-     }
-    ]
-   }
-  },
-  "CL": {
-   "name": "Champions League",
-   "kind": "cup",
-   "season": "2026/27",
-   "label": "League phase · Matchday 3",
-   "featured": 9,
-   "model": {
-    "type": "opponent-adjusted Poisson",
-    "shrink": 8.0,
-    "season_decay": 0.5,
-    "rho": -0.08,
-    "matches_used": 225
-   },
-   "fixtures": [
-    {
-     "home": {
-      "code": "SAB",
-      "name": "Sabah FK"
-     },
-     "away": {
-      "code": "BVB",
-      "name": "Dortmund"
-     },
-     "kickoff": "2026-10-20T16:45:00Z",
-     "pct": [
-      43,
-      23,
-      34
-     ],
-     "xg": [
-      1.94,
-      1.7
-     ],
-     "likeliest": {
-      "h": 1,
-      "a": 1,
-      "p": 0.093
-     }
-    },
-    {
-     "home": {
-      "code": "FEN",
-      "name": "Fenerbahçe"
-     },
-     "away": {
-      "code": "SLP",
-      "name": "Slavia Praha"
-     },
-     "kickoff": "2026-10-20T16:45:00Z",
-     "pct": [
-      54,
-      23,
-      23
-     ],
-     "xg": [
-      1.99,
-      1.26
-     ],
-     "likeliest": {
-      "h": 1,
-      "a": 1,
-      "p": 0.105
-     }
-    },
-    {
-     "home": {
-      "code": "MCI",
-      "name": "Man City"
-     },
-     "away": {
-      "code": "AEK",
-      "name": "PAE AEK"
-     },
-     "kickoff": "2026-10-20T19:00:00Z",
-     "pct": [
-      56,
-      24,
-      20
-     ],
-     "xg": [
-      1.95,
-      1.11
-     ],
-     "likeliest": {
-      "h": 1,
-      "a": 1,
-      "p": 0.11
-     }
-    },
-    {
-     "home": {
-      "code": "VFB",
-      "name": "Stuttgart"
-     },
-     "away": {
-      "code": "ATL",
-      "name": "Atleti"
-     },
-     "kickoff": "2026-10-20T19:00:00Z",
-     "pct": [
-      51,
-      23,
-      26
-     ],
-     "xg": [
-      2.05,
-      1.42
-     ],
-     "likeliest": {
-      "h": 1,
-      "a": 1,
-      "p": 0.098
-     }
-    },
-    {
-     "home": {
-      "code": "LIV",
-      "name": "Liverpool"
-     },
-     "away": {
-      "code": "VIL",
-      "name": "Villarreal"
-     },
-     "kickoff": "2026-10-20T19:00:00Z",
-     "pct": [
-      78,
-      14,
-      8
-     ],
-     "xg": [
-      3.02,
-      0.96
+      3.12,
+      0.84
      ],
      "likeliest": {
       "h": 3,
       "a": 0,
-      "p": 0.086
-     }
-    },
-    {
-     "home": {
-      "code": "ROM",
-      "name": "Roma"
-     },
-     "away": {
-      "code": "SBA",
-      "name": "Sl. Bratislava"
-     },
-     "kickoff": "2026-10-20T19:00:00Z",
-     "pct": [
-      66,
-      17,
-      17
-     ],
-     "xg": [
-      2.79,
-      1.4
-     ],
-     "likeliest": {
-      "h": 2,
-      "a": 1,
-      "p": 0.082
-     }
-    },
-    {
-     "home": {
-      "code": "FCP",
-      "name": "Porto"
-     },
-     "away": {
-      "code": "PSV",
-      "name": "PSV"
-     },
-     "kickoff": "2026-10-20T19:00:00Z",
-     "pct": [
-      41,
-      25,
-      34
-     ],
-     "xg": [
-      1.72,
-      1.55
-     ],
-     "likeliest": {
-      "h": 1,
-      "a": 1,
-      "p": 0.109
-     }
-    },
-    {
-     "home": {
-      "code": "NAP",
-      "name": "Napoli"
-     },
-     "away": {
-      "code": "FK",
-      "name": "Bodø/Glimt"
-     },
-     "kickoff": "2026-10-20T19:00:00Z",
-     "pct": [
-      37,
-      26,
-      37
-     ],
-     "xg": [
-      1.52,
-      1.51
-     ],
-     "likeliest": {
-      "h": 1,
-      "a": 1,
-      "p": 0.12
-     }
-    },
-    {
-     "home": {
-      "code": "PSG",
-      "name": "PSG"
-     },
-     "away": {
-      "code": "BAR",
-      "name": "Barça"
-     },
-     "kickoff": "2026-10-20T19:00:00Z",
-     "pct": [
-      62,
-      18,
-      20
-     ],
-     "xg": [
-      2.92,
-      1.71
-     ],
-     "likeliest": {
-      "h": 2,
-      "a": 1,
-      "p": 0.071
-     }
-    },
-    {
-     "home": {
-      "code": "COM",
-      "name": "Como 1907"
-     },
-     "away": {
-      "code": "MUN",
-      "name": "Man United"
-     },
-     "kickoff": "2026-10-21T16:45:00Z",
-     "pct": [
-      48,
-      22,
-      30
-     ],
-     "xg": [
-      2.1,
-      1.64
-     ],
-     "likeliest": {
-      "h": 1,
-      "a": 1,
-      "p": 0.088
-     }
-    },
-    {
-     "home": {
-      "code": "LIL",
-      "name": "Lille"
-     },
-     "away": {
-      "code": "GAL",
-      "name": "Galatasaray"
-     },
-     "kickoff": "2026-10-21T16:45:00Z",
-     "pct": [
-      51,
-      23,
-      26
-     ],
-     "xg": [
-      2.06,
-      1.45
-     ],
-     "likeliest": {
-      "h": 1,
-      "a": 1,
       "p": 0.097
      }
     },
     {
      "home": {
-      "code": "RMA",
-      "name": "Real Madrid"
+      "code": "GET",
+      "name": "Getafe"
      },
      "away": {
-      "code": "RBL",
-      "name": "RB Leipzig"
+      "code": "SEV",
+      "name": "Sevilla FC"
      },
-     "kickoff": "2026-10-21T19:00:00Z",
+     "kickoff": "2026-11-01T13:00:00Z",
      "pct": [
-      71,
-      16,
-      13
+      35,
+      33,
+      32
      ],
      "xg": [
-      2.79,
-      1.17
-     ],
-     "likeliest": {
-      "h": 2,
-      "a": 1,
-      "p": 0.087
-     }
-    },
-    {
-     "home": {
-      "code": "INT",
-      "name": "Inter"
-     },
-     "away": {
-      "code": "SHD",
-      "name": "Shaktar"
-     },
-     "kickoff": "2026-10-21T19:00:00Z",
-     "pct": [
-      45,
-      24,
-      31
-     ],
-     "xg": [
-      1.85,
-      1.49
+      1.04,
+      0.99
      ],
      "likeliest": {
       "h": 1,
       "a": 1,
-      "p": 0.105
+      "p": 0.146
      }
     },
     {
      "home": {
-      "code": "BAY",
-      "name": "Bayern"
+      "code": "SAN",
+      "name": "Santander"
      },
      "away": {
-      "code": "ARS",
-      "name": "Arsenal"
+      "code": "RMA",
+      "name": "Real Madrid"
      },
-     "kickoff": "2026-10-21T19:00:00Z",
+     "kickoff": "2026-11-01T15:15:00Z",
      "pct": [
-      41,
-      27,
-      32
+      15,
+      17,
+      68
      ],
      "xg": [
-      1.54,
-      1.33
+      1.22,
+      2.7
+     ],
+     "likeliest": {
+      "h": 1,
+      "a": 2,
+      "p": 0.088
+     }
+    },
+    {
+     "home": {
+      "code": "ELC",
+      "name": "Elche"
+     },
+     "away": {
+      "code": "VAL",
+      "name": "Valencia"
+     },
+     "kickoff": "2026-11-01T17:30:00Z",
+     "pct": [
+      53,
+      26,
+      21
+     ],
+     "xg": [
+      1.66,
+      0.98
      ],
      "likeliest": {
       "h": 1,
@@ -1228,72 +653,578 @@
     },
     {
      "home": {
-      "code": "BRU",
-      "name": "Club Brugge"
+      "code": "ATH",
+      "name": "Athletic"
      },
      "away": {
-      "code": "RCL",
-      "name": "RC Lens"
+      "code": "RSO",
+      "name": "Real Sociedad"
      },
-     "kickoff": "2026-10-21T19:00:00Z",
+     "kickoff": "2026-11-01T20:00:00Z",
      "pct": [
-      60,
-      18,
-      22
+      44,
+      26,
+      30
      ],
      "xg": [
-      2.83,
-      1.72
+      1.67,
+      1.35
      ],
      "likeliest": {
-      "h": 2,
+      "h": 1,
       "a": 1,
-      "p": 0.073
+      "p": 0.119
      }
     },
     {
      "home": {
+      "code": "DEP",
+      "name": "Deportivo"
+     },
+     "away": {
+      "code": "OSA",
+      "name": "Osasuna"
+     },
+     "kickoff": "2026-11-02T20:00:00Z",
+     "pct": [
+      54,
+      26,
+      20
+     ],
+     "xg": [
+      1.66,
+      0.93
+     ],
+     "likeliest": {
+      "h": 1,
+      "a": 1,
+      "p": 0.125
+     }
+    }
+   ],
+   "results": {
+    "label": "Matchweek 10",
+    "fixtures": [
+     {
+      "home": {
+       "code": "ALA",
+       "name": "Alavés"
+      },
+      "away": {
+       "code": "MAL",
+       "name": "Málaga"
+      },
+      "kickoff": "2026-10-23T19:00:00Z",
+      "status": "FT",
+      "score": [
+       1,
+       1
+      ]
+     },
+     {
+      "home": {
+       "code": "RAY",
+       "name": "Rayo Vallecano"
+      },
+      "away": {
+       "code": "ELC",
+       "name": "Elche"
+      },
+      "kickoff": "2026-10-24T12:00:00Z",
+      "status": "FT",
+      "score": [
+       0,
+       3
+      ]
+     },
+     {
+      "home": {
+       "code": "SAN",
+       "name": "Santander"
+      },
+      "away": {
+       "code": "ESP",
+       "name": "Espanyol"
+      },
+      "kickoff": "2026-10-24T14:15:00Z",
+      "status": "FT",
+      "score": [
+       2,
+       1
+      ]
+     },
+     {
+      "home": {
+       "code": "VAL",
+       "name": "Valencia"
+      },
+      "away": {
+       "code": "VIL",
+       "name": "Villarreal"
+      },
+      "kickoff": "2026-10-24T16:30:00Z",
+      "status": "FT",
+      "score": [
+       1,
+       2
+      ]
+     },
+     {
+      "home": {
+       "code": "ATL",
+       "name": "Atleti"
+      },
+      "away": {
+       "code": "DEP",
+       "name": "Deportivo"
+      },
+      "kickoff": "2026-10-24T19:00:00Z",
+      "status": "FT",
+      "score": [
+       1,
+       0
+      ]
+     },
+     {
+      "home": {
+       "code": "ATH",
+       "name": "Athletic"
+      },
+      "away": {
+       "code": "GET",
+       "name": "Getafe"
+      },
+      "kickoff": "2026-10-25T13:00:00Z",
+      "status": "FT",
+      "score": [
+       4,
+       0
+      ]
+     },
+     {
+      "home": {
+       "code": "CEL",
+       "name": "Celta"
+      },
+      "away": {
+       "code": "BET",
+       "name": "Real Betis"
+      },
+      "kickoff": "2026-10-25T15:15:00Z",
+      "status": "FT",
+      "score": [
+       0,
+       0
+      ]
+     },
+     {
+      "home": {
+       "code": "RSO",
+       "name": "Real Sociedad"
+      },
+      "away": {
+       "code": "LEV",
+       "name": "Levante"
+      },
+      "kickoff": "2026-10-25T17:30:00Z",
+      "status": "FT",
+      "score": [
+       2,
+       1
+      ]
+     },
+     {
+      "home": {
+       "code": "BAR",
+       "name": "Barça"
+      },
+      "away": {
+       "code": "RMA",
+       "name": "Real Madrid"
+      },
+      "kickoff": "2026-10-25T20:00:00Z",
+      "status": "FT",
+      "score": [
+       1,
+       2
+      ]
+     },
+     {
+      "home": {
+       "code": "SEV",
+       "name": "Sevilla FC"
+      },
+      "away": {
+       "code": "OSA",
+       "name": "Osasuna"
+      },
+      "kickoff": "2026-10-26T20:00:00Z",
+      "status": "FT",
+      "score": [
+       2,
+       0
+      ]
+     }
+    ]
+   }
+  },
+  "CL": {
+   "name": "Champions League",
+   "kind": "cup",
+   "season": "2026/27",
+   "label": "League phase · Matchday 4",
+   "featured": 6,
+   "model": {
+    "type": "opponent-adjusted Poisson",
+    "shrink": 8.0,
+    "season_decay": 0.5,
+    "rho": -0.08,
+    "matches_used": 243
+   },
+   "fixtures": [
+    {
+     "home": {
+      "code": "SHD",
+      "name": "Shaktar"
+     },
+     "away": {
+      "code": "SPO",
+      "name": "Sporting CP"
+     },
+     "kickoff": "2026-11-03T17:45:00Z",
+     "pct": [
+      43,
+      27,
+      30
+     ],
+     "xg": [
+      1.57,
+      1.28
+     ],
+     "likeliest": {
+      "h": 1,
+      "a": 1,
+      "p": 0.125
+     }
+    },
+    {
+     "home": {
+      "code": "GAL",
+      "name": "Galatasaray"
+     },
+     "away": {
+      "code": "VFB",
+      "name": "Stuttgart"
+     },
+     "kickoff": "2026-11-03T17:45:00Z",
+     "pct": [
+      34,
+      25,
+      41
+     ],
+     "xg": [
+      1.54,
+      1.69
+     ],
+     "likeliest": {
+      "h": 1,
+      "a": 1,
+      "p": 0.111
+     }
+    },
+    {
+     "home": {
+      "code": "FEY",
+      "name": "Feyenoord"
+     },
+     "away": {
+      "code": "INT",
+      "name": "Inter"
+     },
+     "kickoff": "2026-11-03T20:00:00Z",
+     "pct": [
+      43,
+      25,
+      32
+     ],
+     "xg": [
+      1.74,
+      1.5
+     ],
+     "likeliest": {
+      "h": 1,
+      "a": 1,
+      "p": 0.11
+     }
+    },
+    {
+     "home": {
+      "code": "BAR",
+      "name": "Barça"
+     },
+     "away": {
       "code": "AVL",
       "name": "Aston Villa"
      },
-     "away": {
-      "code": "VIK",
-      "name": "Viking"
-     },
-     "kickoff": "2026-10-21T19:00:00Z",
+     "kickoff": "2026-11-03T20:00:00Z",
      "pct": [
-      71,
-      15,
-      14
+      55,
+      19,
+      26
      ],
      "xg": [
-      3.15,
-      1.42
+      2.65,
+      1.85
      ],
      "likeliest": {
-      "h": 3,
+      "h": 2,
+      "a": 1,
+      "p": 0.072
+     }
+    },
+    {
+     "home": {
+      "code": "ATL",
+      "name": "Atleti"
+     },
+     "away": {
+      "code": "BAY",
+      "name": "Bayern"
+     },
+     "kickoff": "2026-11-03T20:00:00Z",
+     "pct": [
+      40,
+      22,
+      38
+     ],
+     "xg": [
+      2.04,
+      2.01
+     ],
+     "likeliest": {
+      "h": 1,
       "a": 1,
       "p": 0.077
      }
     },
     {
      "home": {
-      "code": "SPO",
-      "name": "Sporting CP"
+      "code": "VIL",
+      "name": "Villarreal"
      },
      "away": {
+      "code": "PSG",
+      "name": "PSG"
+     },
+     "kickoff": "2026-11-03T20:00:00Z",
+     "pct": [
+      18,
+      17,
+      65
+     ],
+     "xg": [
+      1.52,
+      2.87
+     ],
+     "likeliest": {
+      "h": 1,
+      "a": 2,
+      "p": 0.078
+     }
+    },
+    {
+     "home": {
+      "code": "MUN",
+      "name": "Man United"
+     },
+     "away": {
+      "code": "ROM",
+      "name": "Roma"
+     },
+     "kickoff": "2026-11-03T20:00:00Z",
+     "pct": [
+      50,
+      22,
+      28
+     ],
+     "xg": [
+      2.19,
+      1.61
+     ],
+     "likeliest": {
+      "h": 2,
+      "a": 1,
+      "p": 0.086
+     }
+    },
+    {
+     "home": {
+      "code": "FK",
+      "name": "Bodø/Glimt"
+     },
+     "away": {
+      "code": "LIL",
+      "name": "Lille"
+     },
+     "kickoff": "2026-11-03T20:00:00Z",
+     "pct": [
+      67,
+      17,
+      16
+     ],
+     "xg": [
+      2.94,
+      1.47
+     ],
+     "likeliest": {
+      "h": 2,
+      "a": 1,
+      "p": 0.077
+     }
+    },
+    {
+     "home": {
       "code": "LIN",
       "name": "LASK"
      },
-     "kickoff": "2026-10-21T19:00:00Z",
+     "away": {
+      "code": "SBA",
+      "name": "Sl. Bratislava"
+     },
+     "kickoff": "2026-11-03T20:00:00Z",
      "pct": [
       74,
-      15,
-      11
+      14,
+      12
      ],
      "xg": [
-      2.88,
-      1.08
+      3.26,
+      1.35
+     ],
+     "likeliest": {
+      "h": 3,
+      "a": 1,
+      "p": 0.078
+     }
+    },
+    {
+     "home": {
+      "code": "AEK",
+      "name": "PAE AEK"
+     },
+     "away": {
+      "code": "RMA",
+      "name": "Real Madrid"
+     },
+     "kickoff": "2026-11-04T17:45:00Z",
+     "pct": [
+      25,
+      20,
+      55
+     ],
+     "xg": [
+      1.58,
+      2.38
+     ],
+     "likeliest": {
+      "h": 1,
+      "a": 2,
+      "p": 0.085
+     }
+    },
+    {
+     "home": {
+      "code": "FEN",
+      "name": "Fenerbahçe"
+     },
+     "away": {
+      "code": "LIV",
+      "name": "Liverpool"
+     },
+     "kickoff": "2026-11-04T17:45:00Z",
+     "pct": [
+      21,
+      20,
+      59
+     ],
+     "xg": [
+      1.45,
+      2.45
+     ],
+     "likeliest": {
+      "h": 1,
+      "a": 2,
+      "p": 0.088
+     }
+    },
+    {
+     "home": {
+      "code": "RBL",
+      "name": "RB Leipzig"
+     },
+     "away": {
+      "code": "MCI",
+      "name": "Man City"
+     },
+     "kickoff": "2026-11-04T20:00:00Z",
+     "pct": [
+      35,
+      24,
+      41
+     ],
+     "xg": [
+      1.63,
+      1.77
+     ],
+     "likeliest": {
+      "h": 1,
+      "a": 1,
+      "p": 0.104
+     }
+    },
+    {
+     "home": {
+      "code": "SLP",
+      "name": "Slavia Praha"
+     },
+     "away": {
+      "code": "ARS",
+      "name": "Arsenal"
+     },
+     "kickoff": "2026-11-04T20:00:00Z",
+     "pct": [
+      11,
+      21,
+      68
+     ],
+     "xg": [
+      0.71,
+      2.07
+     ],
+     "likeliest": {
+      "h": 0,
+      "a": 2,
+      "p": 0.132
+     }
+    },
+    {
+     "home": {
+      "code": "PSV",
+      "name": "PSV"
+     },
+     "away": {
+      "code": "BRU",
+      "name": "Club Brugge"
+     },
+     "kickoff": "2026-11-04T20:00:00Z",
+     "pct": [
+      50,
+      22,
+      28
+     ],
+     "xg": [
+      2.21,
+      1.64
      ],
      "likeliest": {
       "h": 2,
@@ -1303,223 +1234,138 @@
     },
     {
      "home": {
+      "code": "BVB",
+      "name": "Dortmund"
+     },
+     "away": {
       "code": "BET",
       "name": "Real Betis"
      },
-     "away": {
-      "code": "FEY",
-      "name": "Feyenoord"
-     },
-     "kickoff": "2026-10-21T19:00:00Z",
+     "kickoff": "2026-11-04T20:00:00Z",
      "pct": [
-      61,
-      18,
-      21
+      51,
+      22,
+      27
      ],
      "xg": [
-      2.85,
-      1.68
+      2.2,
+      1.6
      ],
      "likeliest": {
       "h": 2,
       "a": 1,
-      "p": 0.073
+      "p": 0.086
+     }
+    },
+    {
+     "home": {
+      "code": "FCP",
+      "name": "Porto"
+     },
+     "away": {
+      "code": "NAP",
+      "name": "Napoli"
+     },
+     "kickoff": "2026-11-04T20:00:00Z",
+     "pct": [
+      48,
+      24,
+      28
+     ],
+     "xg": [
+      1.86,
+      1.38
+     ],
+     "likeliest": {
+      "h": 1,
+      "a": 1,
+      "p": 0.108
+     }
+    },
+    {
+     "home": {
+      "code": "RCL",
+      "name": "RC Lens"
+     },
+     "away": {
+      "code": "COM",
+      "name": "Como 1907"
+     },
+     "kickoff": "2026-11-04T20:00:00Z",
+     "pct": [
+      33,
+      22,
+      45
+     ],
+     "xg": [
+      1.85,
+      2.14
+     ],
+     "likeliest": {
+      "h": 1,
+      "a": 1,
+      "p": 0.079
+     }
+    },
+    {
+     "home": {
+      "code": "VIK",
+      "name": "Viking"
+     },
+     "away": {
+      "code": "SAB",
+      "name": "Sabah FK"
+     },
+     "kickoff": "2026-11-04T20:00:00Z",
+     "pct": [
+      65,
+      19,
+      16
+     ],
+     "xg": [
+      2.56,
+      1.26
+     ],
+     "likeliest": {
+      "h": 2,
+      "a": 1,
+      "p": 0.091
      }
     }
    ],
    "results": {
-    "label": "League phase · Matchday 2",
+    "label": "League phase · Matchday 3",
     "fixtures": [
-     {
-      "home": {
-       "code": "RCL",
-       "name": "RC Lens"
-      },
-      "away": {
-       "code": "SPO",
-       "name": "Sporting CP"
-      },
-      "kickoff": "2026-10-13T16:45:00Z",
-      "status": "FT",
-      "score": [
-       0,
-       2
-      ]
-     },
      {
       "home": {
        "code": "SAB",
        "name": "Sabah FK"
       },
       "away": {
-       "code": "SLP",
-       "name": "Slavia Praha"
+       "code": "BVB",
+       "name": "Dortmund"
       },
-      "kickoff": "2026-10-13T16:45:00Z",
-      "status": "FT",
-      "score": [
-       2,
-       0
-      ]
-     },
-     {
-      "home": {
-       "code": "INT",
-       "name": "Inter"
-      },
-      "away": {
-       "code": "BRU",
-       "name": "Club Brugge"
-      },
-      "kickoff": "2026-10-13T19:00:00Z",
-      "status": "FT",
-      "score": [
-       3,
-       4
-      ]
-     },
-     {
-      "home": {
-       "code": "GAL",
-       "name": "Galatasaray"
-      },
-      "away": {
-       "code": "BAR",
-       "name": "Barça"
-      },
-      "kickoff": "2026-10-13T19:00:00Z",
+      "kickoff": "2026-10-20T16:45:00Z",
       "status": "FT",
       "score": [
        1,
-       4
-      ]
-     },
-     {
-      "home": {
-       "code": "ATL",
-       "name": "Atleti"
-      },
-      "away": {
-       "code": "MUN",
-       "name": "Man United"
-      },
-      "kickoff": "2026-10-13T19:00:00Z",
-      "status": "FT",
-      "score": [
-       2,
-       0
-      ]
-     },
-     {
-      "home": {
-       "code": "ARS",
-       "name": "Arsenal"
-      },
-      "away": {
-       "code": "LIL",
-       "name": "Lille"
-      },
-      "kickoff": "2026-10-13T19:00:00Z",
-      "status": "FT",
-      "score": [
-       3,
-       0
-      ]
-     },
-     {
-      "home": {
-       "code": "VIK",
-       "name": "Viking"
-      },
-      "away": {
-       "code": "BAY",
-       "name": "Bayern"
-      },
-      "kickoff": "2026-10-13T19:00:00Z",
-      "status": "FT",
-      "score": [
-       3,
-       3
-      ]
-     },
-     {
-      "home": {
-       "code": "RBL",
-       "name": "RB Leipzig"
-      },
-      "away": {
-       "code": "PSV",
-       "name": "PSV"
-      },
-      "kickoff": "2026-10-13T19:00:00Z",
-      "status": "FT",
-      "score": [
-       1,
-       0
-      ]
-     },
-     {
-      "home": {
-       "code": "VIL",
-       "name": "Villarreal"
-      },
-      "away": {
-       "code": "NAP",
-       "name": "Napoli"
-      },
-      "kickoff": "2026-10-13T19:00:00Z",
-      "status": "FT",
-      "score": [
-       3,
-       1
-      ]
-     },
-     {
-      "home": {
-       "code": "LIN",
-       "name": "LASK"
-      },
-      "away": {
-       "code": "LIV",
-       "name": "Liverpool"
-      },
-      "kickoff": "2026-10-14T16:45:00Z",
-      "status": "FT",
-      "score": [
-       3,
-       6
-      ]
-     },
-     {
-      "home": {
-       "code": "FEY",
-       "name": "Feyenoord"
-      },
-      "away": {
-       "code": "COM",
-       "name": "Como 1907"
-      },
-      "kickoff": "2026-10-14T16:45:00Z",
-      "status": "FT",
-      "score": [
-       3,
        2
       ]
      },
      {
       "home": {
-       "code": "ROM",
-       "name": "Roma"
+       "code": "FEN",
+       "name": "Fenerbahçe"
       },
       "away": {
-       "code": "RMA",
-       "name": "Real Madrid"
+       "code": "SLP",
+       "name": "Slavia Praha"
       },
-      "kickoff": "2026-10-14T19:00:00Z",
+      "kickoff": "2026-10-20T16:45:00Z",
       "status": "FT",
       "score": [
-       3,
-       4
+       2,
+       2
       ]
      },
      {
@@ -1528,10 +1374,138 @@
        "name": "Man City"
       },
       "away": {
+       "code": "AEK",
+       "name": "PAE AEK"
+      },
+      "kickoff": "2026-10-20T19:00:00Z",
+      "status": "FT",
+      "score": [
+       5,
+       1
+      ]
+     },
+     {
+      "home": {
+       "code": "VFB",
+       "name": "Stuttgart"
+      },
+      "away": {
+       "code": "ATL",
+       "name": "Atleti"
+      },
+      "kickoff": "2026-10-20T19:00:00Z",
+      "status": "FT",
+      "score": [
+       1,
+       1
+      ]
+     },
+     {
+      "home": {
+       "code": "LIV",
+       "name": "Liverpool"
+      },
+      "away": {
+       "code": "VIL",
+       "name": "Villarreal"
+      },
+      "kickoff": "2026-10-20T19:00:00Z",
+      "status": "FT",
+      "score": [
+       4,
+       3
+      ]
+     },
+     {
+      "home": {
+       "code": "ROM",
+       "name": "Roma"
+      },
+      "away": {
+       "code": "SBA",
+       "name": "Sl. Bratislava"
+      },
+      "kickoff": "2026-10-20T19:00:00Z",
+      "status": "FT",
+      "score": [
+       4,
+       0
+      ]
+     },
+     {
+      "home": {
+       "code": "FCP",
+       "name": "Porto"
+      },
+      "away": {
+       "code": "PSV",
+       "name": "PSV"
+      },
+      "kickoff": "2026-10-20T19:00:00Z",
+      "status": "FT",
+      "score": [
+       0,
+       1
+      ]
+     },
+     {
+      "home": {
+       "code": "NAP",
+       "name": "Napoli"
+      },
+      "away": {
+       "code": "FK",
+       "name": "Bodø/Glimt"
+      },
+      "kickoff": "2026-10-20T19:00:00Z",
+      "status": "FT",
+      "score": [
+       4,
+       3
+      ]
+     },
+     {
+      "home": {
        "code": "PSG",
        "name": "PSG"
       },
-      "kickoff": "2026-10-14T19:00:00Z",
+      "away": {
+       "code": "BAR",
+       "name": "Barça"
+      },
+      "kickoff": "2026-10-20T19:00:00Z",
+      "status": "FT",
+      "score": [
+       4,
+       2
+      ]
+     },
+     {
+      "home": {
+       "code": "COM",
+       "name": "Como 1907"
+      },
+      "away": {
+       "code": "MUN",
+       "name": "Man United"
+      },
+      "kickoff": "2026-10-21T16:45:00Z",
+      "status": "FT",
+      "score": [
+       4,
+       1
+      ]
+     },
+     {
+      "home": {
+       "code": "LIL",
+       "name": "Lille"
+      },
+      "away": {
+       "code": "GAL",
+       "name": "Galatasaray"
+      },
+      "kickoff": "2026-10-21T16:45:00Z",
       "status": "FT",
       "score": [
        2,
@@ -1540,17 +1514,65 @@
      },
      {
       "home": {
-       "code": "FK",
-       "name": "Bodø/Glimt"
+       "code": "RMA",
+       "name": "Real Madrid"
       },
       "away": {
-       "code": "BVB",
-       "name": "Dortmund"
+       "code": "RBL",
+       "name": "RB Leipzig"
       },
-      "kickoff": "2026-10-14T19:00:00Z",
+      "kickoff": "2026-10-21T19:00:00Z",
+      "status": "FT",
+      "score": [
+       4,
+       1
+      ]
+     },
+     {
+      "home": {
+       "code": "INT",
+       "name": "Inter"
+      },
+      "away": {
+       "code": "SHD",
+       "name": "Shaktar"
+      },
+      "kickoff": "2026-10-21T19:00:00Z",
       "status": "FT",
       "score": [
        1,
+       0
+      ]
+     },
+     {
+      "home": {
+       "code": "BAY",
+       "name": "Bayern"
+      },
+      "away": {
+       "code": "ARS",
+       "name": "Arsenal"
+      },
+      "kickoff": "2026-10-21T19:00:00Z",
+      "status": "FT",
+      "score": [
+       2,
+       2
+      ]
+     },
+     {
+      "home": {
+       "code": "BRU",
+       "name": "Club Brugge"
+      },
+      "away": {
+       "code": "RCL",
+       "name": "RC Lens"
+      },
+      "kickoff": "2026-10-21T19:00:00Z",
+      "status": "FT",
+      "score": [
+       3,
        0
       ]
      },
@@ -1560,42 +1582,10 @@
        "name": "Aston Villa"
       },
       "away": {
-       "code": "FEN",
-       "name": "Fenerbahçe"
+       "code": "VIK",
+       "name": "Viking"
       },
-      "kickoff": "2026-10-14T19:00:00Z",
-      "status": "FT",
-      "score": [
-       6,
-       0
-      ]
-     },
-     {
-      "home": {
-       "code": "BET",
-       "name": "Real Betis"
-      },
-      "away": {
-       "code": "FCP",
-       "name": "Porto"
-      },
-      "kickoff": "2026-10-14T19:00:00Z",
-      "status": "FT",
-      "score": [
-       3,
-       2
-      ]
-     },
-     {
-      "home": {
-       "code": "SHD",
-       "name": "Shaktar"
-      },
-      "away": {
-       "code": "AEK",
-       "name": "PAE AEK"
-      },
-      "kickoff": "2026-10-14T19:00:00Z",
+      "kickoff": "2026-10-21T19:00:00Z",
       "status": "FT",
       "score": [
        3,
@@ -1604,18 +1594,34 @@
      },
      {
       "home": {
-       "code": "SBA",
-       "name": "Sl. Bratislava"
+       "code": "SPO",
+       "name": "Sporting CP"
       },
       "away": {
-       "code": "VFB",
-       "name": "Stuttgart"
+       "code": "LIN",
+       "name": "LASK"
       },
-      "kickoff": "2026-10-14T19:00:00Z",
+      "kickoff": "2026-10-21T19:00:00Z",
       "status": "FT",
       "score": [
-       0,
+       2,
        3
+      ]
+     },
+     {
+      "home": {
+       "code": "BET",
+       "name": "Real Betis"
+      },
+      "away": {
+       "code": "FEY",
+       "name": "Feyenoord"
+      },
+      "kickoff": "2026-10-21T19:00:00Z",
+      "status": "FT",
+      "score": [
+       1,
+       0
       ]
      }
     ]
