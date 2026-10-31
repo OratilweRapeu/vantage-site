@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-31T19:24:39+00:00",
+ "updated": "2026-10-31T22:38:16+00:00",
  "order": [
   "PL",
   "PD",
@@ -380,7 +380,7 @@
        "name": "Crystal Palace"
       },
       "kickoff": "2026-10-31T17:30:00Z",
-      "status": "LIVE",
+      "status": "FT",
       "score": [
        2,
        0
@@ -396,8 +396,11 @@
        "name": "Fulham"
       },
       "kickoff": "2026-10-31T20:00:00Z",
-      "status": "SCHEDULED",
-      "score": null
+      "status": "FT",
+      "score": [
+       1,
+       1
+      ]
      },
      {
       "home": {
@@ -754,7 +757,7 @@
        "name": "Málaga"
       },
       "kickoff": "2026-10-31T17:30:00Z",
-      "status": "LIVE",
+      "status": "FT",
       "score": [
        2,
        1
@@ -770,8 +773,11 @@
        "name": "Alavés"
       },
       "kickoff": "2026-10-31T20:00:00Z",
-      "status": "SCHEDULED",
-      "score": null
+      "status": "FT",
+      "score": [
+       6,
+       1
+      ]
      },
      {
       "home": {
