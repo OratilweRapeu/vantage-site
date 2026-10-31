@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-31T15:25:14+00:00",
+ "updated": "2026-10-31T19:24:39+00:00",
  "order": [
   "PL",
   "PD",
@@ -300,7 +300,7 @@
        "name": "Brighton Hove"
       },
       "kickoff": "2026-10-31T15:00:00Z",
-      "status": "LIVE",
+      "status": "FT",
       "score": [
        0,
        1
@@ -316,10 +316,10 @@
        "name": "Leeds United"
       },
       "kickoff": "2026-10-31T15:00:00Z",
-      "status": "LIVE",
+      "status": "FT",
       "score": [
-       0,
-       1
+       2,
+       0
       ]
      },
      {
@@ -332,10 +332,10 @@
        "name": "Sunderland"
       },
       "kickoff": "2026-10-31T15:00:00Z",
-      "status": "LIVE",
+      "status": "FT",
       "score": [
-       1,
-       0
+       3,
+       1
       ]
      },
      {
@@ -348,10 +348,10 @@
        "name": "Ipswich Town"
       },
       "kickoff": "2026-10-31T15:00:00Z",
-      "status": "LIVE",
+      "status": "FT",
       "score": [
-       0,
-       0
+       2,
+       2
       ]
      },
      {
@@ -364,9 +364,9 @@
        "name": "Nottingham"
       },
       "kickoff": "2026-10-31T15:00:00Z",
-      "status": "LIVE",
+      "status": "FT",
       "score": [
-       0,
+       2,
        0
       ]
      },
@@ -380,8 +380,11 @@
        "name": "Crystal Palace"
       },
       "kickoff": "2026-10-31T17:30:00Z",
-      "status": "SCHEDULED",
-      "score": null
+      "status": "LIVE",
+      "score": [
+       2,
+       0
+      ]
      },
      {
       "home": {
@@ -735,9 +738,9 @@
        "name": "Celta"
       },
       "kickoff": "2026-10-31T15:15:00Z",
-      "status": "LIVE",
+      "status": "FT",
       "score": [
-       0,
+       3,
        0
       ]
      },
@@ -751,8 +754,11 @@
        "name": "Málaga"
       },
       "kickoff": "2026-10-31T17:30:00Z",
-      "status": "SCHEDULED",
-      "score": null
+      "status": "LIVE",
+      "score": [
+       2,
+       1
+      ]
      },
      {
       "home": {
