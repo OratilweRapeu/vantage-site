@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-31T22:38:16+00:00",
+ "updated": "2026-11-01T15:20:56+00:00",
  "order": [
   "PL",
   "PD",
@@ -789,8 +789,11 @@
        "name": "Sevilla FC"
       },
       "kickoff": "2026-11-01T13:00:00Z",
-      "status": "SCHEDULED",
-      "score": null
+      "status": "FT",
+      "score": [
+       3,
+       1
+      ]
      },
      {
       "home": {
