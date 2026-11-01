@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-01T19:49:28+00:00",
+ "updated": "2026-11-01T23:12:53+00:00",
  "order": [
   "PL",
   "PD",
@@ -840,8 +840,11 @@
        "name": "Real Sociedad"
       },
       "kickoff": "2026-11-01T20:00:00Z",
-      "status": "SCHEDULED",
-      "score": null
+      "status": "FT",
+      "score": [
+       2,
+       1
+      ]
      },
      {
       "home": {
