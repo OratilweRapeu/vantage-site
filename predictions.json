@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-04T22:58:32+00:00",
+ "updated": "2026-11-06T23:35:18+00:00",
  "order": [
   "PL",
   "PD",
@@ -272,66 +272,18 @@
     }
    ],
    "results": {
-    "label": "Matchweek 9",
+    "label": "Matchweek 10",
     "fixtures": [
      {
       "home": {
-       "code": "CHE",
-       "name": "Chelsea"
+       "code": "EVE",
+       "name": "Everton"
       },
       "away": {
-       "code": "MUN",
-       "name": "Man United"
-      },
-      "kickoff": "2026-10-31T12:30:00Z",
-      "status": "FT",
-      "score": [
-       2,
-       0
-      ]
-     },
-     {
-      "home": {
-       "code": "MCI",
-       "name": "Man City"
-      },
-      "away": {
-       "code": "BHA",
-       "name": "Brighton Hove"
-      },
-      "kickoff": "2026-10-31T15:00:00Z",
-      "status": "FT",
-      "score": [
-       0,
-       1
-      ]
-     },
-     {
-      "home": {
-       "code": "BOU",
-       "name": "Bournemouth"
-      },
-      "away": {
-       "code": "LEE",
-       "name": "Leeds United"
-      },
-      "kickoff": "2026-10-31T15:00:00Z",
-      "status": "FT",
-      "score": [
-       2,
-       0
-      ]
-     },
-     {
-      "home": {
        "code": "COV",
        "name": "Coventry City"
       },
-      "away": {
-       "code": "SUN",
-       "name": "Sunderland"
-      },
-      "kickoff": "2026-10-31T15:00:00Z",
+      "kickoff": "2026-11-06T20:00:00Z",
       "status": "FT",
       "score": [
        3,
@@ -340,99 +292,120 @@
      },
      {
       "home": {
-       "code": "HUL",
-       "name": "Hull City"
+       "code": "LEE",
+       "name": "Leeds United"
       },
       "away": {
-       "code": "IPS",
-       "name": "Ipswich Town"
-      },
-      "kickoff": "2026-10-31T15:00:00Z",
-      "status": "FT",
-      "score": [
-       2,
-       2
-      ]
-     },
-     {
-      "home": {
-       "code": "BRE",
-       "name": "Brentford"
-      },
-      "away": {
-       "code": "NFO",
-       "name": "Nottingham"
-      },
-      "kickoff": "2026-10-31T15:00:00Z",
-      "status": "FT",
-      "score": [
-       2,
-       0
-      ]
-     },
-     {
-      "home": {
        "code": "TOT",
        "name": "Tottenham"
       },
-      "away": {
-       "code": "CRY",
-       "name": "Crystal Palace"
-      },
-      "kickoff": "2026-10-31T17:30:00Z",
-      "status": "FT",
-      "score": [
-       2,
-       0
-      ]
+      "kickoff": "2026-11-07T12:30:00Z",
+      "status": "SCHEDULED",
+      "score": null
      },
      {
       "home": {
-       "code": "AVL",
-       "name": "Aston Villa"
-      },
-      "away": {
-       "code": "FUL",
-       "name": "Fulham"
-      },
-      "kickoff": "2026-10-31T20:00:00Z",
-      "status": "FT",
-      "score": [
-       1,
-       1
-      ]
-     },
-     {
-      "home": {
-       "code": "LIV",
-       "name": "Liverpool"
-      },
-      "away": {
        "code": "ARS",
        "name": "Arsenal"
       },
-      "kickoff": "2026-11-01T16:30:00Z",
-      "status": "FT",
-      "score": [
-       0,
-       1
-      ]
+      "away": {
+       "code": "HUL",
+       "name": "Hull City"
+      },
+      "kickoff": "2026-11-07T15:00:00Z",
+      "status": "SCHEDULED",
+      "score": null
      },
      {
       "home": {
+       "code": "FUL",
+       "name": "Fulham"
+      },
+      "away": {
        "code": "NEW",
        "name": "Newcastle"
       },
-      "away": {
-       "code": "EVE",
-       "name": "Everton"
+      "kickoff": "2026-11-07T15:00:00Z",
+      "status": "SCHEDULED",
+      "score": null
+     },
+     {
+      "home": {
+       "code": "NFO",
+       "name": "Nottingham"
       },
-      "kickoff": "2026-11-02T20:00:00Z",
-      "status": "FT",
-      "score": [
-       0,
-       1
-      ]
+      "away": {
+       "code": "MCI",
+       "name": "Man City"
+      },
+      "kickoff": "2026-11-07T17:30:00Z",
+      "status": "SCHEDULED",
+      "score": null
+     },
+     {
+      "home": {
+       "code": "CRY",
+       "name": "Crystal Palace"
+      },
+      "away": {
+       "code": "LIV",
+       "name": "Liverpool"
+      },
+      "kickoff": "2026-11-08T14:00:00Z",
+      "status": "SCHEDULED",
+      "score": null
+     },
+     {
+      "home": {
+       "code": "SUN",
+       "name": "Sunderland"
+      },
+      "away": {
+       "code": "CHE",
+       "name": "Chelsea"
+      },
+      "kickoff": "2026-11-08T14:00:00Z",
+      "status": "SCHEDULED",
+      "score": null
+     },
+     {
+      "home": {
+       "code": "IPS",
+       "name": "Ipswich Town"
+      },
+      "away": {
+       "code": "BOU",
+       "name": "Bournemouth"
+      },
+      "kickoff": "2026-11-08T14:00:00Z",
+      "status": "SCHEDULED",
+      "score": null
+     },
+     {
+      "home": {
+       "code": "BHA",
+       "name": "Brighton Hove"
+      },
+      "away": {
+       "code": "BRE",
+       "name": "Brentford"
+      },
+      "kickoff": "2026-11-08T14:00:00Z",
+      "status": "SCHEDULED",
+      "score": null
+     },
+     {
+      "home": {
+       "code": "MUN",
+       "name": "Man United"
+      },
+      "away": {
+       "code": "AVL",
+       "name": "Aston Villa"
+      },
+      "kickoff": "2026-11-08T16:30:00Z",
+      "status": "SCHEDULED",
+      "score": null
      }
     ]
    }
@@ -703,119 +676,75 @@
     }
    ],
    "results": {
-    "label": "Matchweek 11",
+    "label": "Matchweek 12",
     "fixtures": [
      {
       "home": {
-       "code": "VIL",
-       "name": "Villarreal"
-      },
-      "away": {
-       "code": "ESP",
-       "name": "Espanyol"
-      },
-      "kickoff": "2026-10-30T20:00:00Z",
-      "status": "FT",
-      "score": [
-       0,
-       1
-      ]
-     },
-     {
-      "home": {
-       "code": "LEV",
-       "name": "Levante"
-      },
-      "away": {
-       "code": "ATL",
-       "name": "Atleti"
-      },
-      "kickoff": "2026-10-31T13:00:00Z",
-      "status": "FT",
-      "score": [
-       0,
-       2
-      ]
-     },
-     {
-      "home": {
-       "code": "RAY",
-       "name": "Rayo Vallecano"
-      },
-      "away": {
-       "code": "CEL",
-       "name": "Celta"
-      },
-      "kickoff": "2026-10-31T15:15:00Z",
-      "status": "FT",
-      "score": [
-       3,
-       0
-      ]
-     },
-     {
-      "home": {
-       "code": "BET",
-       "name": "Real Betis"
-      },
-      "away": {
-       "code": "MAL",
-       "name": "Málaga"
-      },
-      "kickoff": "2026-10-31T17:30:00Z",
-      "status": "FT",
-      "score": [
-       2,
-       1
-      ]
-     },
-     {
-      "home": {
-       "code": "BAR",
-       "name": "Barça"
+       "code": "SEV",
+       "name": "Sevilla FC"
       },
       "away": {
        "code": "ALA",
        "name": "Alavés"
       },
-      "kickoff": "2026-10-31T20:00:00Z",
+      "kickoff": "2026-11-06T20:00:00Z",
       "status": "FT",
       "score": [
-       6,
-       1
+       0,
+       0
       ]
      },
      {
       "home": {
-       "code": "GET",
-       "name": "Getafe"
+       "code": "MAL",
+       "name": "Málaga"
       },
       "away": {
-       "code": "SEV",
-       "name": "Sevilla FC"
+       "code": "SAN",
+       "name": "Santander"
       },
-      "kickoff": "2026-11-01T13:00:00Z",
-      "status": "FT",
-      "score": [
-       3,
-       1
-      ]
+      "kickoff": "2026-11-07T13:00:00Z",
+      "status": "SCHEDULED",
+      "score": null
      },
      {
       "home": {
-       "code": "SAN",
-       "name": "Santander"
+       "code": "ESP",
+       "name": "Espanyol"
+      },
+      "away": {
+       "code": "DEP",
+       "name": "Deportivo"
+      },
+      "kickoff": "2026-11-07T15:15:00Z",
+      "status": "SCHEDULED",
+      "score": null
+     },
+     {
+      "home": {
+       "code": "OSA",
+       "name": "Osasuna"
+      },
+      "away": {
+       "code": "ATH",
+       "name": "Athletic"
+      },
+      "kickoff": "2026-11-07T17:30:00Z",
+      "status": "SCHEDULED",
+      "score": null
+     },
+     {
+      "home": {
+       "code": "VAL",
+       "name": "Valencia"
       },
       "away": {
        "code": "RMA",
        "name": "Real Madrid"
       },
-      "kickoff": "2026-11-01T15:15:00Z",
-      "status": "FT",
-      "score": [
-       0,
-       3
-      ]
+      "kickoff": "2026-11-07T20:00:00Z",
+      "status": "SCHEDULED",
+      "score": null
      },
      {
       "home": {
@@ -823,47 +752,64 @@
        "name": "Elche"
       },
       "away": {
-       "code": "VAL",
-       "name": "Valencia"
+       "code": "BET",
+       "name": "Real Betis"
       },
-      "kickoff": "2026-11-01T17:30:00Z",
-      "status": "FT",
-      "score": [
-       0,
-       1
-      ]
+      "kickoff": "2026-11-08T13:00:00Z",
+      "status": "SCHEDULED",
+      "score": null
      },
      {
       "home": {
-       "code": "ATH",
-       "name": "Athletic"
-      },
-      "away": {
        "code": "RSO",
        "name": "Real Sociedad"
       },
-      "kickoff": "2026-11-01T20:00:00Z",
-      "status": "FT",
-      "score": [
-       2,
-       1
-      ]
+      "away": {
+       "code": "RAY",
+       "name": "Rayo Vallecano"
+      },
+      "kickoff": "2026-11-08T15:15:00Z",
+      "status": "SCHEDULED",
+      "score": null
      },
      {
       "home": {
-       "code": "DEP",
-       "name": "Deportivo"
+       "code": "CEL",
+       "name": "Celta"
       },
       "away": {
-       "code": "OSA",
-       "name": "Osasuna"
+       "code": "LEV",
+       "name": "Levante"
       },
-      "kickoff": "2026-11-02T20:00:00Z",
-      "status": "FT",
-      "score": [
-       2,
-       1
-      ]
+      "kickoff": "2026-11-08T17:30:00Z",
+      "status": "SCHEDULED",
+      "score": null
+     },
+     {
+      "home": {
+       "code": "VIL",
+       "name": "Villarreal"
+      },
+      "away": {
+       "code": "GET",
+       "name": "Getafe"
+      },
+      "kickoff": "2026-11-08T17:30:00Z",
+      "status": "SCHEDULED",
+      "score": null
+     },
+     {
+      "home": {
+       "code": "ATL",
+       "name": "Atleti"
+      },
+      "away": {
+       "code": "BAR",
+       "name": "Barça"
+      },
+      "kickoff": "2026-11-08T20:00:00Z",
+      "status": "SCHEDULED",
+      "score": null
      }
     ]
    }
