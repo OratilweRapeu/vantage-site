@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-06T11:55:01Z",
+  "updated": "2026-11-06T18:38:55Z",
   "table": [
     {
       "position": 1,
@@ -6380,7 +6380,14 @@
       "odds": {
         "msg": "Activate Odds-Package in User-Panel to retrieve odds."
       },
-      "referees": []
+      "referees": [
+        {
+          "id": 11494,
+          "name": "Stuart Attwell",
+          "type": "REFEREE",
+          "nationality": "England"
+        }
+      ]
     },
     {
       "area": {
