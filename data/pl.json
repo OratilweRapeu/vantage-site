@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-07T17:35:32Z",
+  "updated": "2026-11-07T20:36:02Z",
   "table": [
     {
       "position": 1,
@@ -32,12 +32,12 @@
       "playedGames": 10,
       "form": null,
       "won": 7,
-      "draw": 1,
-      "lost": 2,
-      "points": 22,
-      "goalsFor": 20,
-      "goalsAgainst": 10,
-      "goalDifference": 10
+      "draw": 0,
+      "lost": 3,
+      "points": 21,
+      "goalsFor": 21,
+      "goalsAgainst": 13,
+      "goalDifference": 8
     },
     {
       "position": 3,
@@ -289,6 +289,25 @@
     {
       "position": 16,
       "team": {
+        "id": 351,
+        "name": "Nottingham Forest FC",
+        "shortName": "Nottingham",
+        "tla": "NOT",
+        "crest": "https://crests.football-data.org/351.png"
+      },
+      "playedGames": 10,
+      "form": null,
+      "won": 2,
+      "draw": 3,
+      "lost": 5,
+      "points": 9,
+      "goalsFor": 9,
+      "goalsAgainst": 13,
+      "goalDifference": -4
+    },
+    {
+      "position": 17,
+      "team": {
         "id": 1076,
         "name": "Coventry City FC",
         "shortName": "Coventry City",
@@ -306,7 +325,7 @@
       "goalDifference": -9
     },
     {
-      "position": 17,
+      "position": 18,
       "team": {
         "id": 66,
         "name": "Manchester United FC",
@@ -323,25 +342,6 @@
       "goalsFor": 10,
       "goalsAgainst": 15,
       "goalDifference": -5
-    },
-    {
-      "position": 18,
-      "team": {
-        "id": 351,
-        "name": "Nottingham Forest FC",
-        "shortName": "Nottingham",
-        "tla": "NOT",
-        "crest": "https://crests.football-data.org/351.png"
-      },
-      "playedGames": 10,
-      "form": null,
-      "won": 1,
-      "draw": 4,
-      "lost": 5,
-      "points": 7,
-      "goalsFor": 6,
-      "goalsAgainst": 12,
-      "goalDifference": -6
     },
     {
       "position": 19,
@@ -6610,11 +6610,11 @@
       },
       "id": 560641,
       "utcDate": "2026-11-07T17:30:00Z",
-      "status": "TIMED",
+      "status": "FINISHED",
       "matchday": 10,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-11-07T00:20:31Z",
+      "lastUpdated": "2026-11-07T19:32:35Z",
       "homeTeam": {
         "id": 351,
         "name": "Nottingham Forest FC",
@@ -6630,15 +6630,15 @@
         "crest": "https://crests.football-data.org/65.png"
       },
       "score": {
-        "winner": null,
+        "winner": "HOME_TEAM",
         "duration": "REGULAR",
         "fullTime": {
-          "home": null,
-          "away": null
+          "home": 3,
+          "away": 1
         },
         "halfTime": {
-          "home": null,
-          "away": null
+          "home": 2,
+          "away": 0
         }
       },
       "odds": {

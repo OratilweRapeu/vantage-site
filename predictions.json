@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-07T16:40:47+00:00",
+ "updated": "2026-11-07T20:36:27+00:00",
  "order": [
   "PL",
   "PD",
@@ -316,7 +316,7 @@
        "name": "Hull City"
       },
       "kickoff": "2026-11-07T15:00:00Z",
-      "status": "LIVE",
+      "status": "FT",
       "score": [
        1,
        0
@@ -332,10 +332,10 @@
        "name": "Newcastle"
       },
       "kickoff": "2026-11-07T15:00:00Z",
-      "status": "LIVE",
+      "status": "FT",
       "score": [
-       0,
-       0
+       1,
+       1
       ]
      },
      {
@@ -348,8 +348,11 @@
        "name": "Man City"
       },
       "kickoff": "2026-11-07T17:30:00Z",
-      "status": "SCHEDULED",
-      "score": null
+      "status": "FT",
+      "score": [
+       3,
+       1
+      ]
      },
      {
       "home": {
@@ -729,7 +732,7 @@
        "name": "Deportivo"
       },
       "kickoff": "2026-11-07T15:15:00Z",
-      "status": "LIVE",
+      "status": "FT",
       "score": [
        0,
        0
@@ -745,8 +748,11 @@
        "name": "Athletic"
       },
       "kickoff": "2026-11-07T17:30:00Z",
-      "status": "SCHEDULED",
-      "score": null
+      "status": "FT",
+      "score": [
+       1,
+       1
+      ]
      },
      {
       "home": {
@@ -758,8 +764,11 @@
        "name": "Real Madrid"
       },
       "kickoff": "2026-11-07T20:00:00Z",
-      "status": "SCHEDULED",
-      "score": null
+      "status": "LIVE",
+      "score": [
+       0,
+       0
+      ]
      },
      {
       "home": {
