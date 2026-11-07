@@ -329,7 +329,7 @@
       {
         "n": "Manchester City FC",
         "p": 2,
-        "pts": 21
+        "pts": 22
       },
       {
         "n": "Brighton & Hove Albion FC",
@@ -362,17 +362,17 @@
         "pts": 14
       },
       {
-        "n": "Newcastle United FC",
-        "p": 9,
-        "pts": 14
-      },
-      {
         "n": "AFC Bournemouth",
-        "p": 10,
+        "p": 9,
         "pts": 12
       },
       {
         "n": "Tottenham Hotspur FC",
+        "p": 10,
+        "pts": 12
+      },
+      {
+        "n": "Newcastle United FC",
         "p": 11,
         "pts": 12
       },
@@ -394,7 +394,7 @@
       {
         "n": "Fulham FC",
         "p": 15,
-        "pts": 9
+        "pts": 10
       },
       {
         "n": "Coventry City FC",
@@ -407,14 +407,14 @@
         "pts": 7
       },
       {
-        "n": "Crystal Palace FC",
+        "n": "Nottingham Forest FC",
         "p": 18,
         "pts": 7
       },
       {
-        "n": "Nottingham Forest FC",
+        "n": "Crystal Palace FC",
         "p": 19,
-        "pts": 6
+        "pts": 7
       },
       {
         "n": "Sunderland AFC",
