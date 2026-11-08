@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-08T18:33:47Z",
+  "updated": "2026-11-08T19:24:10Z",
   "table": [
     {
       "position": 1,
@@ -6940,11 +6940,11 @@
       },
       "id": 560639,
       "utcDate": "2026-11-08T16:30:00Z",
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "matchday": 10,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-11-08T18:33:23Z",
+      "lastUpdated": "2026-11-08T18:37:39Z",
       "homeTeam": {
         "id": 66,
         "name": "Manchester United FC",
