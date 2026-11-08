@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-08T00:04:26+00:00",
+ "updated": "2026-11-08T13:42:10+00:00",
  "order": [
   "PL",
   "PD",
@@ -780,8 +780,11 @@
        "name": "Real Betis"
       },
       "kickoff": "2026-11-08T13:00:00Z",
-      "status": "SCHEDULED",
-      "score": null
+      "status": "LIVE",
+      "score": [
+       0,
+       0
+      ]
      },
      {
       "home": {
