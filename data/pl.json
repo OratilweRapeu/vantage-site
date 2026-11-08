@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-08T14:51:19Z",
+  "updated": "2026-11-08T18:33:47Z",
   "table": [
     {
       "position": 1,
@@ -73,9 +73,9 @@
       "draw": 3,
       "lost": 2,
       "points": 18,
-      "goalsFor": 12,
-      "goalsAgainst": 9,
-      "goalDifference": 3
+      "goalsFor": 14,
+      "goalsAgainst": 10,
+      "goalDifference": 4
     },
     {
       "position": 5,
@@ -130,8 +130,8 @@
       "draw": 3,
       "lost": 3,
       "points": 15,
-      "goalsFor": 15,
-      "goalsAgainst": 13,
+      "goalsFor": 16,
+      "goalsAgainst": 14,
       "goalDifference": 2
     },
     {
@@ -175,6 +175,25 @@
     {
       "position": 10,
       "team": {
+        "id": 58,
+        "name": "Aston Villa FC",
+        "shortName": "Aston Villa",
+        "tla": "AVL",
+        "crest": "https://crests.football-data.org/58.png"
+      },
+      "playedGames": 10,
+      "form": null,
+      "won": 3,
+      "draw": 4,
+      "lost": 3,
+      "points": 13,
+      "goalsFor": 14,
+      "goalsAgainst": 17,
+      "goalDifference": -3
+    },
+    {
+      "position": 11,
+      "team": {
         "id": 73,
         "name": "Tottenham Hotspur FC",
         "shortName": "Tottenham",
@@ -192,7 +211,7 @@
       "goalDifference": -1
     },
     {
-      "position": 11,
+      "position": 12,
       "team": {
         "id": 67,
         "name": "Newcastle United FC",
@@ -208,25 +227,6 @@
       "points": 12,
       "goalsFor": 13,
       "goalsAgainst": 16,
-      "goalDifference": -3
-    },
-    {
-      "position": 12,
-      "team": {
-        "id": 58,
-        "name": "Aston Villa FC",
-        "shortName": "Aston Villa",
-        "tla": "AVL",
-        "crest": "https://crests.football-data.org/58.png"
-      },
-      "playedGames": 9,
-      "form": null,
-      "won": 3,
-      "draw": 3,
-      "lost": 3,
-      "points": 12,
-      "goalsFor": 10,
-      "goalsAgainst": 13,
       "goalDifference": -3
     },
     {
@@ -263,8 +263,8 @@
       "draw": 2,
       "lost": 5,
       "points": 11,
-      "goalsFor": 14,
-      "goalsAgainst": 19,
+      "goalsFor": 15,
+      "goalsAgainst": 20,
       "goalDifference": -5
     },
     {
@@ -327,6 +327,25 @@
     {
       "position": 18,
       "team": {
+        "id": 66,
+        "name": "Manchester United FC",
+        "shortName": "Man United",
+        "tla": "MUN",
+        "crest": "https://crests.football-data.org/66.png"
+      },
+      "playedGames": 10,
+      "form": null,
+      "won": 1,
+      "draw": 5,
+      "lost": 4,
+      "points": 8,
+      "goalsFor": 14,
+      "goalsAgainst": 19,
+      "goalDifference": -5
+    },
+    {
+      "position": 19,
+      "team": {
         "id": 71,
         "name": "Sunderland AFC",
         "shortName": "Sunderland",
@@ -344,25 +363,6 @@
       "goalDifference": -9
     },
     {
-      "position": 19,
-      "team": {
-        "id": 66,
-        "name": "Manchester United FC",
-        "shortName": "Man United",
-        "tla": "MUN",
-        "crest": "https://crests.football-data.org/66.png"
-      },
-      "playedGames": 9,
-      "form": null,
-      "won": 1,
-      "draw": 4,
-      "lost": 4,
-      "points": 7,
-      "goalsFor": 10,
-      "goalsAgainst": 15,
-      "goalDifference": -5
-    },
-    {
       "position": 20,
       "team": {
         "id": 354,
@@ -377,9 +377,9 @@
       "draw": 1,
       "lost": 7,
       "points": 7,
-      "goalsFor": 9,
-      "goalsAgainst": 22,
-      "goalDifference": -13
+      "goalsFor": 10,
+      "goalsAgainst": 24,
+      "goalDifference": -14
     }
   ],
   "matches": [
@@ -6676,11 +6676,11 @@
       },
       "id": 560635,
       "utcDate": "2026-11-08T14:00:00Z",
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "matchday": 10,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-11-08T14:50:27Z",
+      "lastUpdated": "2026-11-08T16:01:55Z",
       "homeTeam": {
         "id": 354,
         "name": "Crystal Palace FC",
@@ -6699,12 +6699,12 @@
         "winner": "AWAY_TEAM",
         "duration": "REGULAR",
         "fullTime": {
-          "home": 0,
-          "away": 1
+          "home": 1,
+          "away": 3
         },
         "halfTime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 1
         }
       },
       "odds": {
@@ -6742,11 +6742,11 @@
       },
       "id": 560636,
       "utcDate": "2026-11-08T14:00:00Z",
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "matchday": 10,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-11-08T14:50:27Z",
+      "lastUpdated": "2026-11-08T16:08:19Z",
       "homeTeam": {
         "id": 71,
         "name": "Sunderland AFC",
@@ -6769,8 +6769,8 @@
           "away": 0
         },
         "halfTime": {
-          "home": null,
-          "away": null
+          "home": 1,
+          "away": 0
         }
       },
       "odds": {
@@ -6808,11 +6808,11 @@
       },
       "id": 560637,
       "utcDate": "2026-11-08T14:00:00Z",
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "matchday": 10,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-11-08T14:50:27Z",
+      "lastUpdated": "2026-11-08T16:04:03Z",
       "homeTeam": {
         "id": 349,
         "name": "Ipswich Town FC",
@@ -6831,12 +6831,12 @@
         "winner": "AWAY_TEAM",
         "duration": "REGULAR",
         "fullTime": {
-          "home": 0,
-          "away": 1
+          "home": 1,
+          "away": 2
         },
         "halfTime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 1
         }
       },
       "odds": {
@@ -6874,11 +6874,11 @@
       },
       "id": 560638,
       "utcDate": "2026-11-08T14:00:00Z",
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "matchday": 10,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-11-08T14:49:55Z",
+      "lastUpdated": "2026-11-08T16:04:03Z",
       "homeTeam": {
         "id": 397,
         "name": "Brighton & Hove Albion FC",
@@ -6901,8 +6901,8 @@
           "away": 0
         },
         "halfTime": {
-          "home": null,
-          "away": null
+          "home": 2,
+          "away": 0
         }
       },
       "odds": {
@@ -6940,11 +6940,11 @@
       },
       "id": 560639,
       "utcDate": "2026-11-08T16:30:00Z",
-      "status": "TIMED",
+      "status": "IN_PLAY",
       "matchday": 10,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-11-08T01:32:01Z",
+      "lastUpdated": "2026-11-08T18:33:23Z",
       "homeTeam": {
         "id": 66,
         "name": "Manchester United FC",
@@ -6960,15 +6960,15 @@
         "crest": "https://crests.football-data.org/58.png"
       },
       "score": {
-        "winner": null,
+        "winner": "DRAW",
         "duration": "REGULAR",
         "fullTime": {
-          "home": null,
-          "away": null
+          "home": 4,
+          "away": 4
         },
         "halfTime": {
-          "home": null,
-          "away": null
+          "home": 2,
+          "away": 2
         }
       },
       "odds": {
