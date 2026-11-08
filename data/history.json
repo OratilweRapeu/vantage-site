@@ -327,44 +327,44 @@
         "pts": 27
       },
       {
-        "n": "Manchester City FC",
+        "n": "Brighton & Hove Albion FC",
         "p": 2,
+        "pts": 22
+      },
+      {
+        "n": "Manchester City FC",
+        "p": 3,
         "pts": 21
       },
       {
-        "n": "Brighton & Hove Albion FC",
-        "p": 3,
-        "pts": 19
+        "n": "Liverpool FC",
+        "p": 4,
+        "pts": 18
       },
       {
         "n": "Chelsea FC",
-        "p": 4,
-        "pts": 16
-      },
-      {
-        "n": "Everton FC",
         "p": 5,
         "pts": 16
       },
       {
-        "n": "Liverpool FC",
+        "n": "Everton FC",
         "p": 6,
+        "pts": 16
+      },
+      {
+        "n": "AFC Bournemouth",
+        "p": 7,
         "pts": 15
       },
       {
         "n": "Brentford FC",
-        "p": 7,
-        "pts": 14
-      },
-      {
-        "n": "Leeds United FC",
         "p": 8,
         "pts": 14
       },
       {
-        "n": "AFC Bournemouth",
+        "n": "Leeds United FC",
         "p": 9,
-        "pts": 12
+        "pts": 14
       },
       {
         "n": "Tottenham Hotspur FC",
@@ -407,19 +407,19 @@
         "pts": 9
       },
       {
-        "n": "Manchester United FC",
+        "n": "Sunderland AFC",
         "p": 18,
-        "pts": 7
+        "pts": 8
       },
       {
-        "n": "Crystal Palace FC",
+        "n": "Manchester United FC",
         "p": 19,
         "pts": 7
       },
       {
-        "n": "Sunderland AFC",
+        "n": "Crystal Palace FC",
         "p": 20,
-        "pts": 5
+        "pts": 7
       }
     ]
   }
