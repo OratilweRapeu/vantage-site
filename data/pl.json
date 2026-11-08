@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-07T21:35:36Z",
+  "updated": "2026-11-08T00:04:02Z",
   "table": [
     {
       "position": 1,
@@ -6416,7 +6416,7 @@
       "matchday": 10,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-11-07T14:32:51Z",
+      "lastUpdated": "2026-11-07T23:25:12Z",
       "homeTeam": {
         "id": 341,
         "name": "Leeds United FC",
@@ -6482,7 +6482,7 @@
       "matchday": 10,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-11-07T17:02:11Z",
+      "lastUpdated": "2026-11-07T23:25:12Z",
       "homeTeam": {
         "id": 57,
         "name": "Arsenal FC",
@@ -6548,7 +6548,7 @@
       "matchday": 10,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-11-07T17:03:15Z",
+      "lastUpdated": "2026-11-07T23:25:12Z",
       "homeTeam": {
         "id": 63,
         "name": "Fulham FC",
@@ -6614,7 +6614,7 @@
       "matchday": 10,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-11-07T19:32:35Z",
+      "lastUpdated": "2026-11-07T23:25:13Z",
       "homeTeam": {
         "id": 351,
         "name": "Nottingham Forest FC",
