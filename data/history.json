@@ -422,5 +422,111 @@
         "pts": 7
       }
     ]
+  },
+  {
+    "md": 11,
+    "date": "2026-11-11",
+    "t": [
+      {
+        "n": "Arsenal FC",
+        "p": 1,
+        "pts": 27
+      },
+      {
+        "n": "Brighton & Hove Albion FC",
+        "p": 2,
+        "pts": 22
+      },
+      {
+        "n": "Manchester City FC",
+        "p": 3,
+        "pts": 21
+      },
+      {
+        "n": "Liverpool FC",
+        "p": 4,
+        "pts": 18
+      },
+      {
+        "n": "Chelsea FC",
+        "p": 5,
+        "pts": 16
+      },
+      {
+        "n": "Everton FC",
+        "p": 6,
+        "pts": 16
+      },
+      {
+        "n": "AFC Bournemouth",
+        "p": 7,
+        "pts": 15
+      },
+      {
+        "n": "Brentford FC",
+        "p": 8,
+        "pts": 14
+      },
+      {
+        "n": "Leeds United FC",
+        "p": 9,
+        "pts": 14
+      },
+      {
+        "n": "Aston Villa FC",
+        "p": 10,
+        "pts": 13
+      },
+      {
+        "n": "Tottenham Hotspur FC",
+        "p": 11,
+        "pts": 12
+      },
+      {
+        "n": "Newcastle United FC",
+        "p": 12,
+        "pts": 12
+      },
+      {
+        "n": "Hull City AFC",
+        "p": 13,
+        "pts": 11
+      },
+      {
+        "n": "Ipswich Town FC",
+        "p": 14,
+        "pts": 11
+      },
+      {
+        "n": "Fulham FC",
+        "p": 15,
+        "pts": 10
+      },
+      {
+        "n": "Nottingham Forest FC",
+        "p": 16,
+        "pts": 9
+      },
+      {
+        "n": "Coventry City FC",
+        "p": 17,
+        "pts": 9
+      },
+      {
+        "n": "Manchester United FC",
+        "p": 18,
+        "pts": 8
+      },
+      {
+        "n": "Sunderland AFC",
+        "p": 19,
+        "pts": 8
+      },
+      {
+        "n": "Crystal Palace FC",
+        "p": 20,
+        "pts": 7
+      }
+    ]
   }
 ]
