@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-08T22:35:09+00:00",
+ "updated": "2026-11-20T21:36:54+00:00",
  "order": [
   "PL",
   "PD",
@@ -703,55 +703,101 @@
     }
    ],
    "results": {
-    "label": "Matchweek 12",
+    "label": "Matchweek 13",
     "fixtures": [
+     {
+      "home": {
+       "code": "ATH",
+       "name": "Athletic"
+      },
+      "away": {
+       "code": "ESP",
+       "name": "Espanyol"
+      },
+      "kickoff": "2026-11-20T20:00:00Z",
+      "status": "LIVE",
+      "score": [
+       0,
+       1
+      ]
+     },
+     {
+      "home": {
+       "code": "ALA",
+       "name": "Alavés"
+      },
+      "away": {
+       "code": "DEP",
+       "name": "Deportivo"
+      },
+      "kickoff": "2026-11-21T13:00:00Z",
+      "status": "SCHEDULED",
+      "score": null
+     },
+     {
+      "home": {
+       "code": "RAY",
+       "name": "Rayo Vallecano"
+      },
+      "away": {
+       "code": "VAL",
+       "name": "Valencia"
+      },
+      "kickoff": "2026-11-21T15:15:00Z",
+      "status": "SCHEDULED",
+      "score": null
+     },
      {
       "home": {
        "code": "SEV",
        "name": "Sevilla FC"
       },
       "away": {
-       "code": "ALA",
-       "name": "Alavés"
+       "code": "BET",
+       "name": "Real Betis"
       },
-      "kickoff": "2026-11-06T20:00:00Z",
-      "status": "FT",
-      "score": [
-       0,
-       0
-      ]
+      "kickoff": "2026-11-21T17:30:00Z",
+      "status": "SCHEDULED",
+      "score": null
      },
      {
       "home": {
-       "code": "MAL",
-       "name": "Málaga"
+       "code": "RMA",
+       "name": "Real Madrid"
       },
       "away": {
+       "code": "CEL",
+       "name": "Celta"
+      },
+      "kickoff": "2026-11-21T20:00:00Z",
+      "status": "SCHEDULED",
+      "score": null
+     },
+     {
+      "home": {
+       "code": "BAR",
+       "name": "Barça"
+      },
+      "away": {
+       "code": "VIL",
+       "name": "Villarreal"
+      },
+      "kickoff": "2026-11-22T13:00:00Z",
+      "status": "SCHEDULED",
+      "score": null
+     },
+     {
+      "home": {
        "code": "SAN",
        "name": "Santander"
       },
-      "kickoff": "2026-11-07T13:00:00Z",
-      "status": "FT",
-      "score": [
-       1,
-       2
-      ]
-     },
-     {
-      "home": {
-       "code": "ESP",
-       "name": "Espanyol"
-      },
       "away": {
-       "code": "DEP",
-       "name": "Deportivo"
+       "code": "RSO",
+       "name": "Real Sociedad"
       },
-      "kickoff": "2026-11-07T15:15:00Z",
-      "status": "FT",
-      "score": [
-       0,
-       0
-      ]
+      "kickoff": "2026-11-22T15:15:00Z",
+      "status": "SCHEDULED",
+      "score": null
      },
      {
       "home": {
@@ -759,111 +805,38 @@
        "name": "Osasuna"
       },
       "away": {
-       "code": "ATH",
-       "name": "Athletic"
+       "code": "MAL",
+       "name": "Málaga"
       },
-      "kickoff": "2026-11-07T17:30:00Z",
-      "status": "FT",
-      "score": [
-       1,
-       1
-      ]
+      "kickoff": "2026-11-22T17:30:00Z",
+      "status": "SCHEDULED",
+      "score": null
      },
      {
       "home": {
-       "code": "VAL",
-       "name": "Valencia"
-      },
-      "away": {
-       "code": "RMA",
-       "name": "Real Madrid"
-      },
-      "kickoff": "2026-11-07T20:00:00Z",
-      "status": "FT",
-      "score": [
-       0,
-       3
-      ]
-     },
-     {
-      "home": {
-       "code": "ELC",
-       "name": "Elche"
-      },
-      "away": {
-       "code": "BET",
-       "name": "Real Betis"
-      },
-      "kickoff": "2026-11-08T13:00:00Z",
-      "status": "FT",
-      "score": [
-       0,
-       2
-      ]
-     },
-     {
-      "home": {
-       "code": "RSO",
-       "name": "Real Sociedad"
-      },
-      "away": {
-       "code": "RAY",
-       "name": "Rayo Vallecano"
-      },
-      "kickoff": "2026-11-08T15:15:00Z",
-      "status": "FT",
-      "score": [
-       1,
-       0
-      ]
-     },
-     {
-      "home": {
-       "code": "CEL",
-       "name": "Celta"
-      },
-      "away": {
-       "code": "LEV",
-       "name": "Levante"
-      },
-      "kickoff": "2026-11-08T17:30:00Z",
-      "status": "FT",
-      "score": [
-       0,
-       0
-      ]
-     },
-     {
-      "home": {
-       "code": "VIL",
-       "name": "Villarreal"
-      },
-      "away": {
        "code": "GET",
        "name": "Getafe"
       },
-      "kickoff": "2026-11-08T17:30:00Z",
-      "status": "FT",
-      "score": [
-       2,
-       0
-      ]
-     },
-     {
-      "home": {
+      "away": {
        "code": "ATL",
        "name": "Atleti"
       },
-      "away": {
-       "code": "BAR",
-       "name": "Barça"
+      "kickoff": "2026-11-22T20:00:00Z",
+      "status": "SCHEDULED",
+      "score": null
+     },
+     {
+      "home": {
+       "code": "LEV",
+       "name": "Levante"
       },
-      "kickoff": "2026-11-08T20:00:00Z",
-      "status": "FT",
-      "score": [
-       1,
-       2
-      ]
+      "away": {
+       "code": "ELC",
+       "name": "Elche"
+      },
+      "kickoff": "2026-11-23T20:00:00Z",
+      "status": "SCHEDULED",
+      "score": null
      }
     ]
    }
