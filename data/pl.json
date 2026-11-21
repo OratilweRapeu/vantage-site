@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-21T17:41:32Z",
+  "updated": "2026-11-21T20:49:03Z",
   "table": [
     {
       "position": 1,
@@ -16,8 +16,8 @@
       "draw": 1,
       "lost": 1,
       "points": 28,
-      "goalsFor": 15,
-      "goalsAgainst": 5,
+      "goalsFor": 17,
+      "goalsAgainst": 7,
       "goalDifference": 10
     },
     {
@@ -225,8 +225,8 @@
       "draw": 4,
       "lost": 4,
       "points": 13,
-      "goalsFor": 13,
-      "goalsAgainst": 16,
+      "goalsFor": 15,
+      "goalsAgainst": 18,
       "goalDifference": -3
     },
     {
@@ -7402,11 +7402,11 @@
       },
       "id": 560651,
       "utcDate": "2026-11-21T17:30:00Z",
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "matchday": 11,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-11-21T17:39:55Z",
+      "lastUpdated": "2026-11-21T19:34:03Z",
       "homeTeam": {
         "id": 67,
         "name": "Newcastle United FC",
@@ -7425,12 +7425,12 @@
         "winner": "DRAW",
         "duration": "REGULAR",
         "fullTime": {
-          "home": 0,
-          "away": 0
+          "home": 2,
+          "away": 2
         },
         "halfTime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 1
         }
       },
       "odds": {
