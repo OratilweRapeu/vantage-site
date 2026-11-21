@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-21T17:41:54+00:00",
+ "updated": "2026-11-21T22:32:31+00:00",
  "order": [
   "PL",
   "PD",
@@ -380,10 +380,10 @@
        "name": "Arsenal"
       },
       "kickoff": "2026-11-21T17:30:00Z",
-      "status": "LIVE",
+      "status": "FT",
       "score": [
-       0,
-       0
+       2,
+       2
       ]
      },
      {
@@ -722,8 +722,11 @@
        "name": "Deportivo"
       },
       "kickoff": "2026-11-21T13:00:00Z",
-      "status": "SCHEDULED",
-      "score": null
+      "status": "FT",
+      "score": [
+       3,
+       1
+      ]
      },
      {
       "home": {
@@ -735,8 +738,11 @@
        "name": "Valencia"
       },
       "kickoff": "2026-11-21T15:15:00Z",
-      "status": "SCHEDULED",
-      "score": null
+      "status": "FT",
+      "score": [
+       0,
+       1
+      ]
      },
      {
       "home": {
@@ -748,8 +754,11 @@
        "name": "Real Betis"
       },
       "kickoff": "2026-11-21T17:30:00Z",
-      "status": "SCHEDULED",
-      "score": null
+      "status": "FT",
+      "score": [
+       1,
+       1
+      ]
      },
      {
       "home": {
@@ -761,8 +770,11 @@
        "name": "Celta"
       },
       "kickoff": "2026-11-21T20:00:00Z",
-      "status": "SCHEDULED",
-      "score": null
+      "status": "FT",
+      "score": [
+       2,
+       1
+      ]
      },
      {
       "home": {
