@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-21T10:23:41Z",
+  "updated": "2026-11-21T14:51:46Z",
   "table": [
     {
       "position": 1,
@@ -48,14 +48,14 @@
         "tla": "MCI",
         "crest": "https://crests.football-data.org/65.png"
       },
-      "playedGames": 10,
+      "playedGames": 11,
       "form": null,
       "won": 7,
-      "draw": 0,
+      "draw": 1,
       "lost": 3,
-      "points": 21,
-      "goalsFor": 21,
-      "goalsAgainst": 13,
+      "points": 22,
+      "goalsFor": 22,
+      "goalsAgainst": 14,
       "goalDifference": 8
     },
     {
@@ -251,6 +251,25 @@
     {
       "position": 14,
       "team": {
+        "id": 63,
+        "name": "Fulham FC",
+        "shortName": "Fulham",
+        "tla": "FUL",
+        "crest": "https://crests.football-data.org/63.png"
+      },
+      "playedGames": 11,
+      "form": null,
+      "won": 2,
+      "draw": 5,
+      "lost": 4,
+      "points": 11,
+      "goalsFor": 11,
+      "goalsAgainst": 13,
+      "goalDifference": -2
+    },
+    {
+      "position": 15,
+      "team": {
         "id": 349,
         "name": "Ipswich Town FC",
         "shortName": "Ipswich Town",
@@ -266,25 +285,6 @@
       "goalsFor": 15,
       "goalsAgainst": 20,
       "goalDifference": -5
-    },
-    {
-      "position": 15,
-      "team": {
-        "id": 63,
-        "name": "Fulham FC",
-        "shortName": "Fulham",
-        "tla": "FUL",
-        "crest": "https://crests.football-data.org/63.png"
-      },
-      "playedGames": 10,
-      "form": null,
-      "won": 2,
-      "draw": 4,
-      "lost": 4,
-      "points": 10,
-      "goalsFor": 10,
-      "goalsAgainst": 12,
-      "goalDifference": -2
     },
     {
       "position": 16,
@@ -7006,11 +7006,11 @@
       },
       "id": 560643,
       "utcDate": "2026-11-21T12:30:00Z",
-      "status": "TIMED",
+      "status": "FINISHED",
       "matchday": 11,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-11-21T00:20:36Z",
+      "lastUpdated": "2026-11-21T14:27:23Z",
       "homeTeam": {
         "id": 65,
         "name": "Manchester City FC",
@@ -7026,21 +7026,28 @@
         "crest": "https://crests.football-data.org/63.png"
       },
       "score": {
-        "winner": null,
+        "winner": "DRAW",
         "duration": "REGULAR",
         "fullTime": {
-          "home": null,
-          "away": null
+          "home": 1,
+          "away": 1
         },
         "halfTime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 1
         }
       },
       "odds": {
         "msg": "Activate Odds-Package in User-Panel to retrieve odds."
       },
-      "referees": []
+      "referees": [
+        {
+          "id": 11620,
+          "name": "Thomas Bramall",
+          "type": "REFEREE",
+          "nationality": "England"
+        }
+      ]
     },
     {
       "area": {
@@ -7099,7 +7106,14 @@
       "odds": {
         "msg": "Activate Odds-Package in User-Panel to retrieve odds."
       },
-      "referees": []
+      "referees": [
+        {
+          "id": 11605,
+          "name": "Michael Oliver",
+          "type": "REFEREE",
+          "nationality": "England"
+        }
+      ]
     },
     {
       "area": {
@@ -7158,7 +7172,14 @@
       "odds": {
         "msg": "Activate Odds-Package in User-Panel to retrieve odds."
       },
-      "referees": []
+      "referees": [
+        {
+          "id": 11423,
+          "name": "Andy Madley",
+          "type": "REFEREE",
+          "nationality": "England"
+        }
+      ]
     },
     {
       "area": {
@@ -7217,7 +7238,14 @@
       "odds": {
         "msg": "Activate Odds-Package in User-Panel to retrieve odds."
       },
-      "referees": []
+      "referees": [
+        {
+          "id": 58025,
+          "name": "Adam Herczeg",
+          "type": "REFEREE",
+          "nationality": "England"
+        }
+      ]
     },
     {
       "area": {
@@ -7276,7 +7304,14 @@
       "odds": {
         "msg": "Activate Odds-Package in User-Panel to retrieve odds."
       },
-      "referees": []
+      "referees": [
+        {
+          "id": 11446,
+          "name": "Robert Jones",
+          "type": "REFEREE",
+          "nationality": "England"
+        }
+      ]
     },
     {
       "area": {
@@ -7335,7 +7370,14 @@
       "odds": {
         "msg": "Activate Odds-Package in User-Panel to retrieve odds."
       },
-      "referees": []
+      "referees": [
+        {
+          "id": 11469,
+          "name": "Darren England",
+          "type": "REFEREE",
+          "nationality": "England"
+        }
+      ]
     },
     {
       "area": {
