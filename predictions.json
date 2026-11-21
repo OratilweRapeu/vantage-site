@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-20T21:36:54+00:00",
+ "updated": "2026-11-21T02:54:27+00:00",
  "order": [
   "PL",
   "PD",
@@ -715,7 +715,7 @@
        "name": "Espanyol"
       },
       "kickoff": "2026-11-20T20:00:00Z",
-      "status": "LIVE",
+      "status": "FT",
       "score": [
        0,
        1
