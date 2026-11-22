@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-22T17:57:24Z",
+  "updated": "2026-11-22T22:22:57Z",
   "table": [
     {
       "position": 1,
@@ -73,9 +73,9 @@
       "draw": 3,
       "lost": 2,
       "points": 21,
-      "goalsFor": 16,
+      "goalsFor": 18,
       "goalsAgainst": 10,
-      "goalDifference": 6
+      "goalDifference": 8
     },
     {
       "position": 5,
@@ -359,8 +359,8 @@
       "lost": 5,
       "points": 8,
       "goalsFor": 14,
-      "goalsAgainst": 21,
-      "goalDifference": -7
+      "goalsAgainst": 23,
+      "goalDifference": -9
     },
     {
       "position": 20,
@@ -7472,7 +7472,7 @@
       "matchday": 11,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-11-22T16:04:27Z",
+      "lastUpdated": "2026-11-22T19:25:07Z",
       "homeTeam": {
         "id": 322,
         "name": "Hull City AFC",
@@ -7534,11 +7534,11 @@
       },
       "id": 560645,
       "utcDate": "2026-11-22T16:30:00Z",
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "matchday": 11,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-11-22T17:56:26Z",
+      "lastUpdated": "2026-11-22T19:25:07Z",
       "homeTeam": {
         "id": 64,
         "name": "Liverpool FC",
@@ -7557,7 +7557,7 @@
         "winner": "HOME_TEAM",
         "duration": "REGULAR",
         "fullTime": {
-          "home": 2,
+          "home": 4,
           "away": 0
         },
         "halfTime": {
