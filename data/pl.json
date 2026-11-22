@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-22T16:57:15Z",
+  "updated": "2026-11-22T17:57:24Z",
   "table": [
     {
       "position": 1,
@@ -7538,7 +7538,7 @@
       "matchday": 11,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-11-22T16:55:39Z",
+      "lastUpdated": "2026-11-22T17:56:26Z",
       "homeTeam": {
         "id": 64,
         "name": "Liverpool FC",
@@ -7561,8 +7561,8 @@
           "away": 0
         },
         "halfTime": {
-          "home": null,
-          "away": null
+          "home": 2,
+          "away": 0
         }
       },
       "odds": {
