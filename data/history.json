@@ -443,12 +443,12 @@
         "pts": 22
       },
       {
-        "n": "AFC Bournemouth",
+        "n": "Liverpool FC",
         "p": 4,
-        "pts": 18
+        "pts": 21
       },
       {
-        "n": "Liverpool FC",
+        "n": "AFC Bournemouth",
         "p": 5,
         "pts": 18
       },
@@ -478,24 +478,24 @@
         "pts": 14
       },
       {
-        "n": "Aston Villa FC",
+        "n": "Hull City AFC",
         "p": 11,
         "pts": 14
       },
       {
-        "n": "Newcastle United FC",
+        "n": "Aston Villa FC",
         "p": 12,
+        "pts": 14
+      },
+      {
+        "n": "Newcastle United FC",
+        "p": 13,
         "pts": 13
       },
       {
         "n": "Coventry City FC",
-        "p": 13,
-        "pts": 12
-      },
-      {
-        "n": "Hull City AFC",
         "p": 14,
-        "pts": 11
+        "pts": 12
       },
       {
         "n": "Fulham FC",

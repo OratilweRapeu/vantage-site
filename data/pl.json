@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-22T10:27:51Z",
+  "updated": "2026-11-22T16:57:15Z",
   "table": [
     {
       "position": 1,
@@ -29,15 +29,15 @@
         "tla": "BHA",
         "crest": "https://crests.football-data.org/397.png"
       },
-      "playedGames": 10,
+      "playedGames": 11,
       "form": null,
       "won": 7,
       "draw": 1,
-      "lost": 2,
+      "lost": 3,
       "points": 22,
       "goalsFor": 26,
-      "goalsAgainst": 7,
-      "goalDifference": 19
+      "goalsAgainst": 9,
+      "goalDifference": 17
     },
     {
       "position": 3,
@@ -61,6 +61,25 @@
     {
       "position": 4,
       "team": {
+        "id": 64,
+        "name": "Liverpool FC",
+        "shortName": "Liverpool",
+        "tla": "LIV",
+        "crest": "https://crests.football-data.org/64.png"
+      },
+      "playedGames": 11,
+      "form": null,
+      "won": 6,
+      "draw": 3,
+      "lost": 2,
+      "points": 21,
+      "goalsFor": 16,
+      "goalsAgainst": 10,
+      "goalDifference": 6
+    },
+    {
+      "position": 5,
+      "team": {
         "id": 1044,
         "name": "AFC Bournemouth",
         "shortName": "Bournemouth",
@@ -75,25 +94,6 @@
       "points": 18,
       "goalsFor": 18,
       "goalsAgainst": 14,
-      "goalDifference": 4
-    },
-    {
-      "position": 5,
-      "team": {
-        "id": 64,
-        "name": "Liverpool FC",
-        "shortName": "Liverpool",
-        "tla": "LIV",
-        "crest": "https://crests.football-data.org/64.png"
-      },
-      "playedGames": 10,
-      "form": null,
-      "won": 5,
-      "draw": 3,
-      "lost": 2,
-      "points": 18,
-      "goalsFor": 14,
-      "goalsAgainst": 10,
       "goalDifference": 4
     },
     {
@@ -194,6 +194,25 @@
     {
       "position": 11,
       "team": {
+        "id": 322,
+        "name": "Hull City AFC",
+        "shortName": "Hull City",
+        "tla": "HUL",
+        "crest": "https://crests.football-data.org/322.png"
+      },
+      "playedGames": 11,
+      "form": null,
+      "won": 3,
+      "draw": 5,
+      "lost": 3,
+      "points": 14,
+      "goalsFor": 13,
+      "goalsAgainst": 11,
+      "goalDifference": 2
+    },
+    {
+      "position": 12,
+      "team": {
         "id": 58,
         "name": "Aston Villa FC",
         "shortName": "Aston Villa",
@@ -211,7 +230,7 @@
       "goalDifference": -3
     },
     {
-      "position": 12,
+      "position": 13,
       "team": {
         "id": 67,
         "name": "Newcastle United FC",
@@ -230,7 +249,7 @@
       "goalDifference": -3
     },
     {
-      "position": 13,
+      "position": 14,
       "team": {
         "id": 1076,
         "name": "Coventry City FC",
@@ -247,25 +266,6 @@
       "goalsFor": 13,
       "goalsAgainst": 21,
       "goalDifference": -8
-    },
-    {
-      "position": 14,
-      "team": {
-        "id": 322,
-        "name": "Hull City AFC",
-        "shortName": "Hull City",
-        "tla": "HUL",
-        "crest": "https://crests.football-data.org/322.png"
-      },
-      "playedGames": 10,
-      "form": null,
-      "won": 2,
-      "draw": 5,
-      "lost": 3,
-      "points": 11,
-      "goalsFor": 11,
-      "goalsAgainst": 11,
-      "goalDifference": 0
     },
     {
       "position": 15,
@@ -352,15 +352,15 @@
         "tla": "MUN",
         "crest": "https://crests.football-data.org/66.png"
       },
-      "playedGames": 10,
+      "playedGames": 11,
       "form": null,
       "won": 1,
       "draw": 5,
-      "lost": 4,
+      "lost": 5,
       "points": 8,
       "goalsFor": 14,
-      "goalsAgainst": 19,
-      "goalDifference": -5
+      "goalsAgainst": 21,
+      "goalDifference": -7
     },
     {
       "position": 20,
@@ -7468,11 +7468,11 @@
       },
       "id": 560646,
       "utcDate": "2026-11-22T14:00:00Z",
-      "status": "TIMED",
+      "status": "FINISHED",
       "matchday": 11,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-11-22T01:32:00Z",
+      "lastUpdated": "2026-11-22T16:04:27Z",
       "homeTeam": {
         "id": 322,
         "name": "Hull City AFC",
@@ -7488,21 +7488,28 @@
         "crest": "https://crests.football-data.org/397.png"
       },
       "score": {
-        "winner": null,
+        "winner": "HOME_TEAM",
         "duration": "REGULAR",
         "fullTime": {
-          "home": null,
-          "away": null
+          "home": 2,
+          "away": 0
         },
         "halfTime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 0
         }
       },
       "odds": {
         "msg": "Activate Odds-Package in User-Panel to retrieve odds."
       },
-      "referees": []
+      "referees": [
+        {
+          "id": 11309,
+          "name": "Peter Bankes",
+          "type": "REFEREE",
+          "nationality": "England"
+        }
+      ]
     },
     {
       "area": {
@@ -7527,11 +7534,11 @@
       },
       "id": 560645,
       "utcDate": "2026-11-22T16:30:00Z",
-      "status": "TIMED",
+      "status": "IN_PLAY",
       "matchday": 11,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-11-22T01:32:01Z",
+      "lastUpdated": "2026-11-22T16:55:39Z",
       "homeTeam": {
         "id": 64,
         "name": "Liverpool FC",
@@ -7547,11 +7554,11 @@
         "crest": "https://crests.football-data.org/66.png"
       },
       "score": {
-        "winner": null,
+        "winner": "HOME_TEAM",
         "duration": "REGULAR",
         "fullTime": {
-          "home": null,
-          "away": null
+          "home": 2,
+          "away": 0
         },
         "halfTime": {
           "home": null,
@@ -7561,7 +7568,14 @@
       "odds": {
         "msg": "Activate Odds-Package in User-Panel to retrieve odds."
       },
-      "referees": []
+      "referees": [
+        {
+          "id": 213813,
+          "name": "Sam Barrott",
+          "type": "REFEREE",
+          "nationality": "England"
+        }
+      ]
     },
     {
       "area": {
