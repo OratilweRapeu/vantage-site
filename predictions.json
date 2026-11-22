@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-22T17:57:48+00:00",
+ "updated": "2026-11-22T23:06:58+00:00",
  "order": [
   "PL",
   "PD",
@@ -412,9 +412,9 @@
        "name": "Man United"
       },
       "kickoff": "2026-11-22T16:30:00Z",
-      "status": "LIVE",
+      "status": "FT",
       "score": [
-       2,
+       4,
        0
       ]
      },
@@ -824,7 +824,7 @@
        "name": "Málaga"
       },
       "kickoff": "2026-11-22T17:30:00Z",
-      "status": "LIVE",
+      "status": "FT",
       "score": [
        1,
        0
@@ -840,8 +840,11 @@
        "name": "Atleti"
       },
       "kickoff": "2026-11-22T20:00:00Z",
-      "status": "SCHEDULED",
-      "score": null
+      "status": "FT",
+      "score": [
+       0,
+       3
+      ]
      },
      {
       "home": {
