@@ -425,7 +425,7 @@
   },
   {
     "md": 11,
-    "date": "2026-11-23",
+    "date": "2026-11-24",
     "t": [
       {
         "n": "Arsenal FC",
@@ -453,14 +453,14 @@
         "pts": 18
       },
       {
-        "n": "Leeds United FC",
+        "n": "Brentford FC",
         "p": 6,
         "pts": 17
       },
       {
-        "n": "Everton FC",
+        "n": "Leeds United FC",
         "p": 7,
-        "pts": 16
+        "pts": 17
       },
       {
         "n": "Chelsea FC",
@@ -468,14 +468,14 @@
         "pts": 16
       },
       {
-        "n": "Tottenham Hotspur FC",
+        "n": "Everton FC",
         "p": 9,
-        "pts": 15
+        "pts": 16
       },
       {
-        "n": "Brentford FC",
+        "n": "Tottenham Hotspur FC",
         "p": 10,
-        "pts": 14
+        "pts": 15
       },
       {
         "n": "Hull City AFC",
