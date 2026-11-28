@@ -531,7 +531,7 @@
   },
   {
     "md": 12,
-    "date": "2026-11-27",
+    "date": "2026-11-28",
     "t": [
       {
         "n": "Arsenal FC",
@@ -599,24 +599,24 @@
         "pts": 13
       },
       {
-        "n": "Coventry City FC",
+        "n": "Nottingham Forest FC",
         "p": 14,
         "pts": 12
       },
       {
-        "n": "Fulham FC",
+        "n": "Coventry City FC",
         "p": 15,
-        "pts": 11
+        "pts": 12
       },
       {
-        "n": "Ipswich Town FC",
+        "n": "Fulham FC",
         "p": 16,
         "pts": 11
       },
       {
-        "n": "Nottingham Forest FC",
+        "n": "Ipswich Town FC",
         "p": 17,
-        "pts": 9
+        "pts": 11
       },
       {
         "n": "Sunderland AFC",
